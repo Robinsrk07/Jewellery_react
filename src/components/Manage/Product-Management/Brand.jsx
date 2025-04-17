@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 
-const List_item_Type = () => {
-  const [formData, setFormData] = useState({
+const Brand =()=>{
+ const [formData, setFormData] = useState({
     code: '',
     name: '',
     description: '',
@@ -91,7 +91,7 @@ const List_item_Type = () => {
         <div className="bg-white p-6 rounded-lg shadow-md">
           <div className="overflow-x-auto">
             <table className="table w-full text-sm text-left text-gray-500" style={{ borderSpacing: '0 12px', borderCollapse: 'separate' }}>
-              <thead className="text-xs text-gray-400 uppercase bg-white">
+              <thead className="text-xs text-center text-gray-400 uppercase bg-white">
                 <tr>
                   <th className="px-6 py-3" style={{ width: '80px' }}>SL NO</th>
                   <th className="px-6 py-3" style={{ width: '120px' }}>CODE</th>
@@ -99,11 +99,26 @@ const List_item_Type = () => {
                   <th className="px-6 py-3" style={{ width: '250px' }}>DESCRIPTION</th>
                   <th className="px-6 py-3" style={{ width: '150px' }}>STATUS</th>
                   <th className="px-6 py-3" style={{ width: '150px' }}>ACTION</th>
+                  <th className="px-6 py-3" style={{ width: '150px' }}></th>
                 </tr>
               </thead>
               <tbody>
                 {/* Sample data */}
-                <tr className="bg-white hover:bg-gray-50">
+                <tr className="bg-white text-center hover:bg-gray-50">
+                  <td className="px-6 py-5 border-b border-gray-200">1</td>
+                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
+                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
+                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
+                  <td className="px-6 py-5 border-b border-gray-200">
+                    <span className="bg-green-200 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                      ACTIVE
+                    </span>
+                  </td>
+                  <td className="px-6 py-5 border-b border-gray-200 text-blue-600"><button className="btn btn-info w-3/4 h-1/2">Edit</button>
+                   </td>
+                  <td className="px-6 py-5 border-b border-gray-200 text-blue-600"><button className="btn btn-info w-3/4 h-1/2">Delete Brand</button></td>
+                </tr>
+                <tr className="bg-white text-center hover:bg-gray-50">
                   <td className="px-6 py-5 border-b border-gray-200">1</td>
                   <td className="px-6 py-5 border-b border-gray-200">Gold</td>
                   <td className="px-6 py-5 border-b border-gray-200">Gold</td>
@@ -115,19 +130,7 @@ const List_item_Type = () => {
                   </td>
                   <td className="px-6 py-5 border-b border-gray-200 text-blue-600">N/A N/A</td>
                 </tr>
-                <tr className="bg-white hover:bg-gray-50">
-                  <td className="px-6 py-5 border-b border-gray-200">1</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">
-                    <span className="bg-green-200 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
-                      ACTIVE
-                    </span>
-                  </td>
-                  <td className="px-6 py-5 border-b border-gray-200 text-blue-600">N/A N/A</td>
-                </tr>
-                <tr className="bg-white hover:bg-gray-50">
+                <tr className="bg-white text-center hover:bg-gray-50">
                   <td className="px-6 py-5 border-b border-gray-200">1</td>
                   <td className="px-6 py-5 border-b border-gray-200">Gold</td>
                   <td className="px-6 py-5 border-b border-gray-200">Gold</td>
@@ -222,6 +225,5 @@ const List_item_Type = () => {
       </dialog>
     </div>
   );
-};
-
-export default List_item_Type;
+}
+export default  Brand

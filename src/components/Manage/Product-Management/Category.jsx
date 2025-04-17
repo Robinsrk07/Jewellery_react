@@ -1,11 +1,12 @@
 import { useState } from "react";
 
-const Jewellery_Type = () => {
+const Category = () => {
   const [formData, setFormData] = useState({
     code: '',
     name: '',
-    description: '',
     itemType: '',
+    standardPurity: '',
+    IsDefault: '',
     status: ''
   });
 
@@ -13,17 +14,18 @@ const Jewellery_Type = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-    setErrors((prev) => ({ ...prev, [name]: '' })); 
+    setFormData(prev => ({ ...prev, [name]: value }));
+    setErrors(prev => ({ ...prev, [name]: '' }));
   };
 
   const validate = () => {
     const newErrors = {};
     if (!formData.code.trim()) newErrors.code = 'Please Enter Code';
     if (!formData.name.trim()) newErrors.name = 'Please Enter Name';
-    if (!formData.description.trim()) newErrors.description = 'Enter the Description';
-    if (!formData.itemType.trim()) newErrors.itemType = 'Please Select Item Type'; // Added this validation
-    if (!formData.status.trim()) newErrors.status = 'Enter Status';
+    if (!formData.itemType.trim()) newErrors.itemType = 'Please Select Item Type';
+    if (!formData.standardPurity.trim()) newErrors.standardPurity = 'Please Enter Standard Purity';
+    if (!formData.IsDefault.trim()) newErrors.IsDefault = 'Please Select Default Status';
+    if (!formData.status.trim()) newErrors.status = 'Please Select Status';
     return newErrors;
   };
 
@@ -35,18 +37,20 @@ const Jewellery_Type = () => {
       return;
     }
 
-    // Submit form
     console.log('Form submitted:', formData);
-
-    // Reset form and close modal - Fixed to include all fields
     setFormData({
       code: '',
       name: '',
-      description: '',
-      itemType: '', // Adding this field which was missing in reset
+      itemType: '',
+      standardPurity: '',
+      IsDefault: '',
       status: ''
     });
     setErrors({});
+    document.getElementById('my_modal_5').close();
+  };
+
+  const handleClose = () => {
     document.getElementById('my_modal_5').close();
   };
 
@@ -66,6 +70,7 @@ const Jewellery_Type = () => {
         gap: '1rem',
       }}
     >
+      {/* New Item Button */}
       <div
         style={{
           width: '100%',
@@ -84,79 +89,69 @@ const Jewellery_Type = () => {
             borderRadius: '8px',
             backgroundColor: 'blue',
             color: 'white',
-          }} onClick={() => document.getElementById('my_modal_5').showModal()}
+          }}
+          onClick={() => document.getElementById('my_modal_5').showModal()}
         >
           + New Item Type
         </button>
       </div>
 
+      {/* Table Section */}
       <div className="w-full h-full bg-transparent" style={{ flex: 1 }}>
         <div className="bg-white p-6 rounded-lg shadow-md">
           <div className="overflow-x-auto">
-            <table className="table w-full text-sm text-left text-gray-500" style={{ borderSpacing: '0 12px', borderCollapse: 'separate' }}>
+            <table 
+              className="table w-full text-sm text-left text-gray-500" 
+              style={{ borderSpacing: '0 12px', borderCollapse: 'separate' }}
+            >
               <thead className="text-xs text-gray-400 uppercase bg-white">
                 <tr>
                   <th className="px-6 py-3" style={{ width: '80px' }}>SL NO</th>
-                  <th className="px-6 py-3" style={{ width: '120px' }}>CODE</th>
-                  <th className="px-6 py-3" style={{ width: '110px' }}>NAME</th>
-                  <th className="px-6 py-3" style={{ width: '180px' }}>JEWELLERY TYPE</th>
-                  <th className="px-6 py-3" style={{ width: '140px' }}>STATUS</th>
-                  <th className="px-6 py-3" style={{ width: '130px' }}>ACTION</th>
+                  <th className="px-6 py-3" style={{ width: '80px' }}>CODE</th>
+                  <th className="px-6 py-3" style={{ width: '80px' }}>NAME</th>
+                  <th className="px-6 py-3" style={{ width: '80px' }}>ITEM TYPE</th>
+                  <th className="px-6 py-3" style={{ width: '80px' }}>IS DEFAULT</th>
+                  <th className="px-6 py-3" style={{ width: '80px' }}>STATUS</th>
+                  <th className="px-6 py-3" style={{ width: '120px' }}>ACTION</th>
                 </tr>
               </thead>
               <tbody>
-                {/* Sample data */}
-                <tr className="bg-white hover:bg-gray-50">
-                  <td className="px-6 py-5 border-b border-gray-200">1</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">
-                    <span className="bg-green-200 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
-                      ACTIVE
-                    </span>
-                  </td>
-                  <td className="px-6 py-5 border-b border-gray-200 text-blue-600"><button className="btn btn-info w-2/4 h-2/4">Edit</button>
-                  </td>
-                  <td className="px-6 py-5 border-b border-gray-200 text-blue-600"><button className="btn btn-info w-3/4 h-2/4">Delete Jewellery Type</button></td>
-                </tr>
-                <tr className="bg-white hover:bg-gray-50">
-                  <td className="px-6 py-5 border-b border-gray-200">1</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">
-                    <span className="bg-green-200 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
-                      ACTIVE
-                    </span>
-                  </td>
-                  <td className="px-6 py-5 border-b border-gray-200 text-blue-600">N/A N/A</td>
-                </tr>
-                <tr className="bg-white hover:bg-gray-50">
-                  <td className="px-6 py-5 border-b border-gray-200">1</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">
-                    <span className="bg-green-200 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
-                      ACTIVE
-                    </span>
-                  </td>
-                  <td className="px-6 py-5 border-b border-gray-200 text-blue-600">N/A N/A</td>
-                </tr>
+                {/* Sample Data Rows */}
+                {[1, 2, 3].map((item) => (
+                  <tr key={item} className="bg-white hover:bg-gray-50">
+                    <td className="px-6 py-5 border-b border-gray-200 text-xs">{item}</td>
+                    <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold</td>
+                    <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold</td>
+                    <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold</td>
+                    <td className="px-6 py-5 border-b border-gray-200 text-xs">
+                      <span className="bg-green-200 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                        ACTIVE
+                      </span>
+                    </td>
+                    <td className="px-6 py-5 border-b border-gray-200 text-blue-600">
+                      <button className="btn btn-info w-2/4 h-2/4">Edit</button>
+                    </td>
+                    <td className="px-6 py-5 border-b border-gray-200 text-blue-600">
+                      <button className="btn btn-info w-3/4 h-2/4">Delete Category</button>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
         </div>
       </div>
 
+      {/* Modal Dialog */}
       <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
         <form method="dialog" className="modal-box" onSubmit={handleSubmit}>
-          <div style={{ width: '100%', height: '50px', padding: '50px' }}>
-            <h3 className="font-bold text-lg text-gray-500">Create Jewellery Type</h3>
+          {/* Modal Header */}
+          <div style={{ width: '100%', height: '50px', padding: '40px' }}>
+            <h3 className="font-bold text-lg text-gray-500">Create Category Type</h3>
             <hr className="my-9 border-t-1 border-gray-300 w-full p-9" />
           </div>
 
+          {/* Form Fields */}
           <div style={{ padding: '50px', height: '30px' }}>
             <label className="block mb-2 font-semibold text-gray-500">Code:</label>
             <input
@@ -182,19 +177,6 @@ const Jewellery_Type = () => {
             />
             {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
           </div>
-          
-          <div style={{ padding: '50px', height: '30px' }}>
-            <label className="block mb-4 font-semibold text-gray-500">Description:</label>
-            <input
-              type="text"
-              value={formData.description}
-              name="description"
-              placeholder="description"
-              onChange={handleChange}
-              className="input input-md w-full"
-            />
-            {errors.description && <p className="text-red-500 text-sm">{errors.description}</p>}
-          </div>
 
           <div style={{ padding: '50px', height: '20px', marginBottom: '30px' }}>
             <label className="block mb-4 font-semibold text-gray-500">Item Type</label>
@@ -214,6 +196,37 @@ const Jewellery_Type = () => {
             {errors.itemType && <p className="text-red-500 text-sm">{errors.itemType}</p>}
           </div>
 
+          <div style={{ padding: '50px', height: '30px' }}>
+  <label className="block mb-4 font-semibold text-gray-500">Standard Purity:</label>
+  <input
+    type="number"
+    step="0.1"
+    min="0"
+    value={formData.standardPurity}
+    name="standardPurity"
+    placeholder="Standard Purity"
+    onChange={handleChange}
+    className="input input-md w-full appearance-auto [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+  />
+  {errors.standardPurity && <p className="text-red-500 text-sm">{errors.standardPurity}</p>}
+</div>
+
+          <div style={{ padding: '50px', height: '20px' }}>
+            <label className="block mb-4 font-semibold text-gray-500">Is Default</label>
+            <select
+              name="IsDefault"
+              value={formData.IsDefault}
+              className="select select-bordered w-full"
+              onChange={handleChange}
+              style={{ height: '38px' }}
+            >
+              <option value="">Select Default Status</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+            {errors.IsDefault && <p className="text-red-500 text-sm">{errors.IsDefault}</p>}
+          </div>
+
           <div style={{ padding: '50px', height: '20px' }}>
             <label className="block mb-4 font-semibold text-gray-500">Status</label>
             <select
@@ -230,12 +243,13 @@ const Jewellery_Type = () => {
             {errors.status && <p className="text-red-500 text-sm">{errors.status}</p>}
           </div>
 
+          {/* Modal Actions */}
           <div className="modal-action" style={{ padding: '50px', height: '30px' }}>
             <button type="submit" className="btn btn-accent w-1/6">Submit</button>
             <button
               type="button"
               className="btn btn-error w-1/6"
-              onClick={() => document.getElementById('my_modal_5').close()}
+              onClick={handleClose}
             >
               Close
             </button>
@@ -244,6 +258,6 @@ const Jewellery_Type = () => {
       </dialog>
     </div>
   );
-}
+};
 
-export default Jewellery_Type;
+export default Category;

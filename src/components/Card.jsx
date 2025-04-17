@@ -8,12 +8,12 @@ const Card = () => {
         <h1 className="text-lg font-semibold text-gray-400">DashBoard</h1>
       </div>
 
-      <hr className="border-t border-blue-500 my-4 w-3/5" />
+      <hr className="border-t border-blue-500 my-4 w-3/5" style={{margin:'20px'}} />
 
       <ul className="flex flex-col gap-[20px] w-full pl-6">
         <li className='mt-3'>
           <details close>
-          <summary className="list-none cursor-pointer  flex items-center gap-3 text-gray-500 font-normal transition-all duration-300 hover:text-gray-700" style={{paddingLeft: '60px'}}>          <svg className="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+          <summary className="list-none cursor-pointer  flex items-center gap-3 text-gray-500 font-normal transition-all duration-300 hover:text-gray-700" style={{paddingLeft: '50px'}}>          <svg className="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
   <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"/>
   <path fillRule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" clipRule="evenodd"/>
 </svg>
@@ -21,40 +21,40 @@ const Card = () => {
 </summary>
  
             {/* Added pl-4 to nested uls */}
-            <ul className="flex flex-col gap-[20px] mt-2 text-gray-400   pl-9" style={{paddingLeft: '60px'}}>
-              <li><Link to="/list_item_type">Item Type</Link></li>
-              <li><Link to="/list_jewellery_type">Jewellery Type</Link></li>
+            <ul className="flex flex-col gap-[20px] mt-2 text-gray-600   pl-9" style={{paddingLeft: '50px'}}>
+              <li><Link to="/list_item_type" style={{paddingLeft: '30px'}}>Item Type</Link></li>
+              <li><Link to="/list_jewellery_type"  style={{paddingLeft: '30px'}}>Jewellery Type</Link></li>
               <li>
                 <details>
-                  <summary className="list-none cursor-pointer flex items-center gap-2 font-normal" style={{paddingLeft: '60px'}}>
+                  <summary className="list-none cursor-pointer flex items-center gap-2 text-base" style={{paddingLeft: '30px'}} >
                     Product Management
                   </summary>
-                  <ul className="flex flex-col gap-[20px] mt-2 text-gray-400 pl-6" style={{paddingLeft: '60px'}}>
-                    <li><Link to=''>Category</Link></li>
-                    <li><Link to=''>Sub Category</Link></li>
-                    <li><Link to=''>Brand</Link></li>
-                    <li><Link to=''>Colour Code</Link></li>
-                    <li><Link to=''>Return Type</Link></li>
-                    <li><Link to=''>Size</Link></li>
-                    <li><Link to=''>Gender</Link></li>
-                    <li><Link to=''>Diamond Type</Link></li>
-                    <li><Link to=''>Stone Type</Link></li>
-                    <li><Link to=''>Occasion</Link></li>
-                    <li><Link to=''>Stock Point</Link></li>
-                    <li><Link to=''>Style</Link></li>
-                    <li><Link to=''>Design</Link></li>
+                  <ul className="flex flex-col gap-[20px] mt-2 text-gray-400 pl-6" >
+                  <li className="text-sm hover:text-blue-500 " style={{paddingLeft: '30px',marginTop:'10px'}} > <Link to='/category'>Category</Link></li>
+                    <li className="text-sm hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/subcategory'>Sub Category</Link></li>
+                    <li className="text-sm hover:text-blue-500"  style={{paddingLeft: '30px'}} ><Link to='/brand'>Brand</Link></li>
+                    <li className="text-sm hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Colour Code</Link></li>
+                    <li className="text-sm hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Return Type</Link></li>
+                    <li className="text-sm hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Size</Link></li>
+                    <li className="text-sm hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Gender</Link></li>
+                    <li  className="text-sm hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Diamond Type</Link></li>
+                    <li  className="text-sm hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Stone Type</Link></li>
+                    <li  className="text-sm hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Occasion</Link></li>
+                    <li  cclassName="text-sm hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Stock Point</Link></li>
+                    <li className="text-sm hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Style</Link></li>
+                    <li  className="text-sm hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Design</Link></li>
                   </ul>
                 </details>
               </li>
               <li>
                 <details close>
-                  <summary className="list-none cursor-pointer flex items-center gap-2 font-semibold" style={{paddingLeft: '60px'}}>
+                  <summary className="list-none cursor-pointer flex items-center gap-2 text-base" style={{paddingLeft: '30px'}} >
                     Location Management
                   </summary>
-                  <ul className="flex flex-col gap-[20px] text-gray-400 mt-2 pl-6" style={{paddingLeft: '60px'}}>
-                    <li><Link to=''>Country</Link></li>
-                    <li><Link to=''>City</Link></li>
-                    <li><Link to=''>Adress Type</Link></li>                        
+                  <ul className="flex flex-col gap-[20px] text-gray-400 mt-2 pl-6" >
+                    <li className="text-sm hover:text-blue-500 " style={{paddingLeft: '30px',marginTop:'10px'}}><Link to=''>Country</Link></li>
+                    <li className="text-sm hover:text-blue-500 " style={{paddingLeft: '30px'}}><Link to=''>City</Link></li>
+                    <li className="text-sm hover:text-blue-500 " style={{paddingLeft: '30px'}}><Link to=''>Adress Type</Link></li>                        
                   </ul>
                 </details>
               </li>
@@ -63,13 +63,13 @@ const Card = () => {
         </li>
         <li>
           <details close>
-            <summary className="list-none cursor-pointer flex items-center gap-4 text-gray-500 font-normal" style={{paddingLeft: '60px'}}>
+            <summary className="list-none cursor-pointer flex items-center gap-4 text-gray-500 font-normal" style={{paddingLeft: '50px'}}>
             <svg className="w-4 h-4 text-pink-500" fill="currentColor" viewBox="0 0 20 20">
             <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"/>
 </svg>
               Branch
             </summary>
-            <ul className="flex flex-col text-gray-400 gap-[20px] mt-2 pl-6" style={{paddingLeft: '60px'}}>
+            <ul className="flex flex-col text-gray-400 gap-[20px] mt-2 pl-6" style={{paddingLeft: '80px'}}>
               <li><Link to=''>Branch</Link></li>
             </ul>
           </details>
@@ -77,7 +77,7 @@ const Card = () => {
 
         <li>
           <details close>
-            <summary className="list-none cursor-pointer flex items-center text-gray-500 gap-3 font-normal" style={{paddingLeft: '60px'}}>
+            <summary className="list-none cursor-pointer flex items-center text-gray-500 gap-3 font-normal" style={{paddingLeft: '50px'}}>
             <svg 
             className="w-5 h-5 text-gray-400" 
             fill="none" 
@@ -93,7 +93,7 @@ const Card = () => {
 </svg>
               Supplier
             </summary>
-            <ul className="flex flex-col gap-[20px] text-gray-400 mt-2 pl-6" style={{paddingLeft: '60px'}}>
+            <ul className="flex flex-col gap-[20px] text-gray-400 mt-2 pl-6" style={{paddingLeft: '80px'}}>
               <li><Link to=''>Control Account</Link></li>
               <li><Link to=''>Group</Link></li>
               <li><Link to=''>Tax Category</Link></li>
@@ -103,7 +103,7 @@ const Card = () => {
         </li>
         <li>
           <details close>
-            <summary className="list-none cursor-pointer flex items-center text-gray-500 gap-2 font-normal" style={{paddingLeft: '60px'}}>
+            <summary className="list-none cursor-pointer flex items-center text-gray-500 gap-2 font-normal" style={{paddingLeft: '50px'}}>
             <svg 
   className="w-6 h-6 text-gray-800" 
   fill="none" 
@@ -119,7 +119,7 @@ const Card = () => {
 </svg>
               Employees
             </summary>
-            <ul className="flex flex-col text-gray-400 gap-[20px] mt-2 pl-6" style={{paddingLeft: '60px'}}>
+            <ul className="flex flex-col text-gray-400 gap-[20px] mt-2 pl-6" style={{paddingLeft: '80px'}}>
               <li><Link to=''>Departments</Link></li>
               <li><Link to=''>Positions</Link></li>
               <li><Link to=''>Payment Methodes</Link></li>
@@ -130,10 +130,10 @@ const Card = () => {
         </li>
         <li>
           <details close>
-            <summary className="list-none text-gray-500 cursor-pointer flex items-center gap-2 font-normal before:content-['👤'] before:mr-2" style={{paddingLeft: '60px'}}>
+            <summary className="list-none text-gray-500 cursor-pointer flex items-center gap-2 font-normal before:content-['👤'] before:mr-2" style={{paddingLeft: '50px'}}>
               Customers
             </summary>
-            <ul className="flex flex-col text-gray-400 gap-[20px] mt-2 pl-6" style={{paddingLeft: '60px'}}>
+            <ul className="flex flex-col text-gray-400 gap-[20px] mt-2 pl-6" style={{paddingLeft: '85px'}}>
               <li><Link to=''>Customers List</Link></li>
             </ul>
           </details>
@@ -141,7 +141,7 @@ const Card = () => {
 
         <li>
           <details close>
-            <summary className="list-none text-gray-500 cursor-pointer flex items-center gap-2 font-normal" style={{paddingLeft: '60px'}}>
+            <summary className="list-none text-gray-500 cursor-pointer flex items-center gap-2 font-normal" style={{paddingLeft: '50px'}}>
             <svg
   className="w-6 h-6 text-gray-800"
   fill="none"
@@ -158,14 +158,14 @@ const Card = () => {
 
               Inventory
             </summary>
-            <ul className="flex flex-col text-gray-400 gap-[20px] mt-2 pl-6" style={{paddingLeft: '60px'}}>
+            <ul className="flex flex-col text-gray-400 gap-[20px] mt-2 pl-6" style={{paddingLeft: '80px'}}>
               <li>Items</li>
               <li>
                 <details close>
-                  <summary className="list-none text-gray-400 cursor-pointer flex items-center gap-2 font-semibold" style={{paddingLeft: '60px'}}>
+                  <summary className="list-none text-gray-400 cursor-pointer flex items-center gap-2 font-semibold" style={{paddingLeft: '0px'}}>
                     Gold
                   </summary>
-                  <ul className="flex flex-col text-gray-400 gap-[20px] mt-2 pl-6" style={{paddingLeft: '60px'}}>
+                  <ul className="flex flex-col text-gray-400 gap-[20px] mt-2 pl-6" style={{paddingLeft: '0px'}}>
                     <li>Purchase</li>
                     <li>Purchase fix</li>
                     <li>List Purchase Fix</li>
@@ -174,10 +174,10 @@ const Card = () => {
               </li>
               <li>
                 <details close>
-                  <summary className="list-none text-gray-400 cursor-pointer flex items-center gap-2 font-semibold" style={{paddingLeft: '60px'}}>
+                  <summary className="list-none text-gray-400 cursor-pointer flex items-center gap-2 font-semibold" style={{paddingLeft: '0px'}}>
                     Diamond
                   </summary>
-                  <ul className="flex flex-col text-gray-400 gap-[20px] mt-2 pl-6" style={{paddingLeft: '60px'}}>
+                  <ul className="flex flex-col text-gray-400 gap-[20px] mt-2 pl-6" style={{paddingLeft: '00px'}}>
                     <li>N/A</li>
                   </ul>
                 </details>
@@ -188,7 +188,7 @@ const Card = () => {
               
         <li>
           <details close>
-            <summary className="list-none text-gray-500 cursor-pointer flex items-center gap-2 font-normal " style={{paddingLeft: '60px'}}>
+            <summary className="list-none text-gray-500 cursor-pointer flex items-center gap-2 font-normal " style={{paddingLeft: '50px'}}>
               <svg
   className="w-6 h-6 text-gray-800"
   fill="none"
@@ -205,7 +205,7 @@ const Card = () => {
 
               Settings
             </summary>
-            <ul className="flex flex-col text-gray-400 gap-[20px] mt-2 pl-6" style={{paddingLeft: '60px'}}>
+            <ul className="flex flex-col text-gray-400 gap-[20px] mt-2 pl-6" style={{paddingLeft: '20px'}}>
               <li>
                 <details close>
                   <summary className="list-none text-gray-400 cursor-pointer flex items-center gap-2 font-semibold" style={{paddingLeft: '60px'}}>
