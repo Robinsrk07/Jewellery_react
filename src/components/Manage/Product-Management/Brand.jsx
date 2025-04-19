@@ -163,8 +163,7 @@ const Brand =()=>{
               name="code"
               placeholder="code"
               onChange={handleChange}
-              className="input input-md w-full"
-            />
+              className="input input-md w-full border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 rounded"            />
             {errors.code && <p className="text-red-500 text-sm">{errors.code}</p>}
           </div>
 
@@ -176,8 +175,7 @@ const Brand =()=>{
               name="name"
               placeholder="name"
               onChange={handleChange}
-              className="input input-md w-full"
-            />
+              className="input input-md w-full border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 rounded"            />
             {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
           </div>
 
@@ -185,7 +183,7 @@ const Brand =()=>{
             <label className="block mb-4 font-semibold text-gray-500">Description:</label>
             <textarea
               name="description"
-              className="textarea w-full"
+              className="textarea w-full focus:outline-none focus:border-blue-500"
               placeholder="Enter description"
               value={formData.description}
               onChange={handleChange}
@@ -199,8 +197,7 @@ const Brand =()=>{
               type="text"
               name="status"
               value={formData.status}
-              className="input w-full"
-              onChange={handleChange}
+              className="input input-md w-full border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 rounded"              onChange={handleChange}
               placeholder="select status"
               list="statusOptions"
             />

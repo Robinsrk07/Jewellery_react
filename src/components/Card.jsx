@@ -22,18 +22,18 @@ const Card = () => {
  
             {/* Added pl-4 to nested uls */}
             <ul className="flex flex-col gap-[20px] mt-2 text-gray-600   pl-9" style={{paddingLeft: '50px'}}>
-              <li><Link to="/list_item_type" style={{paddingLeft: '30px'}}>Item Type</Link></li>
-              <li><Link to="/list_jewellery_type"  style={{paddingLeft: '30px'}}>Jewellery Type</Link></li>
+              <li><Link to="/dashboard/list_item_type" style={{paddingLeft: '30px'}}>Item Type</Link></li>
+              <li><Link to="/dashboard/list_jewellery_type"  style={{paddingLeft: '30px'}}>Jewellery Type</Link></li>
               <li>
                 <details>
                   <summary className="list-none cursor-pointer flex items-center gap-2 text-base" style={{paddingLeft: '30px'}} >
                     Product Management
                   </summary>
                   <ul className="flex flex-col gap-[20px] mt-2 text-gray-400 pl-6" >
-                  <li className="text-sm hover:text-blue-500 " style={{paddingLeft: '30px',marginTop:'10px'}} > <Link to='/category'>Category</Link></li>
-                    <li className="text-sm hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/subcategory'>Sub Category</Link></li>
-                    <li className="text-sm hover:text-blue-500"  style={{paddingLeft: '30px'}} ><Link to='/brand'>Brand</Link></li>
-                    <li className="text-sm hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Colour Code</Link></li>
+                  <li className="text-sm hover:text-blue-500 " style={{paddingLeft: '30px',marginTop:'10px'}} > <Link to='/dashboard/category'>Category</Link></li>
+                    <li className="text-sm hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/subcategory'>Sub Category</Link></li>
+                    <li className="text-sm hover:text-blue-500"  style={{paddingLeft: '30px'}} ><Link to='/dashboard/brand'>Brand</Link></li>
+                    <li className="text-sm hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/color'>Colour Code</Link></li>
                     <li className="text-sm hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Return Type</Link></li>
                     <li className="text-sm hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Size</Link></li>
                     <li className="text-sm hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Gender</Link></li>
