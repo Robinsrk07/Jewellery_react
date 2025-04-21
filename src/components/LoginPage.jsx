@@ -7,8 +7,8 @@ import { useNavigate } from 'react-router';
 
 const Login = () => {
     const navigate =useNavigate()
-    const [userName,setUserName] = useState('')
-    const [password,setPassword] =useState('')
+    const [userName,setUserName] = useState('mdh@mdh')
+    const [password,setPassword] =useState('12345')
     const [errors,setErrors] = useState({})
     const [logOut,setLogOut] =useState(false)
     

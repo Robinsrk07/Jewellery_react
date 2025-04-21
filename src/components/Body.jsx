@@ -5,11 +5,13 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Body = () => {
   const [showSettings, setShowSettings] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const panelRef = useRef();
- const navigate = useNavigate()
- const handleLogout = () =>{
-  navigate('/')
- }
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate('/');
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -18,80 +20,88 @@ const Body = () => {
       }
     };
 
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
     if (showSettings) {
       document.addEventListener('mousedown', handleClickOutside);
     }
 
+    window.addEventListener('resize', handleResize);
+
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('resize', handleResize);
     };
   }, [showSettings]);
 
   return (
     <div className="h-screen w-full bg-[linear-gradient(to_bottom,#5e72e4_45%,#EFF2F3_45%)]">
       <div className="flex h-full">
-        <div className="h-full">
-          <Card />
-        </div>
+        {/* Conditionally render Card component based on window width */}
+        {windowWidth > 1100 && (
+          <div className="h-full" style={{ marginLeft: '25px', marginTop: '16px' }}>
+            <Card />
+          </div>
+        )}
 
         <div
-          className="flex-1 overflow-auto"
+          className="flex-1 overflow-hidden rounded-2xl"
           style={{
-            marginLeft: '300px',
-            paddingTop: '140px',
+            marginLeft: windowWidth > 1100 ? '10px' : '25px', // Adjust margin based on window width
+            paddingTop: '80px',
             paddingBottom: '50px',
-            paddingRight: '20px',
+            paddingRight: '0px',
           }}
         >
           <Outlet />
         </div>
+
         <div className="relative">
           {/* Floating Button */}
-          {!showSettings && (<div
-            className="w-[60px] h-[60px] bg-white rounded-full absolute bottom-12 right-10 flex items-center justify-center text-gray-500 text-xl hover:bg-gray-100 cursor-pointer z-50"
-            style={{ boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.3)' }}
-            onClick={() => setShowSettings(true)}
-          >
-            <i className="fas fa-cog"></i>
-          </div>)}
-          
+          {!showSettings && (
+            <div
+              className="w-[60px] h-[60px] bg-white rounded-full absolute bottom-12 right-10 flex items-center justify-center text-gray-500 text-xl hover:bg-gray-100 cursor-pointer z-50"
+              style={{ boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.3)' }}
+              onClick={() => setShowSettings(true)}
+            >
+              <i className="fas fa-cog"></i>
+            </div>
+          )}
 
-          {/* Slide-in Panel - Always render but transform based on state */}
+          {/* Slide-in Panel */}
           <div
-  ref={panelRef}
-  className={`fixed top-0 right-0 h-full w-90 bg-white shadow-xl transition-transform duration-500 ease-in-out pointer-events-auto ${
-    showSettings ? 'translate-x-0 z-[100]' : 'translate-x-full z-[100]'
-  }`}
->
-
-
-
-            <div className='flex flex-col gap-4  items-center' style={{paddingTop:'90px'}}>
-            <Link to="/test-print" className="w-[80%]">
-               <button className="btn btn-primary rounded-lg bg-[#5e72e4] w-full">
-               TEST PRINT
-               </button>
-            </Link>
-            <Link to="/pos" className="w-[80%]">
-              <button className="btn btn-primary rounded-lg bg-[#5e72e4] w-full">
-                POS
-              </button>
-            </Link>
-
-            <Link to="/profile" className="w-[80%]">
-              <button className="btn btn-primary rounded-lg bg-[#344767] w-full">
-                Profile
-              </button>
-            </Link>
-
-              <div style={{marginTop:'250px', width:'250px'}} >  <button 
-              className="btn btn-primary border border-blue-900 text-blue-900 rounded-lg w-full"
-              onClick={handleLogout}
-              >Logout</button>
+            ref={panelRef}
+            className={`fixed top-0 right-0 h-full w-90 bg-white shadow-xl transition-transform duration-500 ease-in-out pointer-events-auto ${
+              showSettings ? 'translate-x-0 z-[100]' : 'translate-x-full z-[100]'
+            }`}
+          >
+            <div className='flex flex-col gap-4 items-center' style={{ paddingTop: '90px' }}>
+              <Link to="/test-print" className="w-[80%]">
+                <button className="btn btn-primary rounded-lg bg-[#5e72e4] w-full">
+                  TEST PRINT
+                </button>
+              </Link>
+              <Link to="/pos" className="w-[80%]">
+                <button className="btn btn-primary rounded-lg bg-[#5e72e4] w-full">
+                  POS
+                </button>
+              </Link>
+              <Link to="/profile" className="w-[80%]">
+                <button className="btn btn-primary rounded-lg bg-[#344767] w-full">
+                  Profile
+                </button>
+              </Link>
+              <div style={{ marginTop: '250px', width: '250px' }}>
+                <button
+                  className="btn btn-primary border border-blue-900 text-blue-900 rounded-lg w-full"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </button>
               </div>
             </div>
-
-            
           </div>
         </div>
       </div>
