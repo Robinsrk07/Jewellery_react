@@ -10,6 +10,7 @@ import SubCategory from './components/Manage/Product-Management/SubCategory';
 import Brand from './components/Manage/Product-Management/Brand';
 import Color from './components/Manage/Product-Management/Color';
 import Login from './components/LoginPage';
+import List_return_Type from './components/Manage/Product-Management/List_return_Type';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path='subcategory' element={<SubCategory />} />
             <Route path='brand' element={<Brand />} />
             <Route path='color' element={<Color />} />
+            <Route path='list_return_Type' element={<Color />} />
           </Route>
         </Routes>
       </BrowserRouter>

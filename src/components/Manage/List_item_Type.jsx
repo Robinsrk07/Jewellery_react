@@ -128,7 +128,7 @@ const List_item_Type = () => {
 
       <div className="w-full h-full bg-transparent" style={{ flex: 1 }}>
         <div className="bg-white p-6 rounded-lg ">
-          <div className="overflow-x-auto">
+          <div className="" style={{overflow:'visible'}}>
             <table className="table w-full text-sm text-left text-gray-500" style={{ borderSpacing: '0 12px', borderCollapse: 'separate' }}>
               <thead className="text-xs text-gray-400 uppercase bg-white">
                 <tr>

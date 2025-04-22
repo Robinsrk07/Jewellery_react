@@ -48,7 +48,7 @@ const Card = () => {
                      <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/subcategory'>Sub Category</Link></li>
                      <li className="text-xs hover:text-blue-500"  style={{paddingLeft: '30px'}} ><Link to='/dashboard/brand'>Brand</Link></li>
                      <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/color'>Colour Code</Link></li>
-                     <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Return Type</Link></li>
+                     <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/list_return_Type'>Return Type</Link></li>
                      <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Size</Link></li>
                      <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Gender</Link></li>
                      <li  className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Diamond Type</Link></li>

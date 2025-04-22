@@ -1,68 +1,15 @@
 import { useState } from "react";
+import '@fontsource/open-sans'; // Default weight 400
+import '@fontsource/open-sans/600.css'; // Semi-bold
+import '@fontsource/open-sans/700.css'; // Bold
 
-const Brand =()=>{
- const [formData, setFormData] = useState({
-    code: '',
-    name: '',
-    description: '',
-    status: ''
-  });
-
-  const [errors, setErrors] = useState({});
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-    setErrors((prev) => ({ ...prev, [name]: '' })); 
-  };
-
-  const validate = () => {
-    const newErrors = {};
-    if (!formData.code.trim()) newErrors.code = 'Please Enter Code';
-    if (!formData.name.trim()) newErrors.name = 'Please Enter Name';
-    if (!formData.description.trim()) newErrors.description = 'Enter the Description';
-    if (!formData.status.trim()) newErrors.status = 'Enter Status';
-    return newErrors;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const validationErrors = validate();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
-
-    // Submit form
-    console.log('Form submitted:', formData);
-
-    // Reset form and close modal
-    setFormData({
-      code: '',
-      name: '',
-      description: '',
-      status: ''
-    });
-    setErrors({});
-    document.getElementById('my_modal_5').close();
-  };
+const Brand = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [items, setItems] = useState(10);
 
   return (
-    <div
-      style={{
-        width: '95%',
-        height: '90%',
-        margin: '1rem',
-        marginBottom: '4rem',
-        borderRadius: '8px',
-        backgroundColor: 'white',
-        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-        overflow: 'hidden',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem',
-      }}
-    >
+    <div>
+    <div className="bg-white w-[170vh] h-[69vh] rounded-xl" style={{ marginLeft: '13px', overflow: 'auto', fontFamily: 'Open Sans'}}>
       <div
         style={{
           width: '100%',
@@ -74,153 +21,115 @@ const Brand =()=>{
       >
         <button
           style={{
-            width: '100%',
-            maxWidth: '180px',
-            height: '40px',
+            width: '90%',
+            maxWidth: '160px',
+            height: '30px',
             border: '1px solid blue',
             borderRadius: '8px',
-            backgroundColor: 'blue',
+            backgroundColor: isHovered
+              ? 'rgb(97, 113, 228)'
+              : 'rgb(126, 96, 228)',
             color: 'white',
-          }} onClick={() => document.getElementById('my_modal_5').showModal()}
+            transition: 'background-color 0.3s ease',
+            cursor: 'pointer',
+          }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onClick={() => document.getElementById('my_modal_5').showModal()}
         >
-          + New Item Type
+          + New Brand
         </button>
       </div>
 
-      <div className="w-full h-full bg-transparent" style={{ flex: 1 }}>
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <div className="overflow-x-auto">
-            <table className="table w-full text-sm text-left text-gray-500" style={{ borderSpacing: '0 12px', borderCollapse: 'separate' }}>
-              <thead className="text-xs text-center text-gray-400 uppercase bg-white">
-                <tr>
-                  <th className="px-6 py-3" style={{ width: '80px' }}>SL NO</th>
-                  <th className="px-6 py-3" style={{ width: '120px' }}>CODE</th>
-                  <th className="px-6 py-3" style={{ width: '180px' }}>NAME</th>
-                  <th className="px-6 py-3" style={{ width: '250px' }}>DESCRIPTION</th>
-                  <th className="px-6 py-3" style={{ width: '150px' }}>STATUS</th>
-                  <th className="px-6 py-3" style={{ width: '150px' }}>ACTION</th>
-                  <th className="px-6 py-3" style={{ width: '150px' }}></th>
-                </tr>
-              </thead>
-              <tbody>
-                {/* Sample data */}
-                <tr className="bg-white text-center hover:bg-gray-50">
-                  <td className="px-6 py-5 border-b border-gray-200">1</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">
-                    <span className="bg-green-200 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
-                      ACTIVE
-                    </span>
-                  </td>
-                  <td className="px-6 py-5 border-b border-gray-200 text-blue-600"><button className="btn btn-info w-3/4 h-1/2">Edit</button>
-                   </td>
-                  <td className="px-6 py-5 border-b border-gray-200 text-blue-600"><button className="btn btn-info w-3/4 h-1/2">Delete Brand</button></td>
-                </tr>
-                <tr className="bg-white text-center hover:bg-gray-50">
-                  <td className="px-6 py-5 border-b border-gray-200">1</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">
-                    <span className="bg-green-200 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
-                      ACTIVE
-                    </span>
-                  </td>
-                  <td className="px-6 py-5 border-b border-gray-200 text-blue-600">N/A N/A</td>
-                </tr>
-                <tr className="bg-white text-center hover:bg-gray-50">
-                  <td className="px-6 py-5 border-b border-gray-200">1</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200">
-                    <span className="bg-green-200 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
-                      ACTIVE
-                    </span>
-                  </td>
-                  <td className="px-6 py-5 border-b border-gray-200 text-blue-600">N/A N/A</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
+        <p className="text-xs font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
+        <select
+          className="border border-gray-300 rounded-lg w-[114px] h-[35px] px-2"
+          style={{
+            appearance: 'none',
+            WebkitAppearance: 'none',
+            MozAppearance: 'none',
+            backgroundColor: 'white',
+            backgroundImage: 'none',
+            paddingLeft: '5px',
+          }}
+          onChange={(e) => setItems(Number(e.target.value))}
+          value={items}
+        >
+          <option value={10}>10</option>
+          <option value={25}>25</option>
+          <option value={50}>50</option>
+        </select>
       </div>
 
-      <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-        <form method="dialog" className="modal-box" onSubmit={handleSubmit}>
-          <div style={{ width: '100%', height: '50px', padding: '50px' }}>
-            <h3 className="font-bold text-lg text-gray-500">Create New Item</h3>
-            <hr className="my-9 border-t-1 border-gray-300 w-full p-9" />
-          </div>
+      <table className="table w-full text-sm text-left text-gray-500" style={{ borderSpacing: '0 12px', borderCollapse: 'separate', minWidth: '1200px' }}>
+        <thead className="text-xs text-gray-400 uppercase bg-white">
+          <tr>
+            <th className="px-6 py-3" style={{ width: '100px', paddingLeft: '30px' }}>SL NO</th>
+            <th className="px-6 py-3" style={{ width: '100px' }}>CODE</th>
+            <th className="px-6 py-3" style={{ width: '130px' }}>NAME</th>
+            <th className="px-6 py-3" style={{ width: '1300px' }}>DESCRIPTION</th>
+            <th className="px-6 py-3" style={{ width: '130px' }}>STATUS</th>
+            <th className="px-6 py-3" style={{ width: '170px' }}>ACTION</th>
+            <th className="px-6 py-3" style={{ width: '200px' }}></th>
+          </tr>
+        </thead>
+        <tbody>
+          {[1, 2, 3, 4, 5, 6, 7].map((item) => (
+            <tr key={item} className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+              <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '40px' }}>{item}</td>
+              <td className="px-6 py-5 border-b border-gray-200 text-xs">Tanishq</td>
+              <td className="px-6 py-5 border-b border-gray-200 text-xs">Tanishq</td>
+              <td className="px-6 py-5 border-b border-gray-200 text-xs">A leading Indian jewellery brand known for its high-quality gold and diamond collections, including bridal and everyday wear</td>
+              <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                <span className="bg-green-200 text-green-800 text-xs font-bold rounded">
+                  yes
+                </span>
+              </td>
+              <td className="px-6 py-5 border-b border-gray-200">
+                <span className="bg-green-200 text-green-800 font-bold text-[10px] rounded" style={{ padding: '4px 6px' }}>
+                  ACTIVE
+                </span>
+              </td>
+              <td className="px-6 py-5 border-b border-gray-200 text-blue-600">
+                <button className="btn w-1/2 text-white font-bold text-xs rounded-lg" style={{ width: '100px', padding: '5px', backgroundColor: '#696BE4' }}
+                  onClick={() => document.getElementById('my_modal_edit').showModal()}
+                >
+                  Edit
+                </button>
+              </td>
+              <td className="px-6 py-5 border-b border-gray-200 text-blue-600">
+                <button className="btn text-white font-bold text-xs rounded-lg"
+                  style={{ width: '220px', padding: '5px', background: 'linear-gradient(to right, #A1B1D1, #697C9B)' }}
+                  onClick={() => document.getElementById('my_modal_delete').showModal()}
+                >
+                  Delete Brand
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
-          <div style={{ padding: '50px', height: '30px' }}>
-            <label className="block mb-2 font-semibold text-gray-500">Code:</label>
-            <input
-              type="text"
-              value={formData.code}
-              name="code"
-              placeholder="code"
-              onChange={handleChange}
-              className="input input-md w-full border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 rounded"            />
-            {errors.code && <p className="text-red-500 text-sm">{errors.code}</p>}
-          </div>
+      {/* Pagination */}
+      <div className="flex gap-1 justify-center">
+        <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+          {'<'}
+        </button>
+        <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
+          1
+        </button>
+        <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+          {'>'}
+        </button>
+      </div>
 
-          <div style={{ padding: '50px', height: '30px' }}>
-            <label className="block mb-4 font-semibold text-gray-500">Name:</label>
-            <input
-              type="text"
-              value={formData.name}
-              name="name"
-              placeholder="name"
-              onChange={handleChange}
-              className="input input-md w-full border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 rounded"            />
-            {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
-          </div>
-
-          <div style={{ padding: '50px', height: '30px', marginBottom: '30px' }}>
-            <label className="block mb-4 font-semibold text-gray-500">Description:</label>
-            <textarea
-              name="description"
-              className="textarea w-full focus:outline-none focus:border-blue-500"
-              placeholder="Enter description"
-              value={formData.description}
-              onChange={handleChange}
-            />
-            {errors.description && <p className="text-red-500 text-sm">{errors.description}</p>}
-          </div>
-
-          <div style={{ padding: '50px', height: '30px' }}>
-            <label className="block mb-4 font-semibold text-gray-500">Status</label>
-            <input
-              type="text"
-              name="status"
-              value={formData.status}
-              className="input input-md w-full border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 rounded"              onChange={handleChange}
-              placeholder="select status"
-              list="statusOptions"
-            />
-            <datalist id="statusOptions">
-              <option value="Active" />
-              <option value="Inactive" />
-            </datalist>
-            {errors.status && <p className="text-red-500 text-sm">{errors.status}</p>}
-          </div>
-
-          <div className="modal-action" style={{ padding: '50px', height: '30px' }}>
-            <button type="submit" className="btn btn-accent w-1/6">Submit</button>
-            <button
-              type="button"
-              className="btn btn-error w-1/6"
-              onClick={() => document.getElementById('my_modal_5').close()}
-            >
-              Close
-            </button>
-          </div>
-        </form>
-      </dialog>
+      {/* Modal */}
+      
+    </div>
+    
     </div>
   );
-}
-export default  Brand
+};
+
+export default Brand;

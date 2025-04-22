@@ -4,6 +4,7 @@ import '@fontsource/open-sans/600.css'; // Semi-bold
 import '@fontsource/open-sans/700.css'; // Bold
 
 const Category = () => {
+
   const [formData, setFormData] = useState({
     code: '',
     name: '',
@@ -15,15 +16,14 @@ const Category = () => {
       const [items,setItems]= useState(0)
     
   const [errors, setErrors] = useState({});
-    const [isHovered, setIsHovered] = useState(false);
-  
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     setErrors(prev => ({ ...prev, [name]: '' }));
   };
-
+{/* validation*/}
   const validate = () => {
     const newErrors = {};
     if (!formData.code.trim()) newErrors.code = 'Please Enter Code';
@@ -111,6 +111,7 @@ const Category = () => {
       + New Category Type
     </button>
       </div>
+
       <div
         style={{
         display: 'flex',
@@ -204,21 +205,33 @@ const Category = () => {
               <td className="px-6 py-5 border-b border-gray-200 text-xs">EveryDay Wear</td>
               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold</td>
               <td className="px-6 py-5 border-b border-gray-200 text-xs">
-                <span className="bg-green-200 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
-                  yes
-                </span>
+              <span 
+                className="bg-green-200 text-green-800 text-xs font-bold rounded"
+                
+              >
+                yes
+              </span>
               </td>
               <td className="px-6 py-5 border-b border-gray-200 ">
-                <span className="bg-green-200 text-green-800 font-bold text-[10px] rounded">
+                <span className="bg-green-200 text-green-800 font-bold text-[10px] rounded"style={{ padding: '4px 6px' }}>
                   ACTIVE
                 </span>
               </td>
               <td className="px-6 py-5 border-b border-gray-200 text-blue-600">
-                <button className="btn  w-1/2 text-white font-bold text-xs rounded-lg" style={{width:'100px',padding:'5px', backgroundColor:'#696BE4'}} onClick={()=>document.getElementById('my_modal_edit').showModal()}>Edit</button>
+                  <button className="btn  w-1/2 text-white font-bold text-xs rounded-lg"
+                   style={{width:'100px',padding:'5px', backgroundColor:'#696BE4'}}
+                   onClick={()=>document.getElementById('my_modal_edit').showModal()}
+                  >
+                    Edit
+                 </button>
               </td>
               <td className="px-6 py-5 border-b border-gray-200 text-blue-600">
-                <button className="btn  text-white font-bold text-xs rounded-lg" style={{width:'220px',padding:'5px',    background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-                      }}>Delete Category</button>
+                 <button className="btn  text-white font-bold text-xs rounded-lg"
+                 style={{width:'220px',padding:'5px',    background: 'linear-gradient(to right, #A1B1D1, #697C9B)', }}
+                 onClick={()=>document.getElementById('my_modal_delete').showModal()}
+                 >
+                  Delete Category
+                 </button>
               </td>
             </tr>
           ))}
@@ -228,8 +241,19 @@ const Category = () => {
   </div>
 </div>
 
+
+
       {/* Modal Dialog */}
-      <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+      <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle" style={{ fontFamily: 'Open Sans' }}
+      
+      onClick={(e) => {
+        const modalBox = document.querySelector('#my_modal_5 .modal-box');
+        if (modalBox && !modalBox.contains(e.target)) {
+          document.getElementById('my_modal_5').close();
+        }
+      }}
+      
+      >
           <form method="dialog" className="modal-box" onSubmit={handleSubmit}>
               {/* Modal Header */}
               <div style={{ width: '100%', height: '50px' }}>
@@ -246,7 +270,7 @@ const Category = () => {
                   name="code"
                   placeholder="code"
                   onChange={handleChange}
-                  className="input input-md w-full"
+                  className="input input-md w-full shadow-none focus:shadow-none focus:outline-none focus:border-b-2 focus:border-blue-800"
                 />
                 {errors.code && <p className="text-red-500 text-sm">{errors.code}</p>}
               </div>
@@ -259,7 +283,7 @@ const Category = () => {
                   name="name"
                   placeholder="name"
                   onChange={handleChange}
-                  className="input input-md w-full"
+                  className="input input-md w-full shadow-none focus:shadow-none focus:outline-none focus:border-b-2 focus:border-blue-800"
                 />
                 {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
               </div>
@@ -269,7 +293,7 @@ const Category = () => {
                 <select
                   name="itemType"
                   value={formData.itemType}
-                  className="select select-bordered w-full"
+                  className="select select-bordered w-full focus:outline-none focus:border-b-2 focus:border-blue-800 "
                   onChange={handleChange}
                   style={{ height: '38px' }}
                 >
@@ -345,7 +369,18 @@ const Category = () => {
       </dialog>
 
 
-      <dialog id="my_modal_edit" className="modal modal-bottom sm:modal-middle">
+
+      <dialog id="my_modal_edit" className="modal modal-bottom sm:modal-middle"
+       style={{ fontFamily: 'Open Sans' }}
+      
+       onClick={(e) => {
+         const modalBox = document.querySelector('#my_modal_5 .modal-box');
+         if (modalBox && !modalBox.contains(e.target)) {
+           document.getElementById('my_modal_edit').close();
+         }
+       }}
+      
+      >
           <form method="dialog" className="modal-box" onSubmit={handleSubmit}>
               {/* Modal Header */}
               <div style={{ width: '100%', height: '50px' }}>
@@ -460,14 +495,12 @@ const Category = () => {
           </form>
       </dialog>
 
-      <dialog id="my_modal_8" className="modal">
 
 
+      <dialog id="my_modal_delete" className="modal">
       <div className="modal-box text-center py-10 px-8 relative font-[Open Sans]" style={{width:'600px',height:'300px'}}
       onClick={() => {
-        
-          document.getElementById('my_modal_8').close();
-        
+          document.getElementById('my_modal_delete').close();
       }}>
         {/* Icon */}
         <div className="flex justify-center mb-4" style={{opacity:'.5'}}>
@@ -512,14 +545,11 @@ const Category = () => {
 </dialog>
 
 
+
 <dialog id="my_modal_cancel" className="modal">
-
-
   <div className="modal-box text-center py-10 px-8 relative font-[Open Sans]" style={{width:'600px',height:'300px'}}
   onClick={() => {
-    
       document.getElementById('my_modal_cancel').close();
-    
   }}>
     {/* Icon */}
     <div className="flex justify-center mb-4" style={{opacity:'.5'}}>
@@ -541,8 +571,6 @@ const Category = () => {
     <h3 className="text-3xl font-bold text-gray-500 " style={{margin:'20px'}}>Cancelled</h3>
     <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your Jewellery Type is safe</p>
     <button className="btn bg-blue-500 w-[50px] rounded-lg" > ok</button>
-
-    
   </div>
  </dialog>
       

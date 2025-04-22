@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Card from './Card';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import BreadCrump from './BreadCrump';
 
 const Body = () => {
   const [showSettings, setShowSettings] = useState(false);
@@ -37,8 +38,11 @@ const Body = () => {
   }, [showSettings]);
 
   return (
-    <div className="h-screen w-full bg-[linear-gradient(to_bottom,#5e72e4_45%,#EFF2F3_45%)]">
+    <div className="h-screen  w-full bg-[linear-gradient(to_bottom,#5e72e4_45%,#EFF2F3_45%)]">
+
+    
       <div className="flex h-full">
+        
         {/* Conditionally render Card component based on window width */}
         {windowWidth > 1100 && (
           <div className="h-full" style={{ marginLeft: '25px', marginTop: '16px' }}>
