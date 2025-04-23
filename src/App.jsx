@@ -11,7 +11,12 @@ import Brand from './components/Manage/Product-Management/Brand';
 import Color from './components/Manage/Product-Management/Color';
 import Login from './components/LoginPage';
 import List_return_Type from './components/Manage/Product-Management/List_return_Type';
-
+import Product_Size from './components/Manage/Product-Management/Product_size';
+import Gender from './components/Manage/Product-Management/Gender';
+import Diamond_Type from './components/Manage/Product-Management/Diamond_Type';
+import StoneType from './components/Manage/Product-Management/StoneType';
+import Occasion from './components/Manage/Product-Management/Occasion';
+import Stock_point from './components/Manage/Product-Management/Stock_point';
 function App() {
   return (
     <div className="w-full h-full m-0 p-0">
@@ -19,13 +24,21 @@ function App() {
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/dashboard' element={<Body />} >
-            <Route path='list_item_type' element={<List_item_Type />} />
-            <Route path='list_jewellery_type' element={<Jewellery_Type />} />
-            <Route path='category' element={<Category />} />
-            <Route path='subcategory' element={<SubCategory />} />
-            <Route path='brand' element={<Brand />} />
-            <Route path='color' element={<Color />} />
-            <Route path='list_return_Type' element={<Color />} />
+          <Route path='manage'>
+              <Route path='item_type' element={<List_item_Type />} />
+              <Route path='jewellery_type' element={<Jewellery_Type />} />
+              <Route path='category' element={<Category />} />
+              <Route path='subcategory' element={<SubCategory />} />
+              <Route path='brand' element={<Brand />} />
+              <Route path='color' element={<Color />} />
+              <Route path='list_return_Type' element={<List_return_Type />} />
+              <Route path='product_size' element={<Product_Size />} />
+              <Route path='gender' element={<Gender/>} />
+              <Route path='diamond_type' element={<Diamond_Type/>} />
+              <Route path='stonetype' element={<StoneType/>} />
+              <Route path='occasion' element={<Occasion/>} />
+              <Route path='stock-point' element={<Stock_point/>} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>

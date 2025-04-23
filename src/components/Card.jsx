@@ -34,8 +34,8 @@ const Card = () => {
 
       {/* Menu items shown only when expanded */}
       <ul>
-        <li style={{ paddingLeft: '63px', paddingTop: '23px' }}><Link to='/dashboard/list_item_type'>Item Type</Link></li>
-        <li style={{ paddingLeft: '63px', paddingTop: '20px' }}> <Link to="/dashboard/list_jewellery_type">Jewellery Type </Link></li>
+        <li style={{ paddingLeft: '63px', paddingTop: '23px' }}><Link to='/dashboard/manage/item_type'>Item Type</Link></li>
+        <li style={{ paddingLeft: '63px', paddingTop: '20px' }}> <Link to="/dashboard/manage/jewellery_type">Jewellery Type </Link></li>
         
                  <details  className='group' style={{ paddingLeft: '31px', paddingTop: '20px', }} >
                    <summary className="list-none cursor-pointer flex items-center gap-2 text-sm" style={{paddingLeft: '30px'}} >
@@ -44,17 +44,17 @@ const Card = () => {
                      <span className=" text-gray-900 hidden group-open:inline" style={{paddingLeft:'10px',fontSize:'7px',width:'9px'}}>▲</span>
                    </summary>
                    <ul className="flex flex-col gap-[20px] mt-2 text-gray-400 pl-6" >
-                   <li className="text-xs hover:text-blue-500 " style={{paddingLeft: '30px',marginTop:'10px'}} > <Link to='/dashboard/category'>Category</Link></li>
-                     <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/subcategory'>Sub Category</Link></li>
-                     <li className="text-xs hover:text-blue-500"  style={{paddingLeft: '30px'}} ><Link to='/dashboard/brand'>Brand</Link></li>
-                     <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/color'>Colour Code</Link></li>
-                     <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/list_return_Type'>Return Type</Link></li>
-                     <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Size</Link></li>
-                     <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Gender</Link></li>
-                     <li  className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Diamond Type</Link></li>
-                     <li  className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Stone Type</Link></li>
-                     <li  className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Occasion</Link></li>
-                     <li  cclassName="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Stock Point</Link></li>
+                   <li className="text-xs hover:text-blue-500 " style={{paddingLeft: '30px',marginTop:'10px'}} > <Link to='/dashboard/manage/category'>Category</Link></li>
+                     <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/manage/subcategory'>Sub Category</Link></li>
+                     <li className="text-xs hover:text-blue-500"  style={{paddingLeft: '30px'}} ><Link to='/dashboard/manage/brand'>Brand</Link></li>
+                     <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/manage/color'>Colour Code</Link></li>
+                     <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/manage/list_return_Type'>Return Type</Link></li>
+                     <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/manage/product_size'>Size</Link></li>
+                     <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/manage/gender'>Gender</Link></li>
+                     <li  className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/manage/diamond_type'>Diamond Type</Link></li>
+                     <li  className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/manage/stonetype'>Stone Type</Link></li>
+                     <li  className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/manage/occasion'>Occasion</Link></li>
+                     <li  className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/manage/stock-point'>Stock Point</Link></li>
                      <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Style</Link></li>
                      <li  className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Design</Link></li>
                    </ul>

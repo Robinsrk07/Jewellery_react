@@ -2,12 +2,39 @@ import { useState } from "react";
 
 const List_return_Type =()=>{
     const [isHovered, setIsHovered] = useState(false);
-  const [items, setItems] = useState(10);
+    const [items, setItems] = useState(10);
 
   return (
-    <div>
-    <div className="bg-white w-[170vw] h-[69vh]  rounded-xl" style={{ marginLeft: '13px', overflow: 'auto', fontFamily: 'Open Sans'}}>
-      <div
+   <>
+   <style jsx global>{`
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;  /* Slightly wider for better visibility */
+    height: 6px; /* For horizontal scroll */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Light gray track */
+    border-radius: 3px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background:rgb(218, 216, 216); /* Rich red color */
+    border-radius: 3px;
+    border: 1px solidrgb(206, 198, 198); /* Darker red border */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background:rgb(202, 190, 190); /* Darker red on hover */
+  }
+  
+  /* For Firefox */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color:rgb(226, 215, 215) #f1f1f1; /* red thumb on gray track */
+  }
+`}</style>
+<div className="bg-white w-full max-w-6xl h-auto max-h-[65vh] rounded-xl px-4 md:px-8 lg:px-12 mx-auto overflow-auto  custom-scrollbar" style={{ fontFamily: 'Open Sans',overflow:'auto'}}>
+<div
         style={{
           width: '100%',
           display: 'flex',
@@ -125,33 +152,6 @@ const List_return_Type =()=>{
                 </button>
               </td>
             </tr>
-            <tr className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-              <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '40px' }}>1</td>
-              <td className="px-6 py-5 border-b border-gray-200 text-xs">Full refund</td>
-              <td className="px-6 py-5 border-b border-gray-200 text-xs">The customer receives a complete refund if the jewellery is returned within the return period (e.g., 7-30 days) and meets the return conditions.</td>
-             
-              <td className="px-6 py-5 border-b border-gray-200">
-                <span className="bg-green-200 text-green-800 font-bold text-[10px] rounded" style={{ padding: '4px 6px' }}>
-                  ACTIVE
-                </span>
-              </td>
-              <td className="px-6 py-5 border-b border-gray-200 text-blue-600">
-                <button className="btn w-1/2 text-white font-bold text-xs rounded-lg" style={{ width: '100px', padding: '5px', backgroundColor: '#696BE4' }}
-                  onClick={() => document.getElementById('my_modal_edit').showModal()}
-                >
-                  Edit
-                </button>
-              </td>
-              <td className="px-6 py-5 border-b border-gray-200 text-blue-600">
-                <button className="btn text-white font-bold text-xs rounded-lg"
-                  style={{ width: '220px', padding: '5px', background: 'linear-gradient(to right, #A1B1D1, #697C9B)' }}
-                  onClick={() => document.getElementById('my_modal_delete').showModal()}
-                >
-                  Delete Adress Type
-                </button>
-              </td>
-            </tr>
-         
         </tbody>
       </table>
 
@@ -172,7 +172,9 @@ const List_return_Type =()=>{
       
     </div>
     
-    </div>
+    </>
+
+
   );
 
 }

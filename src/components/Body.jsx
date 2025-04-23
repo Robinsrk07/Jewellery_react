@@ -39,8 +39,7 @@ const Body = () => {
 
   return (
     <div className="h-screen  w-full bg-[linear-gradient(to_bottom,#5e72e4_45%,#EFF2F3_45%)]">
-
-    
+     
       <div className="flex h-full">
         
         {/* Conditionally render Card component based on window width */}
@@ -53,7 +52,8 @@ const Body = () => {
         <div
           className="flex-1 overflow-hidden rounded-2xl"
           style={{
-            marginLeft: windowWidth > 1100 ? '10px' : '25px', // Adjust margin based on window width
+            marginLeft: windowWidth > 1100 ? '25px' : '10px', // Adjust margin based on window width
+            marginRight: windowWidth > 1100 ? '10px' : '10px', // Adjust margin based on window width
             paddingTop: '80px',
             paddingBottom: '50px',
             paddingRight: '0px',
