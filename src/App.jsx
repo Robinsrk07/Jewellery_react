@@ -17,6 +17,12 @@ import Diamond_Type from './components/Manage/Product-Management/Diamond_Type';
 import StoneType from './components/Manage/Product-Management/StoneType';
 import Occasion from './components/Manage/Product-Management/Occasion';
 import Stock_point from './components/Manage/Product-Management/Stock_point';
+import Style from './components/Manage/Product-Management/Style';
+import Design from './components/Manage/Product-Management/Design';
+import Country from './components/Manage/Location-Management/Country';
+import City from './components/Manage/Location-Management/City';
+import Adress_Type from './components/Manage/Location-Management/AdressType';
+
 function App() {
   return (
     <div className="w-full h-full m-0 p-0">
@@ -38,7 +44,13 @@ function App() {
               <Route path='stonetype' element={<StoneType/>} />
               <Route path='occasion' element={<Occasion/>} />
               <Route path='stock-point' element={<Stock_point/>} />
+              <Route path='style' element={<Style/>} />
+              <Route path='design' element={<Design/>} />
+              <Route path='country' element={<Country/>} />
+              <Route path='city' element={<City/>} />
+              <Route path='adresstype' element={<Adress_Type/>} />
             </Route>
+            
           </Route>
         </Routes>
       </BrowserRouter>

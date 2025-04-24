@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Stock_point=()=>{
+const Adress_Type=()=>{
 
     
 const  [isHovered, setIsHovered] = useState(false);
@@ -95,7 +95,15 @@ const  [isHovered, setIsHovered] = useState(false);
                scrollbar-color:rgb(226, 215, 215) #f1f1f1; /* red thumb on gray track */
              }
            `}</style>
-          <div className="bg-white w-full max-w-6xl h-auto max-h-[80vh] rounded-xl px-4 md:px-8 lg:px-12 mx-auto overflow-auto  custom-scrollbar" style={{ fontFamily: 'Open Sans',overflow:'auto'}}>
+          <div className="bg-white w-full
+              max-w-[95vw] 
+              xl:max-w-[90vw] 
+              2xl:max-w-[85vw] 
+              h-auto max-h-[70vh] 
+              rounded-xl px-4 md:px-8 lg:px-12
+              mx-auto overflow-auto  custom-scrollbar"
+           style={{ fontFamily: 'Open Sans',overflow:'auto'}}
+             >
            <div
                    style={{
                      width: '100%',
@@ -166,8 +174,8 @@ const  [isHovered, setIsHovered] = useState(false);
                      
                        <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
                          <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Reserved Stock</td>
-                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Items set aside for specific customers or orders but not yet sold.</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Billing Address</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">The registered address of the customer used for invoicing and payment processing.</td>
                          <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
                          <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
                             <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
@@ -201,8 +209,8 @@ const  [isHovered, setIsHovered] = useState(false);
                        </tr>
                        <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
                          <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>2</td>
-                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Low Stock Alert</td>
-                         <td className="px-6 py-5 border-b border-gray-200 text-xs">	Items that have reached a minimum threshold and need restocking.</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Shipping Address</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">	The location where the jewellery order is delivered, which may differ from the billing address.</td>
                          <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
                          <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
                             <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
@@ -235,8 +243,8 @@ const  [isHovered, setIsHovered] = useState(false);
                        </tr>
                        <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
                          <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
-                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Warehouse Stock</td>
-                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Jewellery stored in a central warehouse before being distributed to stores or branches..</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Warehouse Address</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">The location where jewellery stock is stored before being distributed to stores or customers.</td>
                          <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
                          <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
                             <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
@@ -270,58 +278,21 @@ const  [isHovered, setIsHovered] = useState(false);
                             </td>
                        </tr>
                        <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>4</td>
-                         <td className="px-6 py-5 border-b border-gray-200 text-xs">In-Store Stock</td>
-                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Jewellery available at a physical store for immediate purchase.</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Warehouse Address</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">The location where jewellery stock is stored before being distributed to stores or customers.</td>
                          <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
                          <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
                             <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                                 <button
+                                 type="button"
                                 className="btn text-white font-bold text-xs rounded-lg"
-                                type="button"
-
                                 style={{
                                     width: '100px',
                                     padding: '5px',
                                     backgroundColor: '#696BE4',
                                 }}
                                 onClick={()=>setEditModal(true)}
-                                >
-                                Edit
-                                </button>
-        
-                                <button
-                                className="btn text-white font-bold text-xs rounded-lg"
-                                style={{
-                                    width: '100px',
-                                    padding: '5px',
-                                    background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-                                }}
-                                onClick={()=>document.getElementById('my_modal_8').showModal()}
-
-                                >
-                                Delete 
-                                </button>
-                            </div>
-                            </td>
-                       </tr>
-                       <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>5</td>
-                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Transit Stock</td>
-                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Jewellery being transferred between the warehouse and store or between branches.</td>
-                         <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
-                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
-                            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                <button
-                                className="btn text-white font-bold text-xs rounded-lg"
-                                style={{
-                                    width: '100px',
-                                    padding: '5px',
-                                    backgroundColor: '#696BE4',
-                                }}
-                                type="button"
-                                onClick={()=>setEditModal(true)}
-
 
                                 >
                                 Edit
@@ -343,21 +314,22 @@ const  [isHovered, setIsHovered] = useState(false);
                             </td>
                        </tr>
                        <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>6</td>
-                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Display Stock</td>
-                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Jewellery items placed in display cases for customers to view.</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Warehouse Address</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">The location where jewellery stock is stored before being distributed to stores or customers.</td>
                          <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
                          <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
                             <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                                 <button
+                                 type="button"
                                 className="btn text-white font-bold text-xs rounded-lg"
                                 style={{
                                     width: '100px',
                                     padding: '5px',
                                     backgroundColor: '#696BE4',
                                 }}
-                                type="button"
                                 onClick={()=>setEditModal(true)}
+
                                 >
                                 Edit
                                 </button>
@@ -377,6 +349,260 @@ const  [isHovered, setIsHovered] = useState(false);
                             </div>
                             </td>
                        </tr>
+                       <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Warehouse Address</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">The location where jewellery stock is stored before being distributed to stores or customers.</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                <button
+                                 type="button"
+                                className="btn text-white font-bold text-xs rounded-lg"
+                                style={{
+                                    width: '100px',
+                                    padding: '5px',
+                                    backgroundColor: '#696BE4',
+                                }}
+                                onClick={()=>setEditModal(true)}
+
+                                >
+                                Edit
+                                </button>
+        
+                                <button
+                                className="btn text-white font-bold text-xs rounded-lg"
+                                style={{
+                                    width: '100px',
+                                    padding: '5px',
+                                    background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                }}
+                                onClick={()=>document.getElementById('my_modal_8').showModal()}
+
+                                >
+                                Delete 
+                                </button>
+                            </div>
+                            </td>
+                       </tr>
+                       <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Warehouse Address</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">The location where jewellery stock is stored before being distributed to stores or customers.</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                <button
+                                 type="button"
+                                className="btn text-white font-bold text-xs rounded-lg"
+                                style={{
+                                    width: '100px',
+                                    padding: '5px',
+                                    backgroundColor: '#696BE4',
+                                }}
+                                onClick={()=>setEditModal(true)}
+
+                                >
+                                Edit
+                                </button>
+        
+                                <button
+                                className="btn text-white font-bold text-xs rounded-lg"
+                                style={{
+                                    width: '100px',
+                                    padding: '5px',
+                                    background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                }}
+                                onClick={()=>document.getElementById('my_modal_8').showModal()}
+
+                                >
+                                Delete 
+                                </button>
+                            </div>
+                            </td>
+                       </tr>
+                       <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Warehouse Address</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">The location where jewellery stock is stored before being distributed to stores or customers.</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                <button
+                                 type="button"
+                                className="btn text-white font-bold text-xs rounded-lg"
+                                style={{
+                                    width: '100px',
+                                    padding: '5px',
+                                    backgroundColor: '#696BE4',
+                                }}
+                                onClick={()=>setEditModal(true)}
+
+                                >
+                                Edit
+                                </button>
+        
+                                <button
+                                className="btn text-white font-bold text-xs rounded-lg"
+                                style={{
+                                    width: '100px',
+                                    padding: '5px',
+                                    background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                }}
+                                onClick={()=>document.getElementById('my_modal_8').showModal()}
+
+                                >
+                                Delete 
+                                </button>
+                            </div>
+                            </td>
+                       </tr>
+                       <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Warehouse Address</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">The location where jewellery stock is stored before being distributed to stores or customers.</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                <button
+                                 type="button"
+                                className="btn text-white font-bold text-xs rounded-lg"
+                                style={{
+                                    width: '100px',
+                                    padding: '5px',
+                                    backgroundColor: '#696BE4',
+                                }}
+                                onClick={()=>setEditModal(true)}
+
+                                >
+                                Edit
+                                </button>
+        
+                                <button
+                                className="btn text-white font-bold text-xs rounded-lg"
+                                style={{
+                                    width: '100px',
+                                    padding: '5px',
+                                    background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                }}
+                                onClick={()=>document.getElementById('my_modal_8').showModal()}
+
+                                >
+                                Delete 
+                                </button>
+                            </div>
+                            </td>
+                       </tr>
+                       <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Warehouse Address</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">The location where jewellery stock is stored before being distributed to stores or customers.</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                <button
+                                 type="button"
+                                className="btn text-white font-bold text-xs rounded-lg"
+                                style={{
+                                    width: '100px',
+                                    padding: '5px',
+                                    backgroundColor: '#696BE4',
+                                }}
+                                onClick={()=>setEditModal(true)}
+
+                                >
+                                Edit
+                                </button>
+        
+                                <button
+                                className="btn text-white font-bold text-xs rounded-lg"
+                                style={{
+                                    width: '100px',
+                                    padding: '5px',
+                                    background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                }}
+                                onClick={()=>document.getElementById('my_modal_8').showModal()}
+
+                                >
+                                Delete 
+                                </button>
+                            </div>
+                            </td>
+                       </tr>
+                       <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Warehouse Address</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">The location where jewellery stock is stored before being distributed to stores or customers.</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                <button
+                                 type="button"
+                                className="btn text-white font-bold text-xs rounded-lg"
+                                style={{
+                                    width: '100px',
+                                    padding: '5px',
+                                    backgroundColor: '#696BE4',
+                                }}
+                                onClick={()=>setEditModal(true)}
+
+                                >
+                                Edit
+                                </button>
+        
+                                <button
+                                className="btn text-white font-bold text-xs rounded-lg"
+                                style={{
+                                    width: '100px',
+                                    padding: '5px',
+                                    background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                }}
+                                onClick={()=>document.getElementById('my_modal_8').showModal()}
+
+                                >
+                                Delete 
+                                </button>
+                            </div>
+                            </td>
+                       </tr>
+                       <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">Warehouse Address</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">The location where jewellery stock is stored before being distributed to stores or customers.</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                         <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                <button
+                                 type="button"
+                                className="btn text-white font-bold text-xs rounded-lg"
+                                style={{
+                                    width: '100px',
+                                    padding: '5px',
+                                    backgroundColor: '#696BE4',
+                                }}
+                                onClick={()=>setEditModal(true)}
+
+                                >
+                                Edit
+                                </button>
+        
+                                <button
+                                className="btn text-white font-bold text-xs rounded-lg"
+                                style={{
+                                    width: '100px',
+                                    padding: '5px',
+                                    background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                }}
+                                onClick={()=>document.getElementById('my_modal_8').showModal()}
+
+                                >
+                                Delete 
+                                </button>
+                            </div>
+                            </td>
+                       </tr>
+                       
+                       
                       
                     
                    </tbody>
@@ -681,4 +907,4 @@ const  [isHovered, setIsHovered] = useState(false);
                    
               </>)}
 
-export default  Stock_point
+export default  Adress_Type

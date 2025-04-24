@@ -8,7 +8,7 @@ import Logo from '../assets/images/logo-ct-dark.png';
 
 const Card = () => {
   return (
-    <div className="bg-white rounded-2xl w-[250px] h-[575px]" style={{fontFamily:'Open Sans' ,overflow:'auto'}}>
+    <div className="bg-white rounded-2xl w-[250px] h-[90vh]" style={{fontFamily:'Open Sans' ,overflow:'auto'}}>
           <div className="pt-[25px] pl-[65px] flex items-center gap-2 font-semibold text-[14px] text-gray-500" style={{paddingLeft:'30px', paddingTop:'25px'}}>
             <img src={Logo} alt="Logo" className="w-[30px] h-[30px]" />
             <span>Dashboard</span>
@@ -55,8 +55,8 @@ const Card = () => {
                      <li  className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/manage/stonetype'>Stone Type</Link></li>
                      <li  className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/manage/occasion'>Occasion</Link></li>
                      <li  className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/manage/stock-point'>Stock Point</Link></li>
-                     <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Style</Link></li>
-                     <li  className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to=''>Design</Link></li>
+                     <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/manage/style'>Style</Link></li>
+                     <li  className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/manage/design'>Design</Link></li>
                    </ul>
                  </details>
               
@@ -67,9 +67,9 @@ const Card = () => {
                      <span className=" text-gray-900 hidden group-open:inline" style={{paddingLeft:'10px',fontSize:'7px',width:'9px'}}>▲</span>
                    </summary>
                    <ul className="flex flex-col gap-[20px] mt-2 text-gray-400 pl-6" >
-                    <li className="text-xs hover:text-blue-500 " style={{paddingLeft: '30px',marginTop:'10px'}} > <Link to='/dashboard/category'>Country</Link></li>
-                     <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/subcategory'>City</Link></li>
-                     <li className="text-xs hover:text-blue-500"  style={{paddingLeft: '30px'}} ><Link to='/dashboard/brand'>Adress Type</Link></li>
+                    <li className="text-xs hover:text-blue-500 " style={{paddingLeft: '30px',marginTop:'10px'}} > <Link to='/dashboard/manage/country'>Country</Link></li>
+                     <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/manage/city'>City</Link></li>
+                     <li className="text-xs hover:text-blue-500"  style={{paddingLeft: '30px'}} ><Link to='/dashboard/manage/adresstype'>Adress Type</Link></li>
                      
                    </ul>
                  </details>
