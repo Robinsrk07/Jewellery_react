@@ -97,7 +97,16 @@ const City=()=>{
                       scrollbar-color:rgb(226, 215, 215) #f1f1f1; /* red thumb on gray track */
                     }
                   `}</style>
-                 <div className="bg-white w-full max-w-6xl h-auto max-h-[80vh] rounded-xl px-4 md:px-8 lg:px-12 mx-auto overflow-auto  custom-scrollbar" style={{ fontFamily: 'Open Sans',overflow:'auto'}}>
+
+                    <div className="bg-white w-full
+                                  max-w-[95vw] 
+                                  xl:max-w-[90vw] 
+                                  2xl:max-w-[85vw] 
+                                  h-auto max-h-[70vh] 
+                                  rounded-xl px-4 md:px-8 lg:px-12
+                                  mx-auto overflow-auto  custom-scrollbar"
+                              style={{ fontFamily: 'Open Sans',overflow:'auto'}}
+                                >
                   <div
                           style={{
                             width: '100%',
@@ -153,19 +162,22 @@ const City=()=>{
                   
                         
                   
-                        <table className="table w-full text-sm text-left text-gray-500 border-collapse
-                        " style={{ width: '100%', borderSpacing: '0 12px', borderCollapse: 'separate' }}
->
-                          <thead className="text-xs text-gray-400 uppercase bg-white">
-                            <tr>
-                              <th className="px-6 py-3" style={{width:'80px',paddingLeft:'20px'}} >SL NO</th>
-                              <th className="px-6 py-3" style={{width:'100px'}} >CODE</th>
-                              <th className="px-6 py-3"  style={{width:'130px'}}>NAME</th>
-                              <th className="px-6 py-3"  style={{width:'130px'}}>COUNTRY</th>
-                              <th className="px-6 py-3" style={{width:'10px'}}>STATUS</th>
-                              <th className="px-6 py-3" style={{width:'130px'}} >ACTION</th>
-                            </tr>
-                          </thead>
+                        <table className="w-full text-sm text-left text-gray-500" 
+                          style={{ 
+                            tableLayout: 'fixed',  // Crucial for fixed column widths
+                            width: '100%',
+                            borderSpacing: '0 12px'
+                          }}>
+                      <thead className="text-xs text-gray-400 uppercase bg-white">
+                        <tr>
+                          <th style={{ width: '100px', paddingLeft: '', paddingTop: '12px', paddingBottom: '12px' }}>SL NO</th>
+                          <th style={{ width: '100px', padding: '' }}>CODE</th>
+                          <th style={{ width: '120px', padding: '' }}>NAME</th>
+                          <th style={{ width: '150px', padding: '' }}>COUNTRY</th>
+                          <th style={{ width: '100px', padding: '' }}>STATUS</th>
+                          <th style={{ width: '100px', padding: '' }}>ACTION</th>
+                        </tr>
+                      </thead>
                           <tbody>
                             
                               <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
@@ -270,10 +282,10 @@ const City=()=>{
                         <div className="modal-box text-center py-8 px-6 relative font-[Open_Sans]
                            w-[90vw] h-[50vh]             /* base (mobile) */
                            sm:w-[70vw] sm:h-[50vh]       /* ≥ 640px */
-                           md:w-[50vw] md:h-[50vh]       /* ≥ 768px */
-                           lg:w-[35vw] lg:h-[50vh]       /* ≥ 1024px */
-                           xl:w-[30vw] xl:h-[50vh]       /* ≥ 1280px */
-                           2xl:w-[25vw] 2xl:h-[50vh]     /* ≥ 1536px */
+                           md:w-[50vw] md:h-[40vh]       /* ≥ 768px */
+                           lg:w-[35vw] lg:h-[40vh]       /* ≥ 1024px */
+                           xl:w-[30vw] xl:h-[40vh]       /* ≥ 1280px */
+                           2xl:w-[25vw] 2xl:h-[20vh]     /* ≥ 1536px */
                          "
        
                         onClick={()=>document.getElementById('my_modal_8').close()}
@@ -360,16 +372,18 @@ const City=()=>{
        
                        {modal && (
                            <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                              <div className="bg-white rounded-xl shadow-md w-[90%]  h-[85vh] sm:w-[85vw] sm:h-[95vh] sm:p-6  /* ≥ 640px */
-                                       md:w-[65vw] md:h-[66vh] md:p-8  /* ≥ 768px */
-                                       lg:w-[65vw] lg:h-[55vh] lg:p-10 /* ≥ 1024px */
+                              <div className="bg-white rounded-xl shadow-md w-[90%]  h-[85vh]
+                                       sm:w-[85vw] sm:h-[95vh] sm:p-6  /* ≥ 640px */
+                                       md:w-[65vw] md:h-[95vh] md:p-8  /* ≥ 768px */
+                                       lg:w-[65vw] lg:h-[95vh] lg:p-10 /* ≥ 1024px */
                                        xl:w-[32vw] xl:h-[95vh] xl:p-12 /* ≥ 1280px */
                                        2xl:w-[25vw] 2xl:h-[90vh] 2xl:p-14 /* ≥ 1536px */ 
                                        p-4 sm:p-6 md:p-8">
+
                                 <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
                                 style={{paddingLeft:'20px',
                                 paddingTop:"20px"}}>
-                                 New City
+                                 Create City
                                </h3>
                                <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
        
@@ -457,17 +471,25 @@ const City=()=>{
                                   {errors.status && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.status}</span>}
                                   
                                 <hr className="my-4 border-gray-300" style={{marginTop:'40px'}}/>
-                                <div className="modal-action" style={{ padding: '50px',paddingTop:'70px', height: '30px' }}>
-                                     <button type="button" className="btn  w-2/6"  style={{backgroundColor: '#8392ab'}} onClick={(e)=>handleSubmit(e)}>Submit</button>
-                                     <button
-                                       type="button"
-                                       className="btn  w-2/6"
-                                       style={{backgroundColor: '#5E72e4'}}
-                                       onClick={handleCloseModal}
-                                     >
-                                       Close
-                                     </button>
-                                   </div>
+                                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
+                                  style={{ marginBottom:'5px', paddingLeft:'200px'}}>
+                                <button
+                                  type="button"
+                                  className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                  style={{ backgroundColor: '#8392ab' }}
+                                  onClick={(e) => handleSubmit(e)}
+                                >
+                                  Submit
+                                </button>
+                                <button
+                                  type="button"
+                                  className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                  style={{ backgroundColor: '#5E72e4' }}
+                                  onClick={handleCloseModal}
+                                >
+                                  Close
+                                </button>
+                              </div>
                                </div>
                              </div>
                            </div>
@@ -479,7 +501,7 @@ const City=()=>{
                                      md:w-[65vw] md:h-[66vh] md:p-8  /* ≥ 768px */
                                      lg:w-[65vw] lg:h-[55vh] lg:p-10 /* ≥ 1024px */
                                      xl:w-[32vw] xl:h-[95vh] xl:p-12 /* ≥ 1280px */
-                                     2xl:w-[25vw] 2xl:h-[90vh] 2xl:p-14 /* ≥ 1536px */ 
+                                     2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14 /* ≥ 1536px */ 
                                      p-4 sm:p-6 md:p-8">
                               <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
                               style={{paddingLeft:'20px',

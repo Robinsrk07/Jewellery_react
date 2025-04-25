@@ -59,11 +59,7 @@ const Style =()=>{
                   setModal(false);
                   setEditModal(false)
                 };
-              
-              
-              
-              
-              
+          
                 return (
                   
               <>
@@ -94,7 +90,12 @@ const Style =()=>{
                   scrollbar-color:rgb(226, 215, 215) #f1f1f1; /* red thumb on gray track */
                 }
               `}</style>
-             <div className="bg-white w-full max-w-6xl h-auto max-h-[80vh] rounded-xl px-4 md:px-8 lg:px-12 mx-auto overflow-auto  custom-scrollbar" style={{ fontFamily: 'Open Sans',overflow:'auto'}}>
+             <div className="bg-white 
+                 max-w-[90vw] h-auto max-h-[80vh]
+                 rounded-xl px-4 md:px-8 lg:px-12 
+                 mx-auto overflow-auto  custom-scrollbar" 
+                 style={{ fontFamily: 'Open Sans',overflow:'auto'}}
+               >
               <div
                       style={{
                         width: '100%',
@@ -108,9 +109,9 @@ const Style =()=>{
                       className="text-xs font-bold"
                         style={{
                           width: '90%',
+                          position: 'fixed',
                           maxWidth: '160px',
                           height: '30px',
-                          border: '1px solid blue',
                           borderRadius: '8px',
                           backgroundColor: isHovered
                             ? 'rgb(97, 113, 228)'
@@ -268,6 +269,1338 @@ const Style =()=>{
                                </div>
                                </td>
                           </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
+                          <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Vintage/Antique</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">Classic, timeless pieces inspired by historical designs, featuring oxidized gold, filigree work, or heirloom-style craftsmanship.</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                   <button
+                                    type="button"
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       backgroundColor: '#696BE4',
+                                   }}
+                                   onClick={()=>setEditModal(true)}
+   
+                                   >
+                                   Edit
+                                   </button>
+           
+                                   <button
+                                   className="btn text-white font-bold text-xs rounded-lg"
+                                   style={{
+                                       width: '100px',
+                                       padding: '5px',
+                                       background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                   }}
+                                   onClick={()=>document.getElementById('my_modal_8').showModal()}
+   
+                                   >
+                                   Delete 
+                                   </button>
+                               </div>
+                               </td>
+                          </tr>
                          
                           
                          
@@ -296,12 +1629,12 @@ const Style =()=>{
    
    
                     <div className="modal-box text-center py-8 px-6 relative font-[Open_Sans]
-                       w-[90vw] h-[50vh]             /* base (mobile) */
+                       w-[90vw] h-[40vh]             /* base (mobile) */
                        sm:w-[70vw] sm:h-[50vh]       /* ≥ 640px */
-                       md:w-[50vw] md:h-[50vh]       /* ≥ 768px */
+                       md:w-[50vw] md:h-[40vh]       /* ≥ 768px */
                        lg:w-[35vw] lg:h-[50vh]       /* ≥ 1024px */
-                       xl:w-[30vw] xl:h-[50vh]       /* ≥ 1280px */
-                       2xl:w-[25vw] 2xl:h-[50vh]     /* ≥ 1536px */
+                       xl:w-[30vw] xl:h-[40vh]       /* ≥ 1280px */
+                       2xl:w-[25vw] 2xl:h-[20vh]     /* ≥ 1536px */
                      "
    
                     onClick={()=>document.getElementById('my_modal_8').close()}
@@ -388,11 +1721,11 @@ const Style =()=>{
    
                    {modal && (
                        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                          <div className="bg-white rounded-xl shadow-md w-[90%]  h-[85vh] sm:w-[85vw] sm:h-[95vh] sm:p-6  /* ≥ 640px */
+                          <div className="bg-white rounded-xl shadow-md w-[90%]  h-[90vh] sm:w-[85vw] sm:h-[95vh] sm:p-6  /* ≥ 640px */
                                    md:w-[65vw] md:h-[66vh] md:p-8  /* ≥ 768px */
                                    lg:w-[65vw] lg:h-[55vh] lg:p-10 /* ≥ 1024px */
                                    xl:w-[32vw] xl:h-[95vh] xl:p-12 /* ≥ 1280px */
-                                   2xl:w-[25vw] 2xl:h-[90vh] 2xl:p-14 /* ≥ 1536px */ 
+                                   2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14 /* ≥ 1536px */ 
                                    p-4 sm:p-6 md:p-8">
                             <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
                             style={{paddingLeft:'20px',
@@ -464,10 +1797,10 @@ const Style =()=>{
                               
                             <hr className="my-4 border-gray-300" style={{marginTop:'40px'}}/>
                             <div className="modal-action" style={{ padding: '50px',paddingTop:'70px', height: '30px' }}>
-                                 <button type="button" className="btn  w-2/6"  style={{backgroundColor: '#8392ab'}} onClick={(e)=>handleSubmit(e)}>Submit</button>
+                                 <button type="button" className="btn  w-2/6 text-white"  style={{backgroundColor: '#8392ab'}} onClick={(e)=>handleSubmit(e)}>Submit</button>
                                  <button
                                    type="button"
-                                   className="btn  w-2/6"
+                                   className="btn  w-2/6 text-white"
                                    style={{backgroundColor: '#5E72e4'}}
                                    onClick={handleCloseModal}
                                  >
@@ -485,7 +1818,7 @@ const Style =()=>{
                                    md:w-[65vw] md:h-[66vh] md:p-8  /* ≥ 768px */
                                    lg:w-[65vw] lg:h-[55vh] lg:p-10 /* ≥ 1024px */
                                    xl:w-[32vw] xl:h-[95vh] xl:p-12 /* ≥ 1280px */
-                                   2xl:w-[25vw] 2xl:h-[90vh] 2xl:p-14 /* ≥ 1536px */ 
+                                   2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14 /* ≥ 1536px */ 
                                    p-4 sm:p-6 md:p-8">
                             <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
                             style={{paddingLeft:'20px',
@@ -557,10 +1890,11 @@ const Style =()=>{
                               
                             <hr className="my-4 border-gray-300" style={{marginTop:'40px'}}/>
                             <div className="modal-action" style={{ padding: '50px',paddingTop:'70px', height: '30px' }}>
-                                 <button type="button" className="btn  w-1/6"  style={{backgroundColor: '#8392ab'}} onClick={(e)=>handleSubmit(e)}>Submit</button>
+                                 <button type="button" className="btn  w-2/6 text-white"  style={{backgroundColor: '#8392ab'}} onClick={(e)=>handleSubmit(e)}>Submit</button>
                                  <button
+                                 
                                    type="button"
-                                   className="btn  w-1/6"
+                                   className="btn  w-2/6 text-white"
                                    style={{backgroundColor: '#5E72e4'}}
                                    onClick={handleCloseModal}
                                  >

@@ -77,7 +77,7 @@ const Body = () => {
           {/* Slide-in Panel */}
           <div
             ref={panelRef}
-            className={`fixed top-0 right-0 h-full w-90 bg-white shadow-xl transition-transform duration-500 ease-in-out pointer-events-auto ${
+            className={`fixed top-0 right-0 h-full w-[30vw] bg-white shadow-xl transition-transform duration-500 ease-in-out pointer-events-auto ${
               showSettings ? 'translate-x-0 z-[100]' : 'translate-x-full z-[100]'
             }`}
           >
@@ -97,7 +97,7 @@ const Body = () => {
                   Profile
                 </button>
               </Link>
-              <div style={{ marginTop: '250px', width: '250px' }}>
+              <div  className="w-[20vw]" style={{ marginTop: '250px'}}>
                 <button
                   className="btn btn-primary border border-blue-900 text-blue-900 rounded-lg w-full"
                   onClick={handleLogout}
