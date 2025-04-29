@@ -22,6 +22,11 @@ import Design from './components/Manage/Product-Management/Design';
 import Country from './components/Manage/Location-Management/Country';
 import City from './components/Manage/Location-Management/City';
 import Adress_Type from './components/Manage/Location-Management/AdressType';
+import ControllAccount from './components/Supplier/ControllAccount';
+import Group from './components/Supplier/Group';
+import Tax from './components/Supplier/Tax';
+import List_supplier from './components/Supplier/List_supplier';
+import CreateSupplier from './components/Supplier/CreateSupplier';
 
 function App() {
   return (
@@ -49,6 +54,13 @@ function App() {
               <Route path='country' element={<Country/>} />
               <Route path='city' element={<City/>} />
               <Route path='adresstype' element={<Adress_Type/>} />
+            </Route>
+            <Route path='supplier'>
+              <Route path='controllaccount' element={<ControllAccount/>} />
+              <Route path='group' element={<Group/>} />
+              <Route path='tax' element={<Tax/>} />
+              <Route path='list_supplier' element={<List_supplier/>} />
+              <Route path='Create_supplier' element={<CreateSupplier/>} />
             </Route>
             
           </Route>
