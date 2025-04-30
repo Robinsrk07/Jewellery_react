@@ -27,6 +27,12 @@ import Group from './components/Supplier/Group';
 import Tax from './components/Supplier/Tax';
 import List_supplier from './components/Supplier/List_supplier';
 import CreateSupplier from './components/Supplier/CreateSupplier';
+import Departments from './components/Employees/Departments';
+import EmployeeList from './components/Employees/EmployeeList';
+import PaymentMethodes from './components/Employees/PaymentMethodes';
+import Genders from './components/Employees/Genders';
+import Positions from './components/Employees/Postitions';
+import CustomersList from './components/Cutomers/CustomersList.jsx';
 
 function App() {
   return (
@@ -61,6 +67,16 @@ function App() {
               <Route path='tax' element={<Tax/>} />
               <Route path='list_supplier' element={<List_supplier/>} />
               <Route path='Create_supplier' element={<CreateSupplier/>} />
+            </Route>
+            <Route path='employees'>
+              <Route path='departments' element={<Departments/>} />
+              <Route path='positions' element={<Positions/>} />
+              <Route path='paymentmethodes' element={<PaymentMethodes/>} />
+              <Route path='gender' element={<Genders/>} />
+              <Route path='employeelist' element={<EmployeeList/>} />
+            </Route>
+            <Route path='customers'>
+              <Route path='customerslist' element={<CustomersList/>} />
             </Route>
             
           </Route>

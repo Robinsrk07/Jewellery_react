@@ -927,6 +927,7 @@ const  [isHovered, setIsHovered] = useState(false);
                    </div>)}
 
                    
-              </>)}
+              </>)
+              }
 
 export default  Group

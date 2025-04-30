@@ -44,7 +44,7 @@ const Body = () => {
         
         {/* Conditionally render Card component based on window width */}
         {windowWidth > 1100 && (
-          <div className="h-full" style={{ marginLeft: '25px', marginTop: '16px' }}>
+          <div className="h-full " style={{ marginLeft: '25px', marginTop: '16px' }}>
             <Card />
           </div>
         )}
