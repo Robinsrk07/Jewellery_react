@@ -33,6 +33,14 @@ import PaymentMethodes from './components/Employees/PaymentMethodes';
 import Genders from './components/Employees/Genders';
 import Positions from './components/Employees/Postitions';
 import CustomersList from './components/Cutomers/CustomersList.jsx';
+import Item from './components/Inventory/Item.jsx';
+import CreateItem from './components/Inventory/CreateItem.jsx';
+import Purchase from './components/Inventory/Gold/Purchase.jsx';
+import PurchaseFix from './components/Inventory/Gold/PurchaseFix.jsx';
+import ListPurchase from './components/Inventory/Gold/ListPurchase.jsx';
+import CreateGoldPurchase from './components/Inventory/Gold/CreateGoldPurchase.jsx';
+import CreateNewPurchase from './components/Inventory/Gold/CreateNewPurchase.jsx';
+import ViewPurchase from './components/Inventory/Gold/ViewPurchase.jsx';
 
 function App() {
   return (
@@ -78,6 +86,22 @@ function App() {
             <Route path='customers'>
               <Route path='customerslist' element={<CustomersList/>} />
             </Route>
+            <Route path='inventory'>
+              <Route path='item' element={<Item/>} />
+              <Route path='createItem' element={<CreateItem/>} />
+            
+              <Route path='gold'>
+                <Route path='purchase' element={<Purchase/>} />
+                <Route path='purchaseFix' element={<PurchaseFix/>} />
+                <Route path='ListPurchase' element={<ListPurchase/>} />
+                <Route path='creategoldpurchase' element={<CreateGoldPurchase/>} />
+                <Route path='createnewpurchase' element={<CreateNewPurchase/>} />
+                <Route path='viewpurchase' element={<ViewPurchase/>} />
+
+              
+             </Route>
+            </Route>
+            
             
           </Route>
         </Routes>

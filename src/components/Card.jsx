@@ -183,8 +183,20 @@ const Card = () => {
 
         {/* Menu items shown only when expanded */}
        <ul>
-        <li style={{ paddingLeft: '63px', paddingTop: '23px' }}><Link to='/dashboard/customers/customerslist'> Customers List</Link></li>
-  
+        <li style={{ paddingLeft: '63px', paddingTop: '23px' }}><Link to='/dashboard/inventory/item'>Item</Link></li>
+        <details  className='group' style={{ paddingLeft: '31px', paddingTop: '20px', }} >
+                   <summary className="list-none cursor-pointer flex items-center gap-2 text-sm" style={{paddingLeft: '30px'}} >
+                     Gold
+                     <span className=" text-xs text-gray-900 group-open:hidden" style={{paddingLeft:'10px',fontSize:'7px',width:'9px'}}>▼</span>
+                     <span className=" text-gray-900 hidden group-open:inline" style={{paddingLeft:'10px',fontSize:'7px',width:'9px'}}>▲</span>
+                   </summary>
+                   <ul className="flex flex-col gap-[20px] mt-2 text-gray-400 pl-6" >
+                    <li className="text-xs hover:text-blue-500 " style={{paddingLeft: '30px',marginTop:'10px'}} > <Link to='/dashboard/inventory/gold/purchase'>Purchase</Link></li>
+                     <li className="text-xs hover:text-blue-500" style={{paddingLeft: '30px'}}><Link to='/dashboard/inventory/gold/purchaseFix'>Purchase Fix</Link></li>
+                     <li className="text-xs hover:text-blue-500"  style={{paddingLeft: '30px'}} ><Link to='/dashboard/inventory/gold/ListPurchase'>List Purchase Fix</Link></li>
+                     
+                   </ul>
+                 </details>
        </ul>
        </details>
 
