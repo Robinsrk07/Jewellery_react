@@ -20,6 +20,7 @@ const CreateItem = () => {
             <label className="text-xs font-bold  text-[#344767]">Code</label>
                 <input
                 type="text"
+                required
                 placeholder="    Type here"
                 className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300"/>
             </div>
@@ -29,6 +30,7 @@ const CreateItem = () => {
           <label className="text-xs font-bold  text-[#344767]">Name</label>
             <input
               type="text"
+              required
               placeholder="    Type here"
               className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300" />
           </div>

@@ -6,6 +6,7 @@ import BreadCrump from './BreadCrump';
 
 const Body = () => {
   const [showSettings, setShowSettings] = useState(false);
+  const [showCard, setShowCard] = useState(true);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const panelRef = useRef();
   const navigate = useNavigate();
@@ -39,11 +40,19 @@ const Body = () => {
 
   return (
     <div className="h-screen  w-full bg-[linear-gradient(to_bottom,#5e72e4_45%,#EFF2F3_45%)]">
-     
+
+  <button
+    className="btn btn-primary w-[10vw] justify-center"
+    onClick={() => setShowCard(!showCard)}
+  >
+    bbb
+  </button>
+
+    
       <div className="flex h-full">
         
         {/* Conditionally render Card component based on window width */}
-        {windowWidth > 1100 && (
+        {(windowWidth > 1100 || showCard ) && (
           <div className="h-full " style={{ marginLeft: '25px', marginTop: '30px' }}>
             <Card />
           </div>

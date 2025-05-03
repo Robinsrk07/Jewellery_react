@@ -2,79 +2,12 @@
     
     
      import { useState } from "react";
-import { Link } from "react-router";
+     import { Link } from "react-router";
      const  Item = () => {
      
           
       const  [isHovered, setIsHovered] = useState(false);
                    const [items, setItems] = useState(10);
-                   const [formData, setFormData] = useState({
-                     name: '',
-                     email:'',
-                     status:'',
-                     phone:'',
-                     address:'',
-                     gender:''
-                   });
-                   const [errors, setErrors] = useState({});
-                 
-                       const handleChange = (e) => {
-                         const { name, value } = e.target;
-                         setFormData((prev) => ({ ...prev, [name]: value }));
-                         setErrors((prev) => ({ ...prev, [name]: '' })); 
-                       };
-      
-                    const [modal, setModal] = useState(false)   
-                    const [editModal,setEditModal]= useState(false)
-                 
-                   //validation 
-                   
-                   const validate = () => {
-                     const newErrors = {};
-                     if (!formData.gender.trim()) newErrors.gender = 'Please Enter Name';
-                     if (!formData.phone.trim()) newErrors.phone = 'Please Enter Name';
-                     if (!formData.name.trim()) newErrors.name = 'Please Enter Name';
-                     if (!formData.address.trim()) newErrors.address = 'Please Enter Name';
-                     if (!formData.description.trim()) newErrors.description = 'Enter the Description';
-                     if (!formData.status.trim()) newErrors.status = 'Enter Status';
-                     return newErrors;
-                   };    
-                 
-                   //handle submit
-                 
-                   const handleSubmit = (e) => {
-                     e.preventDefault();
-                     const validationErrors = validate();
-                     if (Object.keys(validationErrors).length > 0) {
-                       setErrors(validationErrors);
-                       return;
-                     }
-                 
-                     // Submit form
-                     console.log('Form submitted:', formData);
-                 
-                     // Reset form and close modal - Fixed to include all fields
-                     setFormData({
-                      name: '',
-                      email:'',
-                      status:'',
-                      phone:'',
-                      address:'',
-                      gender:''
-                     });
-                     setErrors({});
-                     setModal(false);
-                   };
-                  
-                   // Handle close modal
-                   const handleCloseModal = () => {
-                     setModal(false);
-                     setEditModal(false)
-                   };
-                 
-                 
-                 
-                 
                  
                    return (
                      
@@ -146,7 +79,7 @@ import { Link } from "react-router";
                           onMouseEnter={() => setIsHovered(true)}
                           onMouseLeave={() => setIsHovered(false)}
                         >
-                          + New Tax Category
+                          Create New Item
                         </button>
                       </Link>
                           </div>
@@ -178,7 +111,7 @@ import { Link } from "react-router";
                        " style={{ borderSpacing: '0 12px', borderCollapse: 'separate', }}>
                          <thead className="text-xs text-gray-400 uppercase bg-white">
                            <tr>
-                             <th className="px-6 py-3" style={{paddingLeft:'20px'}} >SL NO</th>
+                             <th className="px-6 py-3" style={{paddingLeft:'20px' ,width:'150px'}} >SL NO</th>
                              <th className="px-6 py-3 " style={{width:'150px'}} >CODE </th>
                              <th className="px-6 py-3 "  style={{width:'150px'}}>UNIQUE ID</th>
                              <th className="px-6 py-3   " style={{width:'150px'}} >NAME</th>
@@ -209,6 +142,7 @@ import { Link } from "react-router";
       
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
                                   <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                    <Link to='/dashboard/inventory/gold/updateitem'>
                                       <button
                                       type="button"
                                       className="btn text-white font-bold text-xs rounded-lg"
@@ -217,10 +151,9 @@ import { Link } from "react-router";
                                           padding: '5px',
                                           backgroundColor: '#696BE4',
                                       }}                              
-                                      onClick={()=>setEditModal(true)}
                                       >
                                       Edit
-                                      </button>
+                                      </button></Link>
               
                                       <button
                                       className="btn text-white font-bold text-xs rounded-lg"
@@ -348,298 +281,7 @@ import { Link } from "react-router";
                   </dialog>
                       </div>
       
-                      {modal && (
-                                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
-                                  <div className="bg-white rounded-xl shadow-md w-[90%]  max-h-[95vh]
-                                                sm:w-[85vw] sm:h-[75vh] sm:p-6
-                                                md:w-[65vw] md:h-[55vh] md:p-8
-                                                lg:w-[65vw] lg:h-[75vh] lg:p-10
-                                                xl:w-[37vw] xl:h-[95vh] xl:p-12
-                                                2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14
-                                                p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
-                                                
-                                                {/* Added flex-col */}
-                                    <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6 "
-                                        style={{paddingLeft:'20px', paddingTop:"20px"}}>
-                                         Create New Item                      </h3>
-                                    <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
-      
-                                    <div className="flex flex-col flex-grow"> {/* Added flex-grow */}
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                        Name:
-                                      </label>
-                                      <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.name}
-                                        onChange={(e)=>handleChange(e)}
-                                        name="name"
-                                      />
-                                      {errors.name && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.name}</span>}
-      
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                        Email:
-                                      </label>
-                                      <input type="text" 
-                                        placeholder="    email" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.email}
-                                        onChange={(e)=>handleChange(e)}
-                                        name="email"
-                                      />
-                                      {errors.email && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.email}</span>}
-      
-                                    
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                        Phone Number:
-                                      </label>
-                                      <input type="text" 
-                                        placeholder="    phone number" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.phone}
-                                        onChange={(e)=>handleChange(e)}
-                                        name="phone"
-                                      />
-                                      {errors.phone && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.phone}</span>}
-      
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                        Address:
-                                      </label>
-
-                                      <textarea className="textarea w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
-                                        placeholder="address" 
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.address}
-                                        onChange={(e)=>handleChange(e)}
-                                        
-                                        name="address"
-                                      ></textarea>
-      
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                        Gender:
-                                      </label>
-                                      <select defaultValue="   select Status"
-                                        className="select w-[90%] focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.gender}
-                                        name='gender'
-                                        onChange={(e)=>handleChange(e)}
-                                      >
-                                        <option  className="text-gray-400">select Status</option>
-                                        <option>MALE</option>
-                                        <option>FEMALE</option>
-                                      </select>
-                                      {errors.gender && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.gender}</span>}
-                                      
-                                      
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                        Status:
-                                      </label>
-                                      <select defaultValue="   select Status"
-                                        className="select w-[90%] focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.status}
-                                        name='status'
-                                        onChange={(e)=>handleChange(e)}
-                                      >
-                                        <option  className="text-gray-400">select Status</option>
-                                        <option>ACTIVE</option>
-                                        <option>INACTIVE</option>
-                                      </select>
-                                      {errors.status && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.status}</span>}
-                                    </div> {/* End of flex-grow container */}
-      
-                                    {/* Button container positioned 10px above bottom */}
-                                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
-                                        style={{marginTop: 'auto', marginBottom: '10px', paddingLeft: '200px'}}>
-                                      <button
-                                        type="button"
-                                        className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
-                                        style={{ backgroundColor: '#8392ab' }}
-                                        onClick={(e) => handleSubmit(e)}
-                                      >
-                                        Submit
-                                      </button>
-                                      <button
-                                        type="button"
-                                        className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
-                                        style={{ backgroundColor: '#5E72e4' }}
-                                        onClick={handleCloseModal}
-                                      >
-                                        Close
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                                   )}      
-      
-      
-                      {editModal && (
-                                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
-                                  <div className="bg-white rounded-xl shadow-md w-[90%]  max-h-[95vh]
-                                                sm:w-[85vw] sm:h-[75vh] sm:p-6
-                                                md:w-[65vw] md:h-[55vh] md:p-8
-                                                lg:w-[65vw] lg:h-[75vh] lg:p-10
-                                                xl:w-[37vw] xl:h-[95vh] xl:p-12
-                                                2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14
-                                                p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
-                                                
-                                                {/* Added flex-col */}
-                                    <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6 "
-                                        style={{paddingLeft:'20px', paddingTop:"20px"}}>
-                                         Edit Customer Detials                        </h3>
-                                    <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
-      
-                                    <div className="flex flex-col flex-grow"> {/* Added flex-grow */}
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                        Name:
-                                      </label>
-                                      <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.name}
-                                        onChange={(e)=>handleChange(e)}
-                                        name="name"
-                                      />
-                                      {errors.name && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.name}</span>}
-      
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                        Email:
-                                      </label>
-                                      <input type="text" 
-                                        placeholder="    email" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.email}
-                                        onChange={(e)=>handleChange(e)}
-                                        name="email"
-                                      />
-                                      {errors.email && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.email}</span>}
-      
-                                    
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                        Phone Number:
-                                      </label>
-                                      <input type="text" 
-                                        placeholder="    phone number" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.phone}
-                                        onChange={(e)=>handleChange(e)}
-                                        name="phone"
-                                      />
-                                      {errors.phone && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.phone}</span>}
-      
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                        Address:
-                                      </label>
-
-                                      <textarea className="textarea w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
-                                        placeholder="address" 
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.address}
-                                        onChange={(e)=>handleChange(e)}
-                                        
-                                        name="address"
-                                      ></textarea>
-      
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                        Gender:
-                                      </label>
-                                      <select defaultValue="   select Status"
-                                        className="select w-[90%] focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.gender}
-                                        name='gender'
-                                        onChange={(e)=>handleChange(e)}
-                                      >
-                                        <option  className="text-gray-400">select Status</option>
-                                        <option>MALE</option>
-                                        <option>FEMALE</option>
-                                      </select>
-                                      {errors.gender && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.gender}</span>}
-                                      
-                                      
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                        Status:
-                                      </label>
-                                      <select defaultValue="   select Status"
-                                        className="select w-[90%] focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.status}
-                                        name='status'
-                                        onChange={(e)=>handleChange(e)}
-                                      >
-                                        <option  className="text-gray-400">select Status</option>
-                                        <option>ACTIVE</option>
-                                        <option>INACTIVE</option>
-                                      </select>
-                                      {errors.status && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.status}</span>}
-                                    </div> {/* End of flex-grow container */}
-      
-                                    {/* Button container positioned 10px above bottom */}
-                                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
-                                        style={{marginTop: 'auto', marginBottom: '10px', paddingLeft: '200px'}}>
-                                      <button
-                                        type="button"
-                                        className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
-                                        style={{ backgroundColor: '#8392ab' }}
-                                        onClick={(e) => handleSubmit(e)}
-                                      >
-                                        Submit
-                                      </button>
-                                      <button
-                                        type="button"
-                                        className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
-                                        style={{ backgroundColor: '#5E72e4' }}
-                                        onClick={handleCloseModal}
-                                      >
-                                        Close
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                                   )}
+                     
       
                          
                     </>)

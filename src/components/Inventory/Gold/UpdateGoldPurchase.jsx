@@ -1,10 +1,5 @@
 
-
-
-
-
-
-const CreateNewPurchase = () => {
+const UpdateGoldPurchase = () => {
     return (
       <div 
         className="bg-white w-full
@@ -367,7 +362,7 @@ const CreateNewPurchase = () => {
     );
   };
   
-  export default CreateNewPurchase
+  export default UpdateGoldPurchase
 
 
 

@@ -41,6 +41,8 @@ import ListPurchase from './components/Inventory/Gold/ListPurchase.jsx';
 import CreateGoldPurchase from './components/Inventory/Gold/CreateGoldPurchase.jsx';
 import CreateNewPurchase from './components/Inventory/Gold/CreateNewPurchase.jsx';
 import ViewPurchase from './components/Inventory/Gold/ViewPurchase.jsx';
+import UpdateGoldPurchase from './components/Inventory/Gold/UpdateGoldPurchase.jsx';
+import UpdateItem from './components/Inventory/UpdateItem.jsx';
 
 function App() {
   return (
@@ -97,6 +99,8 @@ function App() {
                 <Route path='creategoldpurchase' element={<CreateGoldPurchase/>} />
                 <Route path='createnewpurchase' element={<CreateNewPurchase/>} />
                 <Route path='viewpurchase' element={<ViewPurchase/>} />
+                <Route path='updatepurchase' element={<UpdateGoldPurchase/>} />
+                <Route path='updateitem' element={<UpdateItem/>} />
 
               
              </Route>

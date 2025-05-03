@@ -355,11 +355,11 @@ const CreateGoldPurchase = () => {
   
         </div>
         <div className="flex  w-full h-[20vh]  mt-4 justify-center text-white items-center" >  {/* Container div */}
-            <button className="btn text-white  bg-blue-700  w-full  sm:w-1/4 md:w-[10vw] rounded-lg">
+            <button className="btn text-white text-xs bg-blue-700  w-full  sm:w-1/4 md:w-[10vw] rounded-lg">
               Save
             </button>
-            <button className="btn text-white  bg-blue-700  w-full  sm:w-1/4 md:w-[10vw] rounded-lg">
-              Save $ Continue
+            <button className="btn text-white text-xs  bg-blue-700  w-full  sm:w-1/4 md:w-[15vw] rounded-lg">
+              Save & Continue Adding
             </button>
          </div>
       </div>

@@ -149,7 +149,7 @@
                           onMouseEnter={() => setIsHovered(true)}
                           onMouseLeave={() => setIsHovered(false)}
                         >
-                          + New Tax Category
+                          + Purchase
                         </button>
                       </Link>
                           </div>
@@ -177,7 +177,7 @@
                  
                        
                  
-                       <table className="table w-full text-sm text-left text-gray-500 border-collapse min-w-[4000px]
+                       <table className="table w-full text-sm text-left text-gray-500 border-collapse min-w-[5000px]
                        " style={{ borderSpacing: '0 12px', borderCollapse: 'separate', }}>
                          <thead className="text-xs text-gray-400 uppercase bg-white">
                            <tr>
@@ -224,22 +224,49 @@
                          <tbody>
                            
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               {/* <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">INV-000001 </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">GOLD_SUPPLIER_DUBAI </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">20.000 </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">50.00 </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">916.00 </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">None %</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">$ 200.000000000 </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">$ 180.00 </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">$ 1800.00</td>
-                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">1</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">GOLD-BAR-001 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">None </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">None </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">None</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">None </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">None</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">None </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">None</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">None</td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">None</td>
                                  <td className="px-6 py-5 border-b border-gray-200 text-xs">April 9, 2025, 12:35 p.m.</td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">10.000000000 %</td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">$ 10.000000000</td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">10.000</td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">$ 0.000000000</td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">$ 200.000000000</td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">$ 10.000000000</td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">10.00</td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">50.00</td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">916.00</td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">$ 18180.000000000</td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">$ 1800.000000000</td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">$ 0.000000000</td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">$ 180.000000000</td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">1.00 %</td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">$</td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">$ 200.000000000</td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">GOLD_BAR00001</td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs"></td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs"></td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs"></td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs"></td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs"></td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs"></td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs"></td>
+                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
+                               </td> 
       
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
                                   <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                      <Link to="/dashboard/inventory/gold/createnewpurchase">
+                                      <Link to="/dashboard/inventory/gold/updatepurchase">
                                       <button
                                       type="button"
                                       className="btn text-white font-bold text-xs rounded-lg"
@@ -249,21 +276,11 @@
                                           backgroundColor: '#696BE4',
                                       }}                              
                                       >
-                                      New Purchase
+                                      Edit Purchase
                                       </button></Link>
-                                      <Link to="/dashboard/inventory/gold/viewpurchase">
-                                      <button
-                                      className="btn text-white w-full font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '200px',
-                                          padding: '5px',
-                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-                                      }}
-                                      >
-                                      view Purchase
-                                      </button></Link>
+                                     
                                   </div>
-                                  </td> */}
+                                  </td>
                              </tr>
                             
                             
