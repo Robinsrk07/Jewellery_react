@@ -43,7 +43,12 @@ import CreateNewPurchase from './components/Inventory/Gold/CreateNewPurchase.jsx
 import ViewPurchase from './components/Inventory/Gold/ViewPurchase.jsx';
 import UpdateGoldPurchase from './components/Inventory/Gold/UpdateGoldPurchase.jsx';
 import UpdateItem from './components/Inventory/UpdateItem.jsx';
-
+import SettingsTax from './components/Settings/SettingsTax.jsx';
+import Currency from './components/Settings/Currency.jsx';
+import UnitOfMeasures from './components/Settings/UnitOfMeasures.jsx';
+import TermsOfPayment from './components/Settings/TermsOfPayment.jsx';
+import GroupAndPermission from './components/Group&Permission/GroupAndPermission.jsx';
+import ManagePermissions from './components/Group&Permission/ManagePermissions.jsx';
 function App() {
   return (
     <div className="w-full h-full m-0 p-0">
@@ -51,7 +56,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/dashboard' element={<Body />} >
-          <Route path='manage'>
+            <Route path='manage'>
               <Route path='item_type' element={<List_item_Type />} />
               <Route path='jewellery_type' element={<Jewellery_Type />} />
               <Route path='category' element={<Category />} />
@@ -91,7 +96,6 @@ function App() {
             <Route path='inventory'>
               <Route path='item' element={<Item/>} />
               <Route path='createItem' element={<CreateItem/>} />
-            
               <Route path='gold'>
                 <Route path='purchase' element={<Purchase/>} />
                 <Route path='purchaseFix' element={<PurchaseFix/>} />
@@ -101,12 +105,21 @@ function App() {
                 <Route path='viewpurchase' element={<ViewPurchase/>} />
                 <Route path='updatepurchase' element={<UpdateGoldPurchase/>} />
                 <Route path='updateitem' element={<UpdateItem/>} />
-
-              
-             </Route>
+              </Route>
             </Route>
-            
-            
+            <Route path='settings'>
+              <Route path='tradesettings'>
+                <Route path='tax' element={<SettingsTax/>} />
+                <Route path='currency' element={<Currency/>} />
+                <Route path='uom' element={<UnitOfMeasures/>} />
+                <Route path='termsofpayment' element={<TermsOfPayment/>} />
+              </Route>
+              <Route path='groupandpermissions'>
+                <Route path='group' element={<GroupAndPermission/>} />
+                <Route path='managepermissions' element={<ManagePermissions/>} />
+                
+              </Route>
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>

@@ -1,7 +1,10 @@
+
+
+
  
      import { useState } from "react";
      
-     const  EmployeeList = () => {
+     const  Currency = () => {
      
           
       const  [isHovered, setIsHovered] = useState(false);
@@ -138,7 +141,7 @@
                               onMouseLeave={() => setIsHovered(false)}
                               onClick={() => setModal(true)}
                               >
-                              + New Employee
+                              + New Currency
                               </button>
                           </div>
                  
@@ -165,30 +168,26 @@
                  
                        
                  
-                       <table className="table w-full text-sm text-left text-gray-500 border-collapse min-w-[1220px]  " style={{ borderSpacing: '0 12px', borderCollapse: 'separate', }}>
+                       <table className="table w-full text-sm text-left text-gray-500 border-collapse min-w-[1100px]  " style={{ borderSpacing: '0 12px', borderCollapse: 'separate', }}>
                          <thead className="text-xs text-gray-400 uppercase bg-white">
                            <tr>
                              <th className="px-6 py-3" style={{width:'90px',paddingLeft:'20px'}} >SL NO</th>
-                             <th className="px-6 py-3" style={{width:'100px'}} >NAME </th>
-                             <th className="px-6 py-3" style={{width:'100px'}} >GENDER </th>
-                             <th className="px-6 py-3" style={{width:'90px'}}>DEPARTMENT</th>
-                             <th className="px-6 py-3" style={{width:'90px'}} >POSITION</th>
-                             <th className="px-6 py-3" style={{width:'90px'}} >SALARY</th>
-                             <th className="px-6 py-3" style={{width:'100px'}} >BANK ACCOUNT</th>
-                             <th className="px-6 py-3" style={{width:'100px'}} >STATUS</th>
-                             <th className="px-6 py-3" style={{width:'90px'}} >ACTION</th>
+                             <th className="px-6 py-3"  >CODE</th>
+                             <th className="px-6 py-3"  >NAME </th>
+                             <th className="px-6 py-3" >EXCHANGE RATE </th>
+                             <th className="px-6 py-3"  >SYMBOL</th>
+                             <th className="px-6 py-3"  >STATUS</th>
+                             <th className="px-6 py-3"  >ACTION</th>
                            </tr>
                          </thead>
                          <tbody>
                            
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NAME </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">GENDER </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">DEPARTMENT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">POSITION </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SALARY </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">BANK ACCOUNT </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">USD </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">US Dollar </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">1.0000</td>
+                               <td className="px-6 py-5 border-b border-gray-200  text-red-500 text-xs">$</td>
                               
                                <td className="px-6 py-5 border-b border-gray-200 text-xs">
                                <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
@@ -212,18 +211,19 @@
                                       <button
                                       className="btn text-white font-bold text-xs rounded-lg"
                                       style={{
-                                          width: '100px',
+                                          width: '150px',
                                           padding: '5px',
                                           background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
                                       }}
                                       onClick={()=>document.getElementById('my_modal_8').showModal()}
       
                                       >
-                                      Delete 
+                                      Delete Currency
                                       </button>
                                   </div>
                                   </td>
                              </tr>
+                             
                             
                             
                              
@@ -340,355 +340,251 @@
                                 <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
                                   <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
                                                 sm:w-[85vw] sm:h-[75vh] sm:p-6
-                                                md:w-[65vw] md:h-[55vh] md:p-8
-                                                lg:w-[65vw] lg:h-[75vh] lg:p-10
-                                                xl:w-[42vw] xl:h-[95vh] xl:p-12
+                                                md:w-[65vw] md:h-[65vh] md:p-8
+                                                lg:w-[55vw] lg:h-[75vh] lg:p-10
+                                                xl:w-[35vw] xl:h-[95vh] xl:p-12
                                                 2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14
                                                 p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
                                                 
                                                 {/* Added flex-col */}
                                     <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
                                         style={{paddingLeft:'20px', paddingTop:"20px"}}>
-                                         Create Employee                           </h3>
+                                         Create Currency                           </h3>
                                     <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
       
                                     <div className="flex flex-col flex-grow"> {/* Added flex-grow */}
+                                   
                                       <label 
                                         style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
                                         className="font-semibold text-sm text-[#344767] w-[80%]"
                                       >
-                                        Name:
+                                       code:
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
                                         className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
-                                        value={formData.name}
                                         onChange={(e)=>handleChange(e)}
-                                        name="name"
+                                        name=""
                                       />
-                                      {errors.name && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.name}</span>}
-      
-                                    
-      
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                        Gender:
-                                      </label>
-                                      <select defaultValue="   select Status"
-                                        className="select w-[90%] focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.status}
-                                        name='gender'
-                                        onChange={(e)=>handleChange(e)}
-                                      >
-                                        <option className=" text-gray-400">select Status</option>
-                                        <option className=" text-gray-400">male </option>
-                                        <option className=" text-gray-400">female</option>
-                                      </select>
-                                      {errors.gender && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.gender}</span>}
-                                     
-                                     
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                       Department:
-                                      </label>
-                                      <select defaultValue="select Department"
-                                        className="select w-full max-w-full focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.department}
-                                        name='department'
-                                        onChange={(e)=>handleChange(e)}
-                                      >
-                                        <option  className=" text-gray-400">select Department</option>
-                                        <option className=" text-gray-400">ABC </option>
-                                        <option className=" text-gray-400">EFG</option>
-                                      </select>
-                                      {errors.department && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.department}</span>}
-                                      
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                       Position:
-                                      </label>
-                                      <select defaultValue="select Position"
-                                        className="select w-[90%] focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.department}
-                                        name='position'
-                                        onChange={(e)=>handleChange(e)}
-                                      >
-                                        <option  className=" text-gray-400">select Position</option>
-                                        <option className=" text-gray-400">ABC </option>
-                                        <option className=" text-gray-400">EFG</option>
-                                      </select>
-                                      {errors.position && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.position}</span>}
-
-
                                       <label 
                                         style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
                                         className="font-semibold text-sm text-[#344767] w-[80%]"
                                       >
-                                        Salary:
+                                       Name:
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
                                         className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
-                                        value={formData.salary}
                                         onChange={(e)=>handleChange(e)}
-                                        name="salary"
+                                        name=""
                                       />
-                                      {errors.salary && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.salary}</span>}
-                                     
-                                     
-                                      <label 
+
+
+                            
+                                            <label 
+                                            style={{ paddingLeft: '25px', marginTop: '20px', marginBottom: '10px', display: 'block' }}
+                                            className="font-semibold text-sm text-[#344767] w-[80%]"
+                                            >
+                                            Exchange rate:
+                                            </label>
+
+                                            <input 
+                                                type="number" 
+                                                name="input_tax"  // Must match your formData key
+                                                placeholder="Type here" 
+                                                className="input w-[90%] rounded-lg border border-gray-300 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                                style={{ marginLeft: '25px', padding: '8px 12px' }}
+                                                value={formData.input_tax || ''}
+                                                onChange={handleChange}
+                                                step="1"  // For decimal values if needed
+                                                />
+
+                                        <label 
                                         style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
                                         className="font-semibold text-sm text-[#344767] w-[80%]"
                                       >
-                                        Bank Account Number:
+                                      Symbol:
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
                                         className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
-                                        value={formData.bankaccountnumber}
                                         onChange={(e)=>handleChange(e)}
-                                        name="bankaccountnumber"
+                                        name=""
                                       />
-                                      {errors.bankaccountnumber && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.bankaccountnumber}</span>}
-                                        
-                                         
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                       Status:
-                                      </label>
-                                      <select defaultValue="select Position"
-                                        className="select w-[90%] focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.status}
-                                        name='status'
-                                        onChange={(e)=>handleChange(e)}
-                                      >
-                                        <option  className=" text-gray-400">select status</option>
-                                        <option className=" text-gray-400">Active </option>
-                                        <option className=" text-gray-400">Inactive</option>
-                                      </select>
-                                      {errors.status && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.status}</span>}
-                                      
-                                    </div> 
-      
 
-
-                                    {/* Button container positioned 10px above bottom */}
-                                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
-                                        style={{marginTop: 'auto', marginBottom: '10px', paddingLeft: '200px'}}>
-                                      <button
-                                        type="button"
-                                        className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
-                                        style={{ backgroundColor: '#8392ab' }}
-                                        onClick={(e) => handleSubmit(e)}
-                                      >
-                                        Submit
-                                      </button>
-                                      <button
-                                        type="button"
-                                        className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
-                                        style={{ backgroundColor: '#5E72e4' }}
-                                        onClick={handleCloseModal}
-                                      >
-                                        Close
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                         )}      
+                                           
+                                            <label 
+                                                style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
+                                                className="font-semibold text-sm text-[#344767] w-[80%]"
+                                            >
+                                                Status:
+                                            </label>
+                                            <select defaultValue=""
+                                                className="select w-[90%] h-[35px] focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                                                style={{marginLeft:'25px'}}
+                                                value={formData.status}
+                                                name=''
+                                                onChange={(e)=>handleChange(e)}
+                                            >
+                                                <option className=" text-gray-600"></option>
+                                                <option className=" text-gray-600"> Active</option>
+                                                <option className=" text-gray-600"> InActive</option>
+                                            </select>
+            
+                                            </div> 
+                                            {/* Button container positioned 10px above bottom */}
+                                            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
+                                                style={{marginTop: '20px', marginBottom: '10px',  paddingLeft: '200px'}}>
+                                            <button
+                                                type="button"
+                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                style={{ backgroundColor: '#8392ab' }}
+                                                onClick={(e) => handleSubmit(e)}
+                                            >
+                                                Submit
+                                            </button>
+                                            <button
+                                                type="button"
+                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                style={{ backgroundColor: '#5E72e4' }}
+                                                onClick={handleCloseModal}
+                                            >
+                                                Close
+                                            </button>
+                                            </div>
+                                        </div>
+                                        </div>
+                                )}      
       
       
-                      {editModal && (
+                      {editModal &&  (
                                 <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
                                   <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
                                                 sm:w-[85vw] sm:h-[75vh] sm:p-6
-                                                md:w-[65vw] md:h-[55vh] md:p-8
-                                                lg:w-[65vw] lg:h-[75vh] lg:p-10
-                                                xl:w-[42vw] xl:h-[95vh] xl:p-12
+                                                md:w-[65vw] md:h-[65vh] md:p-8
+                                                lg:w-[55vw] lg:h-[75vh] lg:p-10
+                                                xl:w-[35vw] xl:h-[95vh] xl:p-12
                                                 2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14
                                                 p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
                                                 
                                                 {/* Added flex-col */}
                                     <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
                                         style={{paddingLeft:'20px', paddingTop:"20px"}}>
-                                         Create Employee                           </h3>
+                                         Create Currency                           </h3>
                                     <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
       
                                     <div className="flex flex-col flex-grow"> {/* Added flex-grow */}
+                                   
                                       <label 
                                         style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
                                         className="font-semibold text-sm text-[#344767] w-[80%]"
                                       >
-                                        Name:
+                                       code:
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
                                         className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
-                                        value={formData.name}
                                         onChange={(e)=>handleChange(e)}
-                                        name="name"
+                                        name=""
                                       />
-                                      {errors.name && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.name}</span>}
-      
-                                    
-      
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                        Gender:
-                                      </label>
-                                      <select defaultValue="   select Status"
-                                        className="select w-[90%] focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.status}
-                                        name='gender'
-                                        onChange={(e)=>handleChange(e)}
-                                      >
-                                        <option className=" text-gray-400">select Status</option>
-                                        <option className=" text-gray-400">male </option>
-                                        <option className=" text-gray-400">female</option>
-                                      </select>
-                                      {errors.gender && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.gender}</span>}
-                                     
-                                     
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                       Department:
-                                      </label>
-                                      <select defaultValue="select Department"
-                                        className="select w-[90%] focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.department}
-                                        name='department'
-                                        onChange={(e)=>handleChange(e)}
-                                      >
-                                        <option  className=" text-gray-400">select Department</option>
-                                        <option className=" text-gray-400">ABC </option>
-                                        <option className=" text-gray-400">EFG</option>
-                                      </select>
-                                      {errors.department && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.department}</span>}
-                                      
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                       Position:
-                                      </label>
-                                      <select defaultValue="select Position"
-                                        className="select w-[90%] focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.department}
-                                        name='position'
-                                        onChange={(e)=>handleChange(e)}
-                                      >
-                                        <option  className=" text-gray-400">select Position</option>
-                                        <option className=" text-gray-400">ABC </option>
-                                        <option className=" text-gray-400">EFG</option>
-                                      </select>
-                                      {errors.position && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.position}</span>}
-
-
                                       <label 
                                         style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
                                         className="font-semibold text-sm text-[#344767] w-[80%]"
                                       >
-                                        Salary:
+                                       Name:
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
                                         className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
-                                        value={formData.salary}
                                         onChange={(e)=>handleChange(e)}
-                                        name="salary"
+                                        name=""
                                       />
-                                      {errors.salary && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.salary}</span>}
-                                     
-                                     
-                                      <label 
+
+
+                            
+                                            <label 
+                                            style={{ paddingLeft: '25px', marginTop: '20px', marginBottom: '10px', display: 'block' }}
+                                            className="font-semibold text-sm text-[#344767] w-[80%]"
+                                            >
+                                            Exchange rate:
+                                            </label>
+
+                                            <input 
+                                                type="number" 
+                                                name="input_tax"  // Must match your formData key
+                                                placeholder="Type here" 
+                                                className="input w-[90%] rounded-lg border border-gray-300 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                                style={{ marginLeft: '25px', padding: '8px 12px' }}
+                                                value={formData.input_tax || ''}
+                                                onChange={handleChange}
+                                                step="1"  // For decimal values if needed
+                                                />
+
+                                        <label 
                                         style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
                                         className="font-semibold text-sm text-[#344767] w-[80%]"
                                       >
-                                        Bank Account Number:
+                                      Symbol:
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
                                         className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
-                                        value={formData.bankaccountnumber}
                                         onChange={(e)=>handleChange(e)}
-                                        name="bankaccountnumber"
+                                        name=""
                                       />
-                                      {errors.bankaccountnumber && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.bankaccountnumber}</span>}
-                                        
-                                         
-                                      <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
-                                      >
-                                       Status:
-                                      </label>
-                                      <select defaultValue="select Position"
-                                        className="select w-[90%] focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
-                                        value={formData.status}
-                                        name='status'
-                                        onChange={(e)=>handleChange(e)}
-                                      >
-                                        <option  className=" text-gray-400">select status</option>
-                                        <option className=" text-gray-400">Active </option>
-                                        <option className=" text-gray-400">Inactive</option>
-                                      </select>
-                                      {errors.status && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.status}</span>}
-                                      
-                                    </div> 
-      
 
-
-                                    {/* Button container positioned 10px above bottom */}
-                                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
-                                        style={{marginTop: 'auto', marginBottom: '10px', paddingLeft: '200px'}}>
-                                      <button
-                                        type="button"
-                                        className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
-                                        style={{ backgroundColor: '#8392ab' }}
-                                        onClick={(e) => handleSubmit(e)}
-                                      >
-                                        Submit
-                                      </button>
-                                      <button
-                                        type="button"
-                                        className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
-                                        style={{ backgroundColor: '#5E72e4' }}
-                                        onClick={handleCloseModal}
-                                      >
-                                        Close
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                         )}
+                                           
+                                            <label 
+                                                style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
+                                                className="font-semibold text-sm text-[#344767] w-[80%]"
+                                            >
+                                                Status:
+                                            </label>
+                                            <select defaultValue=""
+                                                className="select w-[90%] h-[35px] focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                                                style={{marginLeft:'25px'}}
+                                                value={formData.status}
+                                                name=''
+                                                onChange={(e)=>handleChange(e)}
+                                            >
+                                                <option className=" text-gray-600"></option>
+                                                <option className=" text-gray-600"> Active</option>
+                                                <option className=" text-gray-600"> InActive</option>
+                                            </select>
+            
+                                            </div> 
+                                            {/* Button container positioned 10px above bottom */}
+                                            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
+                                                style={{marginTop: '20px', marginBottom: '10px',  paddingLeft: '200px'}}>
+                                            <button
+                                                type="button"
+                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                style={{ backgroundColor: '#8392ab' }}
+                                                onClick={(e) => handleSubmit(e)}
+                                            >
+                                                Submit
+                                            </button>
+                                            <button
+                                                type="button"
+                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                style={{ backgroundColor: '#5E72e4' }}
+                                                onClick={handleCloseModal}
+                                            >
+                                                Close
+                                            </button>
+                                            </div>
+                                        </div>
+                                        </div>
+                                )}
       
                          
                     </>)
      }
      
-     export default EmployeeList;
+     export default Currency;

@@ -14,7 +14,7 @@ const Jewellery_Type = () => {
 
   const [errors, setErrors] = useState({});
   const [isHovered, setIsHovered] = useState(false);
-  const [items,setItems]= useState(0)
+  const [items,setItems]= useState(0) 
     
   
 

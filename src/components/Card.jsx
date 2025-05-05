@@ -33,13 +33,14 @@ const Card = () => {
   return (
     <div className="bg-white rounded-2xl w-[250px] h-[90vh]" style={{ fontFamily: 'Open Sans', overflow: 'auto' }}>
       {/* Logo and Dashboard title */}
-      <div className="pt-[25px] pl-[65px] flex items-center gap-2 font-semibold text-[14px] text-gray-500" style={{ paddingLeft: '30px', paddingTop: '25px' }}>
+      
+      <div className="pt-[25px] pl-[65px] flex  items-center gap-2 font-semibold text-[14px] text-gray-500" style={{ paddingLeft: '30px', paddingTop: '25px' }}>
         <img src={Logo} alt="Logo" className="w-[30px] h-[30px]" />
         <span>Dashboard</span>
       </div>
 
       {/* Divider line */}
-      <div style={{ padding: '20px', paddingLeft: '35px' }}>
+      <div className='' style={{ padding: '20px', paddingLeft: '35px' }}>
         <hr className="border-gray-200" style={{ width: '95%' }} />
       </div>
 
@@ -63,7 +64,7 @@ const Card = () => {
 
           {openSections.manage && (
             <ul>
-              <li style={{ paddingLeft: '63px', paddingTop: '23px' }}><Link to='/dashboard/manage/item_type'>Item Type</Link></li>
+              <li style={{ paddingLeft: '63px', paddingTop: '23px' }}><Link to='/dashboard/manage/item_type' className='hover:text-black'>Item Type</Link></li>
               <li style={{ paddingLeft: '63px', paddingTop: '20px' }}><Link to="/dashboard/manage/jewellery_type">Jewellery Type</Link></li>
               
               {/* Product Management Subsection */}
@@ -306,9 +307,10 @@ const Card = () => {
                 
                 {openSections.tradeSettings && (
                   <ul className="flex flex-col gap-[20px] mt-2 text-gray-400 pl-6">
-                    <li className="text-xs hover:text-blue-500" style={{ paddingLeft: '30px', marginTop: '10px' }}><Link to='/dashboard/inventory/gold/purchase'>Purchase</Link></li>
-                    <li className="text-xs hover:text-blue-500" style={{ paddingLeft: '30px' }}><Link to='/dashboard/inventory/gold/purchaseFix'>Purchase Fix</Link></li>
-                    <li className="text-xs hover:text-blue-500" style={{ paddingLeft: '30px' }}><Link to='/dashboard/inventory/gold/ListPurchase'>List Purchase Fix</Link></li>
+                    <li className="text-xs hover:text-blue-500" style={{ paddingLeft: '30px', marginTop: '10px' }}><Link to='/dashboard/settings/tradesettings/tax'>Tax</Link></li>
+                    <li className="text-xs hover:text-blue-500" style={{ paddingLeft: '30px' }}><Link to='/dashboard/settings/tradesettings/currency'>Currency</Link></li>
+                    <li className="text-xs hover:text-blue-500" style={{ paddingLeft: '30px' }}><Link to='/dashboard/settings/tradesettings/uom'>UOM</Link></li>
+                    <li className="text-xs hover:text-blue-500" style={{ paddingLeft: '30px' }}><Link to='/dashboard/settings/tradesettings/termsofpayment'>Terms Of Payment</Link></li>
                   </ul>
                 )}
               </div>
@@ -328,9 +330,8 @@ const Card = () => {
                 
                 {openSections.groupPermissions && (
                   <ul className="flex flex-col gap-[20px] mt-2 text-gray-400 pl-6">
-                    <li className="text-xs hover:text-blue-500" style={{ paddingLeft: '30px', marginTop: '10px' }}><Link to='/dashboard/inventory/gold/purchase'>Purchase</Link></li>
-                    <li className="text-xs hover:text-blue-500" style={{ paddingLeft: '30px' }}><Link to='/dashboard/inventory/gold/purchaseFix'>Purchase Fix</Link></li>
-                    <li className="text-xs hover:text-blue-500" style={{ paddingLeft: '30px' }}><Link to='/dashboard/inventory/gold/ListPurchase'>List Purchase Fix</Link></li>
+                    <li className="text-xs hover:text-blue-500" style={{ paddingLeft: '30px', marginTop: '10px' }}><Link to='/dashboard/settings/groupandpermissions/group'>Groups</Link></li>
+                    
                   </ul>
                 )}
               </div>
