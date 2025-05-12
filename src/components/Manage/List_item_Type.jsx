@@ -155,9 +155,9 @@ const List_item_Type = () => {
                 </tr>
                 <tr className="bg-white hover:bg-gray-50 text-xs" style={{height:'50px'}}>
                   <td className="px-6 py-5 border-b border-gray-200 text-gray-400"  style={{paddingLeft:'20px'}}>2</td>
-                  <td className="px-6 py-5 border-b border-gray-200 text-gray-400">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200 text-gray-400">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200 text-gray-400">Gold</td>
+                  <td className="px-6 py-5 border-b border-gray-200 text-gray-400">Diamond</td>
+                  <td className="px-6 py-5 border-b border-gray-200 text-gray-400">Diamond</td>
+                  <td className="px-6 py-5 border-b border-gray-200 text-gray-400">Diamond</td>
                   <td className="px-6 py-5 border-b border-gray-200 text-gray-400">
                     <span className="bg-green-200 text-green-800 text-[9px] font-bold font-semibold px-2.5 py-0.5 rounded">
                       ACTIVE

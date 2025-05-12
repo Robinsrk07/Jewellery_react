@@ -107,7 +107,7 @@
                  
                        
                  
-                       <table className="table w-full text-sm text-left text-gray-500 border-collapse min-w-[1200px]
+                       <table className="table w-full text-sm text-left text-gray-500 border-collapse min-w-[2200px]
                        " style={{ borderSpacing: '0 12px', borderCollapse: 'separate', }}>
                          <thead className="text-xs text-gray-400 uppercase bg-white">
                            <tr>
@@ -128,14 +128,14 @@
                            
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">CODE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UNIQUE ID </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NAME </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">ITEM TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">CATEGORY </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">JEWELLERY TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">MAKING CALCULATION ON </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">BRD-NKL-22K-001 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">BRD-NKL00001 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">22K Gold Bridal Necklace </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gram </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Bridal Jewellery </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Necklace </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">gross_weight </td>
                                <td className="px-6 py-5 border-b border-gray-200 text-xs">
                                <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
                                </td> 
@@ -164,7 +164,136 @@
                                       }}
                                       onClick={()=>document.getElementById('my_modal_8').showModal()}
                                       >
-                                      Delete 
+                                      Delete  Item
+                                      </button>
+                                  </div>
+                                  </td>
+                             </tr>
+                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>2</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">EVD-PND-18K-002 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">EVD-PND00002 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">18K Gold Everyday Wear Pendant </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gram </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Everyday Wear </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Necklace </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">net_weight </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
+                               </td> 
+      
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                    <Link to='/dashboard/inventory/gold/updateitem'>
+                                      <button
+                                      type="button"
+                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      style={{
+                                          width: '100px',
+                                          padding: '5px',
+                                          backgroundColor: '#696BE4',
+                                      }}                              
+                                      >
+                                      Edit
+                                      </button></Link>
+              
+                                      <button
+                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      style={{
+                                          width: '100px',
+                                          padding: '5px',
+                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                      }}
+                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
+                                      >
+                                      Delete Item
+                                      </button>
+                                  </div>
+                                  </td>
+                             </tr>
+                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>3</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">LUX-RNG-14K-003 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">LUX-RNG00003 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">14K Gold Designer Cocktail Ring </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gram </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Luxury & Designer Jewellery </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Ring </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">gross_weight </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
+                               </td> 
+      
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                    <Link to='/dashboard/inventory/gold/updateitem'>
+                                      <button
+                                      type="button"
+                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      style={{
+                                          width: '100px',
+                                          padding: '5px',
+                                          backgroundColor: '#696BE4',
+                                      }}                              
+                                      >
+                                      Edit
+                                      </button></Link>
+              
+                                      <button
+                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      style={{
+                                          width: '100px',
+                                          padding: '5px',
+                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                      }}
+                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
+                                      >
+                                      Delete Item
+                                      </button>
+                                  </div>
+                                  </td>
+                             </tr>
+                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>4</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">GOLD-BAR-001</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">GOLD_BAR00004 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold Bar</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gram </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold Bar </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">gross_weight </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
+                               </td> 
+      
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                    <Link to='/dashboard/inventory/gold/updateitem'>
+                                      <button
+                                      type="button"
+                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      style={{
+                                          width: '100px',
+                                          padding: '5px',
+                                          backgroundColor: '#696BE4',
+                                      }}                              
+                                      >
+                                      Edit
+                                      </button></Link>
+              
+                                      <button
+                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      style={{
+                                          width: '100px',
+                                          padding: '5px',
+                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                      }}
+                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
+                                      >
+                                      Delete Item
                                       </button>
                                   </div>
                                   </td>

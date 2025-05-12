@@ -156,8 +156,8 @@ const Jewellery_Type = () => {
                 {/* Sample data */}
                 <tr className="bg-white hover:bg-gray-50" style={{height:'50px'}}>
                   <td className="px-6 py-5 border-b border-gray-200 " style={{paddingLeft:'30px'}}>1</td>
-                  <td className="px-6 py-5 border-b border-gray-200 text-xs text-gray-400">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200 text-xs text-gray-400">Gold</td>
+                  <td className="px-6 py-5 border-b border-gray-200 text-xs text-gray-400">Necklace</td>
+                  <td className="px-6 py-5 border-b border-gray-200 text-xs text-gray-400">Necklace</td>
                   <td className="px-6 py-5 border-b border-gray-200 text-xs text-gray-400">Gold</td>
                   <td className="px-6 py-5 border-b border-gray-200 text-xs text-gray-400">
                     <span className="bg-green-200 text-green-600 text-[10px] font-bold px-2.5 py-0.5 rounded">
@@ -172,8 +172,8 @@ const Jewellery_Type = () => {
                 </tr>
                 <tr className="bg-white hover:bg-gray-50" style={{height:'50px'}}>
                   <td className="px-6 py-5 border-b border-gray-200" style={{paddingLeft:'30px'}}>2</td>
-                  <td className="px-6 py-5 border-b border-gray-200 text-xs text-gray-400">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200 text-xs text-gray-400">Gold</td>
+                  <td className="px-6 py-5 border-b border-gray-200 text-xs text-gray-400">Earrings</td>
+                  <td className="px-6 py-5 border-b border-gray-200 text-xs text-gray-400">Earrings</td>
                   <td className="px-6 py-5 border-b border-gray-200 text-xs text-gray-400">Gold</td>
                   <td className="px-6 py-5 border-b border-gray-200">
                     <span className="bg-green-200 text-green-600 text-[10px] font-bold px-2.5 py-0.5 rounded">
@@ -188,9 +188,9 @@ const Jewellery_Type = () => {
                 </tr>
                 <tr className="bg-white hover:bg-gray-50" style={{height:'50px'}}>
                   <td className="px-6 py-5 border-b border-gray-200" style={{paddingLeft:'30px'}}>3</td>
-                  <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold</td>
-                  <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold</td>
+                  <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold Bar</td>
+                  <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold Bar</td>
+                  <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold </td>
                   <td className="px-6 py-5 border-b border-gray-200">
                     <span className="bg-green-200 text-green-600 text-[10px] font-bold px-2.5 py-0.5 rounded">
                       ACTIVE

@@ -191,11 +191,11 @@
                            
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NAME </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">EMAIL </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PHONE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">ADDRESS </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">GENDER </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">AJIL </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Ajil@gmail.com </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">789568684 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Sulthan Bathery </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Male </td>
                                <td className="px-6 py-5 border-b border-gray-200 text-xs">
                                <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
                                </td> 

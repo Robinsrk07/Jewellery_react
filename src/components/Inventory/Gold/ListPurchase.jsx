@@ -218,226 +218,108 @@ import { Link } from "react-router";
                            
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">COD</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">1 GRAM </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">USED </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> $ 23 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NEED TO CLRIFY </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">#000737 </td>
                                
       
                                
                              </tr>
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>2</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">COD</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">1 GRAM </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">USED </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> $ 23 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NEED TO CLRIFY </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">#000737 </td>
                                
       
                                
                              </tr>
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>3</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">COD</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">1 GRAM </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">USED </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> $ 23 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NEED TO CLRIFY </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">#000737 </td>
                                
       
                                
                              </tr>
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>4</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">COD</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">1 GRAM </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">USED </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> $ 23 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NEED TO CLRIFY </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">#000737 </td>
                                
       
                                
                              </tr>
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>5</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">COD</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">1 GRAM </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">USED </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> $ 23 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NEED TO CLRIFY </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">#000737 </td>
                                
       
                                
                              </tr>
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>6</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">COD</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">1 GRAM </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">USED </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> $ 23 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NEED TO CLRIFY </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">#000737 </td>
                                
       
                                
                              </tr>
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>7</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">COD</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">1 GRAM </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">USED </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> $ 23 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NEED TO CLRIFY </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">#000737 </td>
                                
       
                                
                              </tr>
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>8</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">COD</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">1 GRAM </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">USED </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> $ 23 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NEED TO CLRIFY </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">#000737 </td>
                                
       
                                
                              </tr>
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
-                             </tr>
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
-                             </tr>
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
-                             </tr>
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
-                             </tr>
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
-                    
-                             </tr>
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
-                               
-      
-                               
-                             </tr>
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
-                               
-      
-                               
-                             </tr>
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
-                               
-      
-                               
-                             </tr>
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
-                               
-      
-                               
-                             </tr>
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
-                               
-      
-                               
-                             </tr>
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
-                               
-      
-                               
-                             </tr>
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PAYMENT TYPE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SETTLED WEIGHT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">UOM USED </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">METAL RATE(USD) </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NOTES </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">REFERENCE NUMBER </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>9</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">COD</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">1 GRAM </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">USED </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> $ 23 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NEED TO CLRIFY </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">#000737 </td>
                                
       
                                

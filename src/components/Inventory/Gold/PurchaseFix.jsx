@@ -136,36 +136,36 @@ const purchaseFix = () => {
                            
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NAME </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">EMAIL </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PHONE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">ADDRESS </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">GENDER </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> cod </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> $1.000 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">60 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">north carolina </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">dgdg </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">0#9999
                                </td> 
       
                                
                              </tr>
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NAME </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">EMAIL </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PHONE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">ADDRESS </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">GENDER </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> cod </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> $1.000 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">60 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">north carolina </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">dgdg </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">0#9999
                                </td> 
       
                                
                              </tr>
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NAME </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">EMAIL </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">PHONE </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">ADDRESS </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">GENDER </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> cod </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> $1.000 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">60 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">north carolina </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">dgdg </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">0#9999
                                </td> 
       
                                

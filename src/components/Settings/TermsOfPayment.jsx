@@ -185,12 +185,12 @@
                            
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">TEST </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">TEST description </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">bhj </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> bhjbhj</td>
                              
                               
                                <td className="px-6 py-5 border-b border-gray-200 text-xs">
-                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>PRIMARY</span>
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
                                </td> 
       
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
@@ -226,12 +226,12 @@
                            
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">TEST </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">TEST description </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">FGSGS </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> SGSGS </td>
                              
                               
                                <td className="px-6 py-5 border-b border-gray-200 text-xs">
-                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>PRIMARY</span>
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
                                </td> 
       
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
@@ -267,12 +267,12 @@
                            
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">TEST </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">TEST description </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">FGSGS </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SGSGS  </td>
                              
                               
                                <td className="px-6 py-5 border-b border-gray-200 text-xs">
-                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>PRIMARY</span>
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
                                </td> 
       
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>

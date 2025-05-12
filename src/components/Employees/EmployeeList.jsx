@@ -183,12 +183,12 @@
                            
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">NAME </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">GENDER </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">DEPARTMENT </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">POSITION </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">SALARY </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">BANK ACCOUNT </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Arjun </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Male </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Sales </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Maneger </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">57000 </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">457844578575545 </td>
                               
                                <td className="px-6 py-5 border-b border-gray-200 text-xs">
                                <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
