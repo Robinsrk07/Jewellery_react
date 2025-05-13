@@ -416,7 +416,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        className="input w-[90%] rounded-lg focus:outline-none  bg-white focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
@@ -429,7 +429,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        className="input w-[90%] rounded-lg bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
@@ -443,7 +443,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                         Description:
                                       </label>
 
-                                      <textarea className="textarea w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
+                                      <textarea className="textarea w-[90%] bg-white rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
                                         placeholder="Description" 
                                         style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
@@ -459,7 +459,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                                 Status:
                                             </label>
                                             <select defaultValue=""
-                                                className="select w-[90%] h-[35px] focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                                                className="select w-[90%] h-[35px] bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
                                                 style={{marginLeft:'25px'}}
                                                 value={formData.status}
                                                 name=''
