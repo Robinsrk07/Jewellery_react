@@ -180,13 +180,13 @@ import '@fontsource/open-sans/700.css'; // Bold
                        <table className="table w-full text-sm text-left text-gray-500 border-collapse  min-w-1200px  " style={{ borderSpacing: '0 12px', borderCollapse: 'separate',minWidth: '1200px' }}>
                          <thead className="text-xs text-gray-400 uppercase bg-white">
                            <tr>
-                           <th className="px-6 py-3" style={{ width: '100px', paddingLeft: '20px' }}>SL NO</th>
-                            <th className="px-6 py-3" style={{ width: '220px' }}>CODE</th>
-                            <th className="px-6 py-3" style={{ width: '220px' }}>NAME</th>
-                            <th className="px-6 py-3" style={{ width: '150px' }}>ITEM TYPE</th>
-                            <th className="px-6 py-3" style={{ width: '100px' }}>IS DEFAULT</th>
-                            <th className="px-6 py-3" style={{ width: '100px' }}>STATUS</th>
-                            <th className="px-6 py-3" style={{ width: '200px' }}>ACTION</th>
+                           <th className="px-6 py-3" style={{ minWidth: '100px', paddingLeft: '20px' }}>SL NO</th>
+                            <th className="px-6 py-3" style={{ minWidth: '220px' }}>CODE</th>
+                            <th className="px-6 py-3" style={{ minWidth: '220px' }}>NAME</th>
+                            <th className="px-6 py-3" style={{ minWidth: '150px' }}>ITEM TYPE</th>
+                            <th className="px-6 py-3" style={{ minWidth: '100px' }}>IS DEFAULT</th>
+                            <th className="px-6 py-3" style={{ minWidth: '100px' }}>STATUS</th>
+                            <th className="px-6 py-3" style={{ minWidth: '200px' }}>ACTION</th>
                            </tr>
                          </thead>
                          <tbody>
