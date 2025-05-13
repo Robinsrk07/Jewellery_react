@@ -180,26 +180,27 @@ import '@fontsource/open-sans/700.css'; // Bold
                        <table className="table w-full text-sm text-left text-gray-500 border-collapse   " style={{ borderSpacing: '0 12px', borderCollapse: 'separate', }}>
                          <thead className="text-xs text-gray-400 uppercase bg-white">
                            <tr>
-                           <th className="px-6 py-3" style={{ width: '', paddingLeft: '20px' }}>SL NO</th>
-                            <th className="px-6 py-3" style={{ width: '' }}>CODE</th>
-                            <th className="px-6 py-3" style={{ width: '' }}>NAME</th>
-                            <th className="px-6 py-3" style={{ width: '' }}>ITEM TYPE</th>
-                            <th className="px-6 py-3" style={{ width: '' }}>IS DEFAULT</th>
-                            <th className="px-6 py-3" style={{ width: '' }}>STATUS</th>
-                            <th className="px-6 py-3" style={{ width: '' }}>ACTION</th>
+                           <th className="px-6 py-3" style={{ width: '100px', paddingLeft: '20px' }}>SL NO</th>
+                            <th className="px-6 py-3" style={{ width: '220px' }}>CODE</th>
+                            <th className="px-6 py-3" style={{ width: '220px' }}>NAME</th>
+                            <th className="px-6 py-3" style={{ width: '150px' }}>ITEM TYPE</th>
+                            <th className="px-6 py-3" style={{ width: '100px' }}>IS DEFAULT</th>
+                            <th className="px-6 py-3" style={{ width: '100px' }}>STATUS</th>
+                            <th className="px-6 py-3" style={{ width: '200px' }}>ACTION</th>
                            </tr>
                          </thead>
                          <tbody>
                            
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 bg-red-400 text-xs">Bridal Jewellery </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Bridal Jewellery </td>
                                <td className="px-6 py-5 border-b border-gray-200 text-xs">Bridal Jewellery</td>
-                               <td className="px-6 py-5 border-b border-gray-200 bg-red-400 text-xs"> Gold</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> No</td>
-                             
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Gold</td>
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
+                               <span className="bg-blue-300 font-bold text-[10px] text-gray-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>No</span>
+                               </td>                              
                               
-                               <td className="px-6 py-5 border-b border-gray-200 bg-red-400 text-xs">
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
                                <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
                                </td> 
       
@@ -221,7 +222,138 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       <button
                                       className="btn text-white font-bold text-xs rounded-lg"
                                       style={{
-                                          width: '150px',
+                                          width: '190px',
+                                          padding: '5px',
+                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                      }}
+                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
+      
+                                      >
+                                      Delete 
+                                      </button>
+                                  </div>
+                                  </td>
+                             </tr>
+                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>2</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Everyday Wear </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Everyday Wear</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Gold</td>
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
+                               <span className="bg-blue-300 font-bold text-[10px] text-gray-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>No</span>
+                               </td>                              
+                              
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
+                               </td> 
+      
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                      <button
+                                      type="button"
+                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      style={{
+                                          width: '100px',
+                                          padding: '5px',
+                                          backgroundColor: '#696BE4',
+                                      }}                              
+                                      onClick={()=>setEditModal(true)}
+                                      >
+                                      Edit
+                                      </button>
+              
+                                      <button
+                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      style={{
+                                          width: '190px',
+                                          padding: '5px',
+                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                      }}
+                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
+      
+                                      >
+                                      Delete 
+                                      </button>
+                                  </div>
+                                  </td>
+                             </tr>
+                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>3</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Luxury & Designer Jewellery </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Luxury & Designer Jewellery</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Gold</td>
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
+                               <span className="bg-blue-300 font-bold text-[10px] text-gray-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>No</span>
+                               </td>                              
+                              
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
+                               </td> 
+      
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                      <button
+                                      type="button"
+                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      style={{
+                                          width: '100px',
+                                          padding: '5px',
+                                          backgroundColor: '#696BE4',
+                                      }}                              
+                                      onClick={()=>setEditModal(true)}
+                                      >
+                                      Edit
+                                      </button>
+              
+                                      <button
+                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      style={{
+                                          width: '190px',
+                                          padding: '5px',
+                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                      }}
+                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
+      
+                                      >
+                                      Delete 
+                                      </button>
+                                  </div>
+                                  </td>
+                             </tr>
+                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>4</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold BAR </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold BAR</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Gold</td>
+                              
+                             
+                              
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>Yes</span>
+                               </td> 
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
+                               </td> 
+      
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                      <button
+                                      type="button"
+                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      style={{
+                                          width: '100px',
+                                          padding: '5px',
+                                          backgroundColor: '#696BE4',
+                                      }}                              
+                                      onClick={()=>setEditModal(true)}
+                                      >
+                                      Edit
+                                      </button>
+              
+                                      <button
+                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      style={{
+                                          width: '190px',
                                           padding: '5px',
                                           background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
                                       }}
@@ -234,47 +366,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                   </td>
                              </tr>
                            
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Diamond </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Diamond </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Diamond </td>
-                             
-                              
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">
-                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
-                               </td> 
-      
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
-                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                      <button
-                                      type="button"
-                                      className="btn text-white font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '100px',
-                                          padding: '5px',
-                                          backgroundColor: '#696BE4',
-                                      }}                              
-                                      onClick={()=>setEditModal(true)}
-                                      >
-                                      Edit
-                                      </button>
-              
-                                      <button
-                                      className="btn text-white font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '150px',
-                                          padding: '5px',
-                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-                                      }}
-                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
-      
-                                      >
-                                      Delete 
-                                      </button>
-                                  </div>
-                                  </td>
-                             </tr>
+                            
                            
                              
                              
@@ -416,8 +508,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  bg-gray-200 focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        className="input w-[90%] rounded-lg focus:outline-none bg-gray-100 focus:border-b-2 focus:border-blue-500"                                        style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
@@ -429,7 +520,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        className="input w-[90%] rounded-lg focus:outline-none bg-gray-100 focus:border-b-2 focus:border-blue-500"                                        style={{marginLeft:'25px'}}
                                         style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
@@ -443,7 +534,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                         Description:
                                       </label>
 
-                                      <textarea className="textarea w-[90%] bg-gray-2- rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
+                                      <textarea className="textarea w-[90%] bg-gray-100 rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
                                         placeholder="Description" 
                                         style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
@@ -459,7 +550,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                                 Status:
                                             </label>
                                             <select defaultValue=""
-                                                className="select w-[90%] h-[35px] bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                                                className="select w-[90%] h-[35px] bg-gray-100 focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
                                                 style={{marginLeft:'25px'}}
                                                 value={formData.status}
                                                 name=''
@@ -476,7 +567,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                                 style={{marginTop: '20px', marginBottom: '10px',  paddingLeft: '200px'}}>
                                             <button
                                                 type="button"
-                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white border-none"
                                                 style={{ backgroundColor: '#8392ab' }}
                                                 onClick={(e) => handleSubmit(e)}
                                             >
@@ -484,7 +575,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                             </button>
                                             <button
                                                 type="button"
-                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white border-none"
                                                 style={{ backgroundColor: '#5E72e4' }}
                                                 onClick={handleCloseModal}
                                             >
@@ -512,7 +603,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                          Edit Type                       </h3>
                                     <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
       
-                                    <div className="flex flex-col flex-grow"> {/* Added flex-grow */}
+                                    <div className="flex flex-col flex-grow"> {/* Added flex-grow */}   
                                    
                                       <label 
                                         style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
@@ -583,7 +674,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                                 style={{marginTop: '20px', marginBottom: '10px',  paddingLeft: '200px'}}>
                                             <button
                                                 type="button"
-                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white border-none"
                                                 style={{ backgroundColor: '#8392ab' }}
                                                 onClick={(e) => handleSubmit(e)}
                                             >
@@ -591,7 +682,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                             </button>
                                             <button
                                                 type="button"
-                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white border-none"
                                                 style={{ backgroundColor: '#5E72e4' }}
                                                 onClick={handleCloseModal}
                                             >
