@@ -416,7 +416,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  bg-white focus:border-b-2 focus:border-blue-500"
+                                        className="input w-[90%] rounded-lg focus:outline-none  bg-gray-200 focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
@@ -443,7 +443,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                         Description:
                                       </label>
 
-                                      <textarea className="textarea w-[90%] bg-white rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
+                                      <textarea className="textarea w-[90%] bg-gray-2- rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
                                         placeholder="Description" 
                                         style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
