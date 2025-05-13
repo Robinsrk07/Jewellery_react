@@ -154,8 +154,8 @@ import '@fontsource/open-sans/700.css'; // Bold
                               </button>
                           </div>
                  
-                       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
-                         <p className="text-xs font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
+                       <div className='text-gray-800' style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
+                         <p className="text-xs  font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
                          <select
                            className="border border-gray-300 rounded-lg w-[114px] h-[35px] px-2"
                            style={{
@@ -163,7 +163,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                              WebkitAppearance: 'none',
                              MozAppearance: 'none',
                              backgroundColor: 'white',
-                             backgroundImage: 'none',
+                             backgroundImage: 'none', 
                              paddingLeft: '5px',
                            }}
                            onChange={(e) => setItems(Number(e.target.value))}
@@ -208,7 +208,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                   <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                                       <button
                                       type="button"
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn text-white font-bold text-xs rounded-lg border-none"
                                       style={{
                                           width: '100px',
                                           padding: '5px',
@@ -220,7 +220,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       </button>
               
                                       <button
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn text-white font-bold text-xs rounded-lg border-none"
                                       style={{
                                           width: '190px',
                                           padding: '5px',
@@ -384,13 +384,13 @@ import '@fontsource/open-sans/700.css'; // Bold
                  
                        {/* Pagination */}
                        <div className="flex gap-1 justify-center">
-                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+                         <button className="btn rounded-full bg-gray-200 w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500 border-none">
                            {'<'}
                          </button>
-                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
+                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white border-none">
                            1
                          </button>
-                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+                         <button className="btn rounded-full bg-gray-200 w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500 border-none">
                            {'>'}
                          </button>
                        </div>
@@ -478,8 +478,8 @@ import '@fontsource/open-sans/700.css'; // Bold
                       <h3 className="text-3xl font-bold text-gray-500 " style={{margin:'20px'}}>Cancelled</h3>
                       <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your Jewellery Type is safe</p>
                       <button className="btn bg-blue-500 w-[50px] rounded-lg" > ok</button>
-                  </div>
-                  </dialog>
+                      </div>
+                      </dialog>
                       </div>
       
                       {modal && (
@@ -520,7 +520,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none bg-gray-100 focus:border-b-2 focus:border-blue-500"                                        style={{marginLeft:'25px'}}
+                                        className="input w-[90%] rounded-lg focus:outline-none bg-gray-100 focus:border-b-2 focus:border-blue-500"                                       
                                         style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
@@ -613,7 +613,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        className="input w-[90%] rounded-lg focus:outline-none bg-gray-100 focus:border-b-2 focus:border-blue-500"                                        
                                         style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
@@ -627,7 +627,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        className="input w-[90%] rounded-lg focus:outline-none bg-gray-100 focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
@@ -641,7 +641,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                         Description:
                                       </label>
 
-                                      <textarea className="textarea w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
+                                      <textarea className="textarea w-[90%] bg-gray-100 rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
                                         placeholder="Description" 
                                         style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
@@ -657,7 +657,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                                 Status:
                                             </label>
                                             <select defaultValue=""
-                                                className="select w-[90%] h-[35px] focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                                                className="select w-[90%] h-[35px] bg-gray-100 focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
                                                 style={{marginLeft:'25px'}}
                                                 value={formData.status}
                                                 name=''
