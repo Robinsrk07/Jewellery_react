@@ -1,580 +1,609 @@
-import { useState } from "react";
+
+
+import React, { useState } from 'react';
 import '@fontsource/open-sans'; // Default weight 400
 import '@fontsource/open-sans/600.css'; // Semi-bold
 import '@fontsource/open-sans/700.css'; // Bold
 
-const Category = () => {
 
-  const [formData, setFormData] = useState({
-    code: '',
-    name: '',
-    itemType: '',
-    standardPurity: '',
-    IsDefault: '',
-    status: ''
-  });
-      const [items,setItems]= useState(0)
-    
-  const [errors, setErrors] = useState({});
-  const [isHovered, setIsHovered] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    setErrors(prev => ({ ...prev, [name]: '' }));
-  };
-{/* validation*/}
-  const validate = () => {
-    const newErrors = {};
-    if (!formData.code.trim()) newErrors.code = 'Please Enter Code';
-    if (!formData.name.trim()) newErrors.name = 'Please Enter Name';
-    if (!formData.itemType.trim()) newErrors.itemType = 'Please Select Item Type';
-    if (!formData.standardPurity.trim()) newErrors.standardPurity = 'Please Enter Standard Purity';
-    if (!formData.IsDefault.trim()) newErrors.IsDefault = 'Please Select Default Status';
-    if (!formData.status.trim()) newErrors.status = 'Please Select Status';
-    return newErrors;
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const validationErrors = validate();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
 
-    console.log('Form submitted:', formData);
-    setFormData({
-      code: '',
-      name: '',
-      itemType: '',
-      standardPurity: '',
-      IsDefault: '',
-      status: ''
-    });
-    setErrors({});
-    document.getElementById('my_modal_5').close();
-  };
 
-  const handleClose = () => {
-    document.getElementById('my_modal_5').close();
-  };
 
-  return (
-    <div
-      style={{
-        width: '95%',
-        height: '95%',
-        margin: '1rem',
-        marginBottom: '4rem',
-        borderRadius: '8px',
-        backgroundColor: 'white',
-        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-        overflow: 'hidden',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem',
-        fontFamily:'Open Sans'
-      }}
-    >
-      {/* New Item Button */}
-      <div
-        style={{
-          width: '100%',
-          display: 'flex',
-          justifyContent: 'flex-end',
-          padding: '1.5rem',
-          boxSizing: 'border-box',
-        }}
-      >
-        <button 
-      style={{
-        width: '100%',
-        maxWidth: '180px',
-        height: '30px',
-        borderRadius: '8px',
-        backgroundColor: isHovered
-          ? 'rgb(97, 113, 228)'
-          : 'rgb(126, 96, 228)',
-        color: 'white',
-        transition: 'background-color 0.3s ease', 
-        cursor: 'pointer',
-        fontSize:'13px',
-        fontWeight: 400,
-    outline: 'none' // ensures no unwanted focus outline
-      }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={() => document.getElementById('my_modal_5').showModal()}
-    >
-      + New Category Type
-    </button>
-      </div>
-
-      <div
-        style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem',
-        paddingLeft: '5px',
-              }}
-           >
-        <p className='text-xs font-semibold' style={{marginLeft:'5px'}}>Items per page: {items}</p>
-        <select
-        className='border border-gray-300 rounded-lg w-[114px] h-[35px] px-2'
-        style={{
-        appearance: 'none',       
-        WebkitAppearance: 'none', 
-        MozAppearance: 'none',    
-        backgroundColor: 'white', 
-        backgroundImage: 'none',  
-        paddingLeft:'5px'
-        }}
-        onChange={(e) => setItems(Number(e.target.value))}
-        value={items}
-        >
-        <option value={10}>10</option>
-        <option value={25}>25</option>
-        <option value={50}>50</option>
-      </select>
-      </div>
-
-      {/* Table Section */}
+ 
+     
+     const  Category = () => {
+     
+          
+      const  [isHovered, setIsHovered] = useState(false);
+                   const [items, setItems] = useState(10);
+                   const [formData, setFormData] = useState({
+                     name: '',
+                     gender:'',
+                     department:'',
+                     status:'',
+                     position:'',
+                     bankaccountnumber:''
+                   });
+                   const [errors, setErrors] = useState({});
+                    // handle change 
+                 
+                       const handleChange = (e) => {
+                         const { name, value } = e.target;
+                         setFormData((prev) => ({ ...prev, [name]: value }));
+                         setErrors((prev) => ({ ...prev, [name]: '' })); 
+                       };
       
-
-{/* Table Section with Visible Scrollbar */}
-<div className="w-full h-full bg-transparent" style={{ flex: 1 }}>
-  <div className="bg-white p-6 rounded-lg">
-    {/* This container controls scrolling - with explicit scrollbar styling */}
-    <div 
-      className="w-full" 
-      style={{ 
-        overflowX: 'scroll',
-         // Force scroll instead of auto
-        scrollbarWidth: 'thin', // For Firefox
-        scrollbarColor: '#CBD5E0 #EDF2F7', // For Firefox
-        maxWidth: '100%',
-        position: 'relative', // Ensure scrollbar is positioned relative to this container
-        paddingTop:'30px'
-      }}
-    >
-      {/* Ensure the scroll track is visible with this style */}
-      <style jsx>{`
-        div::-webkit-scrollbar {
-          height: 8px;
-          width: 8px;
-          background: #f1f1f1;
-          display: block;
-        }
-        div::-webkit-scrollbar-thumb {
-          background: #c1c1c1;
-          border-radius: 4px;
-        }
-        div::-webkit-scrollbar-track {
-          background: #f1f1f1;
-        }
-      `}</style>
+                    const [modal, setModal] = useState(false)   
+                    const [editModal,setEditModal]= useState(false)
+                 
+                   //validation 
+                   
+                   const validate = () => {
+                     const newErrors = {};
+                     if (!formData.name.trim()) newErrors.name = 'Please Enter Name';
+                     if (!formData.description.trim()) newErrors.description = 'Enter the Description';
+                     if (!formData.status.trim()) newErrors.status = 'Enter Status';
+                     return newErrors;
+                   };    
+                 
+                   //handle submit
+                 
+                   const handleSubmit = (e) => {
+                     e.preventDefault();
+                     const validationErrors = validate();
+                     if (Object.keys(validationErrors).length > 0) {
+                       setErrors(validationErrors);
+                       return;
+                     }
+                 
+                     // Submit form
+                     console.log('Form submitted:', formData);
+                 
+                     // Reset form and close modal - Fixed to include all fields
+                     setFormData({
+                       name: '',
+                       description: '',
+                       status: '',
+                     });
+                     setErrors({});
+                     setModal(false);
+                   };
+                  
+                   // Handle close modal
+                   const handleCloseModal = () => {
+                     setModal(false);
+                     setEditModal(false)
+                   };
+                 
+                 
+                 
+                 
+                 
+                   return (
+                     
+                 <>
+                 <style jsx global>{`
+                   .custom-scrollbar::-webkit-scrollbar {
+                     width: 6px;  /* Slightly wider for better visibility */
+                     height: 6px; /* For horizontal scroll */
+                   }
+                   
+                   .custom-scrollbar::-webkit-scrollbar-track {
+                     background: #f1f1f1; /* Light gray track */
+                     border-radius: 3px;
+                   }
+                   
+                   .custom-scrollbar::-webkit-scrollbar-thumb {
+                     background:rgb(218, 216, 216); /* Rich red color */
+                     border-radius: 3px;
+                     border: 1px solidrgb(206, 198, 198); /* Darker red border */
+                   }
+                   
+                   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                     background:rgb(202, 190, 190); /* Darker red on hover */
+                   }
+                   
+                   /* For Firefox */
+                   .custom-scrollbar {
+                     scrollbar-width: thin;
+                     scrollbar-color:rgb(226, 215, 215) #f1f1f1; /* red thumb on gray track */
+                   }
+                 `}</style>
+                <div className="bg-white w-full
+                    max-w-[99vw] 
+                    xl:max-w-[90vw] 
+                    2xl:max-w-[95vw] 
+                    h-auto max-h-[70vh] 
+                    rounded-xl px-4 md:px-8 lg:px-12
+                    mx-auto overflow-auto  custom-scrollbar"
+                 style={{ fontFamily: 'Open Sans',overflow:'auto'}}
+                   >
+                                  <div
+                              style={{
+                              position: 'sticky',
+                              left: 0,
+                              top: 0,
+                              zIndex: 10,
+                              backgroundColor: 'white',
+                              padding: '1.5rem',
+                              boxSizing: 'border-box',
+                              display: 'flex',
+                              justifyContent: 'flex-end',
+                              width: 'fit-content', // Changed from 100%
+                              minWidth: '100%' // Ensures it matches table width
+                              }}
+                          >
+                              <button
+                              className="text-xs font-bold"
+                              style={{
+                                  width: '160px',
+                                  height: '30px',
+                                  borderRadius: '8px',
+                                  backgroundColor: isHovered ? 'rgb(97, 113, 228)' : 'rgb(126, 96, 228)',
+                                  color: 'white',
+                                  transition: 'background-color 0.3s ease',
+                                  cursor: 'pointer',
+                              }}
+                              onMouseEnter={() => setIsHovered(true)}
+                              onMouseLeave={() => setIsHovered(false)}
+                              onClick={() => setModal(true)}
+                              >
+                              + New Type
+                              </button>
+                          </div>
+                 
+                       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
+                         <p className="text-xs font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
+                         <select
+                           className="border border-gray-300 rounded-lg w-[114px] h-[35px] px-2"
+                           style={{
+                             appearance: 'none',
+                             WebkitAppearance: 'none',
+                             MozAppearance: 'none',
+                             backgroundColor: 'white',
+                             backgroundImage: 'none',
+                             paddingLeft: '5px',
+                           }}
+                           onChange={(e) => setItems(Number(e.target.value))}
+                           value={items}
+                         >
+                           <option value={10}>10</option>
+                           <option value={25}>25</option>
+                           <option value={50}>50</option>
+                         </select>
+                       </div>
+                 
+                       
+                 
+                       <table className="table w-full text-sm text-left text-gray-500 border-collapse   " style={{ borderSpacing: '0 12px', borderCollapse: 'separate', }}>
+                         <thead className="text-xs text-gray-400 uppercase bg-white">
+                           <tr>
+                           <th className="px-6 py-3" style={{ width: '', paddingLeft: '20px' }}>SL NO</th>
+                            <th className="px-6 py-3" style={{ width: '' }}>CODE</th>
+                            <th className="px-6 py-3" style={{ width: '' }}>NAME</th>
+                            <th className="px-6 py-3" style={{ width: '' }}>ITEM TYPE</th>
+                            <th className="px-6 py-3" style={{ width: '' }}>IS DEFAULT</th>
+                            <th className="px-6 py-3" style={{ width: '' }}>STATUS</th>
+                            <th className="px-6 py-3" style={{ width: '' }}>ACTION</th>
+                           </tr>
+                         </thead>
+                         <tbody>
+                           
+                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
+                               <td className="px-6 py-5 border-b border-gray-200 bg-red-400 text-xs">Bridal Jewellery </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Bridal Jewellery</td>
+                               <td className="px-6 py-5 border-b border-gray-200 bg-red-400 text-xs"> Gold</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> No</td>
+                             
+                              
+                               <td className="px-6 py-5 border-b border-gray-200 bg-red-400 text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
+                               </td> 
       
-      <table 
-        className="table w-full text-sm text-left text-gray-500" 
-        style={{ 
-          borderSpacing: '0 12px', 
-          borderCollapse: 'separate',
-          minWidth: '1200px' // This forces horizontal scroll
-        }}
-      >
-        <thead className="text-xs text-gray-400 uppercase bg-white">
-          <tr>
-            <th className="px-6 py-3" style={{ width: '100px', paddingLeft:'30px' }}>SL NO</th>
-            <th className="px-6 py-3" style={{ width: '100px' }}>CODE</th>
-            <th className="px-6 py-3" style={{ width: '130px' }}>NAME</th>
-            <th className="px-6 py-3" style={{ width: '130px' }}>ITEM TYPE</th>
-            <th className="px-6 py-3" style={{ width: '130px' }}>IS DEFAULT</th>
-            <th className="px-6 py-3" style={{ width: '100px' }}>STATUS</th>
-            <th className="px-6 py-3" style={{ width: '130px' }}>ACTION</th>
-            <th className="px-6 py-3" style={{ width: '170px' }}></th>
-          </tr>
-        </thead>
-        <tbody>
-          {/* Sample Data Rows */}
-          {[1, 2, 3].map((item) => (
-            <tr key={item} className="bg-white hover:bg-gray-50 h-[44px]">
-              <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'40px'}}>{item}</td>
-              <td className="px-6 py-5 border-b border-gray-200 text-xs">Bridal Jewellery</td>
-              <td className="px-6 py-5 border-b border-gray-200 text-xs">EveryDay Wear</td>
-              <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold</td>
-              <td className="px-6 py-5 border-b border-gray-200 text-xs">
-              <span 
-                className="bg-green-200 text-green-800 text-xs font-bold rounded"
-                
-              >
-                yes
-              </span>
-              </td>
-              <td className="px-6 py-5 border-b border-gray-200 ">
-                <span className="bg-green-200 text-green-800 font-bold text-[10px] rounded"style={{ padding: '4px 6px' }}>
-                  ACTIVE
-                </span>
-              </td>
-              <td className="px-6 py-5 border-b border-gray-200 text-blue-600">
-                  <button className="btn  w-1/2 text-white font-bold text-xs rounded-lg"
-                   style={{width:'100px',padding:'5px', backgroundColor:'#696BE4'}}
-                   onClick={()=>document.getElementById('my_modal_edit').showModal()}
-                  >
-                    Edit
-                 </button>
-              </td>
-              <td className="px-6 py-5 border-b border-gray-200 text-blue-600">
-                 <button className="btn  text-white font-bold text-xs rounded-lg"
-                 style={{width:'220px',padding:'5px',    background: 'linear-gradient(to right, #A1B1D1, #697C9B)', }}
-                 onClick={()=>document.getElementById('my_modal_delete').showModal()}
-                 >
-                  Delete Category
-                 </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
-
-
-      {/* Modal Dialog */}
-      <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle" style={{ fontFamily: 'Open Sans' }}
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                      <button
+                                      type="button"
+                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      style={{
+                                          width: '100px',
+                                          padding: '5px',
+                                          backgroundColor: '#696BE4',
+                                      }}                              
+                                      onClick={()=>setEditModal(true)}
+                                      >
+                                      Edit
+                                      </button>
+              
+                                      <button
+                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      style={{
+                                          width: '150px',
+                                          padding: '5px',
+                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                      }}
+                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
       
-      onClick={(e) => {
-        const modalBox = document.querySelector('#my_modal_5 .modal-box');
-        if (modalBox && !modalBox.contains(e.target)) {
-          document.getElementById('my_modal_5').close();
-        }
-      }}
+                                      >
+                                      Delete 
+                                      </button>
+                                  </div>
+                                  </td>
+                             </tr>
+                           
+                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Diamond </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Diamond </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Diamond </td>
+                             
+                              
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
+                               </td> 
       
-      >
-          <form method="dialog" className="modal-box" onSubmit={handleSubmit}>
-              {/* Modal Header */}
-              <div style={{ width: '100%', height: '50px' }}>
-                <h3 className="font-bold text-lg text-gray-500 " style={{paddingLeft:'20px',paddingTop:'30px'}}>Create Category</h3>
-                <hr className="my-9 border-t-1 border-gray-300 w-full p-9" />
-              </div>
-
-              {/* Form Fields */}
-              <div style={{ paddingLeft:'20px',paddingTop:'30px', height: '30px',width:'99%' }}>
-                <label className="block mb-2 font-semibold text-gray-500 text-xs">Code:</label>
-                <input
-                  type="text"
-                  value={formData.code}
-                  name="code"
-                  placeholder="code"
-                  onChange={handleChange}
-                  className="input input-md w-full shadow-none focus:shadow-none focus:outline-none focus:border-b-2 focus:border-blue-800"
-                />
-                {errors.code && <p className="text-red-500 text-sm">{errors.code}</p>}
-              </div>
-
-              <div style={{ paddingLeft:'20px',paddingTop:'80px', height: '60px',width:'99%' }}>
-                <label className="block mb-4 font-semibold text-gray-500 text-xs">Name:</label>
-                <input
-                  type="text"
-                  value={formData.name}
-                  name="name"
-                  placeholder="name"
-                  onChange={handleChange}
-                  className="input input-md w-full shadow-none focus:shadow-none focus:outline-none focus:border-b-2 focus:border-blue-800"
-                />
-                {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
-              </div>
-
-              <div style={{paddingLeft:'20px',paddingTop:'80px', height: '30px',width:'99%' }}>
-                <label className="block mb-4 font-semibold text-gray-500 text-xs">Item Type</label>
-                <select
-                  name="itemType"
-                  value={formData.itemType}
-                  className="select select-bordered w-full focus:outline-none focus:border-b-2 focus:border-blue-800 "
-                  onChange={handleChange}
-                  style={{ height: '38px' }}
-                >
-                  <option value="">Select Item Type</option>
-                  <option value="Gold">Gold</option>
-                  <option value="Diamond">Diamond</option>
-                  <option value="Silver">Silver</option>
-                  <option value="Platinum">Platinum</option>
-                </select>
-                {errors.itemType && <p className="text-red-500 text-sm">{errors.itemType}</p>}
-              </div>
-
-              <div style={{ paddingLeft:'20px',paddingTop:'80px', height: '30px',width:'99%' }}>
-                <label className="block mb-4 font-semibold text-gray-500 text-xs">Standard Purity:</label>
-                <input
-                  type="number"
-                  step="0.1"
-                  min="0"
-                  value={formData.standardPurity}
-                  name="standardPurity"
-                  placeholder="Standard Purity"
-                  onChange={handleChange}
-                  className="input input-md w-full appearance-auto [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                />
-                {errors.standardPurity && <p className="text-red-500 text-sm">{errors.standardPurity}</p>}
-              </div>
-
-              <div style={{ paddingLeft:'20px',paddingTop:'80px', height: '30px',width:'99%'}}>
-                <label className="block mb-4 font-semibold text-gray-500 text-xs">Is Default</label>
-                <select
-                  name="IsDefault"
-                  value={formData.IsDefault}
-                  className="select select-bordered w-full"
-                  onChange={handleChange}
-                  style={{ height: '38px' }}
-                >
-                  <option value="">Select Default Status</option>
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
-                </select>
-                {errors.IsDefault && <p className="text-red-500 text-sm">{errors.IsDefault}</p>}
-              </div>
-
-              <div style={{ paddingLeft:'20px',paddingTop:'80px', height: '30px',width:'99%' }}>
-                <label className="block mb-4 font-semibold text-gray-500 text-xs">Status</label>
-                <select
-                  name="status"
-                  value={formData.status}
-                  className="select select-bordered w-full"
-                  onChange={handleChange}
-                  style={{ height: '38px' }}
-                >
-                  <option value="">Select Status</option>
-                  <option value="Active">Active</option>
-                  <option value="Inactive">Inactive</option>
-                </select>
-                {errors.status && <p className="text-red-500 text-sm">{errors.status}</p>}
-              </div>
-
-              {/* Modal Actions */}
-              <div className="modal-action" style={{ paddingLeft: '50px',paddingTop:'90px',marginBottom:'30px', height: '30px' }}>
-                <button type="submit" className="btn  w-1/6" style={{backgroundColor: '#8392ab'}}>Submit</button>
-                <button
-                  type="button"
-                  className="btn  w-1/6"
-                  onClick={handleClose}
-                  style={{backgroundColor: '#5E72e4'}}
-                >
-                  Close
-                </button>
-              </div>
-          </form>
-      </dialog>
-
-
-
-      <dialog id="my_modal_edit" className="modal modal-bottom sm:modal-middle"
-       style={{ fontFamily: 'Open Sans' }}
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                      <button
+                                      type="button"
+                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      style={{
+                                          width: '100px',
+                                          padding: '5px',
+                                          backgroundColor: '#696BE4',
+                                      }}                              
+                                      onClick={()=>setEditModal(true)}
+                                      >
+                                      Edit
+                                      </button>
+              
+                                      <button
+                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      style={{
+                                          width: '150px',
+                                          padding: '5px',
+                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                      }}
+                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
       
-       onClick={(e) => {
-         const modalBox = document.querySelector('#my_modal_5 .modal-box');
-         if (modalBox && !modalBox.contains(e.target)) {
-           document.getElementById('my_modal_edit').close();
-         }
-       }}
+                                      >
+                                      Delete 
+                                      </button>
+                                  </div>
+                                  </td>
+                             </tr>
+                           
+                             
+                             
+                            
+                            
+                             
+                             
+                             
+                             
+                            
+                          
+                         </tbody>
+                       </table>
+                       
+                 
+                       {/* Pagination */}
+                       <div className="flex gap-1 justify-center">
+                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+                           {'<'}
+                         </button>
+                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
+                           1
+                         </button>
+                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+                           {'>'}
+                         </button>
+                       </div>
+                 
+                       {/* Modal */}
       
-      >
-          <form method="dialog" className="modal-box" onSubmit={handleSubmit}>
-              {/* Modal Header */}
-              <div style={{ width: '100%', height: '50px' }}>
-                <h3 className="font-bold text-lg text-gray-500 " style={{paddingLeft:'20px',paddingTop:'30px'}}> Edit Category</h3>
-                <hr className="my-9 border-t-1 border-gray-300 w-full p-9" />
-              </div>
-
-              {/* Form Fields */}
-              <div style={{ paddingLeft:'20px',paddingTop:'30px', height: '30px',width:'99%' }}>
-                <label className="block mb-2 font-semibold text-gray-500 text-xs">Code:</label>
-                <input
-                  type="text"
-                  value={formData.code}
-                  name="code"
-                  placeholder="code"
-                  onChange={handleChange}
-                  className="input input-md w-full"
-                />
-                {errors.code && <p className="text-red-500 text-sm">{errors.code}</p>}
-              </div>
-
-              <div style={{ paddingLeft:'20px',paddingTop:'80px', height: '60px',width:'99%' }}>
-                <label className="block mb-4 font-semibold text-gray-500 text-xs">Name:</label>
-                <input
-                  type="text"
-                  value={formData.name}
-                  name="name"
-                  placeholder="name"
-                  onChange={handleChange}
-                  className="input input-md w-full"
-                />
-                {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
-              </div>
-
-              <div style={{paddingLeft:'20px',paddingTop:'80px', height: '30px',width:'99%' }}>
-                <label className="block mb-4 font-semibold text-gray-500 text-xs">Item Type</label>
-                <select
-                  name="itemType"
-                  value={formData.itemType}
-                  className="select select-bordered w-full"
-                  onChange={handleChange}
-                  style={{ height: '38px' }}
-                >
-                  <option value="">Select Item Type</option>
-                  <option value="Gold">Gold</option>
-                  <option value="Diamond">Diamond</option>
-                  <option value="Silver">Silver</option>
-                  <option value="Platinum">Platinum</option>
-                </select>
-                {errors.itemType && <p className="text-red-500 text-sm">{errors.itemType}</p>}
-              </div>
-
-              <div style={{ paddingLeft:'20px',paddingTop:'80px', height: '30px',width:'99%' }}>
-                <label className="block mb-4 font-semibold text-gray-500 text-xs">Standard Purity:</label>
-                <input
-                  type="number"
-                  step="0.1"
-                  min="0"
-                  value={formData.standardPurity}
-                  name="standardPurity"
-                  placeholder="Standard Purity"
-                  onChange={handleChange}
-                  className="input input-md w-full appearance-auto [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                />
-                {errors.standardPurity && <p className="text-red-500 text-sm">{errors.standardPurity}</p>}
-              </div>
-
-              <div style={{ paddingLeft:'20px',paddingTop:'80px', height: '30px',width:'99%'}}>
-                <label className="block mb-4 font-semibold text-gray-500 text-xs">Is Default</label>
-                <select
-                  name="IsDefault"
-                  value={formData.IsDefault}
-                  className="select select-bordered w-full"
-                  onChange={handleChange}
-                  style={{ height: '38px' }}
-                >
-                  <option value="">Select Default Status</option>
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
-                </select>
-                {errors.IsDefault && <p className="text-red-500 text-sm">{errors.IsDefault}</p>}
-              </div>
-
-              <div style={{ paddingLeft:'20px',paddingTop:'80px', height: '30px',width:'99%' }}>
-                <label className="block mb-4 font-semibold text-gray-500 text-xs">Status</label>
-                <select
-                  name="status"
-                  value={formData.status}
-                  className="select select-bordered w-full"
-                  onChange={handleChange}
-                  style={{ height: '38px' }}
-                >
-                  <option value="">Select Status</option>
-                  <option value="Active">Active</option>
-                  <option value="Inactive">Inactive</option>
-                </select>
-                {errors.status && <p className="text-red-500 text-sm">{errors.status}</p>}
-              </div>
-
-              {/* Modal Actions */}
-              <div className="modal-action" style={{ paddingLeft: '50px',paddingTop:'90px',marginBottom:'30px', height: '30px' }}>
-                <button type="submit" className="btn  w-1/6" style={{backgroundColor: '#8392ab'}}>Submit</button>
-                <button
-                  type="button"
-                  className="btn  w-1/6"
-                  style={{backgroundColor: '#5E72e4'}}
-                  onClick={()=>document.getElementById('my_modal_edit').close()}
-                >
-                  Close
-                </button>
-              </div>
-          </form>
-      </dialog>
-
-
-
-      <dialog id="my_modal_delete" className="modal">
-      <div className="modal-box text-center py-10 px-8 relative font-[Open Sans]" style={{width:'600px',height:'300px'}}
-      onClick={() => {
-          document.getElementById('my_modal_delete').close();
-      }}>
-        {/* Icon */}
-        <div className="flex justify-center mb-4" style={{opacity:'.5'}}>
-          <div className="text-orange-400 text-6xl">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth=".7"
-              stroke="currentColor"
-              className="w-30 h-30"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0 3.75h.008v.008H12v-.008zM12 3.75c4.556 0 8.25 3.694 8.25 8.25s-3.694 8.25-8.25 8.25S3.75 16.556 3.75 12 7.444 3.75 12 3.75z" />
-            </svg>
-          </div>
-        </div>
-
-        {/* Title & Message */}
-        <h3 className="text-lg font-semibold " style={{margin:'20px'}}>Are you sure?</h3>
-        <p className="text-sm text-gray-500 " style={{margin:'20px'}}>You won't be able to revert this!</p>
-
-        {/* Actions */}
-        <div className="flex justify-center gap-4">
-          <button
-            className="btn text-xs bg-red-500 font-bold text-white hover:bg-red-600 px-6"
-            onClick={() => document.getElementById('my_modal_cancel').showModal()}
-            style={{width:'100px'}}
-          >
-            No, cancel!
-          </button>
-          <button
-            className="btn text-xs bg-green-500 font-bold text-white hover:bg-green-600 px-6"
-            onClick={() => {
-              document.getElementById('my_modal_8').close();
-            }}
-            style={{width:'100px'}}
-          >
-            Yes, delete it!
-          </button>
-        </div>
-        </div>
-</dialog>
-
-
-
-<dialog id="my_modal_cancel" className="modal">
-  <div className="modal-box text-center py-10 px-8 relative font-[Open Sans]" style={{width:'600px',height:'300px'}}
-  onClick={() => {
-      document.getElementById('my_modal_cancel').close();
-  }}>
-    {/* Icon */}
-    <div className="flex justify-center mb-4" style={{opacity:'.5'}}>
-      <div className="text-blue-400 text-6xl">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth=".7"
-          stroke="currentColor"
-          className="w-30 h-30"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0 3.75h.008v.008H12v-.008zM12 3.75c4.556 0 8.25 3.694 8.25 8.25s-3.694 8.25-8.25 8.25S3.75 16.556 3.75 12 7.444 3.75 12 3.75z" />
-        </svg>
-      </div>
-    </div>
-
-    {/* Title & Message */}
-    <h3 className="text-3xl font-bold text-gray-500 " style={{margin:'20px'}}>Cancelled</h3>
-    <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your Jewellery Type is safe</p>
-    <button className="btn bg-blue-500 w-[50px] rounded-lg" > ok</button>
-  </div>
- </dialog>
       
-    </div>
-  );
-};
+                       <dialog id="my_modal_8" className="modal">
+      
+      
+                       <div className="modal-box text-center py-8 px-6 rounded-xl relative font-[Open_Sans]
+                          w-[90vw] h-[50vh]             /* base (mobile) */
+                          sm:w-[70vw] sm:h-[30vh]       /* ≥ 640px */
+                          md:w-[50vw] md:h-[30vh]       /* ≥ 768px */
+                          lg:w-[35vw] lg:h-[30vh]       /* ≥ 1024px */
+                          xl:w-[30vw] xl:h-[50vh]       /* ≥ 1280px */
+                          2xl:w-[25vw] 2xl:h-[20vh]     /* ≥ 1536px */
+                        "
+      
+                       onClick={()=>document.getElementById('my_modal_8').close()}
+                       >
+                       
+                        {/* Icon */}
+                        <div className="flex justify-center mb-4" style={{opacity:'.5'}}>
+                          <div className="text-orange-400 text-6xl">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth=".7"
+                              stroke="currentColor"
+                              className="w-30 h-30"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0 3.75h.008v.008H12v-.008zM12 3.75c4.556 0 8.25 3.694 8.25 8.25s-3.694 8.25-8.25 8.25S3.75 16.556 3.75 12 7.444 3.75 12 3.75z" />
+                            </svg>
+                          </div>
+                        </div>
+      
+                        {/* Title & Message */}
+                        <h3 className="text-lg font-semibold " style={{margin:'20px'}}>Are you sure?</h3>
+                        <p className="text-sm text-gray-500 " style={{margin:'20px'}}>You won't be able to revert this!</p>
+      
+                        {/* Actions */}
+                        <div className="flex justify-center gap-4">
+                          <button
+                            className="btn text-xs bg-red-500 font-bold text-white hover:bg-red-600 px-6"
+                            onClick={() => document.getElementById('my_modal_cancel').showModal()}
+                            style={{width:'100px'}}
+                          >
+                            No, cancel!
+                          </button>
+                          <button
+                            className="btn text-xs bg-green-500 font-bold text-white hover:bg-green-600 px-6"
+                            onClick={() => {
+                              document.getElementById('my_modal_8').close();
+                            }}
+                            style={{width:'100px'}}
+                          >
+                            Yes, delete it!
+                          </button>
+                        </div>
+                      </div>
+                    </dialog>
+      
+      
+                  <dialog id="my_modal_cancel" className="modal">
+                  <div className="modal-box text-center py-10 px-8 relative font-[Open Sans] "
+                      onClick={() => {
+                      document.getElementById('my_modal_cancel').close();
+                      }}>
+                      <div className="flex justify-center mb-4" style={{opacity:'.5'}}>
+                      <div className="text-blue-400 text-6xl">
+                          <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth=".7"
+                          stroke="currentColor"
+                          className="w-30 h-30"
+                          >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0 3.75h.008v.008H12v-.008zM12 3.75c4.556 0 8.25 3.694 8.25 8.25s-3.694 8.25-8.25 8.25S3.75 16.556 3.75 12 7.444 3.75 12 3.75z" />
+                          </svg>
+                      </div>
+                      </div>
+                      <h3 className="text-3xl font-bold text-gray-500 " style={{margin:'20px'}}>Cancelled</h3>
+                      <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your Jewellery Type is safe</p>
+                      <button className="btn bg-blue-500 w-[50px] rounded-lg" > ok</button>
+                  </div>
+                  </dialog>
+                      </div>
+      
+                      {modal && (
+                                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
+                                  <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
+                                                sm:w-[85vw] sm:h-[75vh] sm:p-6
+                                                md:w-[65vw] md:h-[65vh] md:p-8
+                                                lg:w-[55vw] lg:h-[75vh] lg:p-10
+                                                xl:w-[35vw] xl:h-[95vh] xl:p-12
+                                                2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14
+                                                p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
+                                                
+                                                {/* Added flex-col */}
+                                    <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
+                                        style={{paddingLeft:'20px', paddingTop:"20px"}}>
+                                         Create Type                        </h3>
+                                    <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
+      
+                                    <div className="flex flex-col flex-grow"> {/* Added flex-grow */}
+                                   
+                                      <label 
+                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
+                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                      >
+                                       Code:
+                                      </label>
+                                      <input type="text" 
+                                        placeholder="    Type here" 
+                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        style={{marginLeft:'25px'}}
+                                        onChange={(e)=>handleChange(e)}
+                                        name=""
+                                      />
+                                      <label 
+                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
+                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                      >
+                                       Name:
+                                      </label>
+                                      <input type="text" 
+                                        placeholder="    Type here" 
+                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        style={{marginLeft:'25px'}}
+                                        onChange={(e)=>handleChange(e)}
+                                        name=""
+                                      />
+                                      
 
-export default Category;
+                                      <label 
+                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
+                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                      >
+                                        Description:
+                                      </label>
+
+                                      <textarea className="textarea w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
+                                        placeholder="Description" 
+                                        style={{marginLeft:'25px'}}
+                                        onChange={(e)=>handleChange(e)}
+                                        
+                                        name=""
+                                      ></textarea>
+                            
+                                           
+                                            <label 
+                                                style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
+                                                className="font-semibold text-sm text-[#344767] w-[80%]"
+                                            >
+                                                Status:
+                                            </label>
+                                            <select defaultValue=""
+                                                className="select w-[90%] h-[35px] focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                                                style={{marginLeft:'25px'}}
+                                                value={formData.status}
+                                                name=''
+                                                onChange={(e)=>handleChange(e)}
+                                            >
+                                                <option className=" text-gray-600"></option>
+                                                <option className=" text-gray-600"> Active</option>
+                                                <option className=" text-gray-600"> InActive</option>
+                                            </select>
+            
+                                            </div> 
+                                            {/* Button container positioned 10px above bottom */}
+                                            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
+                                                style={{marginTop: '20px', marginBottom: '10px',  paddingLeft: '200px'}}>
+                                            <button
+                                                type="button"
+                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                style={{ backgroundColor: '#8392ab' }}
+                                                onClick={(e) => handleSubmit(e)}
+                                            >
+                                                Submit
+                                            </button>
+                                            <button
+                                                type="button"
+                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                style={{ backgroundColor: '#5E72e4' }}
+                                                onClick={handleCloseModal}
+                                            >
+                                                Close
+                                            </button>
+                                            </div>
+                                        </div>
+                                        </div>
+                                )}      
+      
+      
+                      {editModal &&  (
+                                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
+                                  <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
+                                                sm:w-[85vw] sm:h-[75vh] sm:p-6
+                                                md:w-[65vw] md:h-[65vh] md:p-8
+                                                lg:w-[55vw] lg:h-[75vh] lg:p-10
+                                                xl:w-[35vw] xl:h-[95vh] xl:p-12
+                                                2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14
+                                                p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
+                                                
+                                                {/* Added flex-col */}
+                                    <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
+                                        style={{paddingLeft:'20px', paddingTop:"20px"}}>
+                                         Edit Type                       </h3>
+                                    <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
+      
+                                    <div className="flex flex-col flex-grow"> {/* Added flex-grow */}
+                                   
+                                      <label 
+                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
+                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                      >
+                                       Code:
+                                      </label>
+                                      <input type="text" 
+                                        placeholder="    Type here" 
+                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        style={{marginLeft:'25px'}}
+                                        onChange={(e)=>handleChange(e)}
+                                        name=""
+                                      />
+                                      
+                                      <label 
+                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
+                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                      >
+                                       Name:
+                                      </label>
+                                      <input type="text" 
+                                        placeholder="    Type here" 
+                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        style={{marginLeft:'25px'}}
+                                        onChange={(e)=>handleChange(e)}
+                                        name=""
+                                      />
+                                      
+
+                                      <label 
+                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
+                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                      >
+                                        Description:
+                                      </label>
+
+                                      <textarea className="textarea w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
+                                        placeholder="Description" 
+                                        style={{marginLeft:'25px'}}
+                                        onChange={(e)=>handleChange(e)}
+                                        
+                                        name=""
+                                      ></textarea>
+                            
+                                           
+                                            <label 
+                                                style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
+                                                className="font-semibold text-sm text-[#344767] w-[80%]"
+                                            >
+                                                Status:
+                                            </label>
+                                            <select defaultValue=""
+                                                className="select w-[90%] h-[35px] focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                                                style={{marginLeft:'25px'}}
+                                                value={formData.status}
+                                                name=''
+                                                onChange={(e)=>handleChange(e)}
+                                            >
+                                                <option className=" text-gray-600"></option>
+                                                <option className=" text-gray-600"> Active</option>
+                                                <option className=" text-gray-600"> InActive</option>
+                                            </select>
+            
+                                            </div> 
+                                            {/* Button container positioned 10px above bottom */}
+                                            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
+                                                style={{marginTop: '20px', marginBottom: '10px',  paddingLeft: '200px'}}>
+                                            <button
+                                                type="button"
+                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                style={{ backgroundColor: '#8392ab' }}
+                                                onClick={(e) => handleSubmit(e)}
+                                            >
+                                                Submit
+                                            </button>
+                                            <button
+                                                type="button"
+                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                style={{ backgroundColor: '#5E72e4' }}
+                                                onClick={handleCloseModal}
+                                            >
+                                                Close
+                                            </button>
+                                            </div>
+                                        </div>
+                                        </div>
+                                )}
+      
+                         
+                    </>)
+     }
+     
+     export default Category;
