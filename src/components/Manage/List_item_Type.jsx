@@ -402,7 +402,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                          Create Type                        </h3>
                                     <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
       
-                                    <div className="flex flex-col flex-grow"> {/* Added flex-grow */}
+                                    <div className="flex flex-col flex-grow text-gray-600"> {/* Added flex-grow */}
                                    
                                       <label 
                                         style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
@@ -412,7 +412,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        className="input w-[90%] rounded-lg focus:outline-none border-gray-300 bg-white  focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
@@ -425,7 +425,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        className="input w-[90%] rounded-lg border-gray-300 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
@@ -439,7 +439,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                         Description:
                                       </label>
 
-                                      <textarea className="textarea w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
+                                      <textarea className="textarea w-[90%] border-gray-300 bg-white rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
                                         placeholder="Description" 
                                         style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
@@ -455,7 +455,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                                 Status:
                                             </label>
                                             <select defaultValue=""
-                                                className="select w-[90%] h-[35px] focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                                                className="select w-[90%] h-[35px] border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
                                                 style={{marginLeft:'25px'}}
                                                 value={formData.status}
                                                 name=''
@@ -472,7 +472,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                                 style={{marginTop: '20px', marginBottom: '10px',  paddingLeft: '200px'}}>
                                             <button
                                                 type="button"
-                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white border-none"
                                                 style={{ backgroundColor: '#8392ab' }}
                                                 onClick={(e) => handleSubmit(e)}
                                             >
@@ -480,7 +480,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                             </button>
                                             <button
                                                 type="button"
-                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white border-none"
                                                 style={{ backgroundColor: '#5E72e4' }}
                                                 onClick={handleCloseModal}
                                             >
@@ -518,7 +518,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        className="input w-[90%] rounded-lg focus:outline-none bo  focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""

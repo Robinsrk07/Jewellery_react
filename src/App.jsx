@@ -49,12 +49,17 @@ import UnitOfMeasures from './components/Settings/UnitOfMeasures.jsx';
 import TermsOfPayment from './components/Settings/TermsOfPayment.jsx';
 import GroupAndPermission from './components/Group&Permission/GroupAndPermission.jsx';
 import ManagePermissions from './components/Group&Permission/ManagePermissions.jsx';
+import Pos from './components/Pos.jsx';
+import { Provider } from 'react-redux';
+import store from './StateManagement/store.js';
 function App() {
   return (
     <div className="w-full h-full m-0 p-0">
+      <Provider store={store}>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Login />} />
+          <Route path='/pos' element={<Pos />} />
           <Route path='/dashboard' element={<Body />} >
             <Route path='manage'>
               <Route path='item_type' element={<List_item_Type />} />
@@ -123,6 +128,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      </Provider>
     </div>
   );
 }

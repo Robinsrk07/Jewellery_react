@@ -2,10 +2,14 @@
     
     
      import { useState } from "react";
+     import {useSelector} from 'react-redux'
+import Login from "../LoginPage";
      
      const  CustomersList = () => {
      
-          
+      const customers = useSelector((state)=>state.customer)
+
+      console.log(customers)
       const  [isHovered, setIsHovered] = useState(false);
                    const [items, setItems] = useState(10);
                    const [formData, setFormData] = useState({
@@ -173,71 +177,67 @@
                  
                        
                  
-                       <table className="table w-full text-sm text-left text-gray-500 border-collapse min-w-[1200px]
+                       <table className="table w-full text-sm text-left text-gray-500 border-collapse min-w-[1300px]
                        " style={{ borderSpacing: '0 12px', borderCollapse: 'separate', }}>
                          <thead className="text-xs text-gray-400 uppercase bg-white">
                            <tr>
-                             <th className="px-6 py-3" style={{paddingLeft:'20px'}} >SL NO</th>
-                             <th className="px-6 py-3 " style={{width:'150px'}} >NAME </th>
-                             <th className="px-6 py-3 "  style={{width:'150px'}}>EMAIL</th>
-                             <th className="px-6 py-3   " style={{width:'150px'}} >PHONE</th>
-                             <th className="px-6 py-3 "  style={{width:'150px'}}>ADRESS</th>
-                             <th className="px-6 py-3 " style={{width:'150px'}} >GENDER</th>
-                             <th className="px-6 py-3 "  style={{width:'150px'}}>STATUS</th>
-                             <th className="px-6 py-3 "style={{width:'150px'}}  >ACTION</th>
+                             <th className="px-6 py-3"  >SL NO</th>
+                             <th className="px-6 py-3 "  >NAME </th>
+                             <th className="px-6 py-3 "  >EMAIL</th>
+                             <th className="px-6 py-3   "  >PHONE</th>
+                             <th className="px-6 py-3 "  >ADRESS</th>
+                             <th className="px-6 py-3 "  >GENDER</th>
+                             <th className="px-6 py-3 "  >STATUS</th>
+                             <th className="px-6 py-3 "  >ACTION</th>
                            </tr>
                          </thead>
                          <tbody>
-                           
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">AJIL </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Ajil@gmail.com </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">789568684 </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Sulthan Bathery </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Male </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">
-                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
-                               </td> 
-      
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
-                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                      <button
-                                      type="button"
-                                      className="btn text-white font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '100px',
-                                          padding: '5px',
-                                          backgroundColor: '#696BE4',
-                                      }}                              
-                                      onClick={()=>setEditModal(true)}
-                                      >
-                                      Edit
-                                      </button>
-              
-                                      <button
-                                      className="btn text-white font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '100px',
-                                          padding: '5px',
-                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-                                      }}
-                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
-                                      >
-                                      Delete 
-                                      </button>
-                                  </div>
-                                  </td>
-                             </tr>
-                            
-                            
-                             
-                             
-                             
-                             
-                            
-                          
-                         </tbody>
+  {customers
+    .filter(user => user.name) // Optional: skip empty records
+    .map((user, index) => (
+      <tr key={index} className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+        <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '20px' }}>{index + 1}</td>
+        <td className="px-6 py-5 border-b border-gray-200 text-xs">{user.name}</td>
+        <td className="px-6 py-5 border-b border-gray-200 text-xs">{user.email}</td>
+        <td className="px-6 py-5 border-b border-gray-200 text-xs">{user.phoneNumber}</td>
+        <td className="px-6 py-5 border-b border-gray-200 text-xs">{user.address}</td>
+        <td className="px-6 py-5 border-b border-gray-200 text-xs">Male</td> {/* Add gender if you have */}
+        <td className="px-6 py-5 border-b border-gray-200 text-xs">
+          <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{ padding: '2px 6px' }}>
+            ACTIVE
+          </span>
+        </td>
+        <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+          <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+            <button
+              type="button"
+              className="btn text-white font-bold text-xs rounded-lg"
+              style={{
+                width: '100px',
+                padding: '5px',
+                backgroundColor: '#696BE4',
+              }}
+              onClick={() => setEditModal(true)}
+            >
+              Edit
+            </button>
+
+            <button
+              className="btn text-white font-bold text-xs rounded-lg"
+              style={{
+                width: '100px',
+                padding: '5px',
+                background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+              }}
+              onClick={() => document.getElementById('my_modal_8').showModal()}
+            >
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
+    ))}
+</tbody>
                        </table>
                        
                  
