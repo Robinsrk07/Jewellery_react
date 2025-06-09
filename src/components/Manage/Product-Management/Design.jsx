@@ -103,31 +103,32 @@ const Design= ()=>{
                   mx-auto overflow-auto  custom-scrollbar"
                   style={{ fontFamily: 'Open Sans',overflow:'auto'}}
              >
-                  <div
-                          style={{
-                            width: '100%',
-                            display: 'flex',
-                            justifyContent: 'flex-end',
-                            padding: '1.5rem',
-                            boxSizing: 'border-box',
-                          }}
-                        >
+                 <div
+                              style={{
+                              position: 'sticky',
+                              left: 0,
+                              top: 0,
+                              zIndex: 10,
+                              backgroundColor: 'white',
+                              padding: '1.5rem',
+                              boxSizing: 'border-box',
+                              display: 'flex',
+                              justifyContent: 'flex-end',
+                              width: 'fit-content', // Changed from 100%
+                              minWidth: '100%' // Ensures it matches table width
+                              }}
+                          >
                           <button
-                          className="text-xs font-bold"
-                            style={{
-                              position:'fixed',
-                              width: '90%',
-                              maxWidth: '160px',
-                              height: '30px',
-                            
-                              borderRadius: '8px',
-                              backgroundColor: isHovered
-                                ? 'rgb(97, 113, 228)'
-                                : 'rgb(126, 96, 228)',
-                              color: 'white',
-                              transition: 'background-color 0.3s ease',
-                              cursor: 'pointer',
-                            }}
+                         className="text-xs font-bold"
+                              style={{
+                                  width: '180px',
+                                  height: '40px',
+                                  borderRadius: '8px',
+                                  backgroundColor: isHovered ? 'rgb(97, 113, 228)' : 'rgb(126, 96, 228)',
+                                  color: 'white',
+                                  transition: 'background-color 0.3s ease',
+                                  cursor: 'pointer',
+                              }}
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
                             onClick={() => setModal(true)}
@@ -136,7 +137,7 @@ const Design= ()=>{
                           </button>
                         </div>
                   
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
+                        <div className="text-gray-400" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
                           <p className="text-xs font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
                           <select
                             className="border border-gray-300 rounded-lg w-[114px] h-[35px] px-2"
@@ -176,12 +177,16 @@ const Design= ()=>{
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">Filigree Design</td>
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">Delicate and intricate metalwork, often seen in vintage and traditional jewellery.</td>
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                  <td className="px-6 py-5 border-b border-gray-200">
+                               <span className="bg-green-200 text-green-800 font-bold text-[10px] rounded" style={{ padding: '4px 6px' }}>
+                                ACTIVE
+                               </span>
+                               </td> 
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
                                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                                        <button
                                        type="button"
-                                       className="btn text-white font-bold text-xs rounded-lg"
+                                       className="btn border-none text-white font-bold text-xs rounded-lg"
                                        style={{
                                            width: '100px',
                                            padding: '5px',
@@ -193,7 +198,7 @@ const Design= ()=>{
                                        </button>
                
                                        <button
-                                       className="btn text-white font-bold text-xs rounded-lg"
+                                       className="btn border-none text-white font-bold text-xs rounded-lg"
                                        style={{
                                            width: '100px',
                                            padding: '5px',
@@ -211,12 +216,16 @@ const Design= ()=>{
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>2</td>
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">Halo Design</td>
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">	A central gemstone surrounded by smaller stones, commonly used in engagement rings.</td>
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                           <td className="px-6 py-5 border-b border-gray-200">
+                               <span className="bg-green-200 text-green-800 font-bold text-[10px] rounded" style={{ padding: '4px 6px' }}>
+                                ACTIVE
+                               </span>
+                               </td> 
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
                                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                                        <button
                                        type="button"
-                                       className="btn text-white font-bold text-xs rounded-lg"
+                                       className="btn border-none text-white font-bold text-xs rounded-lg"
                                        style={{
                                            width: '100px',
                                            padding: '5px',
@@ -228,7 +237,7 @@ const Design= ()=>{
                                        </button>
                
                                        <button
-                                       className="btn text-white font-bold text-xs rounded-lg"
+                                       className="btn border-none  text-white font-bold text-xs rounded-lg"
                                        style={{
                                            width: '100px',
                                            padding: '5px',
@@ -245,12 +254,16 @@ const Design= ()=>{
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">Floral Design</td>
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">Inspired by nature, featuring floral patterns in rings, necklaces, and earrings.</td>
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                         <td className="px-6 py-5 border-b border-gray-200">
+                               <span className="bg-green-200 text-green-800 font-bold text-[10px] rounded" style={{ padding: '4px 6px' }}>
+                                ACTIVE
+                               </span>
+                               </td> 
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
                                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                                        <button
                                         type="button"
-                                       className="btn text-white font-bold text-xs rounded-lg"
+                                       className="btn border-none text-white font-bold text-xs rounded-lg"
                                        style={{
                                            width: '100px',
                                            padding: '5px',
@@ -263,7 +276,127 @@ const Design= ()=>{
                                        </button>
                
                                        <button
-                                       className="btn text-white font-bold text-xs rounded-lg"
+                                       className="btn border-none text-white font-bold text-xs rounded-lg"
+                                       style={{
+                                           width: '100px',
+                                           padding: '5px',
+                                           background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                       }}
+                                       onClick={()=>document.getElementById('my_modal_8').showModal()}
+       
+                                       >
+                                       Delete 
+                                       </button>
+                                   </div>
+                                   </td>
+                              </tr>
+                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs">Floral Design</td>
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs">Inspired by nature, featuring floral patterns in rings, necklaces, and earrings.</td>
+                      <td className="px-6 py-5 border-b border-gray-200">
+                               <span className="bg-green-200 text-green-800 font-bold text-[10px] rounded" style={{ padding: '4px 6px' }}>
+                                ACTIVE
+                               </span>
+                               </td> 
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                                   <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                       <button
+                                        type="button"
+                                       className="btn border-none text-white font-bold text-xs rounded-lg"
+                                       style={{
+                                           width: '100px',
+                                           padding: '5px',
+                                           backgroundColor: '#696BE4',
+                                       }}
+                                       onClick={()=>setEditModal(true)}
+       
+                                       >
+                                       Edit
+                                       </button>
+               
+                                       <button
+                                       className="btn border-none text-white font-bold text-xs rounded-lg"
+                                       style={{
+                                           width: '100px',
+                                           padding: '5px',
+                                           background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                       }}
+                                       onClick={()=>document.getElementById('my_modal_8').showModal()}
+       
+                                       >
+                                       Delete 
+                                       </button>
+                                   </div>
+                                   </td>
+                              </tr>
+                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs">Floral Design</td>
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs">Inspired by nature, featuring floral patterns in rings, necklaces, and earrings.</td>
+                           <td className="px-6 py-5 border-b border-gray-200">
+                               <span className="bg-green-200 text-green-800 font-bold text-[10px] rounded" style={{ padding: '4px 6px' }}>
+                                ACTIVE
+                               </span>
+                               </td> 
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                                   <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                       <button
+                                        type="button"
+                                       className="btn border-none text-white font-bold text-xs rounded-lg"
+                                       style={{
+                                           width: '100px',
+                                           padding: '5px',
+                                           backgroundColor: '#696BE4',
+                                       }}
+                                       onClick={()=>setEditModal(true)}
+       
+                                       >
+                                       Edit
+                                       </button>
+               
+                                       <button
+                                       className="btn border-none text-white font-bold text-xs rounded-lg"
+                                       style={{
+                                           width: '100px',
+                                           padding: '5px',
+                                           background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                       }}
+                                       onClick={()=>document.getElementById('my_modal_8').showModal()}
+       
+                                       >
+                                       Delete 
+                                       </button>
+                                   </div>
+                                   </td>
+                              </tr>
+                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>3</td>
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs">Floral Design</td>
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs">Inspired by nature, featuring floral patterns in rings, necklaces, and earrings.</td>
+                             <td className="px-6 py-5 border-b border-gray-200">
+                               <span className="bg-green-200 text-green-800 font-bold text-[10px] rounded" style={{ padding: '4px 6px' }}>
+                                ACTIVE
+                               </span>
+                               </td> 
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                                   <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                       <button
+                                        type="button"
+                                       className="btn border-none text-white font-bold text-xs rounded-lg"
+                                       style={{
+                                           width: '100px',
+                                           padding: '5px',
+                                           backgroundColor: '#696BE4',
+                                       }}
+                                       onClick={()=>setEditModal(true)}
+       
+                                       >
+                                       Edit
+                                       </button>
+               
+                                       <button
+                                       className="btn border-none text-white font-bold text-xs rounded-lg"
                                        style={{
                                            width: '100px',
                                            padding: '5px',
@@ -287,13 +420,13 @@ const Design= ()=>{
                   
                         {/* Pagination */}
                         <div className="flex gap-1 justify-center">
-                          <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+                          <button className="btn bg-white border-gray-300 rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
                             {'<'}
                           </button>
-                          <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
+                          <button className="btn rounded-full border-gray-300 w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
                             1
                           </button>
-                          <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+                          <button className="btn bg-white border-gray-300  rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
                             {'>'}
                           </button>
                         </div>

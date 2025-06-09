@@ -365,6 +365,276 @@ import '@fontsource/open-sans/700.css'; // Bold
                                   </div>
                                   </td>
                              </tr>
+                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>4</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold BAR </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold BAR</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Gold</td>
+                              
+                             
+                              
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>Yes</span>
+                               </td> 
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
+                               </td> 
+      
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                      <button
+                                      type="button"
+                                      className="btn text-white font-bold text-xs rounded-lg border-none"
+                                      style={{
+                                          width: '100px',
+                                          padding: '5px',
+                                          backgroundColor: '#696BE4',
+                                      }}                              
+                                      onClick={()=>setEditModal(true)}
+                                      >
+                                      Edit
+                                      </button>
+              
+                                      <button
+                                      className="btn text-white font-bold text-xs rounded-lg border-none"
+                                      style={{
+                                          width: '190px',
+                                          padding: '5px',
+                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                      }}
+                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
+      
+                                      >
+                                      Delete 
+                                      </button>
+                                  </div>
+                                  </td>
+                             </tr>
+                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>4</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold BAR </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold BAR</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Gold</td>
+                              
+                             
+                              
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>Yes</span>
+                               </td> 
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
+                               </td> 
+      
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                      <button
+                                      type="button"
+                                      className="btn text-white font-bold text-xs rounded-lg border-none"
+                                      style={{
+                                          width: '100px',
+                                          padding: '5px',
+                                          backgroundColor: '#696BE4',
+                                      }}                              
+                                      onClick={()=>setEditModal(true)}
+                                      >
+                                      Edit
+                                      </button>
+              
+                                      <button
+                                      className="btn text-white font-bold text-xs rounded-lg border-none"
+                                      style={{
+                                          width: '190px',
+                                          padding: '5px',
+                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                      }}
+                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
+      
+                                      >
+                                      Delete 
+                                      </button>
+                                  </div>
+                                  </td>
+                             </tr>
+                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>4</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold BAR </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold BAR</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Gold</td>
+                              
+                             
+                              
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>Yes</span>
+                               </td> 
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
+                               </td> 
+      
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                      <button
+                                      type="button"
+                                      className="btn text-white font-bold text-xs rounded-lg border-none"
+                                      style={{
+                                          width: '100px',
+                                          padding: '5px',
+                                          backgroundColor: '#696BE4',
+                                      }}                              
+                                      onClick={()=>setEditModal(true)}
+                                      >
+                                      Edit
+                                      </button>
+              
+                                      <button
+                                      className="btn text-white font-bold text-xs rounded-lg border-none"
+                                      style={{
+                                          width: '190px',
+                                          padding: '5px',
+                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                      }}
+                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
+      
+                                      >
+                                      Delete 
+                                      </button>
+                                  </div>
+                                  </td>
+                             </tr>
+                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>4</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold BAR </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold BAR</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Gold</td>
+                              
+                             
+                              
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>Yes</span>
+                               </td> 
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
+                               </td> 
+      
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                      <button
+                                      type="button"
+                                      className="btn text-white font-bold text-xs rounded-lg border-none"
+                                      style={{
+                                          width: '100px',
+                                          padding: '5px',
+                                          backgroundColor: '#696BE4',
+                                      }}                              
+                                      onClick={()=>setEditModal(true)}
+                                      >
+                                      Edit
+                                      </button>
+              
+                                      <button
+                                      className="btn text-white font-bold text-xs rounded-lg border-none"
+                                      style={{
+                                          width: '190px',
+                                          padding: '5px',
+                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                      }}
+                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
+      
+                                      >
+                                      Delete 
+                                      </button>
+                                  </div>
+                                  </td>
+                             </tr>
+                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>4</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold BAR </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold BAR</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Gold</td>
+                              
+                             
+                              
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>Yes</span>
+                               </td> 
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
+                               </td> 
+      
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                      <button
+                                      type="button"
+                                      className="btn text-white font-bold text-xs rounded-lg border-none"
+                                      style={{
+                                          width: '100px',
+                                          padding: '5px',
+                                          backgroundColor: '#696BE4',
+                                      }}                              
+                                      onClick={()=>setEditModal(true)}
+                                      >
+                                      Edit
+                                      </button>
+              
+                                      <button
+                                      className="btn text-white font-bold text-xs rounded-lg border-none"
+                                      style={{
+                                          width: '190px',
+                                          padding: '5px',
+                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                      }}
+                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
+      
+                                      >
+                                      Delete 
+                                      </button>
+                                  </div>
+                                  </td>
+                             </tr>
+                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>4</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold BAR </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold BAR</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Gold</td>
+                              
+                             
+                              
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>Yes</span>
+                               </td> 
+                               <td className="px-6 py-5 border-b border-gray-200  text-xs">
+                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
+                               </td> 
+      
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                      <button
+                                      type="button"
+                                      className="btn text-white font-bold text-xs rounded-lg border-none"
+                                      style={{
+                                          width: '100px',
+                                          padding: '5px',
+                                          backgroundColor: '#696BE4',
+                                      }}                              
+                                      onClick={()=>setEditModal(true)}
+                                      >
+                                      Edit
+                                      </button>
+              
+                                      <button
+                                      className="btn text-white font-bold text-xs rounded-lg border-none"
+                                      style={{
+                                          width: '190px',
+                                          padding: '5px',
+                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                      }}
+                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
+      
+                                      >
+                                      Delete 
+                                      </button>
+                                  </div>
+                                  </td>
+                             </tr>
                            
                             
                            
@@ -407,7 +677,6 @@ import '@fontsource/open-sans/700.css'; // Bold
                           md:w-[50vw] md:h-[30vh]       /* ≥ 768px */
                           lg:w-[35vw] lg:h-[30vh]       /* ≥ 1024px */
                           xl:w-[30vw] xl:h-[50vh]       /* ≥ 1280px */
-                          2xl:w-[25vw] 2xl:h-[20vh]     /* ≥ 1536px */
                         "
       
                        onClick={()=>document.getElementById('my_modal_8').close()}
@@ -488,8 +757,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                                 sm:w-[85vw] sm:h-[75vh] sm:p-6
                                                 md:w-[65vw] md:h-[65vh] md:p-8
                                                 lg:w-[55vw] lg:h-[75vh] lg:p-10
-                                                xl:w-[35vw] xl:h-[95vh] xl:p-12
-                                                2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14
+                                                xl:w-[35vw] xl:h-[75vh] xl:p-12
                                                 p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
                                                 
                                                 {/* Added flex-col */}
@@ -593,8 +861,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                                 sm:w-[85vw] sm:h-[75vh] sm:p-6
                                                 md:w-[65vw] md:h-[65vh] md:p-8
                                                 lg:w-[55vw] lg:h-[75vh] lg:p-10
-                                                xl:w-[35vw] xl:h-[95vh] xl:p-12
-                                                2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14
+                                                xl:w-[35vw] xl:h-[75vh] xl:p-12
                                                 p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
                                                 
                                                 {/* Added flex-col */}

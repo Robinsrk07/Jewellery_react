@@ -49,6 +49,9 @@ import UnitOfMeasures from './components/Settings/UnitOfMeasures.jsx';
 import TermsOfPayment from './components/Settings/TermsOfPayment.jsx';
 import GroupAndPermission from './components/Group&Permission/GroupAndPermission.jsx';
 import ManagePermissions from './components/Group&Permission/ManagePermissions.jsx';
+import DiamondPurchhase from './components/Inventory/Diamond/DiamondPurchhase.jsx';
+import CreateDiamondPurchase from './components/Inventory/Diamond/CreateDiamondPurchase.jsx';
+import ItemDetials from './components/Inventory/Diamond/ItemDetials.jsx';
 import Pos from './components/Pos.jsx';
 import { Provider } from 'react-redux';
 import store from './StateManagement/store.js';
@@ -110,6 +113,12 @@ function App() {
                 <Route path='viewpurchase' element={<ViewPurchase/>} />
                 <Route path='updatepurchase' element={<UpdateGoldPurchase/>} />
                 <Route path='updateitem' element={<UpdateItem/>} />
+              </Route>
+              <Route path='diamond'>
+                <Route path='purchasediamond' element={<DiamondPurchhase/>} />
+                <Route path='createDiamondPurchase' element={<CreateDiamondPurchase/>} />
+                <Route path='itemDetials' element={<ItemDetials/>} />
+              
               </Route>
             </Route>
             <Route path='settings'>

@@ -271,6 +271,24 @@ const Card = () => {
                   </ul>
                 )}
               </div>
+              <div style={{ paddingLeft: '31px', paddingTop: '20px' }}>
+                <div 
+                  className="list-none cursor-pointer flex items-center gap-2 text-sm" 
+                  style={{ paddingLeft: '30px' }}
+                  onClick={() => toggleSection('gold')}
+                >
+                  Diamond
+                  <span className="text-xs text-gray-400" style={{ paddingLeft: '10px', fontSize: '7px', width: '9px' }}>
+                    {openSections.gold ? '▲' : '▼'}
+                  </span>
+                </div>
+                
+                {openSections.gold && (
+                  <ul className="flex flex-col gap-[20px] mt-2 text-gray-400 pl-6">
+                    <li className="text-xs hover:text-blue-500" style={{ paddingLeft: '30px', marginTop: '10px' }}><Link to='/dashboard/inventory/diamond/purchasediamond'>Item</Link></li>
+                  </ul>
+                )}
+              </div>
             </ul>
           )}
         </div>

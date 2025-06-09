@@ -144,7 +144,7 @@
                               </button>
                           </div>
                  
-                       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
+                       <div className="text-gray-400" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
                          <p className="text-xs font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
                          <select
                            className="border border-gray-300 rounded-lg w-[114px] h-[35px] px-2"
@@ -208,7 +208,7 @@ Can add main stock , Can change main stock , Can delete main stock , Can view ma
                                   <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                                       <button
                                       type="button"
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
                                           width: '100px',
                                           padding: '5px',
@@ -221,7 +221,7 @@ Can add main stock , Can change main stock , Can delete main stock , Can view ma
                                       <Link to='/dashboard/settings/groupandpermissions/managepermissions'>
                                       <button
                                       type="button"
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
                                           width: '200px',
                                           padding: '5px',
@@ -232,7 +232,7 @@ Can add main stock , Can change main stock , Can delete main stock , Can view ma
                                       </button></Link>
               
                                       <button
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
                                           width: '150px',
                                           padding: '5px',
@@ -265,13 +265,13 @@ Can add main stock , Can change main stock , Can delete main stock , Can view ma
                  
                        {/* Pagination */}
                        <div className="flex gap-1 justify-center">
-                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+                         <button className="btn rounded-full bg-white shadow-xl border-gray-100 w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
                            {'<'}
                          </button>
-                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
+                         <button className="btn rounded-full border-none w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
                            1
                          </button>
-                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+                         <button className="btn rounded-full bg-white shadow-xl border-gray-100  w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
                            {'>'}
                          </button>
                        </div>
@@ -389,7 +389,7 @@ Can add main stock , Can change main stock , Can delete main stock , Can view ma
                                             </label>
                                             <input type="text" 
                                                 placeholder="    Type here" 
-                                                className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                                className="input w-[90%] border-gray-300 bg-white rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
                                                 style={{marginLeft:'25px'}}
                                                 onChange={(e)=>handleChange(e)}
                                                 name=""
@@ -400,7 +400,7 @@ Can add main stock , Can change main stock , Can delete main stock , Can view ma
                                                 style={{marginTop: '20px', marginBottom: '10px',  paddingLeft: '200px'}}>
                                             <button
                                                 type="button"
-                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
                                                 style={{ backgroundColor: '#8392ab' }}
                                                 onClick={(e) => handleSubmit(e)}
                                             >
@@ -408,7 +408,7 @@ Can add main stock , Can change main stock , Can delete main stock , Can view ma
                                             </button>
                                             <button
                                                 type="button"
-                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
                                                 style={{ backgroundColor: '#5E72e4' }}
                                                 onClick={handleCloseModal}
                                             >

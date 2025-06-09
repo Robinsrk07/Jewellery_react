@@ -17,11 +17,21 @@ const Product_Size =()=>{
      const [errors, setErrors] = useState({});
       // handle change 
    
-         const handleChange = (e) => {
+   const handleChange = (e) => {
            const { name, value } = e.target;
            setFormData((prev) => ({ ...prev, [name]: value }));
            setErrors((prev) => ({ ...prev, [name]: '' })); 
          };
+
+  const [modal, setModal] = useState(true)   
+  const [editModal,setEditModal]= useState(false)
+
+  const handleCloseModal =()=>{
+    setModal(false)
+  }
+  const handleEditCloseModal =()=>{
+    setEditModal(false)
+  }
    
      //validation 
      
@@ -100,38 +110,40 @@ const Product_Size =()=>{
    `}</style>
    <div className="bg-white w-full max-w-6xl h-auto max-h-[65vh] rounded-xl px-4 md:px-8 lg:px-12 mx-auto overflow-auto  custom-scrollbar" style={{ fontFamily: 'Open Sans',overflow:'auto'}}>
    <div
-           style={{
-             width: '100%',
-             display: 'flex',
-             justifyContent: 'flex-end',
-             padding: '1.5rem',
-             boxSizing: 'border-box',
-           }}
-         >
-           <button
-           className="text-xs font-semibold"
-             style={{
-               width: '90%',
-               maxWidth: '160px',
-               height: '30px',
-               border: '1px solid blue',
-               borderRadius: '8px',
-               backgroundColor: isHovered
-                 ? 'rgb(97, 113, 228)'
-                 : 'rgb(126, 96, 228)',
-               color: 'white',
-               transition: 'background-color 0.3s ease',
-               cursor: 'pointer',
-             }}
+                              style={{
+                              position: 'sticky',
+                              left: 0,
+                              top: 0,
+                              zIndex: 10,
+                              backgroundColor: 'white',
+                              padding: '1.5rem',
+                              boxSizing: 'border-box',
+                              display: 'flex',
+                              justifyContent: 'flex-end',
+                              width: 'fit-content', // Changed from 100%
+                              minWidth: '100%' // Ensures it matches table width
+                              }}
+                          >
+                          <button
+                         className="text-xs font-bold"
+                              style={{
+                                  width: '180px',
+                                  height: '40px',
+                                  borderRadius: '8px',
+                                  backgroundColor: isHovered ? 'rgb(97, 113, 228)' : 'rgb(126, 96, 228)',
+                                  color: 'white',
+                                  transition: 'background-color 0.3s ease',
+                                  cursor: 'pointer',
+                              }}
              onMouseEnter={() => setIsHovered(true)}
              onMouseLeave={() => setIsHovered(false)}
-             onClick={() => document.getElementById('my_modal_color').showModal()}
+             onClick={() =>setModal(true) }
            >
-             + New Color
+             + New Size
            </button>
          </div>
    
-         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
+         <div className="text-gray-400" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
            <p className="text-xs font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
            <select
              className="border border-gray-300 rounded-lg w-[114px] h-[35px] px-2"
@@ -170,29 +182,35 @@ const Product_Size =()=>{
                  <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '35px' }}>1</td>
                  <td className="px-6 py-5 border-b border-gray-200 text-xs">Ring Size</td>
                  <td className="px-6 py-5 border-b border-gray-200 text-xs">Measured in numbers (e.g., US Size 6, 7, 8 or Indian Size 12, 14, 16)</td>
-                 <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                  <td className="px-6 py-5 border-b border-gray-200">
+                <span className="bg-green-200 text-green-800 font-bold text-[10px] rounded" style={{ padding: '4px 6px' }}>
+                  ACTIVE
+                </span>
+              </td>
                  <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
                     <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                         <button
-                        className="btn text-white font-bold text-xs rounded-lg"
+                        className="btn border-none text-white font-bold text-xs rounded-lg"
                         style={{
                             width: '100px',
                             padding: '5px',
                             backgroundColor: '#696BE4',
+                             height:'35px'
                         }}
-                        onClick={() => document.getElementById('my_modal_edit').showModal()}
+                        onClick={() => setEditModal(true)}
                         >
                         Edit
                         </button>
 
                         <button
-                        className="btn text-white font-bold text-xs rounded-lg"
+                        className="btn border-none text-white font-bold text-xs rounded-lg"
                         style={{
                             width: '100px',
                             padding: '5px',
                             background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                            height:'35px'
                         }}
-                        onClick={() => document.getElementById('my_modal_delete').showModal()}
+                        onClick={() => document.getElementById('my_modal_8').showModal()}
                         >
                         Delete 
                         </button>
@@ -203,29 +221,35 @@ const Product_Size =()=>{
                  <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '35px' }}>2</td>
                  <td className="px-6 py-5 border-b border-gray-200 text-xs">Bangle Size</td>
                  <td className="px-6 py-5 border-b border-gray-200 text-xs">Typically measured in diameter (e.g., 2.4, 2.6, 2.8 inches in India).</td>
-                 <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                  <td className="px-6 py-5 border-b border-gray-200">
+                <span className="bg-green-200 text-green-800 font-bold text-[10px] rounded" style={{ padding: '4px 6px' }}>
+                  ACTIVE
+                </span>
+              </td>
                  <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
                     <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                         <button
-                        className="btn text-white font-bold text-xs rounded-lg"
+                        className="btn border-none text-white font-bold text-xs rounded-lg"
                         style={{
                             width: '100px',
                             padding: '5px',
                             backgroundColor: '#696BE4',
+                             height:'35px'
                         }}
-                        onClick={() => document.getElementById('my_modal_edit').showModal()}
+                        onClick={() => setEditModal(true)}
                         >
                         Edit
                         </button>
 
                         <button
-                        className="btn text-white font-bold text-xs rounded-lg"
+                        className="btn border-none text-white font-bold text-xs rounded-lg"
                         style={{
                             width: '100px',
                             padding: '5px',
                             background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                             height:'35px'
                         }}
-                        onClick={() => document.getElementById('my_modal_delete').showModal()}
+                        onClick={() => document.getElementById('my_modal_8').showModal()}
                         >
                         Delete 
                         </button>
@@ -236,29 +260,35 @@ const Product_Size =()=>{
                  <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '35px' }}>3</td>
                  <td className="px-6 py-5 border-b border-gray-200 text-xs">Necklace Length</td>
                  <td className="px-6 py-5 border-b border-gray-200 text-xs">Measured in inches or cm (e.g., 16-inch choker, 18-inch princess length, 24-inch opera length).</td>
-                 <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
+                  <td className="px-6 py-5 border-b border-gray-200">
+                <span className="bg-green-200 text-green-800 font-bold text-[10px] rounded" style={{ padding: '4px 6px' }}>
+                  ACTIVE
+                </span>
+              </td>
                  <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
                     <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                         <button
-                        className="btn text-white font-bold text-xs rounded-lg"
+                        className="btn border-none text-white font-bold text-xs rounded-lg"
                         style={{
                             width: '100px',
                             padding: '5px',
                             backgroundColor: '#696BE4',
+                             height:'35px'
                         }}
-                        onClick={() => document.getElementById('my_modal_edit').showModal()}
+                        onClick={() => setEditModal(true)}
                         >
                         Edit
                         </button>
 
                         <button
-                        className="btn text-white font-bold text-xs rounded-lg"
+                        className="btn border-none text-white font-bold text-xs rounded-lg"
                         style={{
                             width: '100px',
                             padding: '5px',
                             background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                             height:'35px'
                         }}
-                        onClick={() => document.getElementById('my_modal_delete').showModal()}
+                        onClick={() => document.getElementById('my_modal_8').showModal()}
                         >
                         Delete 
                         </button>
@@ -272,132 +302,318 @@ const Product_Size =()=>{
    
          {/* Pagination */}
          <div className="flex gap-1 justify-center">
-           <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+           <button className="btn bg-white border-gray-100 rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
              {'<'}
            </button>
-           <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
+           <button className="btn rounded-full border-none w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
              1
            </button>
-           <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+           <button className="btn  bg-white border-gray-100 rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
              {'>'}
            </button>
          </div>
    
          {/* Modal */}
    
-         <dialog id="my_modal_color" className="modal modal-bottom sm:modal-middle custom-scrollbar"         style={{ fontFamily: 'Open Sans' }}
-               onClick={(e) => {
-                 const modalBox = document.querySelector('#my_modal_5 .modal-box');
-                 if (modalBox && !modalBox.contains(e.target)) {
-                   document.getElementById('my_modal_color').close();
-                 }
-               }}
-               >
-           <form method="dialog" className="modal-box" style={{width: '35vw',
-               maxWidth: '35vw',
-               minWidth:'35vw',
-               height: '700px',
-               maxHeight: '90vh'
-               }} 
-               onSubmit={handleSubmit}>
-             <div style={{ width: '100%', height: '50px' }}>
-               <h3 className="font-bold text-lg text-gray-700" style={{paddingLeft:'20px',paddingTop:"20px"}}>Create Color</h3>
-               <hr className=" border-t-1 border-gray-300 w-full mt-2"  style={{marginTop:'20px'}}/>
-             </div>
-   
-             <div style={{ padding: '50px', height: '30px' }}>
-               <label className="block  font-bold text-xs text-gray-500" style={{marginBottom:'10px'}}>Name:</label>
-               <input
-                 type="text"
-                 value={formData.name}
-                 name="name"
-                 placeholder="name"
-                 onChange={handleChange}
-                 className="input input-md w-full shadow-none focus:shadow-none focus:outline-none focus:border-b-2 focus:border-blue-800"
-               />
-               {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
-             </div>
-             <div style={{ padding: '50px', height: '30px' }}>
-               <label className="block  font-bold text-xs text-gray-500" style={{marginBottom:'10px'}}>Code:</label>
-               <input
-                 type="text"
-                 value={formData.code}
-                 name="code"
-                 placeholder="code"
-                 onChange={handleChange}
-                 className="input input-md w-full shadow-none focus:shadow-none focus:outline-none focus:border-b-2 focus:border-blue-800"
-               />
-               {errors.code && <p className="text-red-500 text-sm">{errors.code}</p>}
-             </div>
-   
-             <div style={{ paddingLeft:'50px',paddingTop:'30px', height: '30px' }}>
-               <label className="block mb-4 font-bold text-xs text-gray-500" style={{marginBottom:'10px'}}>Hex_code:</label>
-               <input
-                 type="text"
-                 value={formData.hex_code}
-                 name="hex_code"
-                 placeholder="Hex_code"
-                 onChange={handleChange}
-                 className="input input-md w-[410px] shadow-none focus:shadow-none focus:outline-none focus:border-b-2 focus:border-blue-800"
-               />
-               {errors.hex_code && <p className="text-red-500 text-sm">{errors.hex_code}</p>}
-             </div>
-             
-             <div style={{ paddingLeft:'50px' ,paddingTop:'80px',height: '30px' }}>
-               <label className="block mb-4 font-bold text-xs text-gray-500">color:</label>
-               <input
-                 type="text"
-                 value={formData.color}
-                 name="color"
-                 placeholder="color"
-                 onChange={handleChange}
-                 className="input input-md w-[410px] shadow-none focus:shadow-none focus:outline-none focus:border-b-2 focus:border-blue-800"
-               />
-               {errors.color && <p className="text-red-500 text-sm">{errors.color}</p>}
-             </div>
-             <div style={{ padding: '50px', height: '30px', marginTop: '30px' }}>
-               <label className="block mb-2 text-xs font-bold text-gray-500">Description:</label>
-               <textarea
-                 name="description"
-                 className="textarea w-full rounded-md mb-2 shadow-none focus:shadow-none focus:outline-none focus:border-b-2 focus:border-blue-800"
-                 placeholder="Enter description"
-                 value={formData.description}
-                 onChange={handleChange}
-               />
-               {errors.description && <p className="text-red-500 text-sm">{errors.description}</p>}
-             </div>
-             
-   
-             <div style={{ paddingLeft:'50px',paddingTop:'80px', height: '20px' }}>
-               <label className="block mb-4 font-bold text-xs text-gray-500">Status</label>
-               <select
-                 name="status"
-                 value={formData.status}
-                 className="select select-bordered w-full shadow-none focus:shadow-none focus:outline-none focus:border-b-2 focus:border-blue-800"
-                 onChange={handleChange}
-                 style={{ height: '38px',width:'410px' }}
-               >
-                 <option value="">Select Status</option>
-                 <option value="Active">Active</option>
-                 <option value="Inactive">Inactive</option>
-               </select>
-               {errors.status && <p className="text-red-500 text-sm">{errors.status}</p>}
-             </div>
-   
-             <div className="modal-action" style={{ padding: '50px',paddingTop:'70px', height: '30px' }}>
-               <button type="submit" className="btn  w-1/6"  style={{backgroundColor: '#8392ab'}}>Create</button>
-                <button
-                 type="button"
-                 className="btn  w-1/6"
-                 style={{backgroundColor: '#5E72e4'}}
-                 onClick={() => document.getElementById('my_modal_5').close()}
-                >
-                  Close
-                </button>
-              </div>
-            </form>
-          </dialog>
+       
         </div>
+        <dialog id="my_modal_8" className="modal">
+       
+       
+                        <div className="modal-box text-center py-8 px-6 relative font-[Open_Sans]
+                           
+                            w-[90vw]   h-[45vh]      /* Mobile: 4:3 ratio */
+                            sm:-w-[70vw] sm:h-[35vh]
+                            md:w-[50vw] md:h-[35vh]
+                            lg:w-[35vw] lg:h-[35vh]
+                            xl:w-[30vw] xl:h-[50vh]
+                          "
+       
+                        onClick={()=>document.getElementById('my_modal_8').close()}
+                        >
+                        
+                         {/* Icon */}
+                         <div className="flex justify-center mb-4" style={{opacity:'.5'}}>
+                           <div className="text-orange-400 text-6xl">
+                             <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               fill="none"
+                               viewBox="0 0 24 24"
+                               strokeWidth=".7"
+                               stroke="currentColor"
+                               className="w-30 h-30"
+                             >
+                               <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0 3.75h.008v.008H12v-.008zM12 3.75c4.556 0 8.25 3.694 8.25 8.25s-3.694 8.25-8.25 8.25S3.75 16.556 3.75 12 7.444 3.75 12 3.75z" />
+                             </svg>
+                           </div>
+                         </div>
+       
+                         {/* Title & Message */}
+                         <h3 className="text-lg font-semibold " style={{margin:'20px'}}>Are you sure?</h3>
+                         <p className="text-sm text-gray-500 " style={{margin:'20px'}}>You won't be able to revert this!</p>
+       
+                         {/* Actions */}
+                         <div className="flex justify-center gap-4">
+                           <button
+                             className="btn text-xs bg-red-500 font-bold text-white hover:bg-red-600 px-6"
+                             onClick={() => document.getElementById('my_modal_cancel').showModal()}
+                             style={{width:'100px'}}
+                           >
+                             No, cancel!
+                           </button>
+                           <button
+                             className="btn text-xs bg-green-500 font-bold text-white hover:bg-green-600 px-6"
+                             onClick={() => {
+                               document.getElementById('my_modal_8').close();
+                             }}
+                             style={{width:'100px'}}
+                           >
+                             Yes, delete it!
+                           </button>
+                         </div>
+                       </div>
+                     </dialog>
+       
+       
+          <dialog id="my_modal_cancel" className="modal">
+       
+       
+         <div className="modal-box text-center py-10 px-8 relative font-[Open Sans]  w-[90vw]   h-[45vh]      /* Mobile: 4:3 ratio */
+                            sm:-w-[70vw] sm:h-[35vh]
+                            md:w-[50vw] md:h-[35vh]
+                            lg:w-[35vw] lg:h-[35vh]
+                            xl:w-[30vw] xl:h-[50vh]"
+         onClick={() => {
+           
+             document.getElementById('my_modal_cancel').close();
+           
+         }}>
+           {/* Icon */}
+           <div className="flex justify-center mb-4" style={{opacity:'.5'}}>
+             <div className="text-blue-400 text-6xl">
+               <svg
+                 xmlns="http://www.w3.org/2000/svg"
+                 fill="none"
+                 viewBox="0 0 24 24"
+                 strokeWidth=".7"
+                 stroke="currentColor"
+                 className="w-30 h-30"
+               >
+                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0 3.75h.008v.008H12v-.008zM12 3.75c4.556 0 8.25 3.694 8.25 8.25s-3.694 8.25-8.25 8.25S3.75 16.556 3.75 12 7.444 3.75 12 3.75z" />
+               </svg>
+             </div>
+           </div>
+       
+           {/* Title & Message */}
+           <h3 className="text-3xl font-bold text-gray-500 " style={{margin:'20px'}}>Cancelled</h3>
+           <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your Jewellery Type is safe</p>
+           <button className="btn bg-blue-500 w-[50px] rounded-lg" > ok</button>
+       
+           
+         </div>
+       </dialog>      
+                      
+       
+                       {modal && (
+                           <div className="fixed  text-gray-400 inset-0 bg-black/50 flex items-center justify-center z-50">
+                              <div className="bg-white rounded-xl shadow-md w-[90%] h-[85vh]
+                                          sm:w-[85vw] sm:h-[100vh] sm:p-6
+                                          md:w-[65vw] md:h-[60vh] md:p-8
+                                          lg:w-[55vw] lg:h-[95vh] lg:p-10
+                                          xl:w-[32vw] xl:h-[85vh] xl:p-12
+                                          p-4 sm:p-6 md:p-8 flex flex-col"> 
+                                <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
+                                style={{paddingLeft:'20px',
+                                paddingTop:"20px"}}>
+                                 Create Product Size
+                               </h3>
+                               <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
+       
+                               <div className="flex flex-col "> {/* Added this container */}
+                                 <label 
+                                   style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
+                                   className="font-semibold text-sm text-[#344767] w-[80%]"
+                                 >
+                                   Name:
+                                 </label>
+                                 <input type="text" 
+                                 placeholder="Type here" 
+                                 className="input w-[90%] bg-white  border-gray-300 rounded-lg "
+                                 style={{marginLeft:'25px'}}
+                             //    value={formData.name}
+                             ///    onChange={(e)=>handleChange(e)}
+                                 name="name"
+                                 />
+                                 {/* {errors.name && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.name}</span>} */}
+       
+                                 <label 
+                                      style={{ paddingLeft:'25px',
+                                      marginTop: '20px',
+                                      marginBottom:'10px', 
+                                      display: 'block' }}
+                                      className="font-semibold text-sm text-[#344767] w-[80%]"
+                                 >
+                                   Description:
+                                   </label>
+       
+       
+                                    <textarea className="textarea w-[90%] bg-white  border-gray-300 rounded-lg" 
+                                    placeholder="Bio" 
+                                    style={{marginLeft:'25px'}}
+                              //      value={formData.description}
+                              //      onChange={(e)=>handleChange(e)}
+                                    name="description"
+                                    >
+                                    </textarea>
+                                    {/* {errors.description && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.description}</span>} */}
+       
+                                    {/* label */}
+                                    <label 
+                                    style={{ paddingLeft:'25px', marginTop: '20px',
+                                    marginBottom:'10px',
+                                    display: 'block' }}
+                                    className="font-semibold text-sm text-[#344767] w-[80%]"
+                                    >
+                                   Status:
+                                 </label>
+                                  <select defaultValue="select Status"
+                                    className="select w-[90%] bg-white  border-gray-300" 
+                                    style={{marginLeft:'25px'}}
+                               //     value={formData.status}
+                                    name='status'
+                              //      onChange={(e)=>handleChange(e)}
+                                    >
+                                  <option disabled={true}>select Status</option>
+                                  <option>Active</option>
+                                  <option>Inactive</option>
+                                  
+                                  </select>
+                                  {/* {errors.status && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.status}</span>} */}
+                                  
+                                <hr className="my-4 border-gray-300" style={{marginTop:'40px'}}/>
+                                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
+                                      style={{ marginTop:'20px', paddingLeft: '200px'}}>
+                                    <button
+                                      type="button"
+                                      className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
+                                      style={{ backgroundColor: '#8392ab' }}
+                                 //     onClick={(e) => handleSubmit(e)}
+                                    >
+                                      Submit
+                                    </button>
+                                    <button
+                                      type="button"
+                                      className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
+                                      style={{ backgroundColor: '#5E72e4' }}
+                                      onClick={handleCloseModal}
+                                    >
+                                      Close
+                                    </button>
+                              </div>
+                               </div>
+                             </div>
+                           </div>
+                         )}
+       
+                       {editModal &&(
+                           <div className="fixed text-gray-300 inset-0 bg-black/50 flex items-center justify-center z-50">
+                        <div className="bg-white rounded-xl shadow-md w-[90%] h-[85vh]
+                                          sm:w-[85vw] sm:h-[100vh] sm:p-6
+                                          md:w-[65vw] md:h-[60vh] md:p-8
+                                          lg:w-[55vw] lg:h-[95vh] lg:p-10
+                                          xl:w-[32vw] xl:h-[85vh] xl:p-12
+                                          p-4 sm:p-6 md:p-8 flex flex-col"> 
+                                <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
+                                style={{paddingLeft:'20px',
+                                paddingTop:"20px"}}>
+                                Edit Product Size
+                               </h3>
+                               <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
+       
+                               <div className="flex flex-col "> {/* Added this container */}
+                                 <label 
+                                   style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
+                                   className="font-semibold text-sm text-[#344767] w-[80%]"
+                                 >
+                                   Name:
+                                 </label>
+                                 <input type="text" 
+                                 placeholder="Type here" 
+                                 className="input bg-white border border-gray-300 w-[90%] rounded-lg "
+                                 style={{marginLeft:'25px'}}
+                               //  value={formData.name}
+                               //  onChange={(e)=>handleChange(e)}
+                                 name="name"
+                                 />
+                                 {/* {errors.name && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.name}</span>} */}
+       
+                                 <label 
+                                      style={{ paddingLeft:'25px',
+                                      marginTop: '20px',
+                                      marginBottom:'10px', 
+                                      display: 'block' }}
+                                      className="font-semibold text-sm text-[#344767] w-[80%]"
+                                 >
+                                   Description:
+                                   </label>
+       
+       
+                                    <textarea className="textarea w-[90%] bg-white border border-gray-300 rounded-lg" 
+                                    placeholder="Bio" 
+                                    style={{marginLeft:'25px'}}
+                               //     value={formData.description}
+                                  //  onChange={(e)=>handleChange(e)}
+                                    name="description"
+                                    >
+                                    </textarea>
+                                    {/* {errors.description && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.description}</span>} */}
+       
+                                    {/* label */}
+                                    <label 
+                                    style={{ paddingLeft:'25px', marginTop: '20px',
+                                    marginBottom:'10px',
+                                    display: 'block' }}
+                                    className="font-semibold text-sm text-[#344767] w-[80%]"
+                                    >
+                                   Status:
+                                 </label>
+                                  <select defaultValue="select     Status"
+                                    className="select bg-white border border-gray-300 w-[90%]" 
+                                    style={{marginLeft:'25px'}}
+                                 //   value={formData.status}
+                                    name='status'
+                                //    onChange={(e)=>handleChange(e)}
+                                    >
+                                  <option disabled={true}>select Status</option>
+                                  <option>Active</option>
+                                  <option>Inactive</option>
+                                  
+                                  </select>
+                                  {/* {errors.status && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.status}</span>} */}
+                                  
+                                <hr className="my-4 border-gray-300" style={{marginTop:'40px'}}/>
+                                <div className="flex flex-col sm:flex-row justify-center  items-center gap-4" 
+                                    style={{ marginTop:'20px' }}>
+                                    <button
+                                      type="button"
+                                      className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
+                                      style={{ backgroundColor: '#8392ab' }}
+                                    //  onClick={(e) => handleSubmit(e)}
+                                    >
+                                      Submit
+                                    </button>
+                                    <button
+                                      type="button"
+                                      className="btn  border-none w-2/3 sm:w-[30%] rounded-lg text-white"
+                                      style={{ backgroundColor: '#5E72e4' }}
+                                      onClick={handleEditCloseModal}
+                                    >
+                                      Close
+                                    </button>
+                              </div>
+                               </div>
+                             </div>
+                           </div>)}
         </>)
 }
 

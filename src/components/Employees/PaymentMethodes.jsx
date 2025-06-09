@@ -105,7 +105,7 @@
                 mx-auto overflow-auto  custom-scrollbar"
              style={{ fontFamily: 'Open Sans',overflow:'auto'}}
                >
-                              <div
+                      <div
                           style={{
                           position: 'sticky',
                           left: 0,
@@ -211,14 +211,6 @@
                               </div>
                               </td>
                          </tr>
-                        
-                        
-                         
-                         
-                         
-                         
-                        
-                      
                      </tbody>
                    </table>
                    

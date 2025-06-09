@@ -348,7 +348,7 @@ import Login from "../LoginPage";
                                                 md:w-[65vw] md:h-[55vh] md:p-8
                                                 lg:w-[65vw] lg:h-[75vh] lg:p-10
                                                 xl:w-[37vw] xl:h-[95vh] xl:p-12
-                                                2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14
+                                                2xl:w-[25vw] 2xl:h-[30dvh] 2xl:p-14
                                                 p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
                                                 
                                                 {/* Added flex-col */}

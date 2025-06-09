@@ -148,7 +148,7 @@
                               </button>
                           </div>
                  
-                       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
+                       <div className="text-gray-400" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
                          <p className="text-xs font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
                          <select
                            className="border border-gray-300 rounded-lg w-[114px] h-[35px] px-2"
@@ -171,16 +171,20 @@
                  
                        
                  
-                       <table className="table w-full text-sm text-left text-gray-500 border-collapse min-w-[1100px]  " style={{ borderSpacing: '0 12px', borderCollapse: 'separate', }}>
-                         <thead className="text-xs text-gray-400 uppercase bg-white">
-                           <tr>
-                             <th className="px-6 py-3" style={{width:'90px',paddingLeft:'20px'}} >SL NO</th>
-                             <th className="px-6 py-3"  >NAME </th>
-                             <th className="px-6 py-3" >DESCRIPTION </th>
-                             <th className="px-6 py-3"  >STATUS</th>
-                             <th className="px-6 py-3"  >ACTION</th>
-                           </tr>
-                         </thead>
+                      <table
+                        className="table w-full text-sm text-left text-gray-500 border-collapse min-w-[1000px] flex items-justify"
+                        style={{ borderSpacing: '0 12px', borderCollapse: 'separate', tableLayout: 'fixed' }}
+                      >
+                        <thead className="text-xs text-gray-400 uppercase bg-white">
+                          <tr>
+                            <th className="px-6 py-3 w-1/5">SL NO</th>
+                            <th className="px-6 py-3 w-1/5">NAME</th>
+                            <th className="px-6 py-3 w-1/5">DESCRIPTION</th>
+                            <th className="px-6 py-3 w-1/5">STATUS</th>
+                            <th className="px-6 py-3 w-1/5">ACTION</th>
+                          </tr>
+                        </thead>
+
                          <tbody>
                            
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
@@ -197,7 +201,7 @@
                                   <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                                       <button
                                       type="button"
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
                                           width: '100px',
                                           padding: '5px',
@@ -209,7 +213,7 @@
                                       </button>
               
                                       <button
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
                                           width: '150px',
                                           padding: '5px',
@@ -238,7 +242,7 @@
                                   <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                                       <button
                                       type="button"
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
                                           width: '100px',
                                           padding: '5px',
@@ -250,7 +254,7 @@
                                       </button>
               
                                       <button
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
                                           width: '150px',
                                           padding: '5px',
@@ -279,7 +283,7 @@
                                   <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                                       <button
                                       type="button"
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
                                           width: '100px',
                                           padding: '5px',
@@ -291,7 +295,7 @@
                                       </button>
               
                                       <button
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
                                           width: '150px',
                                           padding: '5px',
@@ -320,13 +324,13 @@
                  
                        {/* Pagination */}
                        <div className="flex gap-1 justify-center">
-                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+                         <button className="btn border-none bg-gray-50 rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
                            {'<'}
                          </button>
-                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
+                         <button className="btn border-none rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
                            1
                          </button>
-                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+                         <button className="btn border-none bg-gray-50 rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
                            {'>'}
                          </button>
                        </div>
@@ -419,7 +423,7 @@
                       </div>
       
                       {modal && (
-                                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
+                                <div className="fixed text-gray-500 inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
                                   <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
                                                 sm:w-[85vw] sm:h-[75vh] sm:p-6
                                                 md:w-[65vw] md:h-[65vh] md:p-8
@@ -444,7 +448,7 @@
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        className="input w-[90%] bg-white border-gray-300 rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
@@ -458,8 +462,8 @@
                                         Description:
                                       </label>
 
-                                      <textarea className="textarea w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
-                                        placeholder="Description" 
+                                      <textarea className="textarea w-[90%] bg-white border-gray-300  rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
+                                        placeholder="   Description" 
                                         style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
                                         
@@ -474,7 +478,7 @@
                                                 Status:
                                             </label>
                                             <select defaultValue=""
-                                                className="select w-[90%] h-[35px] focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                                                className="select w-[90%] h-[35px] bg-white border-gray-300 focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
                                                 style={{marginLeft:'25px'}}
                                                 value={formData.status}
                                                 name=''
@@ -491,7 +495,7 @@
                                                 style={{marginTop: '20px', marginBottom: '10px',  paddingLeft: '200px'}}>
                                             <button
                                                 type="button"
-                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
                                                 style={{ backgroundColor: '#8392ab' }}
                                                 onClick={(e) => handleSubmit(e)}
                                             >
@@ -499,7 +503,7 @@
                                             </button>
                                             <button
                                                 type="button"
-                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn w-2/3 border-none sm:w-[30%] rounded-lg text-white"
                                                 style={{ backgroundColor: '#5E72e4' }}
                                                 onClick={handleCloseModal}
                                             >
@@ -512,7 +516,7 @@
       
       
                       {editModal &&  (
-                                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
+                                <div className="fixed text-gray-500 inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
                                   <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
                                                 sm:w-[85vw] sm:h-[75vh] sm:p-6
                                                 md:w-[65vw] md:h-[65vh] md:p-8
@@ -537,7 +541,7 @@
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        className="input w-[90%] rounded-lg focus:outline-none border-gray-300 bg-white  focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
@@ -551,7 +555,7 @@
                                         Description:
                                       </label>
 
-                                      <textarea className="textarea w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
+                                      <textarea className="textarea w-[90%] bg-white border-gray-300 rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
                                         placeholder="Description" 
                                         style={{marginLeft:'25px'}}
                                         onChange={(e)=>handleChange(e)}
@@ -567,7 +571,7 @@
                                                 Status:
                                             </label>
                                             <select defaultValue=""
-                                                className="select w-[90%] h-[35px] focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                                                className="select w-[90%] h-[35px] bg-white border border-gray-300 focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
                                                 style={{marginLeft:'25px'}}
                                                 value={formData.status}
                                                 name=''
@@ -584,7 +588,7 @@
                                                 style={{marginTop: '20px', marginBottom: '10px',  paddingLeft: '200px'}}>
                                             <button
                                                 type="button"
-                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
                                                 style={{ backgroundColor: '#8392ab' }}
                                                 onClick={(e) => handleSubmit(e)}
                                             >
@@ -592,7 +596,7 @@
                                             </button>
                                             <button
                                                 type="button"
-                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
                                                 style={{ backgroundColor: '#5E72e4' }}
                                                 onClick={handleCloseModal}
                                             >

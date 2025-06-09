@@ -9,7 +9,7 @@ const Pos = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAddNewOpen, setIsAddNewOpen] = useState(false);
   const [isViewMoreOpen, setIsViewMoreOpen] = useState(false);
-  const [isNewCustomer, setNewCustomer] = useState(true);
+  const [isNewCustomer, setNewCustomer] = useState(false);
   const [Loading,setLoading] =useState(false)
       const [customerDetails, setCustomerDetails] = useState({
       name: '',
@@ -72,10 +72,10 @@ const Pos = () => {
   ];
 
   return (
-    <div className="bg-gray-50 w-full h-full flex">
+    <div className="bg-[#F8F9FA] w-full h-full flex">
       {/* Sidebar Menu */}
       {isMenuOpen && (
-        <div className="w-[20%] h-full bg-[#5E72E4] transition-all duration-300" >
+        <div className="w-[20%] h-full bg-[#5E72E4] transition-all overflow-auto duration-300" >
           <div className="p-4">
             <h2 className="text-xs text-white font-bold mb-4" style={{padding:'30px'}}>Manage</h2>
             <h2 className="text-xs font-semibold text-white font-bold mb-4" style={{padding:'30px'}}>Customers</h2>
@@ -85,10 +85,10 @@ const Pos = () => {
       )}
 
       {/* Main Content */}
-      <div className={`${isMenuOpen ? 'w-[80%]' : 'w-full'}`} style={{fontFamily: 'Open Sans'}} >
-        <div className="w-full min-h-[100px] bg-white" style={{ padding: '20px', fontFamily: 'Open Sans' }}>
+      <div className={`${isMenuOpen ? 'w-[80%]' : 'w-full' }  bg-[#F8F9FA]`} style={{fontFamily: 'Open Sans'}} >
+        <div className="w-full min-h-[100px] bg-[#F8F9FA]" style={{ padding: '20px', fontFamily: 'Open Sans' }}>
           {/* Top Navigation Bar */}
-          <div className="flex justify-between items-center w-full h-[80px] bg-gray-50 flex-nowrap max-w-full">
+          <div className="flex justify-between items-center w-full h-[80px] bg-[#F8F9FA] flex-nowrap max-w-full">
             <button
               className="flex items-center w-[80px] h-[30px] bg-gray-800 text-white text-sm rounded-sm shadow hover:bg-gray-700"
               style={{ padding: '5px 10px' }}
@@ -166,7 +166,7 @@ const Pos = () => {
 
           {/* Form Fields - Only visible when View More is expanded */}
           {isViewMoreOpen && (
-            <div className="w-full min-h-[150px] bg-white border border-gray-300 rounded-lg mt-4 p-4">
+            <div className="w-full min-h-[150px] bg-[#FFFFFF] border border-gray-300 rounded-lg mt-4 p-4">
               <div className="flex flex-col md:flex-row gap-4 items-center text-gray-700" style={{ padding: '30px' }}>
                 <div className="flex flex-col w-full md:w-1/4">
                   <label className="text-sm font-medium text-gray-700 mb-1">Salesman name</label>
@@ -194,8 +194,8 @@ const Pos = () => {
           )}
 
           {/* Products Table */}
-          <div className="w-full min-h-[150px] border border-gray-300 rounded-lg overflow-auto" style={{ marginTop: '30px', padding: '30px' }}>
-  <table className="table w-full text-sm border border-collapse" style={{ minWidth: '1200px' }}>
+          <div className="w-full min-h-[150px] border border-gray-300 bg-[#FFFFFF] rounded-lg overflow-auto" style={{ marginTop: '30px', padding: '30px' }}>
+  <table className="table w-full text-sm border border-collapse bg-[#FFFFFF]" style={{ minWidth: '1200px' }}>
     <thead className="h-[30px]">
       <tr className="bg-gray-800 text-white">
         <th className="px-4 py-2 border text-center">#</th>
@@ -208,7 +208,7 @@ const Pos = () => {
         <th className="px-4 py-2 border text-center">Amount</th>
       </tr>
     </thead>
-    <tbody className="bg-white ">
+    <tbody className="bg-white text-gray-700 text-xs ">
       <tr className="border-t h-[30px]">
         <td className="px-4 py-2 border text-center">1</td>
         <td className="px-4 py-2 border text-center">Gold Chain</td>
@@ -235,10 +235,11 @@ const Pos = () => {
 </div>
 
           {/* Totals Section */}
-          <div className="w-full min-h-[150px] border border-gray-300 rounded-lg" style={{ marginTop: '30px', padding: '30px' }}>
+          <div className="w-full bg-[#FFFFFF] min-h-[150px] border border-gray-300 rounded-lg" style={{ marginTop: '30px', padding: '30px' }}
+          >
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {totalsData.map((item, index) => (
-                <div key={index} className="flex justify-between items-center p-2 rounded-lg bg-gray-50">
+                <div key={index} className="flex justify-between items-center p-2 rounded-lg bg-white">
                   <span className="text-sm font-medium text-gray-700">{item.label}:</span>
                   <span className="text-sm text-gray-700">{item.value}</span>
                 </div>
@@ -250,14 +251,15 @@ const Pos = () => {
 
       {/* Add New Customer Modal */}
       {isNewCustomer && !Loading && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto" onClick={()=>setIsAddNewOpen(false)}>
           <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
                         sm:w-[85vw] sm:h-[55vh] sm:p-6
                         md:w-[65vw] md:h-[65vh] md:p-8
                         lg:w-[55vw] lg:h-[65vh] lg:p-10
                         xl:w-[35vw] xl:h-[65vh] xl:p-12
                         2xl:w-[25vw] 2xl:h-[60vh] 2xl:p-14
-                        p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto">
+                        p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"
+                          onClick={(e) => e.stopPropagation()} >
             <h3 className="font-bold text-[15px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
                 style={{ paddingLeft: '20px', paddingTop: "20px" }}>
               Add New Customer
@@ -271,7 +273,7 @@ const Pos = () => {
               value={customerDetails.name}
               onChange={handleChange}
               placeholder="  Customer Name"
-              className="input w-[90%] rounded-xs focus:outline-none input-sm bg-gray-50 border-gray-300 focus:border-b-2 focus:border-blue-500"
+              className="input w-[90%] rounded-xs focus:outline-none input-sm bg-white border-gray-300 focus:border-b-2 focus:border-blue-500"
               style={{ marginLeft: '25px' }}
             />
 
@@ -281,7 +283,7 @@ const Pos = () => {
               value={customerDetails.phoneNumber}
               onChange={handleChange}
               placeholder="   Mobile Number"
-              className="input w-[90%] rounded-xs focus:outline-none input-sm bg-gray-50 border-gray-300 focus:border-b-2 focus:border-blue-500"
+              className="input w-[90%] rounded-xs focus:outline-none input-sm bg-white border-gray-300 focus:border-b-2 focus:border-blue-500"
               style={{ marginLeft: '25px' }}
             />
 
@@ -291,7 +293,7 @@ const Pos = () => {
               value={customerDetails.email}
               onChange={handleChange}
               placeholder="  Email"
-              className="input w-[90%] rounded-xs focus:outline-none input-sm bg-gray-50 border-gray-300 focus:border-b-2 focus:border-blue-500"
+              className="input w-[90%] rounded-xs focus:outline-none input-sm bg-white border-gray-300 focus:border-b-2 focus:border-blue-500"
               style={{ marginLeft: '25px' }}
             />
 
@@ -300,7 +302,7 @@ const Pos = () => {
               value={customerDetails.address}
               onChange={handleChange}
               placeholder="Address"
-              className="textarea w-[90%] bg-gray-100 rounded-xs input-sm bg-gray-50 border-gray-300 focus:outline-none focus:border-b-2 focus:border-blue-500"
+              className="textarea w-[90%] bg-gray-100 rounded-xs input-sm bg-white border-gray-300 focus:outline-none focus:border-b-2 focus:border-blue-500"
               style={{ marginLeft: '25px' }}
             ></textarea>
           </div>
@@ -401,9 +403,9 @@ const Pos = () => {
 
 
            <div className="overflow-auto" style={{margin:'10px'}}>
-         <table className="w-full overflow-auto border-collapse border border-gray-300 my-5" style={{minWidth:'900px' ,minHeight:'250px'}}>
+         <table className="w-full bg-white overflow-auto border-collapse border border-gray-300 my-5" style={{minWidth:'900px' ,minHeight:'250px'}}>
           <thead>
-          <tr className="bg-gray-100"style={{height:"30px"}} >
+          <tr className="bg-white"style={{height:"30px"}} >
             <th className="border border-gray-300  bg-white text-black text-sm text-center font-semibold"  >Weight / Quantity</th>
             <th className="border border-gray-300  bg-white text-black text-sm text-center font-semibold"  >Rate</th>
             <th className="border border-gray-300  bg-white text-black text-sm text-center font-semibold"  >Amount</th>
@@ -414,7 +416,7 @@ const Pos = () => {
           <tr>
             
           <td className="border border-gray-300 p-4 text-black " style={{padding:'3px'}}>
-            <h3 className="text-[12px] bg-gray-100 flex justify-center items-center p-2 " style={{height:"20px",marginBottom:'5px'}}>
+            <h3 className="text-[12px] bg-w flex justify-center items-center p-2 " style={{height:"20px",marginBottom:'5px'}}>
               Gross Weight (GMS)
             </h3>
             <input 
