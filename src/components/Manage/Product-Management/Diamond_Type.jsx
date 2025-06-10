@@ -113,7 +113,6 @@ const Diamond_Type = ()=>{
                    width: '90%',
                    maxWidth: '160px',
                    height: '30px',
-                   border: '1px solid blue',
                    borderRadius: '8px',
                    backgroundColor: isHovered
                      ? 'rgb(97, 113, 228)'
@@ -385,11 +384,11 @@ const Diamond_Type = ()=>{
                    {errors.status && <p className="text-red-500 text-sm">{errors.status}</p>}
                  </div>
        
-                 <div className="modal-action" style={{ padding: '50px',paddingTop:'70px', height: '30px' }}>
-                   <button type="submit" className="btn  w-1/6"  style={{backgroundColor: '#8392ab'}}>Create</button>
+                 <div className="modal-action " style={{ padding: '50px',paddingTop:'70px', height: '30px' }}>
+                   <button type="submit" className="btn text-white  w-[100px]"  style={{backgroundColor: '#8392ab'}}>Create</button>
                     <button
                      type="button"
-                     className="btn  w-1/6"
+                     className="btn text-white w-[100px]"
                      style={{backgroundColor: '#5E72e4'}}
                      onClick={() => document.getElementById('my_modal_5').close()}
                     >

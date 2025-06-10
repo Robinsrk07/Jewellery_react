@@ -41,12 +41,12 @@ const Body = () => {
   return (
     <div className="h-screen overflow-hidden  w-full bg-[linear-gradient(to_bottom,#5e72e4_45%,#EFF2F3_45%)]">
 
-  <button
+  {/* <button
     className="btn btn-primary w-[10vw] justify-center"
     onClick={() => setShowCard(!showCard)}
   >
     bbb
-  </button>
+  </button> */}
 
 
       <div className="flex h-full">

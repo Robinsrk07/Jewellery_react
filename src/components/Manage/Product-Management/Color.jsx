@@ -7,7 +7,7 @@ const Color = ()=>{
   const [items, setItems] = useState(10);
   
  
-const [modal, setModal] = useState(true)   
+const [modal, setModal] = useState(false)   
   const [editModal,setEditModal]= useState(false)
 
   const handleCloseModal =()=>{
@@ -174,7 +174,7 @@ const [modal, setModal] = useState(true)
                     sm:w-[85vw] sm:h-[75vh] sm:p-6
                     md:w-[65vw] md:h-[65vh] md:p-8
                     lg:w-[55vw] lg:h-[75vh] lg:p-10
-                    xl:w-[35vw] xl:h-[85vh] xl:p-12
+                    xl:w-[35vw] xl:h-[95vh] xl:p-12
                     p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
                                                 
                                                 {/* Added flex-col */}
@@ -304,7 +304,7 @@ const [modal, setModal] = useState(true)
                                 sm:w-[85vw] sm:h-[75vh] sm:p-6
                                 md:w-[65vw] md:h-[65vh] md:p-8
                                 lg:w-[55vw] lg:h-[75vh] lg:p-10
-                                xl:w-[35vw] xl:h-[90vh] xl:p-12
+                                xl:w-[35vw] xl:h-[95vh] xl:p-12
                                 p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
                                                             
                                                             {/* Added flex-col */}

@@ -205,13 +205,13 @@
                                  <td className="px-6 py-5 border-b border-gray-200 text-xs">1</td>
                                  <td className="px-6 py-5 border-b border-gray-200 text-xs">50000</td>
       
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
-                                  ACTIVE
+                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}><span className="bg-green-100">ACTIVE</span>
+                                  
                                   </td>
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
                                   <div className=" flex flex-row">
                                    <Link to='/dashboard/inventory/diamond/itemDetials'>
-                                   <button className=" bg-blue-400 text-white rounded-lg font-semibold w-[150px] h-[30px]">Tagging</button></Link>
+                                   <button className=" bg-[#6470E4] text-white rounded-lg font-semibold w-[120px] h-[30px]">Tagging</button></Link>
                                   </div>
                                 </td>
                              </tr>
@@ -232,7 +232,7 @@
                          <button className="btn bg-gray-100 border-none rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
                            {'<'}
                          </button>
-                         <button className="btn border-none rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
+                         <button className="btn border-none rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-[#636FE4] text-white">
                            1
                          </button>
                          <button className="btn bg-gray-100 border-none rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">

@@ -40,34 +40,34 @@ const ItemDetails = () => {
     return (
         <div className="w-full h-[90%] bg-white rounded-lg overflow-y-auto rounded-lg flex flex-col gap-4" style={{padding:'20px'}}>
             <div className="border text-gray-600 border-gray-300 rounded-lg flex gap-4 relative" style={{padding:'20px'}}>
-                <h3 className="absolute -top-3 left-4 bg-white px-2 text-blue-700 font-semibold text-sm">Tag Information</h3>
+                <h3 className="absolute -top-3 left-4 bg-white px-2 text-gray-500 font-semibold text-sm">Tag Information</h3>
                 <div className="overflow-x-auto">
                 <div className="flex flex-row gap-10 items-center">
-                <div className="flex flex-col">
-                    <label className="text-blue-600 font-semibold text-[11px] ">
+                <div className="flex flex-col gap-2">
+                    <label className="text-gray-400 font-semibold text-[11px] ">
                         Supplier Ref no :
                     </label>
                     <input 
                         type="text" 
-                        className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-400 px-3 py-2 focus:outline-none focus:border-blue-500"
+                        className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-200 px-3 py-2 focus:outline-none focus:border-blue-500"
                     />
                 </div>
-                <div className="flex flex-col">
-                    <label className="text-blue-600 font-semibold text-[11px]">
+                <div className="flex flex-col gap-2">
+                    <label className="text-gray-400 font-semibold text-[11px]">
                         Tagging Line
                     </label>
                     <input 
                         type="text" 
-                        className="border w-[200px] rounded-sm h-[30px] bg-white border-gray-400 px-3 py-2 focus:outline-none focus:border-blue-500"
+                        className="border w-[200px] rounded-sm h-[30px] bg-white border-gray-200 px-3 py-2 focus:outline-none focus:border-blue-500"
                     />
                 </div>
                 
-                <div className="flex flex-col">
-                    <label className="text-blue-600 font-semibold text-[11px] mb-1 sm:mb-0 sm:w-48">
+                <div className="flex flex-col gap-2">
+                    <label className="text-gray-400 font-semibold text-[11px] mb-1 sm:mb-0 sm:w-48">
                         Consider Mark Up
                     </label>
                     <select
-                        className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-400 px-3 focus:outline-none focus:border-blue-500"
+                        className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-200 px-3 focus:outline-none focus:border-blue-500"
                         name="consider_markup"
                     >
                         <option value="">Select</option>
@@ -76,7 +76,7 @@ const ItemDetails = () => {
                     </select>
                 </div>
 
-                <div className="w-[100px] h-[120px] mx-auto border border-dashed border-gray-400 rounded-md flex flex-col items-center justify-center overflow-hidden">
+                <div className="w-[100px] h-[120px] mx-auto border border-dashed border-gray-200 rounded-md flex flex-col items-center justify-center overflow-hidden">
           <img
             src={preview || Default}
             alt="Preview"
@@ -99,175 +99,175 @@ const ItemDetails = () => {
             </div>
 
           
-                <div className="border w-full rounded-lg border-gray-300 relative" style={{padding:'20px'}}>
-                <h3 className="absolute -top-3 left-4 bg-white px-2 text-blue-700 font-semibold text-sm">Tag Specification and Weight Detials</h3>
+                <div className="border w-full rounded-lg border-gray-200 relative" style={{padding:'20px'}}>
+                <h3 className="absolute -top-3 left-4 bg-white px-2 text-gray-400 font-semibold text-sm">Tag Specification and Weight Detials</h3>
                 <div className="overflow-x-auto ">
                     <div className="flex flex-row gap-10 items-center">
-                    <div className="flex flex-col ">
-                        <label className="text-blue-600 font-semibold text-[11px] mb-1">
+                    <div className="flex flex-col gap-2 ">
+                        <label className="text-gray-400 font-semibold text-[11px] mb-1">
                             UOM:
                         </label>
                         <select
-                            className="border text-xs w-[200px]  text-gray-500  h-[30px] rounded-sm bg-white border-gray-400 px-3 focus:outline-none focus:border-blue-500"
+                            className="border text-xs w-[200px]  text-gray-500  h-[30px] rounded-sm bg-white border-gray-200 px-3 focus:outline-none focus:border-blue-500"
                             name="consider_markup"
                         >
                             <option value="yes">PCS</option>
                             <option value="no">PCS</option>
                         </select>
-                        <label className="text-blue-600 font-semibold text-[12px] mb-1">
+                        <label className="text-gray-400 font-semibold text-[12px] mb-1">
                             Category:
                         </label>
                          <select
-                            className="border text-xs w-[200px] text-gray-500 rounded-sm bg-white border-gray-400 h-[30px]   focus:outline-none focus:border-blue-500"
+                            className="border text-xs w-[200px] text-gray-500 rounded-sm bg-white border-gray-200 h-[30px]   focus:outline-none focus:border-blue-500"
                             name="consider_markup"
                         >
                             <option value="yes">DIAMOND JEWELLERY</option>
                             <option value="no">PCS</option>
                         </select>
-                        <label className="text-blue-600 font-semibold text-[11px] ">
+                        <label className="text-gray-400 font-semibold text-[11px] ">
                             Design:
                         </label>
                         <input 
                             type="text" 
-                            className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-400 px-3 py-2 focus:outline-none focus:border-blue-500"
+                            className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-200 px-3 py-2 focus:outline-none focus:border-blue-500"
                         />
-                        <label className="text-blue-600 font-semibold text-[11px] mb-1">
+                        <label className="text-gray-400 font-semibold text-[11px] mb-1">
                             weight</label>
                         <input 
                             type="text" 
-                            className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-400 px-3 py-2 focus:outline-none focus:border-blue-500"
+                            className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-200 px-3 py-2 focus:outline-none focus:border-blue-500"
                         />
-                         <label className="text-blue-600 font-semibold text-[11px] mb-1">
+                         <label className="text-gray-400 font-semibold text-[11px] mb-1">
                             Design:
                         </label>
                         <input 
                             type="text" 
-                            className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-400 px-3 py-2 focus:outline-none focus:border-blue-500"
+                            className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-200 px-3 py-2 focus:outline-none focus:border-blue-500"
                         />
                     </div>
-                     <div className="flex flex-col">
-                        <label className="text-blue-600 font-semibold text-[11px] mb-1">
+                     <div className="flex flex-col gap-2">
+                        <label className="text-gray-400 font-semibold text-[11px] mb-1">
                             Jewellery Type:
                         </label>
                         <select
-                            className="border text-xs w-[200px] text-gray-500 bg-gray-500 h-[30px] px-3 py-2 rounded-sm bg-white border-gray-400 focus:outline-none focus:border-blue-500"
+                            className="border text-xs w-[200px] text-gray-500 bg-gray-500 h-[30px] px-3 py-2 rounded-sm bg-white border-gray-200 focus:outline-none focus:border-blue-500"
                             name="consider_markup"
                         >
                             <option value="yes">DIAMOND NOSE PIN</option>
                             <option value="no"></option>
                         </select>
-                        <label className="text-blue-600 font-semibold text-[11px] mb-1">
+                        <label className="text-gray-400 font-semibold text-[11px] mb-1">
                            Sub Category:
                         </label>
                         <select
-                            className="border text-xs w-[200px] text-gray-500 bg-gray-500 h-[30px] px-3 py-2 rounded-sm bg-white border-gray-400 focus:outline-none focus:border-blue-500"
+                            className="border text-xs w-[200px] text-gray-500 bg-gray-500 h-[30px] px-3 py-2 rounded-sm bg-white border-gray-200 focus:outline-none focus:border-blue-500"
                             name="consider_markup"
                         >
                             <option value="yes"></option>
                             <option value="no"></option>
                         </select>
-                        <label className="text-blue-600 font-semibold text-[11px] mb-1">
+                        <label className="text-gray-400 font-semibold text-[11px] mb-1">
                             Design Group:
                         </label>
                         <input 
                             type="text" 
-                            className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-400 focus:outline-none focus:border-blue-500"
+                            className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-200 focus:outline-none focus:border-blue-500"
                         />
-                        <label className="text-blue-600 font-semibold text-[11px] mb-1">
+                        <label className="text-gray-400 font-semibold text-[11px] mb-1">
                            Pearl weight</label>
                         <input 
                             type="text" 
-                            className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-400 px-3 py-2 focus:outline-none focus:border-blue-500"
+                            className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-200 px-3 py-2 focus:outline-none focus:border-blue-500"
                         />
-                         <label className="text-blue-600 font-semibold text-[11px] mb-1">
+                         <label className="text-gray-400 font-semibold text-[11px] mb-1">
                             Other Store Weight:
                         </label>
                         <input 
                             type="text" 
-                            className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-400 focus:outline-none focus:border-blue-500"
+                            className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-200 focus:outline-none focus:border-blue-500"
                         />
                     </div>
                     
-                     <div className="flex flex-col">
-                        <label className="text-blue-600 font-semibold text-[11px] mb-1">
+                     <div className="flex flex-col gap-2">
+                        <label className="text-gray-400 font-semibold text-[11px] mb-1">
                             Brand:
                         </label>
                          <select
-                            className="border w-[200px] text-gray-500  h-[30px]  rounded-sm bg-white border-gray-400 focus:outline-none focus:border-blue-500"
+                            className="border w-[200px] text-gray-500  h-[30px]  rounded-sm bg-white border-gray-200 focus:outline-none focus:border-blue-500"
                             name="consider_markup"
                         >
                             <option value="yes"></option>
                             <option value="no"></option>
                         </select>
-                        <label className="text-blue-600 font-semibold text-[11px] mb-1">
+                        <label className="text-gray-400 font-semibold text-[11px] mb-1">
                             Occasion:
                         </label>
                          <select
-                            className="border w-[200px] text-gray-500  h-[30px] rounded-sm bg-white border-gray-400 focus:outline-none focus:border-blue-500"
+                            className="border w-[200px] text-gray-500  h-[30px] rounded-sm bg-white border-gray-200 focus:outline-none focus:border-blue-500"
                             name="consider_markup"
                         >
                             <option value="yes"></option>
                             <option value="no"></option>
                         </select>
-                        <label className="text-blue-600 font-semibold text-[11px] mb-1">
+                        <label className="text-gray-400 font-semibold text-[11px] mb-1">
                             Made in:
                         </label>
                         <input 
                             type="text" 
-                            className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-400 focus:outline-none focus:border-blue-500"
+                            className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-200 focus:outline-none focus:border-blue-500"
                         />
-                        <label className="text-blue-600 font-semibold text-[11px] mb-1">
+                        <label className="text-gray-400 font-semibold text-[11px] mb-1">
                           Ruby  weight</label>
                         <select
-                            className="border w-[200px] text-gray-500  h-[30px] rounded-sm bg-white border-gray-400 px-3 focus:outline-none focus:border-blue-500"
+                            className="border w-[200px] text-gray-500  h-[30px] rounded-sm bg-white border-gray-200 px-3 focus:outline-none focus:border-blue-500"
                             name="consider_markup"
                         >
                             <option value="yes"></option>
                             <option value="no"></option>
                         </select>
-                         <label className="text-blue-600 font-semibold text-[11px] mb-1">
+                         <label className="text-gray-400 font-semibold text-[11px] mb-1">
                             Size:
                         </label>
                         <input 
                             type="text" 
-                            className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-400 focus:outline-none focus:border-blue-500"
+                            className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-200 focus:outline-none focus:border-blue-500"
                         />
                     </div>
-                     <div className="flex flex-col">
-                        <label className="text-blue-600 font-semibold text-[11px] mb-1">
+                     <div className="flex flex-col  gap-2">
+                        <label className="text-gray-400 font-semibold text-[11px] mb-1">
                             Style:
                         </label>
                        <select
-                            className="border w-[200px] text-gray-500  h-[30px] rounded-sm bg-white border-gray-400 focus:outline-none focus:border-blue-500"
+                            className="border w-[200px] text-gray-500  h-[30px] rounded-sm bg-white border-gray-200 focus:outline-none focus:border-blue-500"
                             name="consider_markup"
                         >
                             <option value="yes"></option>
                             <option value="no"></option>
                         </select>
                          
-                        <label className="text-blue-600 font-semibold text-[11px] mb-1">
+                        <label className="text-gray-400 font-semibold text-[11px] mb-1">
                             Gender:
                         </label>
                         <select
-                            className="border w-[200px] text-gray-500 bg-gray-500 h-[30px] rounded-sm bg-white border-gray-400 focus:outline-none focus:border-blue-500"
+                            className="border w-[200px] text-gray-500 bg-gray-500 h-[30px] rounded-sm bg-white border-gray-200 focus:outline-none focus:border-blue-500"
                             name="consider_markup"
                         >
                             <option value="yes"></option>
                             <option value="no"></option>
                         </select>
                          
-                        <label className="text-blue-600 font-semibold text-[11px] mb-1">
+                        <label className="text-gray-400 font-semibold text-[11px] mb-1">
                            Metal Color:
                         </label>
                         <input 
                             type="text" 
-                            className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-400 focus:outline-none focus:border-blue-500"
+                            className="border w-[200px] h-[30px] rounded-sm bg-white border-gray-200 focus:outline-none focus:border-blue-500"
                         />
-                        <label className="text-blue-600 font-semibold text-[11px] mb-1">
+                        <label className="text-gray-400 font-semibold text-[11px] mb-1">
                             Emerald Weight</label>
                         <input 
                             type="text" 
-                            className="border w-[200px] h-[30px] rounded-xs rounded-sm bg-white border-gray-400 focus:outline-none focus:border-blue-500"
+                            className="border w-[200px] h-[30px] rounded-xs rounded-sm bg-white border-gray-200 focus:outline-none focus:border-blue-500"
                         />
                          
                     </div>
@@ -279,8 +279,8 @@ const ItemDetails = () => {
                 </div>
             
 
-  <div className="border border-gray-300 min-h-[200px] rounded-lg relative" style={{ padding: '20px' }}>
-    <h3 className="absolute -top-3 left-4 bg-white px-2 text-blue-700 font-semibold text-sm">
+  <div className="border border-gray-200 min-h-[200px] rounded-lg relative" style={{ padding: '20px' }}>
+    <h3 className="absolute -top-3 left-4 bg-white  text-gray-400 font-semibold text-sm">
       Diamond Break Up
     </h3>
   <div className="overflow-auto  ">
@@ -304,14 +304,14 @@ const ItemDetails = () => {
                 <td className="bg-blue-100 flex justify-end text-blue-600 font-semibold">
                   
                 </td>
-                <td className="px-4 py-2 border border-gray-300"></td>
-                <td className="px-4 py-2 border border-gray-300"></td>
-                <td className="px-4 py-2 border border-gray-300"></td>
-                <td className="px-4 py-2 border border-gray-300"></td>
-                <td className="px-4 py-2 border border-gray-300"></td>
-                <td className="px-4 py-2 border border-gray-300"></td>
-                <td className="px-4 py-2 border border-gray-300"></td>
-                <td className="px-4 py-2 border border-gray-300">
+                <td className=" rounded-sm border border-gray-200"></td>
+                <td className=" rounded-sm  border border-gray-200"></td>
+                <td className="rounded-sm  border border-gray-200"></td>
+                <td className=" rounded-sm  border border-gray-200"></td>
+                <td className=" rounded-sm  border border-gray-200"></td>
+                <td className=" rounded-sm  border border-gray-200"></td>
+                <td className="rounded-sm  border border-gray-200"></td>
+                <td className="rounded-sm  border border-gray-200">
                   <button 
                     onClick={addRow}
                     className="w-6 h-6 bg-green-500 text-white rounded flex items-center justify-center"
@@ -319,7 +319,7 @@ const ItemDetails = () => {
                     +
                   </button>
                 </td>
-                <td className="px-4 py-2 border border-gray-300">
+                <td className="rounded-sm  border border-gray-200">
                   {row.type !== 'Main' && (
                     <button 
                       onClick={() => removeRow(row.id)}
@@ -338,8 +338,8 @@ const ItemDetails = () => {
         <tbody className="bg-white border border-gray-200">
           <tr>
             <td className=" bg-blue-100 flex justify-end text-blue-600 font-semibold"> Total</td>
-            <td className=" px-4 py-2 border border-gray-300 h-[0px]"></td>
-            <td className=" px-4 py-2 border border-gray-300"></td>
+            <td className=" rounded-sm  border border-gray-200 h-[0px]"></td>
+            <td className=" rounded-sm  border border-gray-200"></td>
             
             
           </tr>
@@ -354,61 +354,59 @@ const ItemDetails = () => {
 
 
           
-                <div className="flex flex-row gap-4 border border-gray-300 rounded-lg min-h-[200px] items-center justify-between relative" style={{padding:'20px'}}>
-                    <h3 className="absolute -top-3 left-4 bg-white px-2 text-blue-700 font-semibold text-sm">Tag Specification and Weight Details</h3>
+                <div className="flex flex-row gap-4 border border-gray-200 rounded-lg min-h-[200px] items-center justify-between relative" style={{padding:'20px'}}>
+                    <h3 className="absolute -top-3 left-4 bg-white px-2 text-gray-400 font-semibold text-sm">Tag Cost Detials</h3>
 
                     
   {/* Column 1 */}
-  <div className="flex flex-col">
-    <label className="text-blue-600 font-semibold text-[12px] mb-1">
+  <div className="flex flex-col gap-2">
+    <label className="text-gray-400 font-semibold text-[12px] mb-1">
       Cost Price :
     </label>
     <input 
       type="number" 
-      className="border w-full h-[30px] rounded-sm  bg-white border-gray-400 px-3 py-2 focus:outline-none focus:border-blue-500"
+      className="border w-full h-[30px] rounded-sm  bg-white border-gray-200 px-3 py-2 focus:outline-none focus:border-blue-500"
     />
-    <label className="text-blue-600 font-semibold text-[12px] mb-1">
+    <label className="text-gray-400 font-semibold text-[12px] mb-1">
       Additional Charge :
     </label>
     <input 
       type="number" 
-      className="border w-full h-[30px] rounded-sm bg-white border-gray-400 px-3 py-2 focus:outline-none focus:border-blue-500"
+      className="border w-full h-[30px] rounded-sm bg-white border-gray-200 px-3 py-2 focus:outline-none focus:border-blue-500"
     />
   </div>
 
   {/* Column 2 */}
-  <div className="flex flex-col">
-    <label className="text-blue-600 font-semibold text-[11px] mb-1">
+  <div className="flex flex-col gap-2">
+    <label className="text-gray-400 font-semibold text-[11px] mb-1">
       Max Discount:
     </label>
     <input 
       type="number" 
-      className="border w-full rounded-sm h-[30px] bg-white border-gray-400 px-3 py-2 focus:outline-none focus:border-blue-500"
+      className="border w-full rounded-sm h-[30px] bg-white border-gray-200 px-3 py-2 focus:outline-none focus:border-blue-500"
     />
-    <label className="text-blue-600 font-semibold text-[11px] mb-1">
+    <label className="text-gray-400 font-semibold text-[11px] mb-1">
       Mark up:
     </label>
     <input 
       type="number" 
-      className="border w-full rounded-sm h-[30px] bg-white border-gray-400 px-3 py-2 focus:outline-none focus:border-blue-500"
+      className="border w-full rounded-sm h-[30px] bg-white border-gray-200 px-3 py-2 focus:outline-none focus:border-blue-500"
     />
   </div>
 
   {/* Column 3 */}
-  <div className="flex flex-col">
-    <label className="text-blue-600 font-semibold text-[11px] mb-1 sm:mb-0 sm:w-48">
+  <div className="flex flex-col gap-2">
+    <label className="text-gray-400 font-semibold text-[11px] mb-1 sm:mb-0 sm:w-48">
      Tag Price
     </label>
     <input 
       type="number" 
-      className="border w-full rounded-sm h-[30px] bg-white border-gray-400 px-3 py-2 focus:outline-none focus:border-blue-500"
+      className="border w-full rounded-sm h-[30px] bg-white border-gray-200 px-3 py-2 focus:outline-none focus:border-blue-500"
     />
   </div>
 
   {/* Column 4 (Button) */}
-  <div className="flex flex-col gap-2">
-    <button className="border border-gray-600 w-[70px] h-[35px] rounded-lg bg-red-500 text-white" onClick={() => setAddmoreFourth(false)}>-</button>
-  </div>
+  
 </div>
 
           

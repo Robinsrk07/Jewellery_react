@@ -3,7 +3,7 @@ import { useState } from "react";
 const List_return_Type =()=>{
     const [isHovered, setIsHovered] = useState(false);
     const [items, setItems] = useState(10);
-     const [modal, setModal] = useState(true)   
+     const [modal, setModal] = useState(false)   
   const [editModal,setEditModal]= useState(false)
 
   const handleCloseModal =()=>{
@@ -199,17 +199,17 @@ const List_return_Type =()=>{
 
       {/* Pagination */}
           <div
-        className="flex gap-1 justify-center w-full"
+        className="flex gap-1 justify-center w-full" style={{marginBottom:'10px'}}
         
       >
 
-        <button className="btn bg-white border-gray-400 rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+        <button className="btn bg-white border-gray-100 rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
           {'<'}
         </button>
-        <button className="btn rounded-full border-gray-400 w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
+        <button className="btn rounded-full border-gray-100 w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
           1
         </button>
-        <button className="btn rounded-full bg-white border-gray-400 w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+        <button className="btn rounded-full bg-white border-gray-100 w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
           {'>'}
         </button>
       </div>
@@ -322,7 +322,7 @@ const List_return_Type =()=>{
                                 <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
                                 style={{paddingLeft:'20px',
                                 paddingTop:"20px"}}>
-                                 Create Design
+                                 Create Return Type
                                </h3>
                                <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
        
@@ -423,7 +423,7 @@ const List_return_Type =()=>{
                                 <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
                                 style={{paddingLeft:'20px',
                                 paddingTop:"20px"}}>
-                                Edit Design
+                                Edit Return Type
                                </h3>
                                <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
        
@@ -436,7 +436,7 @@ const List_return_Type =()=>{
                                  </label>
                                  <input type="text" 
                                  placeholder="Type here" 
-                                 className="input bg-white border border-gray-400 w-[90%] rounded-lg "
+                                 className="input bg-white border border-gray-200 w-[90%] rounded-lg "
                                  style={{marginLeft:'25px'}}
                                //  value={formData.name}
                                //  onChange={(e)=>handleChange(e)}
@@ -455,7 +455,7 @@ const List_return_Type =()=>{
                                    </label>
        
        
-                                    <textarea className="textarea w-[90%] bg-white border border-gray-400 rounded-lg" 
+                                    <textarea className="textarea w-[90%] bg-white border border-gray-200 rounded-lg" 
                                     placeholder="Bio" 
                                     style={{marginLeft:'25px'}}
                                //     value={formData.description}
@@ -475,7 +475,7 @@ const List_return_Type =()=>{
                                    Status:
                                  </label>
                                   <select defaultValue="select     Status"
-                                    className="select bg-white border border-gray-400 w-[90%]" 
+                                    className="select bg-white border border-gray-200 w-[90%]" 
                                     style={{marginLeft:'25px'}}
                                  //   value={formData.status}
                                     name='status'

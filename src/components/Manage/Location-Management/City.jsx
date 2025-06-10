@@ -122,7 +122,6 @@ const City=()=>{
                               width: '90%',
                               maxWidth: '160px',
                               height: '30px',
-                              border: '1px solid blue',
                               borderRadius: '8px',
                               backgroundColor: isHovered
                                 ? 'rgb(97, 113, 228)'

@@ -309,8 +309,8 @@ const CreateItem = () => {
           
   
         </div>
-        <div className="flex  w-full h-[20vh]  mt-4 justify-center items-center" >  {/* Container div */}
-            <button className="btn bg-blue-700  w-full  sm:w-1/4 md:w-[10vw] rounded-lg">
+        <div className="flex   w-full h-[20vh]  mt-4 justify-center items-center" >  {/* Container div */}
+            <button className="btn  bg-blue-700 text-white  w-full  sm:w-1/4 md:w-[10vw] rounded-lg">
               Save
             </button>
          </div>

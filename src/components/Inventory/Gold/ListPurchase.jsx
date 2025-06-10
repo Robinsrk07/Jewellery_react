@@ -130,8 +130,8 @@ import { Link } from "react-router";
                      <div className=" w-1/2" style={{    justifyContent: 'space-between', 
                          display: 'flex',
 }}>
-                                <div className="w-[90%]">
-                                <select className="select select-bordered select-sm w-[90%]  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+                                <div className="w-[90%] bg-white">
+                                <select className="select select-bordered select-sm w-[90%] bg-white text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
                                 <option  className="text-gray-300" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;-------</option>
                                 <option>&nbsp;&nbsp;&nbsp;&nbsp;Tanishq</option>
                                 <option>&nbsp;&nbsp;&nbsp;&nbsp;cartier</option>

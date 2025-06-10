@@ -136,8 +136,8 @@ import '@fontsource/open-sans/700.css'; // Bold
                               <button
                               className="text-xs font-bold"
                               style={{
-                                  width: '180px',
-                                  height: '40px',
+                                  width: '160px',
+                                  height: '35px',
                                   borderRadius: '8px',
                                   backgroundColor: isHovered ? 'rgb(97, 113, 228)' : 'rgb(126, 96, 228)',
                                   color: 'white',
@@ -148,7 +148,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                               onMouseLeave={() => setIsHovered(false)}
                               onClick={() => setModal(true)}
                               >
-                              + New Type
+                              + New Item Type
                               </button>
                           </div>
                  
@@ -293,13 +293,13 @@ import '@fontsource/open-sans/700.css'; // Bold
                  
                        {/* Pagination */}
                        <div className="flex gap-1  justify-center">
-                         <button className="btn border-gray-400 bg-white rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+                         <button className="btn border-none bg-gray-100 shadow-lg   rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
                            {'<'}
                          </button>
                          <button className="btn border-none rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
                            1
                          </button>
-                         <button className="btn border-gray-400 bg-white  rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+                         <button className="btn  border-none bg-gray-100 shadow-lg  rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
                            {'>'}
                          </button>
                        </div>
@@ -397,7 +397,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                                 sm:w-[85vw] sm:h-[75vh] sm:p-6
                                                 md:w-[65vw] md:h-[65vh] md:p-8
                                                 lg:w-[55vw] lg:h-[75vh] lg:p-10
-                                                xl:w-[35vw] xl:h-[75vh] xl:p-12
+                                                xl:w-[35vw] xl:h-[85vh] xl:p-12
                                                
                                                 p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
                                                 
@@ -503,8 +503,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                                 sm:w-[85vw] sm:h-[75vh] sm:p-6
                                                 md:w-[65vw] md:h-[65vh] md:p-8
                                                 lg:w-[55vw] lg:h-[75vh] lg:p-10
-                                                xl:w-[35vw] xl:h-[55vh] xl:p-12
-                                                2xl:w-[35vw] 2xl:h-[70vh] 2xl:p-14
+                                                xl:w-[35vw] xl:h-[85vh] xl:p-12
                                                 p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
                                                 
                                                 {/* Added flex-col */}

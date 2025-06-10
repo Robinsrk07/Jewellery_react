@@ -509,7 +509,7 @@ const Stock_point =()=>{
                             <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
                             style={{paddingLeft:'20px',
                             paddingTop:"20px"}}>
-                             Create Product Style
+                            Create Stock Point
                            </h3>
                            <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
    
@@ -602,7 +602,7 @@ const Stock_point =()=>{
                             <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
                             style={{paddingLeft:'20px',
                             paddingTop:"20px"}}>
-                             Create Product Style
+                             Edit Stock Point
                            </h3>
                            <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
    

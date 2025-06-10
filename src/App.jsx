@@ -52,6 +52,7 @@ import ManagePermissions from './components/Group&Permission/ManagePermissions.j
 import DiamondPurchhase from './components/Inventory/Diamond/DiamondPurchhase.jsx';
 import CreateDiamondPurchase from './components/Inventory/Diamond/CreateDiamondPurchase.jsx';
 import ItemDetials from './components/Inventory/Diamond/ItemDetials.jsx';
+import PaySlip from './components/Employees/PaySlip.jsx';
 import Pos from './components/Pos.jsx';
 import { Provider } from 'react-redux';
 import store from './StateManagement/store.js';
@@ -97,6 +98,7 @@ function App() {
               <Route path='paymentmethodes' element={<PaymentMethodes/>} />
               <Route path='gender' element={<Genders/>} />
               <Route path='employeelist' element={<EmployeeList/>} />
+              <Route path='payslip' element={<PaySlip/>} />
             </Route>
             <Route path='customers'>
               <Route path='customerslist' element={<CustomersList/>} />

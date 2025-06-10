@@ -23,7 +23,7 @@ const Product_Size =()=>{
            setErrors((prev) => ({ ...prev, [name]: '' })); 
          };
 
-  const [modal, setModal] = useState(true)   
+  const [modal, setModal] = useState(false)   
   const [editModal,setEditModal]= useState(false)
 
   const handleCloseModal =()=>{
@@ -301,7 +301,7 @@ const Product_Size =()=>{
          
    
          {/* Pagination */}
-         <div className="flex gap-1 justify-center">
+         <div className="flex gap-1 justify-center" style={{marginBottom:'20px'}}>
            <button className="btn bg-white border-gray-100 rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
              {'<'}
            </button>

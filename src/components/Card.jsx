@@ -205,6 +205,7 @@ const Card = () => {
               <li style={{ paddingLeft: '63px', paddingTop: '23px' }}><Link to='/dashboard/employees/paymentmethodes'>Payment Methodes</Link></li>
               <li style={{ paddingLeft: '63px', paddingTop: '23px' }}><Link to='/dashboard/employees/gender'>Gender</Link></li>
               <li style={{ paddingLeft: '63px', paddingTop: '23px' }}><Link to='/dashboard/employees/employeelist'>Employee List</Link></li>
+              <li style={{ paddingLeft: '63px', paddingTop: '23px' }}><Link to='/dashboard/employees/payslip'>Payslip</Link></li>
             </ul>
           )}
         </div>
@@ -275,15 +276,15 @@ const Card = () => {
                 <div 
                   className="list-none cursor-pointer flex items-center gap-2 text-sm" 
                   style={{ paddingLeft: '30px' }}
-                  onClick={() => toggleSection('gold')}
+                  onClick={() => toggleSection('diamond')}
                 >
                   Diamond
                   <span className="text-xs text-gray-400" style={{ paddingLeft: '10px', fontSize: '7px', width: '9px' }}>
-                    {openSections.gold ? '▲' : '▼'}
+                    {openSections.diamond ? '▲' : '▼'}
                   </span>
                 </div>
                 
-                {openSections.gold && (
+                {openSections.diamond && (
                   <ul className="flex flex-col gap-[20px] mt-2 text-gray-400 pl-6">
                     <li className="text-xs hover:text-blue-500" style={{ paddingLeft: '30px', marginTop: '10px' }}><Link to='/dashboard/inventory/diamond/purchasediamond'>Item</Link></li>
                   </ul>
