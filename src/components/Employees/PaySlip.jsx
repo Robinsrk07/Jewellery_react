@@ -258,7 +258,7 @@ import { Search, Plus, Edit, Trash2, Save, X, Upload, Eye, Calculator, ArrowLeft
                  
                        <table className="table w-full text-sm text-left text-gray-500 border-collapse min-w-[1220px]  " style={{ borderSpacing: '0 12px', borderCollapse: 'separate', }}>
                         <thead >
-                            <tr className="sticky text-gray-500">
+                            <tr className="sticky text-gray-400">
                                 <th className="sticky " style={{ width: '90px', paddingLeft: '20px' }}>SL NO</th>
                                 <th className="" style={{ width: '100px' }}>NAME</th>
                                 <th className="" style={{ width: '100px' }}>EMPLOYEE ID</th>
@@ -279,7 +279,7 @@ import { Search, Plus, Edit, Trash2, Save, X, Upload, Eye, Calculator, ArrowLeft
                                 emp.phone.includes(searchTerm)
                             )
                             .map((emp, index) => (
-                                <tr key={emp.id} className="bg-white hover:bg-gray-50 h-[44px] text-gray-600">
+                                <tr key={emp.id} className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '20px' }}>{index + 1}</td>
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">{emp.name}</td>
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs">{emp.id}</td>
@@ -290,10 +290,10 @@ import { Search, Plus, Edit, Trash2, Save, X, Upload, Eye, Calculator, ArrowLeft
 
                                     <button className="w-[100px] h-[25px] text-white rounded-sm bg-[#646FE4]" onClick={()=>handlePayslip(emp.id)}>Create Payslip</button>
                                 </td>
-                                <td className="flex flex-row border-b border-gray-200 text-xs gap-2">
+                                <td className="flex flex-row  border-gray-200 text-xs gap-2">
                                     
-                                    <button className="w-[80px] h-[25px] text-white rounded-sm bg-[#646FE4]">Edit</button>
-                                    <button className="w-[80px] h-[25px] text-white rounded-sm bg-[#646FE4]" style={{  background: 'linear-gradient(to right, #A1B1D1, #697C9B)',}}>Delete</button>
+                                    {/* <button className="w-[80px] h-[25px] text-white rounded-sm bg-[#646FE4]">Edit</button>
+                                    <button className="w-[80px] h-[25px] text-white rounded-sm bg-[#646FE4]" style={{  background: 'linear-gradient(to right, #A1B1D1, #697C9B)',}}>Delete</button> */}
                                 </td>
                                 </tr>
                             ))}

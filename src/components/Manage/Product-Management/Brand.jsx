@@ -6,7 +6,7 @@ import '@fontsource/open-sans/700.css'; // Bold
 const Brand = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [items, setItems] = useState(10);
-  const [modal, setModal] = useState(true)   
+  const [modal, setModal] = useState(false)   
   const [editModal,setEditModal]= useState(false)
 
   const handleCloseModal =()=>{
