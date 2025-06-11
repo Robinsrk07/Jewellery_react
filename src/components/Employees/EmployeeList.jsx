@@ -1,7 +1,11 @@
  
      import { useState } from "react";
-     
+     const apiUrl = import.meta.env.VITE_API_BASE_URL;
      const  EmployeeList = () => {
+
+      const [branches,setBranches] =useState(['MANAMA','DUBAI',"KOCHI",'RIYAD'])
+
+      
      
           
       const  [isHovered, setIsHovered] = useState(false);
@@ -142,7 +146,7 @@
                               </button>
                           </div>
                  
-                       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
+                       <div className="text-gray-500" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
                          <p className="text-xs font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
                          <select
                            className="border border-gray-300 rounded-lg w-[114px] h-[35px] px-2"
@@ -166,7 +170,7 @@
                        
                  
                        <table className="table w-full text-sm text-left text-gray-500 border-collapse min-w-[1220px]  " style={{ borderSpacing: '0 12px', borderCollapse: 'separate', }}>
-                         <thead className="text-xs text-gray-400 uppercase bg-white">
+                         <thead className="text-xs text-[#AFB9C9] uppercase bg-white">
                            <tr>
                              <th className="px-6 py-3" style={{width:'90px',paddingLeft:'20px'}} >SL NO</th>
                              <th className="px-6 py-3" style={{width:'100px'}} >NAME </th>
@@ -198,7 +202,7 @@
                                   <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                                       <button
                                       type="button"
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
                                           width: '100px',
                                           padding: '5px',
@@ -210,7 +214,7 @@
                                       </button>
               
                                       <button
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
                                           width: '100px',
                                           padding: '5px',
@@ -238,13 +242,13 @@
                  
                        {/* Pagination */}
                        <div className="flex gap-1 justify-center">
-                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+                         <button className="btn bg-white border-gray-200 rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
                            {'<'}
                          </button>
-                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
+                         <button className="btn border-none rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
                            1
                          </button>
-                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+                         <button className="btn bg-white border-gray-200 rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
                            {'>'}
                          </button>
                        </div>
@@ -255,13 +259,12 @@
                        <dialog id="my_modal_8" className="modal">
       
       
-                       <div className="modal-box text-center py-8 px-6 rounded-xl relative font-[Open_Sans]
+                       <div className="modal-box text-gray-500 text-center bg-white py-8 px-6 rounded-xl relative font-[Open_Sans]
                           w-[90vw] h-[50vh]             /* base (mobile) */
                           sm:w-[70vw] sm:h-[30vh]       /* ≥ 640px */
                           md:w-[50vw] md:h-[30vh]       /* ≥ 768px */
                           lg:w-[35vw] lg:h-[30vh]       /* ≥ 1024px */
                           xl:w-[30vw] xl:h-[50vh]       /* ≥ 1280px */
-                          2xl:w-[25vw] 2xl:h-[20vh]     /* ≥ 1536px */
                         "
       
                        onClick={()=>document.getElementById('my_modal_8').close()}
@@ -290,14 +293,14 @@
                         {/* Actions */}
                         <div className="flex justify-center gap-4">
                           <button
-                            className="btn text-xs bg-red-500 font-bold text-white hover:bg-red-600 px-6"
+                            className="btn border-none text-xs bg-red-500 font-bold text-white hover:bg-red-600 px-6"
                             onClick={() => document.getElementById('my_modal_cancel').showModal()}
                             style={{width:'100px'}}
                           >
                             No, cancel!
                           </button>
                           <button
-                            className="btn text-xs bg-green-500 font-bold text-white hover:bg-green-600 px-6"
+                            className="btn border-none text-xs bg-green-500 font-bold text-white hover:bg-green-600 px-6"
                             onClick={() => {
                               document.getElementById('my_modal_8').close();
                             }}
@@ -310,8 +313,12 @@
                     </dialog>
       
       
-                  <dialog id="my_modal_cancel" className="modal">
-                  <div className="modal-box text-center py-10 px-8 relative font-[Open Sans] "
+                  <dialog id="my_modal_cancel" className="modal ">
+                  <div className="modal-box text-center  bg-white relative font-[Open Sans] w-[90vw] h-[50vh]             /* base (mobile) */
+                          sm:w-[70vw] sm:h-[30vh]       /* ≥ 640px */
+                          md:w-[50vw] md:h-[30vh]       /* ≥ 768px */
+                          lg:w-[35vw] lg:h-[30vh]       /* ≥ 1024px */
+                          xl:w-[30vw] xl:h-[50vh]       /* ≥ 1280px */ "
                       onClick={() => {
                       document.getElementById('my_modal_cancel').close();
                       }}>
@@ -331,7 +338,7 @@
                       </div>
                       <h3 className="text-3xl font-bold text-gray-500 " style={{margin:'20px'}}>Cancelled</h3>
                       <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your Jewellery Type is safe</p>
-                      <button className="btn bg-blue-500 w-[50px] rounded-lg" > ok</button>
+                      <button className="btn border-none bg-blue-500 w-[50px] rounded-lg" > ok</button>
                   </div>
                   </dialog>
                       </div>
@@ -384,9 +391,9 @@
                                         name='gender'
                                         onChange={(e)=>handleChange(e)}
                                       >
-                                        <option className=" text-gray-400">select Status</option>
-                                        <option className=" text-gray-400">male </option>
-                                        <option className=" text-gray-400">female</option>
+                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select Status</option>
+                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;male </option>
+                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;female</option>
                                       </select>
                                       {errors.gender && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.gender}</span>}
                                      
@@ -404,10 +411,35 @@
                                         name='position'
                                         onChange={(e)=>handleChange(e)}
                                       >
-                                        <option  className=" text-gray-400">select Position</option>
-                                        <option className=" text-gray-400">ABC </option>
-                                        <option className=" text-gray-400">EFG</option>
+                                        <option  className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select Position</option>
+                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ABC </option>
+                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EFG</option>
                                       </select>
+                                      {errors.department && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.department}</span>}
+
+                                      <label 
+                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
+                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                      >
+                                       Branch:
+                                      </label>
+                                    <select
+                                    className="select w-[90%] bg-white border-gray-200 text-xs focus:outline-none text-gray-400 focus:border-b-2 focus:border-blue-500"
+                                    style={{ marginLeft: '25px' }}
+                                    value={formData.status}
+                                    name="status"
+                                    onChange={handleChange}
+                                  >
+                                    <option value="" disabled className="text-gray-400" >
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select Branch (optional)
+
+                                    </option>
+                                    {branches.map((branch, index) => (
+                                      <option key={index} value={branch} className="text-xs text-gray-700">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{branch}
+                                      </option>
+                                    ))}
+                                  </select>
                                       {errors.department && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.department}</span>}
                                       
                                       <label 
@@ -423,9 +455,9 @@
                                         name='position'
                                         onChange={(e)=>handleChange(e)}
                                       >
-                                        <option  className=" text-gray-400">select Position</option>
-                                        <option className=" text-gray-400">ABC </option>
-                                        <option className=" text-gray-400">EFG</option>
+                                        <option  className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select Position</option>
+                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ABC </option>
+                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EFG</option>
                                       </select>
                                       {errors.position && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.position}</span>}
 
@@ -477,9 +509,9 @@
                                         name='status'
                                         onChange={(e)=>handleChange(e)}
                                       >
-                                        <option  className=" text-gray-400">select status</option>
-                                        <option className=" text-gray-400">Active </option>
-                                        <option className=" text-gray-400">Inactive</option>
+                                        <option  className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select status</option>
+                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Active </option>
+                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inactive</option>
                                       </select>
                                       {errors.status && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.status}</span>}
                                       
@@ -489,10 +521,10 @@
 
                                     {/* Button container positioned 10px above bottom */}
                                     <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
-                                        style={{marginTop: 'auto', marginBottom: '10px', paddingLeft: '200px'}}>
+                                        style={{marginTop: '20px', marginBottom: '10px', paddingLeft: '200px'}}>
                                       <button
                                         type="button"
-                                        className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                        className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
                                         style={{ backgroundColor: '#8392ab' }}
                                         onClick={(e) => handleSubmit(e)}
                                       >
@@ -500,7 +532,7 @@
                                       </button>
                                       <button
                                         type="button"
-                                        className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                        className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
                                         style={{ backgroundColor: '#5E72e4' }}
                                         onClick={handleCloseModal}
                                       >
@@ -513,18 +545,19 @@
       
       
                       {editModal && (
-                                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
+                                <div className="fixed text-gray-400 inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
                                   <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
                                                 sm:w-[85vw] sm:h-[75vh] sm:p-6
                                                 md:w-[65vw] md:h-[55vh] md:p-8
                                                 lg:w-[65vw] lg:h-[75vh] lg:p-10
                                                 xl:w-[42vw] xl:h-[95vh] xl:p-12
+                                                2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14
                                                 p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
                                                 
                                                 {/* Added flex-col */}
                                     <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
                                         style={{paddingLeft:'20px', paddingTop:"20px"}}>
-                                         Create Employee                           </h3>
+                                         Edit Employee                           </h3>
                                     <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
       
                                     <div className="flex flex-col flex-grow"> {/* Added flex-grow */}
@@ -536,7 +569,7 @@
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none bg-white  focus:border-b-2 focus:border-blue-500"
+                                        className="input w-[90%] rounded-lg bg-white border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
                                         value={formData.name}
                                         onChange={(e)=>handleChange(e)}
@@ -553,15 +586,15 @@
                                         Gender:
                                       </label>
                                       <select defaultValue="   select Status"
-                                        className="select w-[90%] focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
+                                        className="select w-[90%] bg-white border-gray-200 focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
                                         style={{marginLeft:'25px'}}
                                         value={formData.status}
                                         name='gender'
                                         onChange={(e)=>handleChange(e)}
                                       >
-                                        <option className=" text-gray-400">select Status</option>
-                                        <option className=" text-gray-400">male </option>
-                                        <option className=" text-gray-400">female</option>
+                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select Status</option>
+                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;male </option>
+                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;female</option>
                                       </select>
                                       {errors.gender && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.gender}</span>}
                                      
@@ -572,17 +605,42 @@
                                       >
                                        Department:
                                       </label>
-                                      <select defaultValue="select Department"
-                                        className="select w-[90%] focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
+                                     <select defaultValue="select Department"
+                                        className="select w-[90%] focus:outline-none bg-white border-gray-200 text-gray-400  focus:border-b-2 focus:border-blue-500" 
                                         style={{marginLeft:'25px'}}
                                         value={formData.department}
-                                        name='department'
+                                        name='position'
                                         onChange={(e)=>handleChange(e)}
                                       >
-                                        <option  className=" text-gray-400">select Department</option>
-                                        <option className=" text-gray-400">ABC </option>
-                                        <option className=" text-gray-400">EFG</option>
+                                        <option  className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select Position</option>
+                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ABC </option>
+                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EFG</option>
                                       </select>
+                                      {errors.department && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.department}</span>}
+
+                                      <label 
+                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
+                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                      >
+                                       Branch:
+                                      </label>
+                                    <select
+                                    className="select w-[90%] bg-white border-gray-200 text-xs focus:outline-none text-gray-400 focus:border-b-2 focus:border-blue-500"
+                                    style={{ marginLeft: '25px' }}
+                                    value={formData.status}
+                                    name="status"
+                                    onChange={handleChange}
+                                  >
+                                    <option value="" disabled className="text-gray-400" >
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select Branch (optional)
+
+                                    </option>
+                                    {branches.map((branch, index) => (
+                                      <option key={index} value={branch} className="text-xs text-gray-700">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{branch}
+                                      </option>
+                                    ))}
+                                  </select>
                                       {errors.department && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.department}</span>}
                                       
                                       <label 
@@ -592,15 +650,15 @@
                                        Position:
                                       </label>
                                       <select defaultValue="select Position"
-                                        className="select w-[90%] focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
+                                        className="select w-[90%] focus:outline-none bg-white border-gray-200 text-gray-400  focus:border-b-2 focus:border-blue-500" 
                                         style={{marginLeft:'25px'}}
                                         value={formData.department}
                                         name='position'
                                         onChange={(e)=>handleChange(e)}
                                       >
-                                        <option  className=" text-gray-400">select Position</option>
-                                        <option className=" text-gray-400">ABC </option>
-                                        <option className=" text-gray-400">EFG</option>
+                                        <option  className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select Position</option>
+                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ABC </option>
+                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EFG</option>
                                       </select>
                                       {errors.position && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.position}</span>}
 
@@ -613,7 +671,7 @@
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        className="input w-[90%] rounded-lg bg-white border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
                                         value={formData.salary}
                                         onChange={(e)=>handleChange(e)}
@@ -630,7 +688,7 @@
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        className="input w-[90%] rounded-lg bg-white border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
                                         value={formData.bankaccountnumber}
                                         onChange={(e)=>handleChange(e)}
@@ -646,15 +704,15 @@
                                        Status:
                                       </label>
                                       <select defaultValue="select Position"
-                                        className="select w-[90%] focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
+                                        className="select w-[90%] focus:outline-none bg-white border-gray-200 text-gray-400  focus:border-b-2 focus:border-blue-500" 
                                         style={{marginLeft:'25px'}}
                                         value={formData.status}
                                         name='status'
                                         onChange={(e)=>handleChange(e)}
                                       >
-                                        <option  className=" text-gray-400">select status</option>
-                                        <option className=" text-gray-400">Active </option>
-                                        <option className=" text-gray-400">Inactive</option>
+                                        <option  className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select status</option>
+                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Active </option>
+                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inactive</option>
                                       </select>
                                       {errors.status && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.status}</span>}
                                       
@@ -664,10 +722,10 @@
 
                                     {/* Button container positioned 10px above bottom */}
                                     <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
-                                        style={{marginTop: 'auto', marginBottom: '10px', paddingLeft: '200px'}}>
+                                        style={{marginTop: '20px', marginBottom: '10px', paddingLeft: '200px'}}>
                                       <button
                                         type="button"
-                                        className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                        className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
                                         style={{ backgroundColor: '#8392ab' }}
                                         onClick={(e) => handleSubmit(e)}
                                       >
@@ -675,7 +733,7 @@
                                       </button>
                                       <button
                                         type="button"
-                                        className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                        className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
                                         style={{ backgroundColor: '#5E72e4' }}
                                         onClick={handleCloseModal}
                                       >

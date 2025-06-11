@@ -176,7 +176,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                        
                  
                        <table className="table w-full text-sm  text-gray-500 border-collapse min-w-[1200px]  " style={{ borderSpacing: '0 12px', borderCollapse: 'separate', }}>
-                         <thead className="text-xs text-gray-400 uppercase bg-white">
+                         <thead className="text-xs text-[#A8B2C4] uppercase bg-white">
                            <tr>
                              <th  style={{width:'90px',paddingLeft:'20px'}} >SL NO</th>
                              <th  className='w-[150px] ' >CODE </th>
@@ -188,11 +188,11 @@ import '@fontsource/open-sans/700.css'; // Bold
                          </thead>
                          <tbody>
                            
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-sm" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-sm">Gold </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-sm">Gold</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-sm"> Gold</td>
+                             <tr  className="bg-white  hover:bg-gray-50 h-[44px] text-gray-400">
+                               <td className="text-xs border-b border-gray-200 " style={{paddingLeft:'20px'}}>1</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Gold</td>
                              
                               
                                <td className="px-6 py-5 border-b border-gray-200 text-xs">
@@ -233,10 +233,10 @@ import '@fontsource/open-sans/700.css'; // Bold
                              </tr>
                            
                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-sm" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-sm">Diamond </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-sm"> Diamond </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-sm"> Diamond </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Diamond </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Diamond </td>
+                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Diamond </td>
                              
                               
                                <td className="px-6 py-5 border-b border-gray-200 text-xs">

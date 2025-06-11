@@ -289,7 +289,10 @@ const Card = () => {
                     <li className="text-xs hover:text-blue-500" style={{ paddingLeft: '30px', marginTop: '10px' }}><Link to='/dashboard/inventory/diamond/purchasediamond'>Item</Link></li>
                   </ul>
                 )}
+
               </div>
+                <li style={{ paddingLeft: '63px', paddingTop: '23px' }}><Link to='/dashboard/inventory/stock-transfer'>Stock Transfer</Link></li>
+
             </ul>
           )}
         </div>

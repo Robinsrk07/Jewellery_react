@@ -58,6 +58,7 @@ import { Provider } from 'react-redux';
 import store from './StateManagement/store.js';
 import Branches from './components/Branch/Branches.jsx';
 import BranchWiseEmployee from './components/Branch/BranchWiseEmployee.jsx';
+import Stock_Transfer from './components/Inventory/Stock-Transfer.jsx';
 function App() {
   return (
     <div className="w-full h-full m-0 p-0">
@@ -112,6 +113,7 @@ function App() {
             <Route path='inventory'>
               <Route path='item' element={<Item/>} />
               <Route path='createItem' element={<CreateItem/>} />
+              <Route path='stock-transfer' element={<Stock_Transfer/>} />
               <Route path='gold'>
                 <Route path='purchase' element={<Purchase/>} />
                 <Route path='purchaseFix' element={<PurchaseFix/>} />

@@ -84,7 +84,7 @@
                       </Link>
                           </div>
                  
-                       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
+                       <div className="text-gray-500" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
                          <p className="text-xs font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
                          <select
                            className="border border-gray-300 rounded-lg w-[114px] h-[35px] px-2"
@@ -145,7 +145,7 @@
                                     <Link to='/dashboard/inventory/gold/updateitem'>
                                       <button
                                       type="button"
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn text-white border-none font-bold text-xs rounded-lg"
                                       style={{
                                           width: '100px',
                                           padding: '5px',
@@ -156,7 +156,7 @@
                                       </button></Link>
               
                                       <button
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn text-white border-none font-bold text-xs rounded-lg"
                                       style={{
                                           width: '100px',
                                           padding: '5px',
@@ -188,7 +188,7 @@
                                     <Link to='/dashboard/inventory/gold/updateitem'>
                                       <button
                                       type="button"
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn text-white border-none font-bold text-xs rounded-lg"
                                       style={{
                                           width: '100px',
                                           padding: '5px',
@@ -199,7 +199,7 @@
                                       </button></Link>
               
                                       <button
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn text-white border-none font-bold text-xs rounded-lg"
                                       style={{
                                           width: '100px',
                                           padding: '5px',
@@ -231,7 +231,7 @@
                                     <Link to='/dashboard/inventory/gold/updateitem'>
                                       <button
                                       type="button"
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
                                           width: '100px',
                                           padding: '5px',
@@ -242,7 +242,7 @@
                                       </button></Link>
               
                                       <button
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
                                           width: '100px',
                                           padding: '5px',
@@ -274,7 +274,7 @@
                                     <Link to='/dashboard/inventory/gold/updateitem'>
                                       <button
                                       type="button"
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
                                           width: '100px',
                                           padding: '5px',
@@ -285,7 +285,7 @@
                                       </button></Link>
               
                                       <button
-                                      className="btn text-white font-bold text-xs rounded-lg"
+                                      className="btn text-white border-none font-bold text-xs rounded-lg"
                                       style={{
                                           width: '100px',
                                           padding: '5px',
@@ -312,13 +312,13 @@
                  
                        {/* Pagination */}
                        <div className="flex gap-1 justify-center">
-                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+                         <button className="btn border-gray-200 bg-white rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
                            {'<'}
                          </button>
-                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
+                         <button className="btn rounded-full border-gray-100 w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
                            1
                          </button>
-                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+                         <button className="btn  border-gray-200 bg-white rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
                            {'>'}
                          </button>
                        </div>
