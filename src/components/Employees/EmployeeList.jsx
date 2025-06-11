@@ -337,7 +337,7 @@
                       </div>
       
                       {modal && (
-                                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
+                                <div className="fixed text-gray-400 inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
                                   <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
                                                 sm:w-[85vw] sm:h-[75vh] sm:p-6
                                                 md:w-[65vw] md:h-[55vh] md:p-8
@@ -361,7 +361,7 @@
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        className="input w-[90%] rounded-lg bg-white border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
                                         value={formData.name}
                                         onChange={(e)=>handleChange(e)}
@@ -378,7 +378,7 @@
                                         Gender:
                                       </label>
                                       <select defaultValue="   select Status"
-                                        className="select w-[90%] focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
+                                        className="select w-[90%] bg-white border-gray-200 focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
                                         style={{marginLeft:'25px'}}
                                         value={formData.status}
                                         name='gender'
@@ -397,14 +397,14 @@
                                       >
                                        Department:
                                       </label>
-                                      <select defaultValue="select Department"
-                                        className="select w-full max-w-full focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
+                                     <select defaultValue="select Department"
+                                        className="select w-[90%] focus:outline-none bg-white border-gray-200 text-gray-400  focus:border-b-2 focus:border-blue-500" 
                                         style={{marginLeft:'25px'}}
                                         value={formData.department}
-                                        name='department'
+                                        name='position'
                                         onChange={(e)=>handleChange(e)}
                                       >
-                                        <option  className=" text-gray-400">select Department</option>
+                                        <option  className=" text-gray-400">select Position</option>
                                         <option className=" text-gray-400">ABC </option>
                                         <option className=" text-gray-400">EFG</option>
                                       </select>
@@ -417,7 +417,7 @@
                                        Position:
                                       </label>
                                       <select defaultValue="select Position"
-                                        className="select w-[90%] focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
+                                        className="select w-[90%] focus:outline-none bg-white border-gray-200 text-gray-400  focus:border-b-2 focus:border-blue-500" 
                                         style={{marginLeft:'25px'}}
                                         value={formData.department}
                                         name='position'
@@ -438,7 +438,7 @@
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        className="input w-[90%] rounded-lg bg-white border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
                                         value={formData.salary}
                                         onChange={(e)=>handleChange(e)}
@@ -455,7 +455,7 @@
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        className="input w-[90%] rounded-lg bg-white border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
                                         value={formData.bankaccountnumber}
                                         onChange={(e)=>handleChange(e)}
@@ -471,7 +471,7 @@
                                        Status:
                                       </label>
                                       <select defaultValue="select Position"
-                                        className="select w-[90%] focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
+                                        className="select w-[90%] focus:outline-none bg-white border-gray-200 text-gray-400  focus:border-b-2 focus:border-blue-500" 
                                         style={{marginLeft:'25px'}}
                                         value={formData.status}
                                         name='status'
@@ -519,7 +519,6 @@
                                                 md:w-[65vw] md:h-[55vh] md:p-8
                                                 lg:w-[65vw] lg:h-[75vh] lg:p-10
                                                 xl:w-[42vw] xl:h-[95vh] xl:p-12
-                                                2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14
                                                 p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
                                                 
                                                 {/* Added flex-col */}
@@ -537,7 +536,7 @@
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        className="input w-[90%] rounded-lg focus:outline-none bg-white  focus:border-b-2 focus:border-blue-500"
                                         style={{marginLeft:'25px'}}
                                         value={formData.name}
                                         onChange={(e)=>handleChange(e)}

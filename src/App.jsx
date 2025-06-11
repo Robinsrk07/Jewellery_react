@@ -56,6 +56,8 @@ import PaySlip from './components/Employees/PaySlip.jsx';
 import Pos from './components/Pos.jsx';
 import { Provider } from 'react-redux';
 import store from './StateManagement/store.js';
+import Branches from './components/Branch/Branches.jsx';
+import BranchWiseEmployee from './components/Branch/BranchWiseEmployee.jsx';
 function App() {
   return (
     <div className="w-full h-full m-0 p-0">
@@ -102,6 +104,10 @@ function App() {
             </Route>
             <Route path='customers'>
               <Route path='customerslist' element={<CustomersList/>} />
+            </Route>
+            <Route path='branch'>
+              <Route path='branches' element={<Branches/>} />
+              <Route path='branchwiseemployee' element={<BranchWiseEmployee/>} />
             </Route>
             <Route path='inventory'>
               <Route path='item' element={<Item/>} />

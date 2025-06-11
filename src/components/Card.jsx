@@ -150,7 +150,7 @@ const Card = () => {
 
           {openSections.branch && (
             <ul>
-              <li style={{ paddingLeft: '63px', paddingTop: '23px' }}>Branch</li>
+              <li style={{ paddingLeft: '63px', paddingTop: '23px' }}><Link to='/dashboard/branch/branches'>Branch</Link></li>
             </ul>
           )}
         </div>

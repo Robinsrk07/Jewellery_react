@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import { Search, Plus, Edit, Trash2, Save, X, Upload, Eye, Calculator, ArrowLeft } from 'lucide-react';
-
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 const PaySlip = () => {
     const [employees] = useState([
         { id: 'EMP001', name: 'John Doe', phone: '9876543210', department: 'IT', designation: 'Software Engineer', bankAccount: '1234567890', upiId: 'john@paytm' },
@@ -355,10 +356,18 @@ const PaySlip = () => {
                                     <label className="block text-[11px] font-medium text-gray-500 mb-1">Designation</label>
                                     <input type="text" value={formData.designation} readOnly className="w-full input input-xs rounded-sm border border-gray-300 rounded-sm bg-gray-50" style={{ padding: '5px' }} />
                                 </div>
-                                <div>
-                                    <label className="block text-[11px] font-medium text-gray-500 mb-1">Pay Period <span className="text-red-500">*</span></label>
-                                    <input type="month" value={formData.payPeriod} onChange={(e) => handleInputChange('payPeriod', e.target.value)} className="w-full bg-white input input-xs border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-500" required style={{ padding: '5px' }} />
-                                </div>
+                               <div>
+    <label className="block text-[11px] font-medium text-gray-500 mb-1">Pay Period <span className="text-red-500">*</span></label>
+    <DatePicker
+        selected={formData.payPeriod ? new Date(formData.payPeriod) : null}
+        onChange={(date) => handleInputChange('payPeriod', date.toISOString().split('T')[0])}
+        dateFormat="MMMM yyyy"
+        showMonthYearPicker
+        className="w-full bg-white input input-xs border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        required
+        style={{ padding: '5px' }}
+    />
+</div>
                                 <div>
                                     <label className="block text-[11px] font-medium text-gray-500 mb-1">Payment Date <span className="text-red-500">*</span></label>
                                     <input type="date" value={formData.paymentDate} onChange={(e) => handleInputChange('paymentDate', e.target.value)} className="w-full bg-white input input-xs border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-500" required />
@@ -456,18 +465,18 @@ const PaySlip = () => {
                 {currentView === 'payslip-list' && (
                     <div className="bg-white rounded-lg shadow-sm h-[80vh]" style={{ padding: '20px' }}>
                         <div className="p-6">
-                            <h2 className="text-xl font-semibold mb-4">Payslip Records</h2>
+                            <h2 className="text-xl font-semibold sticky mb-4">Payslip Records</h2>
                             <div className="overflow-x-auto">
                                 <table className="table w-full text-sm text-left text-gray-500 border-collapse min-w-[1000px]" style={{ borderSpacing: '0 12px', borderCollapse: 'separate' }}>
-                                    <thead>
-                                        <tr className="sticky text-gray-500">
-                                            <th className="border-b" style={{ width: '100px' }}>Employee</th>
-                                            <th className="border-b" style={{ width: '100px' }}>Department</th>
-                                            <th className="border-b" style={{ width: '90px' }}>Pay Period</th>
-                                            <th className="border-b" style={{ width: '90px' }}>Gross Earnings</th>
-                                            <th className="border-b" style={{ width: '90px' }}>Total Deductions</th>
-                                            <th className="border-b" style={{ width: '100px' }}>Net Salary</th>
-                                            <th className="border-b" style={{ width: '90px' }}>Actions</th>
+                                    <thead style={{margin:'100px'}}>
+                                        <tr className="sticky text-gray-400">
+                                            <th className="border-b border-gray-100" style={{ width: '100px' }}>Employee</th>
+                                            <th className="border-b border-gray-100" style={{ width: '100px' }}>Department</th>
+                                            <th className="border-b border-gray-100" style={{ width: '90px' }}>Pay Period</th>
+                                            <th className="border-b border-gray-100" style={{ width: '90px' }}>Gross Earnings</th>
+                                            <th className="border-b border-gray-100" style={{ width: '90px' }}>Total Deductions</th>
+                                            <th className="border-b border-gray-100" style={{ width: '100px' }}>Net Salary</th>
+                                            <th className="border-b border-gray-100" style={{ width: '90px' }}>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -479,12 +488,12 @@ const PaySlip = () => {
                                                         <div className="text-sm text-gray-500">{payslip.employeeId}</div>
                                                     </div>
                                                 </td>
-                                                <td className="px-6 py-5 border-b border-gray-200 text-xs">{payslip.department}</td>
-                                                <td className="px-6 py-5 border-b border-gray-200 text-xs">{payslip.payPeriod}</td>
-                                                <td className="px-6 py-5 border-b border-gray-200 text-xs">₹{(payslip.basicSalary + payslip.hra + payslip.conveyanceAllowance + payslip.medicalAllowance + payslip.specialAllowance + payslip.bonus + payslip.overtimePay + payslip.otherEarnings).toLocaleString()}</td>
-                                                <td className="px-6 py-5 border-b border-gray-200 text-xs">₹{(payslip.pf + payslip.esi + payslip.professionalTax + payslip.incomeTax + payslip.loanRecovery + payslip.otherDeductions).toLocaleString()}</td>
-                                                <td className="px-6 py-5 border-b border-gray-200 text-xs">₹{((payslip.basicSalary + payslip.hra + payslip.conveyanceAllowance + payslip.medicalAllowance + payslip.specialAllowance + payslip.bonus + payslip.overtimePay + payslip.otherEarnings) - (payslip.pf + payslip.esi + payslip.professionalTax + payslip.incomeTax + payslip.loanRecovery + payslip.otherDeductions)).toLocaleString()}</td>
-                                                <td className="px-6 py-5 border-b border-gray-200 text-xs">
+                                                <td className="px-6 py-5 border-b border-gray-100 text-xs">{payslip.department}</td>
+                                                <td className="px-6 py-5 border-b border-gray-100 text-xs">{payslip.payPeriod}</td>
+                                                <td className="px-6 py-5 border-b border-gray-100 text-xs">₹{(payslip.basicSalary + payslip.hra + payslip.conveyanceAllowance + payslip.medicalAllowance + payslip.specialAllowance + payslip.bonus + payslip.overtimePay + payslip.otherEarnings).toLocaleString()}</td>
+                                                <td className="px-6 py-5 border-b border-gray-100 text-xs">₹{(payslip.pf + payslip.esi + payslip.professionalTax + payslip.incomeTax + payslip.loanRecovery + payslip.otherDeductions).toLocaleString()}</td>
+                                                <td className="px-6 py-5 border-b border-gray-100 text-xs">₹{((payslip.basicSalary + payslip.hra + payslip.conveyanceAllowance + payslip.medicalAllowance + payslip.specialAllowance + payslip.bonus + payslip.overtimePay + payslip.otherEarnings) - (payslip.pf + payslip.esi + payslip.professionalTax + payslip.incomeTax + payslip.loanRecovery + payslip.otherDeductions)).toLocaleString()}</td>
+                                                <td className="px-6 py-5 border-b border-gray-100 text-xs">
                                                     <button onClick={() => handleEdit(payslip)} className="text-blue-600 hover:text-blue-800 mr-2">
                                                         <Edit className="w-4 h-4" />
                                                     </button>
