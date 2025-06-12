@@ -1,48 +1,45 @@
-
-
-
-    
-    
-     import { useState } from "react";
+   
+    import { useState } from "react";
      import { Link } from "react-router";
      const  Stock_Transfer = () => {
      
           
       const  [isHovered, setIsHovered] = useState(false);
-                   const [items, setItems] = useState(10);
+      const [items, setItems] = useState(10);
 
-  const stockTransfers = [
-    {
-      id: 'ST-2025-001',
-      invoices: ['INV-001', 'INV-002', 'INV-003'],
-      fromBranch: 'Head Office',
-      toBranch: 'Branch A',
-      itemCount: 45,
-      transferredBy: 'John Doe',
-      status: 'Completed',
-      transferDate: '2025-06-08',
-    },
-    {
-      id: 'ST-2025-002',
-      invoices: ['INV-004', 'INV-005'],
-      fromBranch: 'Head Office',
-      toBranch: 'Branch B',
-      itemCount: 23,
-      transferredBy: 'Jane Smith',
-      status: 'Pending',
-      transferDate: '2025-06-10',
-    },
-    {
-      id: 'ST-2025-003',
-      invoices: ['INV-006'],
-      fromBranch: 'Branch A',
-      toBranch: 'Branch C',
-      itemCount: 12,
-      transferredBy: 'Mike Johnson',
-      status: 'Cancelled',
-      transferDate: '2025-06-09',
-    }
-  ];
+      const stockTransfers = [
+        {
+          id: 'ST-2025-001',
+          invoices: ['INV-001', 'INV-002', 'INV-003'],
+          fromBranch: 'Head Office',
+          toBranch: 'Branch A',
+          itemCount: 45,
+          transferredBy: 'John Doe',
+          status: 'Completed',
+          transferDate: '2025-06-08',
+        },
+        {
+          id: 'ST-2025-002',
+          invoices: ['INV-004', 'INV-005'],
+          fromBranch: 'Head Office',
+          toBranch: 'Branch B',
+          itemCount: 23,
+          transferredBy: 'Jane Smith',
+          status: 'Pending',
+          transferDate: '2025-06-10',
+        },
+        {
+          id: 'ST-2025-003',
+          invoices: ['INV-006'],
+          fromBranch: 'Branch A',
+          toBranch: 'Branch C',
+          itemCount: 12,
+          transferredBy: 'Mike Johnson',
+          status: 'Cancelled',
+          transferDate: '2025-06-09',
+        }
+      ];
+      const [modal,setModal] = useState(false)
                  
                    return (
                      
@@ -99,24 +96,25 @@
                               minWidth: '100%' // Ensures it matches table width
                               }}
                           >
-                              <Link to="/dashboard/inventory/createItem">
+                              
                         <button
                           className="text-xs font-bold"
                           style={{
                             width: '160px',
                             height: '30px',
                             borderRadius: '8px',
-                            backgroundColor: isHovered ? 'rgb(97, 113, 228)' : 'rgb(126, 96, 228)',
+                            backgroundColor: isHovered ? 'rgb(97, 113, 228)' : '#6270E4',
                             color: 'white',
                             transition: 'background-color 0.3s ease',
                             cursor: 'pointer',
                           }}
                           onMouseEnter={() => setIsHovered(true)}
                           onMouseLeave={() => setIsHovered(false)}
+                          onClick={()=>setModal(true)}
                         >
-                          Create New Item
+                          Create Stock Transfer 
                         </button>
-                      </Link>
+                   
                           </div>
                  
                        <div className="text-gray-500" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
@@ -138,10 +136,7 @@
                            <option value={25}>25</option>
                            <option value={50}>50</option>
                          </select>
-                       </div>
-                 
-                       
-                 
+                       </div>               
                        <table className="table w-full text-sm text-left border-collapse min-w-[1600px]
                        " style={{ borderSpacing: '0 12px', borderCollapse: 'separate', }}>
                          <thead className="text-xs text-[#A8B2C4] uppercase bg-white">
@@ -167,17 +162,18 @@
                             <td className="px-6 py-5 border-b border-gray-200 text-xs">{transfer.id}</td>
                             <td className="px-6 py-5 border-b border-gray-200 text-xs">
                                 {Array.isArray(transfer.invoices) && transfer.invoices.length > 0 ? (
-                                    transfer.invoices.map((invoice, idx) => (
-                                    <span className="" key={idx}>
-                                        {invoice}
-                                        <br />
+                                  transfer.invoices.map((invoice, idx) => (
+                                    <span
+                                      key={idx}
+                                      className="block bg-blue-200 text-gray-900  rounded-md font-medium shadow-sm border border-blue-300 w-[75px] "style={{margin:'5px'}}
+                                    >
+                                      📁 {invoice}
                                     </span>
-                                    ))
+                                  ))
                                 ) : (
-                                    '-'
+                                  '-'
                                 )}
-                                </td>
-
+                              </td>
                             <td className="px-6 py-5 border-b border-gray-200 text-xs">{transfer.fromBranch}</td>
                             <td className="px-6 py-5 border-b border-gray-200 text-xs">{transfer.toBranch}</td>
                             <td className="px-6 py-5 border-b border-gray-200 text-xs">{transfer.itemCount}</td>
@@ -191,14 +187,27 @@
                                     type="button"
                                     className="btn text-white border-none font-bold text-xs rounded-lg"
                                     style={{
-                                        width: '100px',
+                                        width: '84px',
                                         padding: '5px',
+                                        height:'35px',
                                         backgroundColor: '#696BE4',
                                     }}
                                     >
                                     Edit
                                     </button>
                                 </Link>
+                                   <button
+                                    type="button"
+                                    className="btn text-white border-none font-bold text-xs rounded-lg"
+                                    style={{
+                                        width: '84px',
+                                        padding: '5px',
+                                        height:'35px',
+                                        backgroundColor: '#696BE4',
+                                    }}
+                                    >
+                                    view                     
+                                    </button>
 
                                 <button
                                     className="btn text-white border-none font-bold text-xs rounded-lg"
@@ -206,6 +215,8 @@
                                     width: '100px',
                                     padding: '5px',
                                     background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                    height:'35px'
+
                                     }}
                                     onClick={() => document.getElementById('my_modal_8').showModal()}
                                 >
@@ -216,7 +227,7 @@
                             </tr>
                         ))}
                         </tbody>
-                                            </table>
+                        </table>
                        
                  
                        {/* Pagination */}
@@ -236,8 +247,6 @@
       
       
                        <dialog id="my_modal_8" className="modal">
-      
-      
                        <div className="modal-box text-center py-8 px-6 rounded-xl relative font-[Open_Sans]
                           w-[90vw] h-[50vh]             /* base (mobile) */
                           sm:w-[70vw] sm:h-[30vh]       /* ≥ 640px */
@@ -246,10 +255,8 @@
                           xl:w-[30vw] xl:h-[50vh]       /* ≥ 1280px */
                           2xl:w-[25vw] 2xl:h-[20vh]     /* ≥ 1536px */
                         "
-      
                        onClick={()=>document.getElementById('my_modal_8').close()}
-                       >
-                       
+                       >   
                         {/* Icon */}
                         <div className="flex justify-center mb-4" style={{opacity:'.5'}}>
                           <div className="text-orange-400 text-6xl">
@@ -265,7 +272,6 @@
                             </svg>
                           </div>
                         </div>
-      
                         {/* Title & Message */}
                         <h3 className="text-lg font-semibold " style={{margin:'20px'}}>Are you sure?</h3>
                         <p className="text-sm text-gray-500 " style={{margin:'20px'}}>You won't be able to revert this!</p>
@@ -290,10 +296,8 @@
                           </button>
                         </div>
                       </div>
-                    </dialog>
-      
-      
-                  <dialog id="my_modal_cancel" className="modal">
+                       </dialog>
+                       <dialog id="my_modal_cancel" className="modal">
                   <div className="modal-box text-center py-10 px-8 relative font-[Open Sans] "
                       onClick={() => {
                       document.getElementById('my_modal_cancel').close();
@@ -316,12 +320,116 @@
                       <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your Jewellery Type is safe</p>
                       <button className="btn bg-blue-500 w-[50px] rounded-lg" > ok</button>
                   </div>
-                  </dialog>
-                      </div>
+                       </dialog>
+                       </div>  
+
+                  {modal &&(<div className="w-full h-full text-gray-100 z-50 absolute inset-0 bg-black/40 flex justify-center items-center overflow-auto">
+                  
+                  <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
+                                                sm:w-[85vw] sm:h-[75vh] sm:p-6
+                                                md:w-[65vw] md:h-[65vh] md:p-8
+                                                lg:w-[55vw] lg:h-[75vh] lg:p-10
+                                                xl:w-[35vw] xl:h-[85vh] xl:p-12
+                                               
+                                                p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
+                                                
+                                                {/* Added flex-col */}
+                                    <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
+                                        style={{paddingLeft:'20px', paddingTop:"20px"}}>
+                                         Create Stock Transfer                        </h3>
+                                    <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
       
-                     
-      
-                         
+                                    <div className="flex flex-col flex-grow text-gray-600"> {/* Added flex-grow */}
+                                   
+                                      <label 
+                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
+                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                      >
+                                       Code:
+                                      </label>
+                                      <input type="text" 
+                                        placeholder="    Type here" 
+                                        className="input w-[90%] text-gray-300 rounded-lg focus:outline-none border-gray-300 bg-white  focus:border-b-2 focus:border-blue-500"
+                                        style={{marginLeft:'25px'}}
+                                        //onChange={(e)=>handleChange(e)}
+                                        name=""
+                                      />
+                                      <label 
+                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
+                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                      >
+                                       Name:
+                                      </label>
+                                      <input type="text" 
+                                        placeholder="    Type here" 
+                                        className="input w-[90%] rounded-lg border-gray-300 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        style={{marginLeft:'25px'}}
+                                        //onChange={(e)=>handleChange(e)}
+                                        name=""
+                                      />
+                                      
+
+                                      <label 
+                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
+                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                      >
+                                        Description:
+                                      </label>
+
+                                      <textarea className="textarea w-[90%] border-gray-300 bg-white rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
+                                        placeholder="Description" 
+                                        style={{marginLeft:'25px'}}
+                                       // onChange={(e)=>handleChange(e)}
+                                        
+                                        name=""
+                                      ></textarea>
+                            
+                                           
+                                            <label 
+                                                style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
+                                                className="font-semibold text-sm text-[#344767] w-[80%]"
+                                            >
+                                                Status:
+                                            </label>
+                                            <select defaultValue=""
+                                                className="select w-[90%] h-[35px] border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                                                style={{marginLeft:'25px'}}
+                                              //  value={formData.status}
+                                                name=''
+                                              //  onChange={(e)=>handleChange(e)}
+                                            >
+                                                <option className=" text-gray-600"></option>
+                                                <option className=" text-gray-600"> Active</option>
+                                                <option className=" text-gray-600"> InActive</option>
+                                            </select>
+            
+                                            </div> 
+                                            {/* Button container positioned 10px above bottom */}
+                                            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
+                                                style={{marginTop: '20px', marginBottom: '10px',  paddingLeft: '200px'}}>
+                                            <button
+                                                type="button"
+                                                className="w-[150px] h-[40px]  rounded-lg text-white border-none"
+                                                style={{ backgroundColor: '#8392ab' }}
+                                               // onClick={(e) => handleSubmit(e)}
+                                            >
+                                                Submit
+                                            </button>
+                                            <button
+                                                type="button"
+                                                className=" w-[150px] h-[40px] rounded-lg text-white border-none"
+                                                style={{ backgroundColor: '#5E72e4' }}
+                                               // onClick={handleCloseModal}
+                                            >
+                                                Close
+                                            </button>
+                                            </div>
+                                        </div>
+                   
+                  
+                  
+                  </div>)}
+
                     </>)
      }
      
