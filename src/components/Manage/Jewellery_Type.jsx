@@ -136,12 +136,14 @@ import '@fontsource/open-sans/700.css'; // Bold
                               }}
                           >
                               <button
-                              className="text-sm font-bold"
+                              className="text-xs font-bold"
                               style={{
-                                  width: '200px',
-                                  height: '45px',
+                                  width: '180px',
+                                  height: '35px',
                                   borderRadius: '8px',
-                                  backgroundColor: isHovered ? 'rgb(97, 113, 228)' : 'rgb(126, 96, 228)',
+                                    background: isHovered
+                                  ? 'linear-gradient(to right, #6170E4, #7F60E4)'
+                                  : 'linear-gradient(to right, #7F60E4, #6170E4)',
                                   color: 'white',
                                   transition: 'background-color 0.3s ease',
                                   cursor: 'pointer',
@@ -207,9 +209,13 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       type="button"
                                       className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
-                                          width: '100px',
+                                          width: '80px',
                                           padding: '5px',
-                                          backgroundColor: '#696BE4',
+                                           height:'35px',
+
+                                         background: isHovered
+                                          ? 'linear-gradient(to right, #6170E4, #7F60E4)'
+                                          : 'linear-gradient(to right, #7F60E4, #6170E4)', 
                                       }}                              
                                       onClick={()=>setEditModal(true)}
                                       >
@@ -219,8 +225,10 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       <button
                                       className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
-                                          width: '190px',
+                                          width: '180px',
                                           padding: '5px',
+                                          height:'35px',
+
                                           background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
                                       }}
                                       onClick={()=>document.getElementById('my_modal_8').showModal()}
@@ -249,10 +257,12 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       type="button"
                                       className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
-                                          width: '100px',
+                                          width: '80px',
+                                          height:'35px',
                                           padding: '5px',
-                                          backgroundColor: '#696BE4',
-                                      }}                              
+                                   background: isHovered
+                                  ? 'linear-gradient(to right, #6170E4, #7F60E4)'
+                                  : 'linear-gradient(to right, #7F60E4, #6170E4)',                                      }}                              
                                       onClick={()=>setEditModal(true)}
                                       >
                                       Edit
@@ -261,8 +271,9 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       <button
                                       className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
-                                          width: '190px',
+                                          width: '180px',
                                           padding: '5px',
+                                            height:'35px',
                                           background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
                                       }}
                                       onClick={()=>document.getElementById('my_modal_8').showModal()}
@@ -291,9 +302,13 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       type="button"
                                       className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
-                                          width: '100px',
+                                          width: '80px',
                                           padding: '5px',
-                                          backgroundColor: '#696BE4',
+                                          height:'35px',
+
+                                           background: isHovered
+                                            ? 'linear-gradient(to right, #6170E4, #7F60E4)'
+                                            : 'linear-gradient(to right, #7F60E4, #6170E4)', 
                                       }}                              
                                       onClick={()=>setEditModal(true)}
                                       >
@@ -303,8 +318,10 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       <button
                                       className="btn border-none text-white font-bold text-xs rounded-lg"
                                       style={{
-                                          width: '190px',
+                                          width: '180px',
                                           padding: '5px',
+                                          height:'35px',
+
                                           background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
                                       }}
                                       onClick={()=>document.getElementById('my_modal_8').showModal()}
@@ -332,13 +349,13 @@ import '@fontsource/open-sans/700.css'; // Bold
                  
                        {/* Pagination */}
                        <div className="flex gap-1 justify-center" style={{marginBottom:'10px'}}>
-                         <button className="btn  bg-white rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+                         <button className="btn  bg-white border-gray-300 rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
                            {'<'}
                          </button>
-                         <button className="btn  rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
+                         <button className="btn border-none   rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
                            1
                          </button>
-                         <button className="btn  bg-white rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+                         <button className="btn  bg-white border-gray-300 rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
                            {'>'}
                          </button>
                        </div>
@@ -454,8 +471,8 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input bg-white border-gray-200 w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        className=" bg-white border-gray-200 w-[95%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        style={{marginLeft:'0px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />

@@ -115,7 +115,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                     2xl:max-w-[95vw] 
                     h-auto max-h-[70vh] 
                     rounded-xl px-4 md:px-8 lg:px-12
-                    mx-auto overflow-auto  custom-scrollbar"
+                    mx-auto overflow-auto  custom-scrollbar  "
                  style={{ fontFamily: 'Open Sans',overflow:'auto'}}
                    >
                                   <div
@@ -133,24 +133,27 @@ import '@fontsource/open-sans/700.css'; // Bold
                               minWidth: '100%' // Ensures it matches table width
                               }}
                           >
-                              <button
+                             <button
                               className="text-xs font-bold"
                               style={{
-                                  width: '160px',
-                                  height: '35px',
-                                  borderRadius: '8px',
-                                  backgroundColor: isHovered ? 'rgb(97, 113, 228)' : 'rgb(126, 96, 228)',
-                                  color: 'white',
-                                  transition: 'background-color 0.3s ease',
-                                  cursor: 'pointer',
+                                width: '160px',
+                                height: '35px',
+                                borderRadius: '8px',
+                                background: isHovered
+                                  ? 'linear-gradient(to right, #6170E4, #7F60E4)'
+                                  : 'linear-gradient(to right, #7F60E4, #6170E4)',
+                                color: 'white',
+                                transition: 'background 0.3s ease',
+                                cursor: 'pointer',
                               }}
                               onMouseEnter={() => setIsHovered(true)}
                               onMouseLeave={() => setIsHovered(false)}
                               onClick={() => setModal(true)}
-                              >
+                            >
                               + New Item Type
-                              </button>
-                          </div>
+                            </button>
+
+                                  </div>
                  
                        <div className='text-gray-600' style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
                          <p className="text-xs font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
@@ -205,9 +208,9 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       type="button"
                                       className=" text-white font-bold text-xs  rounded-lg"
                                       style={{
-                                          width: '150px',
+                                          width: '120px',
                                           padding: '5px',
-                                          backgroundColor: '#696BE4',
+                                                background: 'linear-gradient(to right, #7F60E4,#6170E4)',
                                           height:'35px'
                                       }}                              
                                       onClick={()=>setEditModal(true)}
@@ -249,9 +252,9 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       type="button"
                                       className=" text-white font-bold text-xs rounded-lg"
                                       style={{
-                                          width: '150px',
+                                          width: '120px',
                                           padding: '5px',
-                                          backgroundColor: '#696BE4',
+                                          background: 'linear-gradient(to right, #7F60E4,#6170E4)',
                                            height:'35px'
 
                                       }}                              
@@ -292,17 +295,20 @@ import '@fontsource/open-sans/700.css'; // Bold
                        
                  
                        {/* Pagination */}
-                       <div className="flex gap-1  justify-center">
-                         <button className="btn border-none bg-gray-100 shadow-lg   rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
-                           {'<'}
-                         </button>
-                         <button className="btn border-none rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
-                           1
-                         </button>
-                         <button className="btn  border-none bg-gray-100 shadow-lg  rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
-                           {'>'}
-                         </button>
-                       </div>
+                       <div
+  className="flex justify-center gap-1 w-full sticky top-0 z-10 bg-white py-6"
+>
+  <button className="btn border-gray-200 bg-white shadow-lg rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+    {'<'}
+  </button>
+  <button className="btn border-none rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
+    1
+  </button>
+  <button className="btn border-gray-200 bg-white shadow-lg rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
+    {'>'}
+  </button>
+</div>
+>
                  
                        {/* Modal */}
       
@@ -393,60 +399,56 @@ import '@fontsource/open-sans/700.css'; // Bold
       
                       {modal && (
                                 <div className="fixed text-black inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
-                                  <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
-                                                sm:w-[85vw] sm:h-[75vh] sm:p-6
-                                                md:w-[65vw] md:h-[65vh] md:p-8
-                                                lg:w-[55vw] lg:h-[75vh] lg:p-10
-                                                xl:w-[35vw] xl:h-[85vh] xl:p-12
-                                               
-                                                p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
+                                   <div className="bg-white rounded-xl shadow-md w-[90vw] max-w-[400px] h-[90vh] max-h-[500px] p-6 overflow-auto">
+
                                                 
                                                 {/* Added flex-col */}
-                                    <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
-                                        style={{paddingLeft:'20px', paddingTop:"20px"}}>
+                                    <h3 className="font-bold text-[22px] text-[#344767]  "
+                                    style={{padding:'20px'}}
+                                        >
                                          Create Type                        </h3>
-                                    <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
+                                    <hr className="my-4 border-gray-300" />
       
-                                    <div className="flex flex-col flex-grow text-gray-600"> {/* Added flex-grow */}
+                                    <div className="flex flex-col gap-2 bg-white  items-center flex-grow text-gray-600"> {/* Added flex-grow */}
                                    
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="block font-bold text-xs text-left  w-[90%] text-[#344767] w-[80%]"
                                       >
                                        Code:
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
                                         className="input w-[90%] text-gray-300 rounded-lg focus:outline-none border-gray-300 bg-white  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-bold text-xs text-[#344767] w-[90%]"
                                       >
                                        Name:
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
                                         className="input w-[90%] rounded-lg border-gray-300 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                       
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                       
 
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                       
+                                        className="font-semibold text-xs text-[#344767] w-[90%]"
                                       >
                                         Description:
                                       </label>
 
                                       <textarea className="textarea w-[90%] border-gray-300 bg-white rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
                                         placeholder="Description" 
-                                        style={{marginLeft:'25px'}}
+                                       
                                         onChange={(e)=>handleChange(e)}
                                         
                                         name=""
@@ -454,14 +456,13 @@ import '@fontsource/open-sans/700.css'; // Bold
                             
                                            
                                             <label 
-                                                style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                                className="font-semibold text-sm text-[#344767] w-[80%]"
+                                               
+                                                className="font-semibold text-xs text-[#344767] w-[90%]"
                                             >
                                                 Status:
                                             </label>
                                             <select defaultValue=""
                                                 className="select w-[90%] h-[35px] border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
-                                                style={{marginLeft:'25px'}}
                                                 value={formData.status}
                                                 name=''
                                                 onChange={(e)=>handleChange(e)}
@@ -471,13 +472,13 @@ import '@fontsource/open-sans/700.css'; // Bold
                                                 <option className=" text-gray-600"> InActive</option>
                                             </select>
             
-                                            </div> 
+                                     </div> 
                                             {/* Button container positioned 10px above bottom */}
-                                            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
-                                                style={{marginTop: '20px', marginBottom: '10px',  paddingLeft: '200px'}}>
+                                            <div className="flex flex-col h-[10vh] md:flex-row gap-2 items-center justify-center bg-white " 
+                                               style={{margin:'10px'}} >
                                             <button
                                                 type="button"
-                                                className="w-[150px] h-[40px]  rounded-lg text-white border-none"
+                                                className="w-[120px] h-[30px] font-bold text-xs rounded-sm text-white border-none"
                                                 style={{ backgroundColor: '#8392ab' }}
                                                 onClick={(e) => handleSubmit(e)}
                                             >
@@ -485,7 +486,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                             </button>
                                             <button
                                                 type="button"
-                                                className=" w-[150px] h-[40px] rounded-lg text-white border-none"
+                                                className=" w-[120px] h-[30px] font-bold text-xs rounded-sm text-white border-none"
                                                 style={{ backgroundColor: '#5E72e4' }}
                                                 onClick={handleCloseModal}
                                             >
@@ -498,61 +499,57 @@ import '@fontsource/open-sans/700.css'; // Bold
       
       
                       {editModal &&  (
-                                <div className="fixed text-gray-800 inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
-                                  <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
-                                                sm:w-[85vw] sm:h-[75vh] sm:p-6
-                                                md:w-[65vw] md:h-[65vh] md:p-8
-                                                lg:w-[55vw] lg:h-[75vh] lg:p-10
-                                                xl:w-[35vw] xl:h-[85vh] xl:p-12
-                                                p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
+                                <div className="fixed text-black inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
+                                                                     <div className="bg-white rounded-xl shadow-md w-[90vw] max-w-[400px] h-[90vh] max-h-[500px] p-6 overflow-auto">
+
                                                 
                                                 {/* Added flex-col */}
-                                    <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
-                                        style={{paddingLeft:'20px', paddingTop:"20px"}}>
-                                         Edit Type                       </h3>
-                                    <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
+                                    <h3 className="font-bold text-[22px] text-[#344767]  "
+                                    style={{padding:'20px'}}
+                                        >
+                                        Edit Type                        </h3>
+                                    <hr className="my-4 border-gray-300" />
       
-                                    <div className="flex flex-col flex-grow"> {/* Added flex-grow */}
+                                    <div className="flex flex-col gap-2 bg-white  items-center flex-grow text-gray-600"> {/* Added flex-grow */}
                                    
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="block font-bold text-xs text-left  w-[90%] text-[#344767] w-[80%]"
                                       >
                                        Code:
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] bg-white border border-gray-300 rounded-lg focus:outline-none bo  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        className="input w-[90%] text-gray-300 rounded-lg focus:outline-none border-gray-300 bg-white  focus:border-b-2 focus:border-blue-500"
+                
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
-                                      
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-bold text-xs text-[#344767] w-[90%]"
                                       >
                                        Name:
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input w-[90%] bg-white border border-gray-300 rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        className="input w-[90%] rounded-lg border-gray-300 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                       
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                       
 
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                       
+                                        className="font-semibold text-xs text-[#344767] w-[90%]"
                                       >
                                         Description:
                                       </label>
 
-                                      <textarea className="textarea bg-white border border-gray-300 w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
+                                      <textarea className="textarea w-[90%] border-gray-300 bg-white rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
                                         placeholder="Description" 
-                                        style={{marginLeft:'25px'}}
+                                       
                                         onChange={(e)=>handleChange(e)}
                                         
                                         name=""
@@ -560,14 +557,13 @@ import '@fontsource/open-sans/700.css'; // Bold
                             
                                            
                                             <label 
-                                                style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                                className="font-semibold text-sm text-[#344767] w-[80%]"
+                                               
+                                                className="font-semibold text-xs text-[#344767] w-[90%]"
                                             >
                                                 Status:
                                             </label>
                                             <select defaultValue=""
-                                                className="select w-[90%] bg-white border border-gray-300 h-[35px] focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
-                                                style={{marginLeft:'25px'}}
+                                                className="select w-[90%] h-[35px] border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
                                                 value={formData.status}
                                                 name=''
                                                 onChange={(e)=>handleChange(e)}
@@ -577,13 +573,13 @@ import '@fontsource/open-sans/700.css'; // Bold
                                                 <option className=" text-gray-600"> InActive</option>
                                             </select>
             
-                                            </div> 
+                                     </div> 
                                             {/* Button container positioned 10px above bottom */}
-                                            <div className="flex flex-col   sm:flex-row justify-center items-center gap-4  " 
-                                                style={{marginTop: '20px', marginBottom: '10px',  paddingLeft: '180px'}}>
+                                            <div className="flex flex-col h-[10vh] md:flex-row gap-2 items-center justify-center bg-white " 
+                                               style={{margin:'10px'}} >
                                             <button
                                                 type="button"
-                                                className=" w-[150px] h-[40px]  rounded-lg text-white"
+                                                className="w-[120px] h-[30px] font-bold text-xs rounded-sm text-white border-none"
                                                 style={{ backgroundColor: '#8392ab' }}
                                                 onClick={(e) => handleSubmit(e)}
                                             >
@@ -591,7 +587,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                             </button>
                                             <button
                                                 type="button"
-                                                className="w-[150px] h-[40px]  rounded-lg text-white"
+                                                className=" w-[120px] h-[30px] font-bold text-xs rounded-sm text-white border-none"
                                                 style={{ backgroundColor: '#5E72e4' }}
                                                 onClick={handleCloseModal}
                                             >
