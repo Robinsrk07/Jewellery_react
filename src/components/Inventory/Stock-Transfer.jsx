@@ -592,8 +592,8 @@ const Stock_Transfer = () => {
               </select>
             </div>
             
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6" 
-                 style={{marginTop: '20px', marginBottom: '10px', paddingLeft: '200px'}}>
+            <div className="flex flex-col sm:flex-row justify-end items-center gap-4 " 
+                 style={{marginTop: '20px', marginBottom: '10px',padding:'20px'}}>
               <button
                 type="button"
                 className="w-[150px] h-[35px] rounded-lg text-white font-bold text-xs border-none"
@@ -786,8 +786,8 @@ const Stock_Transfer = () => {
               </select>
             </div>
             
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6" 
-                 style={{marginTop: '20px', marginBottom: '10px', paddingLeft: '200px'}}>
+            <div className="flex flex-col sm:flex-row justify-end items-center gap-4 " 
+                 style={{marginTop: '20px', marginBottom: '10px' ,padding:'20px'}}>
               <button
                 type="button"
                 className="w-[150px] h-[35px] rounded-lg text-white font-bold text-xs border-none"
