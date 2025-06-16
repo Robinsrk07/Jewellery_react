@@ -3,7 +3,11 @@ import React, { useState } from 'react';
 import '@fontsource/open-sans'; // Default weight 400
 import '@fontsource/open-sans/600.css'; // Semi-bold
 import '@fontsource/open-sans/700.css'; // Bold
-import Pagination from '../Pagination';
+import EditButton from '../../components/EditButton';
+import DeleteButton from '../../components/DeleteButton';
+import CreateButton from '../../components/CreateButton';
+import Pagination from '../../components/Pagination';
+import ItemsPerPageSelector from '../../components/ItemsPerPageSelector';
 import { Link } from 'react-router';
     
      const  Branches = () => {
@@ -114,63 +118,12 @@ import { Link } from 'react-router';
                     mx-auto overflow-auto  custom-scrollbar"
                  style={{ fontFamily: 'Open Sans',overflow:'auto'}}
                    >
-                                  <div
-                              style={{
-                              position: 'sticky',
-                              left: 0,
-                              top: 0,
-                              zIndex: 10,
-                              backgroundColor: 'white',
-                              padding: '1.5rem',
-                              boxSizing: 'border-box',
-                              display: 'flex',
-                              justifyContent: 'flex-end',
-                              width: 'fit-content', // Changed from 100%
-                              minWidth: '100%' // Ensures it matches table width
-                              }}
-                              className='flex flex-row gap-2'
-                          ><input className='input input-md border text-gray-500 bg-white border-gray-300'
-                            placeholder='   Search Here'
-                          ></input>
-                              <button
-                              className="text-xs font-bold"
-                              style={{
-                                  width: '160px',
-                                  height: '35px',
-                                  borderRadius: '6px',
-                                  backgroundColor: isHovered ? 'rgb(97, 113, 228)' : 'rgb(126, 96, 228)',
-                                  color: 'white',
-                                  transition: 'background-color 0.3s ease',
-                                  cursor: 'pointer',
-                              }}
-                              onMouseEnter={() => setIsHovered(true)}
-                              onMouseLeave={() => setIsHovered(false)}
-                              onClick={() => setModal(true)}
-                              >
-                              + New Branch
-                              </button>
-                          </div>
-                 
-                       <div className='text-gray-600' style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
-                         <p className="text-xs font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
-                         <select
-                           className="border border-gray-300 rounded-lg w-[114px] h-[35px] px-2"
-                           style={{
-                             appearance: 'none',
-                             WebkitAppearance: 'none',
-                             MozAppearance: 'none',
-                             backgroundColor: 'white',
-                             backgroundImage: 'none',
-                             paddingLeft: '5px',
-                           }}
-                           onChange={(e) => setItems(Number(e.target.value))}
-                           value={items}
-                         >
-                           <option value={10}>10</option>
-                           <option value={25}>25</option>
-                           <option value={50}>50</option>
-                         </select>
-                       </div>
+                      <CreateButton
+                         buttoncontent="+ New Branch"
+                         onClick={() => setModal(true)}  // This will now work!
+                      />                 
+                      <ItemsPerPageSelector items={items} setItems={setItems} />
+                       
                  
                        
                  
@@ -408,7 +361,7 @@ import { Link } from 'react-router';
                                         style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
                                         className="font-semibold text-sm text-[#344767] w-[80%]"
                                       >
-Branch Name :<span className="text-red-500 font-bold ml-1">*</span>                                      </label>
+                                      Branch Name :<span className="text-red-500 font-bold ml-1">*</span>                                      </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
                                         className="input w-[90%]  rounded-sm focus:outline-none border-gray-300 bg-white  focus:border-b-2 focus:border-blue-500"
@@ -420,7 +373,7 @@ Branch Name :<span className="text-red-500 font-bold ml-1">*</span>             
                                         style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
                                         className="font-semibold text-sm text-[#344767] w-[80%]"
                                       >
-Branch Code<span className="text-red-500 font-bold ml-1">*</span>                                      </label>
+                                       Branch Code<span className="text-red-500 font-bold ml-1">*</span>                                      </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
                                         className="input w-[90%]  rounded-sm focus:outline-none border-gray-300 bg-white  focus:border-b-2 focus:border-blue-500"

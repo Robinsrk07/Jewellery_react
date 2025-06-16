@@ -4,15 +4,11 @@ import React, { useState } from 'react';
 import '@fontsource/open-sans'; // Default weight 400
 import '@fontsource/open-sans/600.css'; // Semi-bold
 import '@fontsource/open-sans/700.css'; // Bold
-
-
-
-
-
-
-
- 
-     
+import EditButton from '../EditButton';
+import DeleteButton from '../DeleteButton';
+import CreateButton from '../CreateButton';
+import Pagination from '../Pagination';
+import ItemsPerPageSelector from '../ItemsPerPageSelector';
      const  Jewellery_Type = () => {
      
           
@@ -37,6 +33,31 @@ import '@fontsource/open-sans/700.css'; // Bold
       
                     const [modal, setModal] = useState(false)   
                     const [editModal,setEditModal]= useState(false)
+
+                    const jewelleryData = [
+                          {
+                            id: 1,
+                            code: 'Necklace',
+                            name: 'Necklace',
+                            type: 'Gold',
+                            status: 'ACTIVE',
+                          },
+                          {
+                            id: 2,
+                            code: 'Earrings',
+                            name: 'Earrings',
+                            type: 'Gold',
+                            status: 'ACTIVE',
+                          },
+                          {
+                            id: 3,
+                            code: 'Gold Bar',
+                            name: 'Gold Bar',
+                            type: 'Gold',
+                            status: 'ACTIVE',
+                          },
+                        ];
+
                  
                    //validation 
                    
@@ -120,245 +141,58 @@ import '@fontsource/open-sans/700.css'; // Bold
                     mx-auto overflow-auto  custom-scrollbar"
                  style={{ fontFamily: 'Open Sans',overflow:'auto'}}
                    >
-                                  <div
-                              style={{
-                              position: 'sticky',
-                              left: 0,
-                              top: 0,
-                              zIndex: 10,
-                              backgroundColor: 'white',
-                              padding: '1.5rem',
-                              boxSizing: 'border-box',
-                              display: 'flex',
-                              justifyContent: 'flex-end',
-                              width: 'fit-content', // Changed from 100%
-                              minWidth: '100%' // Ensures it matches table width
-                              }}
-                          >
-                              <button
-                              className="text-xs font-bold"
-                              style={{
-                                  width: '180px',
-                                  height: '35px',
-                                  borderRadius: '8px',
-                                    background: isHovered
-                                  ? 'linear-gradient(to right, #6170E4, #7F60E4)'
-                                  : 'linear-gradient(to right, #7F60E4, #6170E4)',
-                                  color: 'white',
-                                  transition: 'background-color 0.3s ease',
-                                  cursor: 'pointer',
-                              }}
-                              onMouseEnter={() => setIsHovered(true)}
-                              onMouseLeave={() => setIsHovered(false)}
-                              onClick={() => setModal(true)}
-                              >
-                              + New Jewellery Type
-                              </button>
-                          </div>
-                 
-                       <div className='text-gray-400' style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
-                         <p className="text-xs font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
-                         <select
-                           className="border border-gray-300 rounded-lg w-[114px] h-[35px] px-2"
-                           style={{
-                             appearance: 'none',
-                             WebkitAppearance: 'none',
-                             MozAppearance: 'none',
-                             backgroundColor: 'white',
-                             backgroundImage: 'none',
-                             paddingLeft: '5px',
-                           }}
-                           onChange={(e) => setItems(Number(e.target.value))}
-                           value={items}
-                         >
-                           <option value={10}>10</option>
-                           <option value={25}>25</option>
-                           <option value={50}>50</option>
-                         </select>
-                       </div>
+                        <CreateButton
+                          buttoncontent="+ New Jewellery Type"
+                          onClick={() => setModal(true)}  // This will now work!
+                        />                 
+                       <ItemsPerPageSelector items={items} setItems={setItems} />
+
                  
                        
-                 
-                       <table className="table w-full text-sm text-left text-gray-500 border-collapse min-w-[800px]  " style={{ borderSpacing: '0 12px', borderCollapse: 'separate', }}>
-                         <thead className="text-xs text-gray-400 uppercase bg-white">
-                           <tr>
-                             <th className="w-[150px]" style={{width:'90px',paddingLeft:'20px'}} >SL NO</th>
-                             <th className="w-[150px]"   >CODE </th>
-                             <th className="w-[150px]"   >NAME </th>
-                             <th className="w-[150px]"  >JEWELLERY TYPE </th>
-                             <th className="w-[150px]"   >STATUS</th>
-                             <th className="w-[150px]"   >ACTION</th>
-                           </tr>
-                         </thead>
-                         <tbody>
-                           
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Necklace </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Necklace</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Gold</td>
-                             
-                              
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">
-                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
-                               </td> 
-      
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
-                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                      <button
-                                      type="button"
-                                      className="btn border-none text-white font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '80px',
-                                          padding: '5px',
-                                           height:'35px',
+                      <table className="table w-full text-sm text-left text-gray-500 border-collapse min-w-[800px]" style={{ borderSpacing: '0 12px', borderCollapse: 'separate' }}>
+                        <thead className="text-xs text-gray-400 uppercase bg-white">
+                          <tr>
+                            <th className="w-[150px]" style={{ width: '90px', paddingLeft: '20px' }}>SL NO</th>
+                            <th className="w-[150px]">CODE</th>
+                            <th className="w-[150px]">NAME</th>
+                            <th className="w-[150px]">JEWELLERY TYPE</th>
+                            <th className="w-[150px]">STATUS</th>
+                            <th className="w-[150px]">ACTION</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {jewelleryData.map((item, index) => (
+                            <tr key={item.id} className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                              <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '20px' }}>{index + 1}</td>
+                              <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.code}</td>
+                              <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.name}</td>
+                              <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.type}</td>
+                              <td className="px-6 py-5 border-b border-gray-200 text-xs">
+                                <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{ padding: '2px 6px' }}>{item.status}</span>
+                              </td>
+                              <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                                <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                  <EditButton
+                                    onClick={()=>setEditModal(true)}
+                                  />
 
-                                         background: isHovered
-                                          ? 'linear-gradient(to right, #6170E4, #7F60E4)'
-                                          : 'linear-gradient(to right, #7F60E4, #6170E4)', 
-                                      }}                              
-                                      onClick={()=>setEditModal(true)}
-                                      >
-                                      Edit
-                                      </button>
-              
-                                      <button
-                                      className="btn border-none text-white font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '180px',
-                                          padding: '5px',
-                                          height:'35px',
 
-                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-                                      }}
-                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
-      
-                                      >
-                                      Delete  Jewellery  Type
-                                      </button>
-                                  </div>
-                                  </td>
-                             </tr>
-                           
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Earrings </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Earrings </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Gold </td>
-                             
-                              
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">
-                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
-                               </td> 
-      
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
-                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                      <button
-                                      type="button"
-                                      className="btn border-none text-white font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '80px',
-                                          height:'35px',
-                                          padding: '5px',
-                                   background: isHovered
-                                  ? 'linear-gradient(to right, #6170E4, #7F60E4)'
-                                  : 'linear-gradient(to right, #7F60E4, #6170E4)',                                      }}                              
-                                      onClick={()=>setEditModal(true)}
-                                      >
-                                      Edit
-                                      </button>
-              
-                                      <button
-                                      className="btn border-none text-white font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '180px',
-                                          padding: '5px',
-                                            height:'35px',
-                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-                                      }}
-                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
-      
-                                      >
-                                        Delete  Jewellery  Type
-                                      </button>
-                                  </div>
-                                  </td>
-                             </tr>
-                           
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold Bar </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Gold Bar </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs"> Gold </td>
-                             
-                              
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">
-                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
-                               </td> 
-      
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
-                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                      <button
-                                      type="button"
-                                      className="btn border-none text-white font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '80px',
-                                          padding: '5px',
-                                          height:'35px',
+                                 <DeleteButton 
+                                  buttonText="Delete Jewellery Type" 
+                                  modalId="my_modal_8" 
+                                />
 
-                                           background: isHovered
-                                            ? 'linear-gradient(to right, #6170E4, #7F60E4)'
-                                            : 'linear-gradient(to right, #7F60E4, #6170E4)', 
-                                      }}                              
-                                      onClick={()=>setEditModal(true)}
-                                      >
-                                      Edit
-                                      </button>
-              
-                                      <button
-                                      className="btn border-none text-white font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '180px',
-                                          padding: '5px',
-                                          height:'35px',
+                                </div>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
 
-                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-                                      }}
-                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
-      
-                                      >
-                                        Delete  Jewellery  Type
-                                      </button>
-                                  </div>
-                                  </td>
-                             </tr>
-                           
-                             
-                             
-                            
-                            
-                             
-                             
-                             
-                             
-                            
-                          
-                         </tbody>
-                       </table>
                        
                  
                        {/* Pagination */}
-                       <div className="flex gap-1 justify-center" style={{marginBottom:'10px'}}>
-                         <button className="btn  bg-white border-gray-300 rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
-                           {'<'}
-                         </button>
-                         <button className="btn border-none   rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
-                           1
-                         </button>
-                         <button className="btn  bg-white border-gray-300 rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
-                           {'>'}
-                         </button>
-                       </div>
+                       <Pagination/>
                  
                        {/* Modal */}
       
@@ -367,11 +201,7 @@ import '@fontsource/open-sans/700.css'; // Bold
       
       
                        <div className="modal-box text-center py-8 px-6 rounded-xl relative font-[Open_Sans]
-                          w-[90vw] h-[50vh]             /* base (mobile) */
-                          sm:w-[70vw] sm:h-[30vh]       /* ≥ 640px */
-                          md:w-[50vw] md:h-[30vh]       /* ≥ 768px */
-                          lg:w-[35vw] lg:h-[30vh]       /* ≥ 1024px */
-                          xl:w-[30vw] xl:h-[50vh]       /* ≥ 1280px */
+                         w-[90vw] max-w-[400px] h-[90vh] max-h-[300px]
                         "
       
                        onClick={()=>document.getElementById('my_modal_8').close()}
@@ -421,7 +251,7 @@ import '@fontsource/open-sans/700.css'; // Bold
       
       
                   <dialog id="my_modal_cancel" className="modal">
-                  <div className="modal-box text-center py-10 px-8 relative font-[Open Sans] "
+                  <div className="modal-box text-center py-10 px-8 w-[90vw] max-w-[400px] h-[90vh] max-h-[300px] relative font-[Open Sans] "
                       onClick={() => {
                       document.getElementById('my_modal_cancel').close();
                       }}>
@@ -448,44 +278,37 @@ import '@fontsource/open-sans/700.css'; // Bold
       
                       {modal && (
                                 <div className="fixed inset-0   bg-black/50 flex items-center justify-center z-50 overflow-auto">
-                                  <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
-                                                sm:w-[85vw] sm:h-[75vh] sm:p-6
-                                                md:w-[65vw] md:h-[65vh] md:p-8
-                                                lg:w-[55vw] lg:h-[75vh] lg:p-10
-                                                xl:w-[35vw] xl:h-[85vh] xl:p-12
-                                                p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
+                                  <div className="bg-white rounded-xl shadow-md w-[90vw] max-w-[500px] h-[90vh] max-h-[500px] flex flex-col gap-2 overflow-y-auto"> 
                                                 
                                                 {/* Added flex-col */}
-                                    <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
-                                        style={{paddingLeft:'20px', paddingTop:"20px"}}>
+                                    <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6" style={{padding:'10px'}}
+                                        >
                                          Create Jewellery Type                       </h3>
                                     <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
       
-                                    <div className="flex flex-col flex-grow"> {/* Added flex-grow */}
+                                    <div className="flex flex-col text-gray-300 justify-start gap-2 items-center flex-grow"> {/* Added flex-grow */}
                                    
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                      
+                                        className="font-semibold text-sm text-[#344767] w-[90%]"
                                       >
                                        Code:
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className=" bg-white border-gray-200 w-[95%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'0px'}}
+                                        className=" bg-white border border-gray-200 w-[90%] h-[35px] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-sm text-[#344767] w-[90%]"
                                       >
                                        Name:
                                       </label>
                                       <input type="text" 
                                         placeholder="    Type here" 
-                                        className="input  bg-white border-gray-200 w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        className=" border  bg-white border-gray-200 h-[35px] w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"                          
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
@@ -494,14 +317,13 @@ import '@fontsource/open-sans/700.css'; // Bold
                                       
                                            
                                             <label 
-                                                style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                                className="font-semibold text-sm text-[#344767] w-[80%]"
+                                               
+                                                className="font-semibold text-sm text-[#344767] w-[90%]"
                                             >
                                                 Item type:
                                             </label>
                                             <select defaultValue="Select Item Type"
-                                                className="select w-[90%]  bg-white border-gray-200 h-[35px] focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
-                                                style={{marginLeft:'25px'}}
+                                                className="select w-[90%]  bg-white border-gray-200 h-[35px] focus:outline-none text-gray-300 rounded-lg focus:border-b-2 focus:border-blue-500" 
                                                 value={formData.status}
                                                 name=''
                                                 onChange={(e)=>handleChange(e)}
@@ -511,14 +333,13 @@ import '@fontsource/open-sans/700.css'; // Bold
                                                 <option className=" text-gray-600"> Diamond</option>
                                             </select>
                                             <label 
-                                                style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                                className="font-semibold text-sm text-[#344767] w-[80%]"
+                                                s
+                                                className="font-semibold text-sm text-[#344767] w-[90%]"
                                             >
                                                 Status:
                                             </label>
                                             <select defaultValue=""
                                                 className="select  bg-white border-gray-200 w-[90%] h-[35px] focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
-                                                style={{marginLeft:'25px'}}
                                                 value={formData.status}
                                                 name=''
                                                 onChange={(e)=>handleChange(e)}
@@ -530,11 +351,12 @@ import '@fontsource/open-sans/700.css'; // Bold
             
                                             </div> 
                                             {/* Button container positioned 10px above bottom */}
-                                            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
-                                                style={{marginTop: '20px', marginBottom: '10px',  paddingLeft: '200px'}}>
+                                            <div className="flex flex-col h-[20vh] md:flex-row gap-2 items-center justify-end  bg-white " 
+                                            style={{padding:'20px'}}
+                                                >
                                             <button
                                                 type="button"
-                                                className="btn w-2/3 sm:w-[30%] border-none rounded-lg text-white"
+                                                className="btn w-[80px] sm:w-[30%] border-none rounded-lg text-white"
                                                 style={{ backgroundColor: '#8392ab' }}
                                                 onClick={(e) => handleSubmit(e)}
                                             >
@@ -542,7 +364,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                             </button>
                                             <button
                                                 type="button"
-                                                className="btn w-2/3 sm:w-[30%] border-none rounded-lg text-white"
+                                                className="btn w-[80px] sm:w-[30%] border-none rounded-lg text-white"
                                                 style={{ backgroundColor: '#5E72e4' }}
                                                 onClick={handleCloseModal}
                                             >

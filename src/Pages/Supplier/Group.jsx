@@ -2,33 +2,10 @@
 
 
 import { useState } from "react";
-import Pagination from "../Pagination";
+import Pagination from "../../components/Pagination";
 
-const ControllAccount=()=>{
-const accountingData = [
-  {
-    id: 1,
-    slNo: 1,
-    name: 'Accounts Payable Control Account',
-    description: 'A summary account that tracks the total amount owed to all suppliers for jewellery purchases, including raw materials like gold, diamonds, and gemstones.',
-    status: 'ACTIVE'
-  },
-  {
-    id: 2,
-    slNo: 2,
-    name: 'Supplier Advances Control Account',
-    description: 'Records prepayments or deposits made to suppliers before receiving the jewellery stock or raw materials.',
-    status: 'ACTIVE'
-  },
-  {
-    id: 3,
-    slNo: 3,
-    name: 'Warehouse Address',
-    description: 'The location where jewellery stock is stored before being distributed to stores or customers.',
-    status: 'ACTIVE'
-  },
-  // Add more items as needed...
-];
+const Group=()=>{
+
     
 const  [isHovered, setIsHovered] = useState(false);
              const [items, setItems] = useState(10);
@@ -48,7 +25,7 @@ const  [isHovered, setIsHovered] = useState(false);
 
               const [modal, setModal] = useState(false)   
               const [editModal,setEditModal]= useState(false)
-           2  
+           
              //validation 
              
              const validate = () => {
@@ -88,7 +65,80 @@ const  [isHovered, setIsHovered] = useState(false);
                setEditModal(false)
              };
            
-           
+           const tableData = [
+  {
+    id: 1,
+    name: "Raw Material Suppliers",
+    description: "Suppliers providing gold, diamonds, gemstones, and other materials used in jewellery manufacturing.",
+    status: "ACTIVE"
+  },
+  {
+    id: 2,
+    name: "Finished Jewellery Suppliers",
+    description: "Wholesalers or manufacturers supplying ready-made jewellery pieces for retail sale.",
+    status: "ACTIVE"
+  },
+  {
+    id: 3,
+    name: "Warehouse Address",
+    description: "The location where jewellery stock is stored before being distributed to stores or customers.",
+    status: "ACTIVE"
+  },
+  {
+    id: 4,
+    name: "Warehouse Address",
+    description: "The location where jewellery stock is stored before being distributed to stores or customers.",
+    status: "ACTIVE"
+  },
+  {
+    id: 5,
+    name: "Warehouse Address",
+    description: "The location where jewellery stock is stored before being distributed to stores or customers.",
+    status: "ACTIVE"
+  },
+  {
+    id: 6,
+    name: "Warehouse Address",
+    description: "The location where jewellery stock is stored before being distributed to stores or customers.",
+    status: "ACTIVE"
+  },
+  {
+    id: 7,
+    name: "Warehouse Address",
+    description: "The location where jewellery stock is stored before being distributed to stores or customers.",
+    status: "ACTIVE"
+  },
+  {
+    id: 8,
+    name: "Warehouse Address",
+    description: "The location where jewellery stock is stored before being distributed to stores or customers.",
+    status: "ACTIVE"
+  },
+  {
+    id: 9,
+    name: "Warehouse Address",
+    description: "The location where jewellery stock is stored before being distributed to stores or customers.",
+    status: "ACTIVE"
+  },
+  {
+    id: 10,
+    name: "Warehouse Address",
+    description: "The location where jewellery stock is stored before being distributed to stores or customers.",
+    status: "ACTIVE"
+  },
+  {
+    id: 11,
+    name: "Warehouse Address",
+    description: "The location where jewellery stock is stored before being distributed to stores or customers.",
+    status: "ACTIVE"
+  },
+  {
+    id: 12,
+    name: "Warehouse Address",
+    description: "The location where jewellery stock is stored before being distributed to stores or customers.",
+    status: "ACTIVE"
+  }
+];
            
            
            
@@ -161,11 +211,11 @@ const  [isHovered, setIsHovered] = useState(false);
                         onMouseLeave={() => setIsHovered(false)}
                         onClick={() => setModal(true)}
                         >
-                        + New Address Type
+                        + New Group
                         </button>
                     </div>
            
-                 <div className="text-gray-500" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
+                 <div className="text-gray-400" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
                    <p className="text-xs font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
                    <select
                      className="border border-gray-300 rounded-lg w-[114px] h-[35px] px-2"
@@ -188,66 +238,62 @@ const  [isHovered, setIsHovered] = useState(false);
            
                  
            
-                <table className="table w-full text-sm text-left text-gray-500 border-collapse" 
-       style={{ borderSpacing: '0 12px', borderCollapse: 'separate', minWidth: '1200px' }}>
-  <thead className="text-xs text-gray-400 uppercase bg-white">
-    <tr>
-      <th className="px-6 py-3" style={{ width: '90px', paddingLeft: '20px' }}>SL NO</th>
-      <th className="px-6 py-3" style={{ width: '300px' }}>NAME</th>
-      <th className="px-6 py-3" style={{ width: '900px' }}>DESCRIPTION</th>
-      <th className="px-6 py-3" style={{ width: '90px' }}>STATUS</th>
-      <th className="px-6 py-3" style={{ width: '90px' }}>ACTION</th>
-    </tr>
-  </thead>
-  <tbody>
-    {accountingData.map((item) => (
-      <tr key={item.id} className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-        <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '20px' }}>{item.slNo}</td>
-        <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.name}</td>
-        <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.description}</td>
-        <td className="px-6 py-5 border-b border-gray-200 text-xs">
-          <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" 
-                style={{ padding: '2px 6px' }}>
-            {item.status}
-          </span>
-        </td>
-        <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
-          <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-            <button
-              type="button"
-              className="btn text-white font-bold text-xs rounded-lg border-none"
-              style={{
-                width: '100px',
-                padding: '5px',
-                backgroundColor: '#696BE4',
-              }}
-              onClick={() => setEditModal(true)}
-            >
-              Edit
-            </button>
-            <button
-              className="btn text-white font-bold text-xs rounded-lg border-none"
-              style={{
-                width: '100px',
-                padding: '5px',
-                background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-              }}
-              onClick={() => document.getElementById('my_modal_8').showModal()}
-            >
-              Delete
-            </button>
-          </div>
-        </td>
-      </tr>
-    ))}
-  </tbody>
-</table>
+                 <table className="table w-full text-sm text-left text-gray-500 border-collapse" style={{ borderSpacing: '0 12px', borderCollapse: 'separate', minWidth: '1200px' }}>
+                  <thead className="text-xs text-gray-400 uppercase bg-white">
+                    <tr>
+                      <th className="px-6 py-3" style={{width:'90px',paddingLeft:'20px'}}>SL NO</th>
+                      <th className="px-6 py-3" style={{width:'300px'}}>NAME</th>
+                      <th className="px-6 py-3" style={{width:'900px'}}>DESCRIPTION</th>
+                      <th className="px-6 py-3" style={{width:'90px'}}>STATUS</th>
+                      <th className="px-6 py-3" style={{width:'90px'}}>ACTION</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {tableData.map((item) => (
+                      <tr key={item.id} className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                        <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>{item.id}</td>
+                        <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.name}</td>
+                        <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.description}</td>
+                        <td className="px-6 py-5 border-b border-gray-200 text-xs">
+                          <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>
+                            {item.status}
+                          </span>
+                        </td>
+                        <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                          <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                            <button
+                              type="button"
+                              className="btn border-none text-white font-bold text-xs rounded-lg"
+                              style={{
+                                width: '100px',
+                                padding: '5px',
+                                backgroundColor: '#696BE4',
+                              }}                              
+                              onClick={() => setEditModal(true)}
+                            >
+                              Edit
+                            </button>
+                            <button
+                              className="btn border-none text-white font-bold text-xs rounded-lg"
+                              style={{
+                                width: '100px',
+                                padding: '5px',
+                                background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                              }}
+                              onClick={() => document.getElementById('my_modal_8').showModal()}
+                            >
+                              Delete 
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
                  
            
-                 {/* Pagination */}
-                 <Pagination/>
+                <Pagination/>
            
-                 {/* Modal */}
 
 
                  <dialog id="my_modal_8" className="modal">
@@ -522,6 +568,7 @@ const  [isHovered, setIsHovered] = useState(false);
                    </div>)}
 
                    
-              </>)}
+              </>)
+              }
 
-export default  ControllAccount
+export default  Group

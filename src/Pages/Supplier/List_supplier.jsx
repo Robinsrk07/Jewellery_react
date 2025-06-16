@@ -2,33 +2,12 @@
 
 
 import { useState } from "react";
-import Pagination from "../Pagination";
+import CreateSupplier from "./CreateSupplier";
+import { Link } from "react-router-dom";
+import '@fontsource/open-sans'; // Default weight 400
+import Pagination from "../../components/Pagination";
+const List_supplier=()=>{
 
-const ControllAccount=()=>{
-const accountingData = [
-  {
-    id: 1,
-    slNo: 1,
-    name: 'Accounts Payable Control Account',
-    description: 'A summary account that tracks the total amount owed to all suppliers for jewellery purchases, including raw materials like gold, diamonds, and gemstones.',
-    status: 'ACTIVE'
-  },
-  {
-    id: 2,
-    slNo: 2,
-    name: 'Supplier Advances Control Account',
-    description: 'Records prepayments or deposits made to suppliers before receiving the jewellery stock or raw materials.',
-    status: 'ACTIVE'
-  },
-  {
-    id: 3,
-    slNo: 3,
-    name: 'Warehouse Address',
-    description: 'The location where jewellery stock is stored before being distributed to stores or customers.',
-    status: 'ACTIVE'
-  },
-  // Add more items as needed...
-];
     
 const  [isHovered, setIsHovered] = useState(false);
              const [items, setItems] = useState(10);
@@ -46,9 +25,51 @@ const  [isHovered, setIsHovered] = useState(false);
                    setErrors((prev) => ({ ...prev, [name]: '' })); 
                  };
 
-              const [modal, setModal] = useState(false)   
               const [editModal,setEditModal]= useState(false)
-           2  
+           
+
+              const supplierData = [
+                {
+                  id: 1,
+                  code: "GOLD_SUPPLIER_DUBAI_001",
+                  name: "GOLD_SUPPLIER_DUBAI",
+                  currency: "AED",
+                  controlAccount: "Raw Material Suppliers",
+                  eun: "AE-1234567890",
+                  language: "English",
+                  country: "United Arab Emirates",
+                  city: "None",
+                  createdTime: "Feb. 20, 2025, 5:18 a.m.",
+                  status: "ACTIVE"
+                },
+                // Add more supplier objects as needed
+                {
+                  id: 2,
+                  code: "DIAMOND_SUPPLIER_DUBAI_002",
+                  name: "DIAMOND_SUPPLIER_DUBAI",
+                  currency: "AED",
+                  controlAccount: "Raw Material Suppliers",
+                  eun: "AE-9876543210",
+                  language: "English",
+                  country: "United Arab Emirates",
+                  city: "Dubai",
+                  createdTime: "Mar. 15, 2025, 10:30 a.m.",
+                  status: "ACTIVE"
+                },
+                {
+                  id: 3,
+                  code: "GEMSTONE_SUPPLIER_ABU_003",
+                  name: "GEMSTONE_SUPPLIER_ABU",
+                  currency: "AED",
+                  controlAccount: "Raw Material Suppliers",
+                  eun: "AE-4567891230",
+                  language: "Arabic",
+                  country: "United Arab Emirates",
+                  city: "Abu Dhabi",
+                  createdTime: "Jan. 5, 2025, 2:45 p.m.",
+                  status: "ACTIVE"
+                }
+              ];
              //validation 
              
              const validate = () => {
@@ -79,12 +100,10 @@ const  [isHovered, setIsHovered] = useState(false);
                  status: '',
                });
                setErrors({});
-               setModal(false);
              };
             
              // Handle close modal
              const handleCloseModal = () => {
-               setModal(false);
                setEditModal(false)
              };
            
@@ -142,13 +161,15 @@ const  [isHovered, setIsHovered] = useState(false);
                         boxSizing: 'border-box',
                         display: 'flex',
                         justifyContent: 'flex-end',
-                        width: 'fit-content', // Changed from 100%
-                        minWidth: '100%' // Ensures it matches table width
+                        width: 'fit-content', 
+                        minWidth: '100%' 
                         }}
                     >
+
+                      <Link to="/dashboard/supplier/Create_supplier">
                         <button
-                        className="text-xs font-bold"
-                        style={{
+                          className="text-xs font-bold"
+                          style={{
                             width: '160px',
                             height: '30px',
                             borderRadius: '8px',
@@ -156,13 +177,13 @@ const  [isHovered, setIsHovered] = useState(false);
                             color: 'white',
                             transition: 'background-color 0.3s ease',
                             cursor: 'pointer',
-                        }}
-                        onMouseEnter={() => setIsHovered(true)}
-                        onMouseLeave={() => setIsHovered(false)}
-                        onClick={() => setModal(true)}
+                          }}
+                          onMouseEnter={() => setIsHovered(true)}
+                          onMouseLeave={() => setIsHovered(false)}
                         >
-                        + New Address Type
+                          + New Tax Category
                         </button>
+                      </Link>
                     </div>
            
                  <div className="text-gray-500" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
@@ -188,66 +209,84 @@ const  [isHovered, setIsHovered] = useState(false);
            
                  
            
-                <table className="table w-full text-sm text-left text-gray-500 border-collapse" 
-       style={{ borderSpacing: '0 12px', borderCollapse: 'separate', minWidth: '1200px' }}>
-  <thead className="text-xs text-gray-400 uppercase bg-white">
-    <tr>
-      <th className="px-6 py-3" style={{ width: '90px', paddingLeft: '20px' }}>SL NO</th>
-      <th className="px-6 py-3" style={{ width: '300px' }}>NAME</th>
-      <th className="px-6 py-3" style={{ width: '900px' }}>DESCRIPTION</th>
-      <th className="px-6 py-3" style={{ width: '90px' }}>STATUS</th>
-      <th className="px-6 py-3" style={{ width: '90px' }}>ACTION</th>
-    </tr>
-  </thead>
-  <tbody>
-    {accountingData.map((item) => (
-      <tr key={item.id} className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-        <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '20px' }}>{item.slNo}</td>
-        <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.name}</td>
-        <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.description}</td>
-        <td className="px-6 py-5 border-b border-gray-200 text-xs">
-          <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" 
-                style={{ padding: '2px 6px' }}>
-            {item.status}
-          </span>
-        </td>
-        <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
-          <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-            <button
-              type="button"
-              className="btn text-white font-bold text-xs rounded-lg border-none"
-              style={{
-                width: '100px',
-                padding: '5px',
-                backgroundColor: '#696BE4',
-              }}
-              onClick={() => setEditModal(true)}
-            >
-              Edit
-            </button>
-            <button
-              className="btn text-white font-bold text-xs rounded-lg border-none"
-              style={{
-                width: '100px',
-                padding: '5px',
-                background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-              }}
-              onClick={() => document.getElementById('my_modal_8').showModal()}
-            >
-              Delete
-            </button>
-          </div>
-        </td>
-      </tr>
-    ))}
-  </tbody>
-</table>
-                 
+                 <table 
+                    className="table w-full text-sm text-left text-gray-500 border-collapse" 
+                    style={{ 
+                      borderSpacing: '0 12px', 
+                      borderCollapse: 'separate',
+                      minWidth: '1200px',
+                      tableLayout: 'fixed'
+                    }}
+                  >
+                    <thead className="text-xs text-gray-400 uppercase bg-white">
+                      <tr>
+                        <th className="px-4 py-3" style={{ paddingLeft: '20px', width: '100px' }}>SL NO</th>
+                        <th className="px-4 py-3" style={{ width: '200px' }}>CODE</th>
+                        <th className="px-4 py-3" style={{ width: '200px' }}>NAME</th>
+                        <th className="px-4 py-3" style={{ width: '150px' }}>CURRENCY</th>
+                        <th className="px-4 py-3" style={{ width: '150px' }}>CONTROLL ACCOUNT</th>
+                        <th className="px-4 py-3" style={{ width: '150px' }}>EUN</th>
+                        <th className="px-4 py-3" style={{ width: '150px' }}>LANGUAGE</th>
+                        <th className="px-4 py-3" style={{ width: '150px' }}>COUNTRY</th>
+                        <th className="px-4 py-3" style={{ width: '150px' }}>CITY</th>
+                        <th className="px-4 py-3" style={{ width: '150px' }}>CREATED TIME</th>
+                        <th className="px-4 py-3" style={{ width: '150px' }}>STATUS</th>
+                        <th className="px-4 py-3" style={{ width: '150px' }}>ACTION</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {supplierData.map((supplier) => (
+                        <tr key={supplier.id} className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                          <td className="px-4 py-4 border-b border-gray-200 text-xs" style={{ paddingLeft: '20px' }}>{supplier.id}</td>
+                          <td className="px-4 py-4 border-b border-gray-200 text-xs">{supplier.code}</td>
+                          <td className="px-4 py-4 border-b border-gray-200 text-xs">{supplier.name}</td>
+                          <td className="px-4 py-4 border-b border-gray-200 text-xs">{supplier.currency}</td>
+                          <td className="px-4 py-4 border-b border-gray-200 text-xs">{supplier.controlAccount}</td>
+                          <td className="px-4 py-4 border-b border-gray-200 text-xs">{supplier.eun}</td>
+                          <td className="px-4 py-4 border-b border-gray-200 text-xs">{supplier.language}</td>
+                          <td className="px-4 py-4 border-b border-gray-200 text-xs">{supplier.country}</td>
+                          <td className="px-4 py-4 border-b border-gray-200 text-xs">{supplier.city}</td>
+                          <td className="px-4 py-4 border-b border-gray-200 text-xs">{supplier.createdTime}</td>
+                          <td className="px-4 py-4 border-b border-gray-200 text-xs">
+                            <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{ padding: '2px 6px' }}>
+                              {supplier.status}
+                            </span>
+                          </td>
+                          <td className="px-4 py-4 border-b border-gray-200 text-xs" style={{ width: '200px', paddingLeft: '10px' }}>
+                            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                              <button
+                                type="button"
+                                className="btn border-none text-white font-bold text-xs rounded-lg"
+                                style={{
+                                  width: '80px',
+                                  padding: '5px',
+                                  backgroundColor: '#696BE4',
+                                }}
+                                onClick={() => setEditModal(true)}
+                              >
+                                Edit
+                              </button>
+                              <button
+                                className="btn border-none text-white font-bold text-xs rounded-lg"
+                                style={{
+                                  width: '80px',
+                                  padding: '5px',
+                                  background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                                }}
+                                onClick={() => document.getElementById('my_modal_8').showModal()}
+                              >
+                                Delete
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                              
            
-                 {/* Pagination */}
                  <Pagination/>
            
-                 {/* Modal */}
 
 
                  <dialog id="my_modal_8" className="modal">
@@ -334,104 +373,11 @@ const  [isHovered, setIsHovered] = useState(false);
             </dialog>
                 </div>
 
-                {modal && (
-                          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                            <div className="bg-white rounded-xl shadow-md w-[90%] h-[85vh]
-                                          sm:w-[85vw] sm:h-[75vh] sm:p-6
-                                          md:w-[65vw] md:h-[55vh] md:p-8
-                                          lg:w-[65vw] lg:h-[75vh] lg:p-10
-                                          xl:w-[32vw] xl:h-[85vh] xl:p-12
-                                          2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14
-                                          p-4 sm:p-6 md:p-8 flex flex-col"> 
-                                          
-                                          {/* Added flex-col */}
-                              <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
-                                  style={{paddingLeft:'20px', paddingTop:"20px"}}>
-                                   Create Control Account                              </h3>
-                              <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
-
-                              <div className="flex flex-col flex-grow"> {/* Added flex-grow */}
-                                <label 
-                                  style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                  className="font-semibold text-sm text-[#344767] w-[80%]"
-                                >
-                                  Name:
-                                </label>
-                                <input type="text" 
-                                  placeholder="Type here" 
-                                  className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                  style={{marginLeft:'25px'}}
-                                  value={formData.name}
-                                  onChange={(e)=>handleChange(e)}
-                                  name="name"
-                                />
-                                {errors.name && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.name}</span>}
-
-                                <label 
-                                  style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                  className="font-semibold text-sm text-[#344767] w-[80%]"
-                                >
-                                  Description:
-                                </label>
-
-                                <textarea className="textarea w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
-                                  placeholder="Description" 
-                                  style={{marginLeft:'25px'}}
-                                  value={formData.description}
-                                  onChange={(e)=>handleChange(e)}
-                                  
-                                  name="description"
-                                ></textarea>
-                                {errors.description && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.description}</span>}
-
-                                <label 
-                                  style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                  className="font-semibold text-sm text-[#344767] w-[80%]"
-                                >
-                                  Status:
-                                </label>
-                                <select defaultValue="select Status"
-                                  className="select w-[90%] focus:outline-none  focus:border-b-2 focus:border-blue-500" 
-                                  style={{marginLeft:'25px'}}
-                                  value={formData.status}
-                                  name='status'
-                                  onChange={(e)=>handleChange(e)}
-                                >
-                                  <option disabled={true}>select Status</option>
-                                  <option>Active</option>
-                                  <option>Inactive</option>
-                                </select>
-                                {errors.status && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.status}</span>}
-                              </div> {/* End of flex-grow container */}
-
-                              {/* Button container positioned 10px above bottom */}
-                              <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
-                                  style={{marginTop: 'auto', marginBottom: '10px', paddingLeft: '200px'}}>
-                                <button
-                                  type="button"
-                                  className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
-                                  style={{ backgroundColor: '#8392ab' }}
-                                  onClick={(e) => handleSubmit(e)}
-                                >
-                                  Submit
-                                </button>
-                                <button
-                                  type="button"
-                                  className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
-                                  style={{ backgroundColor: '#5E72e4' }}
-                                  onClick={handleCloseModal}
-                                >
-                                  Close
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                             )}      
 
 
                 {editModal &&(
                      <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                     <div className="bg-white rounded-xl shadow-md w-[90%] h-[85vh]
+                     <div className="bg-white rounded-xl shadow-md w-[90%] h-[95vh]
                                    sm:w-[85vw] sm:h-[75vh] sm:p-6
                                    md:w-[45vw] md:h-[75vh] md:p-8
                                    lg:w-[45vw] lg:h-[75vh] lg:p-10
@@ -440,7 +386,7 @@ const  [isHovered, setIsHovered] = useState(false);
                                    p-4 sm:p-6 md:p-8 flex flex-col"> {/* Added flex-col */}
                        <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
                            style={{paddingLeft:'20px', paddingTop:"20px"}}>
-                         Edit  Control Account
+                         Edit  Tax Category
                        </h3>
                        <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
 
@@ -477,7 +423,21 @@ const  [isHovered, setIsHovered] = useState(false);
                            name="description"
                          ></textarea>
                          {errors.description && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.description}</span>}
-
+                         <label 
+                           style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
+                           className="font-semibold text-sm text-[#344767] w-[80%]"
+                         >
+                           Tax:
+                         </label>
+                         <input type="text" 
+                           placeholder="Type here" 
+                           className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                           style={{marginLeft:'25px'}}
+                           value={formData.name}
+                           onChange={(e)=>handleChange(e)}
+                           name="tax"
+                         />
+                         {errors.name && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.name}</span>}
                          <label 
                            style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
                            className="font-semibold text-sm text-[#344767] w-[80%]"
@@ -521,7 +481,7 @@ const  [isHovered, setIsHovered] = useState(false);
                      </div>
                    </div>)}
 
-                   
+        
               </>)}
 
-export default  ControllAccount
+export default  List_supplier

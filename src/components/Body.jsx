@@ -41,12 +41,12 @@ const Body = () => {
   return (
     <div className="h-screen overflow-hidden  w-full bg-[linear-gradient(to_bottom,#5e72e4_45%,#EFF2F3_45%)]">
 
-  <button
+  {/* <button
     className="btn btn-primary w-[10vw] justify-center"
     onClick={() => setShowCard(!showCard)}
   >
     button
-  </button>
+  </button> */}
 
 
       <div className="flex h-full">
@@ -63,7 +63,7 @@ const Body = () => {
             marginLeft: windowWidth > 1100 ? '25px' : '10px', // Adjust margin based on window width
             marginRight: windowWidth > 1100 ? '10px' : '10px', // Adjust margin based on window width
             paddingTop: '30px',
-            paddingBottom: '50px',
+            paddingBottom: '40px',
             paddingRight: '0px',
           }}
         >

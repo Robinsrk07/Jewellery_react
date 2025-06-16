@@ -3,7 +3,7 @@ import '@fontsource/open-sans'; // Default weight 400
 import '@fontsource/open-sans/600.css'; // Semi-bold
 import '@fontsource/open-sans/700.css'; // Bold
 import { Link } from 'react-router-dom';
- import Pagination from '../Pagination';
+ import Pagination from '../../components/Pagination';
 const BranchWiseEmployee = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [items, setItems] = useState(10);

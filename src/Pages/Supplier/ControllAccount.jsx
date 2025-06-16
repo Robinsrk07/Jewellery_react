@@ -2,7 +2,7 @@
 
 
 import { useState } from "react";
-import Pagination from "../Pagination";
+import Pagination from "../../components/Pagination";
 
 const ControllAccount=()=>{
 const accountingData = [

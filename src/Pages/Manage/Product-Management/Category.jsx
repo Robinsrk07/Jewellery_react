@@ -1,12 +1,59 @@
+
+
 import React, { useState } from 'react';
 import '@fontsource/open-sans'; // Default weight 400
 import '@fontsource/open-sans/600.css'; // Semi-bold
 import '@fontsource/open-sans/700.css'; // Bold
-    
-     const  List_item_Type = () => {
+import EditButton from '../../../components/EditButton';
+import DeleteButton from '../../../components/DeleteButton';
+import CreateButton from '../../../components/CreateButton';
+import Pagination from '../../../components/Pagination';
+import ItemsPerPageSelector from '../../../components/ItemsPerPageSelector';
+ 
+     
+     const  Category = () => {
+     
 
 
-  
+      const tableData = [
+  {
+    "id": 1,
+    "slNo": 1,
+    "code": "Bridal Jewellery",
+    "name": "Bridal Jewellery",
+    "itemType": "Gold",
+    "isDefault": false,
+    "status": "ACTIVE"
+  },
+  {
+    "id": 2,
+    "slNo": 2,
+    "code": "Everyday Wear",
+    "name": "Everyday Wear",
+    "itemType": "Gold",
+    "isDefault": false,
+    "status": "ACTIVE"
+  },
+  {
+    "id": 3,
+    "slNo": 3,
+    "code": "Luxury & Designer Jewellery",
+    "name": "Luxury & Designer Jewellery",
+    "itemType": "Gold",
+    "isDefault": false,
+    "status": "ACTIVE"
+  },
+  {
+    "id": 4,
+    "slNo": 4,
+    "code": "Gold BAR",
+    "name": "Gold BAR",
+    "itemType": "Gold",
+    "isDefault": true,
+    "status": "ACTIVE"
+  },
+  // Add more items as needed
+];
           
       const  [isHovered, setIsHovered] = useState(false);
                    const [items, setItems] = useState(10);
@@ -29,24 +76,6 @@ import '@fontsource/open-sans/700.css'; // Bold
       
                     const [modal, setModal] = useState(false)   
                     const [editModal,setEditModal]= useState(false)
-                    const tableData = [
-                          {
-                            id: 1,
-                            code: 'Gold',
-                            name: 'Gold',
-                            description: 'Gold',
-                            status: 'ACTIVE',
-                          },
-                          {
-                            id: 2,
-                            code: 'Diamond',
-                            name: 'Diamond',
-                            description: 'Diamond',
-                            status: 'ACTIVE',
-                          },
-                          // Add more as needed
-                        ];
-
                  
                    //validation 
                    
@@ -127,148 +156,83 @@ import '@fontsource/open-sans/700.css'; // Bold
                     2xl:max-w-[95vw] 
                     h-auto max-h-[70vh] 
                     rounded-xl px-4 md:px-8 lg:px-12
-                    mx-auto overflow-auto  custom-scrollbar  "
+                    mx-auto overflow-auto  custom-scrollbar"
                  style={{ fontFamily: 'Open Sans',overflow:'auto'}}
                    >
-                                  <div
-                              style={{
-                              position: 'sticky',
-                              left: 0,
-                              top: 0,
-                              zIndex: 10,
-                              backgroundColor: 'white',
-                              padding: '1.5rem',
-                              boxSizing: 'border-box',
-                              display: 'flex',
-                              justifyContent: 'flex-end',
-                              width: 'fit-content', // Changed from 100%
-                              minWidth: '100%' // Ensures it matches table width
-                              }}
-                          >
-                             <button
-                              className="text-xs font-bold"
-                              style={{
-                                width: '160px',
-                                height: '35px',
-                                borderRadius: '8px',
-                                background: isHovered
-                                  ? 'linear-gradient(to right, #6170E4, #7F60E4)'
-                                  : 'linear-gradient(to right, #7F60E4, #6170E4)',
-                                color: 'white',
-                                transition: 'background 0.3s ease',
-                                cursor: 'pointer',
-                              }}
-                              onMouseEnter={() => setIsHovered(true)}
-                              onMouseLeave={() => setIsHovered(false)}
-                              onClick={() => setModal(true)}
-                            >
-                              + New Item Type
-                            </button>
-
-                                  </div>
-                 
-                       <div className='text-gray-600' style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
-                         <p className="text-xs font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
-                         <select
-                           className="border border-gray-300 rounded-lg w-[114px] h-[35px] px-2"
-                           style={{
-                             appearance: 'none',
-                             WebkitAppearance: 'none',
-                             MozAppearance: 'none',
-                             backgroundColor: 'white',
-                             backgroundImage: 'none',
-                             paddingLeft: '5px',
-                           }}
-                           onChange={(e) => setItems(Number(e.target.value))}
-                           value={items}
-                         >
-                           <option value={10}>10</option>
-                           <option value={25}>25</option>
-                           <option value={50}>50</option>
-                         </select>
-                       </div>
+                      <CreateButton
+                         buttoncontent="+ New Category"
+                         onClick={() => setModal(true)}  // This will now work!
+                      />                 
+                      <ItemsPerPageSelector items={items} setItems={setItems} />
                  
                        
                  
-                       <table className="table w-full text-sm  text-gray-500 border-collapse min-w-[1200px]" style={{ borderSpacing: '0 12px', borderCollapse: 'separate' }}>
-                        <thead className="text-xs text-[#A8B2C4] uppercase bg-white">
-                          <tr>
-                            <th style={{ width: '90px', paddingLeft: '20px' }}>SL NO</th>
-                            <th className="w-[150px]">CODE</th>
-                            <th className="w-[150px]">NAME</th>
-                            <th className="w-[150px]">DESCRIPTION</th>
-                            <th className="w-[150px]">STATUS</th>
-                            <th className="w-[150px]">ACTION</th>
+                     <table className="table w-full text-sm text-left text-gray-500 border-collapse min-w-1200px" style={{ borderSpacing: '0 12px', borderCollapse: 'separate', minWidth: '1200px' }}>
+                      <thead className="text-xs text-gray-400 uppercase bg-white">
+                        <tr>
+                          <th className="px-6 py-3" style={{ minWidth: '100px', paddingLeft: '20px' }}>SL NO</th>
+                          <th className="px-6 py-3" style={{ minWidth: '220px' }}>CODE</th>
+                          <th className="px-6 py-3" style={{ minWidth: '220px' }}>NAME</th>
+                          <th className="px-6 py-3" style={{ minWidth: '150px' }}>ITEM TYPE</th>
+                          <th className="px-6 py-3" style={{ minWidth: '100px' }}>IS DEFAULT</th>
+                          <th className="px-6 py-3" style={{ minWidth: '100px' }}>STATUS</th>
+                          <th className="px-6 py-3" style={{ minWidth: '200px' }}>ACTION</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {tableData.map((item) => (
+                          <tr key={item.id} className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '20px' }}>
+                              {item.slNo}
+                            </td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">
+                              {item.code}
+                            </td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">
+                              {item.name}
+                            </td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">
+                              {item.itemType}
+                            </td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">
+                              <span 
+                                className={`${item.isDefault ? 'bg-green-300 text-green-700' : 'bg-blue-300 text-gray-700'} font-bold text-[10px] px-2 py-0.5 rounded`} 
+                                style={{ padding: '2px 6px' }}
+                              >
+                                {item.isDefault ? 'Yes' : 'No'}
+                              </span>
+                            </td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs">
+                              <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{ padding: '2px 6px' }}>
+                                {item.status}
+                              </span>
+                            </td>
+                            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                              <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                 <EditButton
+                                    onClick={()=>setEditModal(true)}
+                                      />
+
+                                      <DeleteButton 
+                                        buttonText="Delete Category" 
+                                          modalId="my_modal_8" 
+                                      />
+                              </div>
+                            </td>
                           </tr>
-                        </thead>
-                        <tbody>
-                          {tableData.map((item, index) => (
-                            <tr key={item.id} className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                              <td className="text-xs border-b border-gray-200" style={{ paddingLeft: '20px' }}>{index + 1}</td>
-                              <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.code}</td>
-                              <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.name}</td>
-                              <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.description}</td>
-                              <td className="px-6 py-5 border-b border-gray-200 text-xs">
-                                <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{ padding: '2px 6px' }}>
-                                  {item.status}
-                                </span>
-                              </td>
-                              <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
-                                <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                  <button
-                                    type="button"
-                                    className="text-white font-bold text-xs rounded-lg"
-                                    style={{
-                                      width: '120px',
-                                      padding: '5px',
-                                      background: 'linear-gradient(to right, #7F60E4,#6170E4)',
-                                      height: '35px',
-                                    }}
-                                    onClick={() => setEditModal(true)}
-                                  >
-                                    Edit
-                                  </button>
-
-                                  <button
-                                    className="text-white font-bold text-xs rounded-lg"
-                                    style={{
-                                      width: '150px',
-                                      padding: '5px',
-                                      background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-                                      height: '35px',
-                                    }}
-                                    onClick={() => document.getElementById('my_modal_8').showModal()}
-                                  >
-                                    Delete
-                                  </button>
-                                </div>
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-
+                        ))}
+                      </tbody>
+                    </table>
+                                          
+                 
                        {/* Pagination */}
-                       <div
-                          className="flex justify-center gap-1 w-full sticky top-0 z-10 bg-white py-6"
-                        >
-                          <button className="btn border-gray-200 bg-white shadow-lg rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
-                            {'<'}
-                          </button>
-                          <button className="btn border-none rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
-                            1
-                          </button>
-                          <button className="btn border-gray-200 bg-white shadow-lg rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
-                            {'>'}
-                          </button>
-                        </div>
-
+                      <Pagination/>
                  
                        {/* Modal */}
       
       
                        <dialog id="my_modal_8" className="modal">
-                       <div className="modal-box text-center py-8 px-6 rounded-xl relative font-[Open_Sans]
+                       <div className="modal-box text-center py-8 px-6 rounded-xl bg-white relative font-[Open_Sans]
                           w-[90vw] max-w-[400px] h-[90vh] max-h-[300px]
                          
                     "
@@ -291,20 +255,20 @@ import '@fontsource/open-sans/700.css'; // Bold
                           </div>
                         </div>
                         {/* Title & Message */}
-                        <h3 className="text-lg font-semibold " style={{margin:'20px'}}>Are you sure?</h3>
+                        <h3 className="text-lg font-semibold text-gray-500 " style={{margin:'20px'}}>Are you sure?</h3>
                         <p className="text-sm text-gray-500 " style={{margin:'20px'}}>You won't be able to revert this!</p>
       
                         {/* Actions */}
                         <div className="flex justify-center gap-4">
                           <button
-                            className="btn text-xs bg-red-500 font-bold text-white hover:bg-red-600 px-6"
+                            className="btn text-xs border-none bg-red-500 font-bold text-white hover:bg-red-600 px-6"
                             onClick={() => document.getElementById('my_modal_cancel').showModal()}
                             style={{width:'100px'}}
                           >
                             No, cancel!
                           </button>
                           <button
-                            className="btn text-xs bg-green-500 font-bold text-white hover:bg-green-600 px-6"
+                            className="btn text-xs bg-green-500 border-none font-bold text-white hover:bg-green-600 px-6"
                             onClick={() => {
                               document.getElementById('my_modal_8').close();
                             }}
@@ -318,7 +282,7 @@ import '@fontsource/open-sans/700.css'; // Bold
       
       
                   <dialog id="my_modal_cancel" className="modal">
-                  <div className="modal-box text-center py-10 px-8 w-[90vw] max-w-[400px] h-[90vh] max-h-[300px] relative font-[Open Sans] "
+                  <div className="modal-box text-center bg-white py-10 px-8 w-[90vw] max-w-[400px] h-[90vh] max-h-[300px] relative font-[Open Sans] "
                       onClick={() => {
                       document.getElementById('my_modal_cancel').close();
                       }}>
@@ -337,49 +301,50 @@ import '@fontsource/open-sans/700.css'; // Bold
                       </div>
                       </div>
                       <h3 className="text-3xl font-bold text-gray-500 " style={{margin:'20px'}}>Cancelled</h3>
-                      <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your Jewellery Type is safe</p>
-                      <button className="btn bg-blue-500 w-[50px] rounded-lg" > ok</button>
+                      <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your Category is safe</p>
+                      <button className="btn border-none bg-blue-500 w-[50px] rounded-lg" > ok</button>
                   </div>
                   </dialog>
                       </div>
       
                       {modal && (
-                                <div className="fixed text-black  inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
-                                   <div className="bg-white rounded-xl shadow-md w-[90vw] max-w-[400px] h-[90vh] max-h-[500px] flex flex-col gap-1 overflow-auto">
-
+                                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
+                                  <div className="bg-white rounded-xl shadow-md  w-[90vw] max-w-[500px] h-[95vh] max-h-[550px] flex flex-col gap-2 overflow-y-auto" style={{padding:'20px'}}> 
                                                 
                                                 {/* Added flex-col */}
-                                    <h3 className="font-bold text-[22px] text-[#344767]  "
-                                    style={{padding:'20px'}}
+                                    <h3 className="font-bold text-[22px] text-[#344767]"
                                         >
-                                         Create Type                        </h3>
-                                    <hr className="my-4 border-gray-300" />
+                                         Create Category                       
+                                          </h3>
+                                    <hr className=" border-gray-300" />
       
-                                    <div className="flex flex-col gap-2 bg-white  items-center flex-grow text-gray-600"> {/* Added flex-grow */}
+                                    <div className="flex flex-col gap-3 flex-grow"> {/* Added flex-grow */}
                                    
+                                      
                                       <label 
-                                        
-                                        className="block font-bold text-xs text-left  w-[90%] text-[#344767] w-[80%]"
+                                       
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        Code:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] text-gray-300 rounded-lg focus:outline-none border-gray-300 bg-white  focus:border-b-2 focus:border-blue-500"
-                
+                                        placeholder="Type here" 
+                                        className="input w-full text-gray-500 rounded-lg focus:outline-none border-gray-300 bg-white  focus:border-b-2 focus:border-blue-500"                                       
+                                        style={{paddingLeft:'12px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                       <label 
-                                        
-                                        className="font-bold text-xs text-[#344767] w-[90%]"
+                                       
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        Name:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg text-gray-300  border-gray-300 bg-white focus:outline-none   focus:border-b-2 focus:border-blue-500"
-                                       
+                                        placeholder="Type here" 
+                                        className="input w-full text-gray-500 rounded-lg focus:outline-none border-gray-300 bg-white focus:border-b-2 focus:border-blue-500"                                       
+                                         style={{paddingLeft:'12px'}}
+
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
@@ -387,15 +352,15 @@ import '@fontsource/open-sans/700.css'; // Bold
 
                                       <label 
                                        
-                                        className="font-semibold text-xs text-[#344767] w-[90%]"
+                                        className="font-semibold text-sm text-[#344767] w-[80%]"
                                       >
                                         Description:
                                       </label>
 
-                                      <textarea className="textarea w-[90%] text-gray-300  border-gray-300 bg-white rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
+                                      <textarea className="textarea w-full bg-white text-gray-500 border-gray-300 rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
                                         placeholder="Description" 
-                                        style={{padding:'18px'}}
-                                       
+                                          style={{padding:'12px'}}
+
                                         onChange={(e)=>handleChange(e)}
                                         
                                         name=""
@@ -404,12 +369,13 @@ import '@fontsource/open-sans/700.css'; // Bold
                                            
                                             <label 
                                                
-                                                className="font-semibold text-xs text-[#344767] w-[90%]"
+                                                className="font-semibold text-sm text-[#344767] w-[80%]"
                                             >
                                                 Status:
                                             </label>
                                             <select defaultValue=""
-                                                className="select w-[90%] h-[35px] border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                                                className="select w-full h-[35px] border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                                                
                                                 value={formData.status}
                                                 name=''
                                                 onChange={(e)=>handleChange(e)}
@@ -419,14 +385,13 @@ import '@fontsource/open-sans/700.css'; // Bold
                                                 <option className=" text-gray-600"> InActive</option>
                                             </select>
             
-                                     </div> 
+                                            </div> 
                                             {/* Button container positioned 10px above bottom */}
-                                            <div className="flex flex-col h-[15vh] md:flex-row gap-2 items-center justify-center bg-white " 
-                                            style={{padding:'10px'}}
-                                                >
+                                            <div className="flex flex-col gap-2 sm:flex-row justify-end items-end   " 
+                                               >
                                             <button
                                                 type="button"
-                                                className="w-[100px] h-[30px] font-bold text-xs rounded-sm text-white border-none"
+                                                className="btn w-[100px] h-[35px] rounded-lg text-white border-none"
                                                 style={{ backgroundColor: '#8392ab' }}
                                                 onClick={(e) => handleSubmit(e)}
                                             >
@@ -434,7 +399,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                             </button>
                                             <button
                                                 type="button"
-                                                className=" w-[100px] h-[30px] font-bold text-xs rounded-sm text-white border-none"
+                                                className="btn w-[100px] h-[35px] rounded-lg text-white border-none"
                                                 style={{ backgroundColor: '#5E72e4' }}
                                                 onClick={handleCloseModal}
                                             >
@@ -447,42 +412,43 @@ import '@fontsource/open-sans/700.css'; // Bold
       
       
                       {editModal &&  (
-                               <div className="fixed text-black  inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
-                                   <div className="bg-white rounded-xl shadow-md w-[90vw] max-w-[400px] h-[90vh] max-h-[500px] flex flex-col gap-1 overflow-auto">
-
+                                 <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
+                                  <div className="bg-white rounded-xl shadow-md  w-[90vw] max-w-[500px] h-[95vh] max-h-[550px] flex flex-col gap-2 overflow-y-auto" style={{padding:'20px'}}> 
                                                 
                                                 {/* Added flex-col */}
-                                    <h3 className="font-bold text-[22px] text-[#344767]  "
-                                    style={{padding:'20px'}}
+                                    <h3 className="font-bold text-[22px] text-[#344767]"
                                         >
-                                         Edit Type                        </h3>
-                                    <hr className="my-4 border-gray-300" />
+                                         Edit Category                       
+                                          </h3>
+                                    <hr className=" border-gray-300" />
       
-                                    <div className="flex flex-col gap-2 bg-white  items-center flex-grow text-gray-600"> {/* Added flex-grow */}
+                                    <div className="flex flex-col gap-3 flex-grow"> {/* Added flex-grow */}
                                    
+                                      
                                       <label 
-                                        
-                                        className="block font-bold text-xs text-left  w-[90%] text-[#344767] w-[80%]"
+                                       
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        Code:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] text-gray-300 rounded-lg focus:outline-none border-gray-300 bg-white  focus:border-b-2 focus:border-blue-500"
-                
+                                        placeholder="Type here" 
+                                        className="input w-full text-gray-500 rounded-lg focus:outline-none border-gray-300 bg-white  focus:border-b-2 focus:border-blue-500"                                       
+                                        style={{paddingLeft:'12px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                       <label 
-                                        
-                                        className="font-bold text-xs text-[#344767] w-[90%]"
+                                       
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        Name:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg text-gray-300  border-gray-300 bg-white focus:outline-none   focus:border-b-2 focus:border-blue-500"
-                                       
+                                        placeholder="Type here" 
+                                        className="input w-full text-gray-500 rounded-lg focus:outline-none border-gray-300 bg-white focus:border-b-2 focus:border-blue-500"                                       
+                                         style={{paddingLeft:'12px'}}
+
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
@@ -490,15 +456,15 @@ import '@fontsource/open-sans/700.css'; // Bold
 
                                       <label 
                                        
-                                        className="font-semibold text-xs text-[#344767] w-[90%]"
+                                        className="font-semibold text-sm text-[#344767] w-[80%]"
                                       >
                                         Description:
                                       </label>
 
-                                      <textarea className="textarea w-[90%] text-gray-300  border-gray-300 bg-white rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
+                                      <textarea className="textarea w-full bg-white text-gray-500 border-gray-300 rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
                                         placeholder="Description" 
-                                        style={{padding:'18px'}}
-                                       
+                                          style={{padding:'12px'}}
+
                                         onChange={(e)=>handleChange(e)}
                                         
                                         name=""
@@ -507,12 +473,13 @@ import '@fontsource/open-sans/700.css'; // Bold
                                            
                                             <label 
                                                
-                                                className="font-semibold text-xs text-[#344767] w-[90%]"
+                                                className="font-semibold text-sm text-[#344767] w-[80%]"
                                             >
                                                 Status:
                                             </label>
                                             <select defaultValue=""
-                                                className="select w-[90%] h-[35px] border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                                                className="select w-full h-[35px] border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                                                
                                                 value={formData.status}
                                                 name=''
                                                 onChange={(e)=>handleChange(e)}
@@ -522,14 +489,13 @@ import '@fontsource/open-sans/700.css'; // Bold
                                                 <option className=" text-gray-600"> InActive</option>
                                             </select>
             
-                                     </div> 
+                                            </div> 
                                             {/* Button container positioned 10px above bottom */}
-                                            <div className="flex flex-col h-[15vh] md:flex-row gap-2 items-center justify-center bg-white " 
-                                            style={{padding:'10px'}}
-                                                >
+                                            <div className="flex flex-col gap-2 sm:flex-row justify-end items-end   " 
+                                               >
                                             <button
                                                 type="button"
-                                                className="w-[100px] h-[30px] font-bold text-xs rounded-sm text-white border-none"
+                                                className="btn w-[100px] h-[35px] rounded-lg text-white border-none"
                                                 style={{ backgroundColor: '#8392ab' }}
                                                 onClick={(e) => handleSubmit(e)}
                                             >
@@ -537,7 +503,7 @@ import '@fontsource/open-sans/700.css'; // Bold
                                             </button>
                                             <button
                                                 type="button"
-                                                className=" w-[100px] h-[30px] font-bold text-xs rounded-sm text-white border-none"
+                                                className="btn w-[100px] h-[35px] rounded-lg text-white border-none"
                                                 style={{ backgroundColor: '#5E72e4' }}
                                                 onClick={handleCloseModal}
                                             >
@@ -552,4 +518,5 @@ import '@fontsource/open-sans/700.css'; // Bold
                     </>)
      }
      
-     export default List_item_Type;
+     export default Category;
+     

@@ -2,33 +2,10 @@
 
 
 import { useState } from "react";
-import Pagination from "../Pagination";
+import Pagination from "../../components/Supplier/Tax";
 
-const ControllAccount=()=>{
-const accountingData = [
-  {
-    id: 1,
-    slNo: 1,
-    name: 'Accounts Payable Control Account',
-    description: 'A summary account that tracks the total amount owed to all suppliers for jewellery purchases, including raw materials like gold, diamonds, and gemstones.',
-    status: 'ACTIVE'
-  },
-  {
-    id: 2,
-    slNo: 2,
-    name: 'Supplier Advances Control Account',
-    description: 'Records prepayments or deposits made to suppliers before receiving the jewellery stock or raw materials.',
-    status: 'ACTIVE'
-  },
-  {
-    id: 3,
-    slNo: 3,
-    name: 'Warehouse Address',
-    description: 'The location where jewellery stock is stored before being distributed to stores or customers.',
-    status: 'ACTIVE'
-  },
-  // Add more items as needed...
-];
+const Tax=()=>{
+
     
 const  [isHovered, setIsHovered] = useState(false);
              const [items, setItems] = useState(10);
@@ -48,7 +25,31 @@ const  [isHovered, setIsHovered] = useState(false);
 
               const [modal, setModal] = useState(false)   
               const [editModal,setEditModal]= useState(false)
-           2  
+
+              const taxData = [
+  {
+    id: 1,
+    name: "VAT-Registered Supplier (5%)",
+    tax: "5.000",
+    description: "Suppliers registered under UAE VAT who charge 5% VAT on taxable supplies, including jewellery, gold, and diamonds.",
+    status: "ACTIVE"
+  },
+  {
+    id: 2,
+    name: "Zero-Rated Supplier (0%)",
+    tax: "0.000",
+    description: "Suppliers dealing with exports, international sales, or specific categories like investment-grade gold (subject to FTA rules).",
+    status: "ACTIVE"
+  },
+  {
+    id: 3,
+    name: "Exempt Supplier",
+    tax: "0.000",
+    description: "Suppliers dealing with VAT-exempt goods/services, such as certain financial services or businesses below the VAT registration threshold.",
+    status: "ACTIVE"
+  }
+];
+           
              //validation 
              
              const validate = () => {
@@ -161,7 +162,7 @@ const  [isHovered, setIsHovered] = useState(false);
                         onMouseLeave={() => setIsHovered(false)}
                         onClick={() => setModal(true)}
                         >
-                        + New Address Type
+                        + New Tax Category
                         </button>
                     </div>
            
@@ -188,66 +189,66 @@ const  [isHovered, setIsHovered] = useState(false);
            
                  
            
-                <table className="table w-full text-sm text-left text-gray-500 border-collapse" 
-       style={{ borderSpacing: '0 12px', borderCollapse: 'separate', minWidth: '1200px' }}>
-  <thead className="text-xs text-gray-400 uppercase bg-white">
-    <tr>
-      <th className="px-6 py-3" style={{ width: '90px', paddingLeft: '20px' }}>SL NO</th>
-      <th className="px-6 py-3" style={{ width: '300px' }}>NAME</th>
-      <th className="px-6 py-3" style={{ width: '900px' }}>DESCRIPTION</th>
-      <th className="px-6 py-3" style={{ width: '90px' }}>STATUS</th>
-      <th className="px-6 py-3" style={{ width: '90px' }}>ACTION</th>
-    </tr>
-  </thead>
-  <tbody>
-    {accountingData.map((item) => (
-      <tr key={item.id} className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-        <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '20px' }}>{item.slNo}</td>
-        <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.name}</td>
-        <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.description}</td>
-        <td className="px-6 py-5 border-b border-gray-200 text-xs">
-          <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" 
-                style={{ padding: '2px 6px' }}>
-            {item.status}
-          </span>
-        </td>
-        <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
-          <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-            <button
-              type="button"
-              className="btn text-white font-bold text-xs rounded-lg border-none"
-              style={{
-                width: '100px',
-                padding: '5px',
-                backgroundColor: '#696BE4',
-              }}
-              onClick={() => setEditModal(true)}
-            >
-              Edit
-            </button>
-            <button
-              className="btn text-white font-bold text-xs rounded-lg border-none"
-              style={{
-                width: '100px',
-                padding: '5px',
-                background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-              }}
-              onClick={() => document.getElementById('my_modal_8').showModal()}
-            >
-              Delete
-            </button>
-          </div>
-        </td>
-      </tr>
-    ))}
-  </tbody>
-</table>
+               <table className="table w-full text-sm text-left text-gray-500 border-collapse" style={{ borderSpacing: '0 12px', borderCollapse: 'separate', minWidth: '1200px' }}>
+                <thead className="text-xs text-gray-400 uppercase bg-white">
+                  <tr>
+                    <th className="px-6 py-3" style={{width:'90px',paddingLeft:'20px'}}>SL NO</th>
+                    <th className="px-6 py-3" style={{width:'280px'}}>NAME</th>
+                    <th className="px-6 py-3" style={{width:'100px'}}>TAX</th>
+                    <th className="px-6 py-3" style={{width:'900px'}}>DESCRIPTION</th>
+                    <th className="px-6 py-3" style={{width:'90px'}}>STATUS</th>
+                    <th className="px-6 py-3" style={{width:'90px'}}>ACTION</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {taxData.map((item) => (
+                    <tr key={item.id} className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                      <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>{item.id}</td>
+                      <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.name}</td>
+                      <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.tax}</td>
+                      <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.description}</td>
+                      <td className="px-6 py-5 border-b border-gray-200 text-xs">
+                        <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>
+                          {item.status}
+                        </span>
+                      </td>
+                      <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                          <button
+                            type="button"
+                            className="btn text-white border-none font-bold text-xs rounded-lg"
+                            style={{
+                              width: '100px',
+                              padding: '5px',
+                              backgroundColor: '#696BE4',
+                            }}                              
+                            onClick={() => setEditModal(true)}
+                          >
+                            Edit
+                          </button>
+                          <button
+                            className="btn text-white border-none font-bold text-xs rounded-lg"
+                            style={{
+                              width: '100px',
+                              padding: '5px',
+                              background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
+                            }}
+                            onClick={() => document.getElementById('my_modal_8').showModal()}
+                          >
+                            Delete 
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
                  
            
-                 {/* Pagination */}
-                 <Pagination/>
+                 
+                  <Pagination/>
            
-                 {/* Modal */}
+                
 
 
                  <dialog id="my_modal_8" className="modal">
@@ -336,7 +337,7 @@ const  [isHovered, setIsHovered] = useState(false);
 
                 {modal && (
                           <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                            <div className="bg-white rounded-xl shadow-md w-[90%] h-[85vh]
+                            <div className="bg-white rounded-xl shadow-md w-[90%] h-[95vh]
                                           sm:w-[85vw] sm:h-[75vh] sm:p-6
                                           md:w-[65vw] md:h-[55vh] md:p-8
                                           lg:w-[65vw] lg:h-[75vh] lg:p-10
@@ -347,7 +348,7 @@ const  [isHovered, setIsHovered] = useState(false);
                                           {/* Added flex-col */}
                               <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
                                   style={{paddingLeft:'20px', paddingTop:"20px"}}>
-                                   Create Control Account                              </h3>
+                                   Create Tax Category                            </h3>
                               <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
 
                               <div className="flex flex-col flex-grow"> {/* Added flex-grow */}
@@ -383,6 +384,21 @@ const  [isHovered, setIsHovered] = useState(false);
                                   name="description"
                                 ></textarea>
                                 {errors.description && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.description}</span>}
+                                <label 
+                                  style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
+                                  className="font-semibold text-sm text-[#344767] w-[80%]"
+                                >
+                                  Tax:
+                                </label>
+                                <input type="number" 
+                                  placeholder="Type here" 
+                                  className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                  style={{marginLeft:'25px'}}
+                                  value={formData.name}
+                                  onChange={(e)=>handleChange(e)}
+                                  name="tax"
+                                />
+                                {errors.name && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.name}</span>}
 
                                 <label 
                                   style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
@@ -407,15 +423,7 @@ const  [isHovered, setIsHovered] = useState(false);
                               {/* Button container positioned 10px above bottom */}
                               <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
                                   style={{marginTop: 'auto', marginBottom: '10px', paddingLeft: '200px'}}>
-                                <button
-                                  type="button"
-                                  className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
-                                  style={{ backgroundColor: '#8392ab' }}
-                                  onClick={(e) => handleSubmit(e)}
-                                >
-                                  Submit
-                                </button>
-                                <button
+                                     <button
                                   type="button"
                                   className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
                                   style={{ backgroundColor: '#5E72e4' }}
@@ -423,6 +431,15 @@ const  [isHovered, setIsHovered] = useState(false);
                                 >
                                   Close
                                 </button>
+                                <button
+                                  type="button"
+                                  className="btn w-full sm:w-[30%] rounded-lg text-white"
+                                  style={{ backgroundColor: '#8392ab' }}
+                                  onClick={(e) => handleSubmit(e)}
+                                >
+                                  Create 
+                                </button>
+                               
                               </div>
                             </div>
                           </div>
@@ -431,7 +448,7 @@ const  [isHovered, setIsHovered] = useState(false);
 
                 {editModal &&(
                      <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                     <div className="bg-white rounded-xl shadow-md w-[90%] h-[85vh]
+                     <div className="bg-white rounded-xl shadow-md w-[90%] h-[95vh]
                                    sm:w-[85vw] sm:h-[75vh] sm:p-6
                                    md:w-[45vw] md:h-[75vh] md:p-8
                                    lg:w-[45vw] lg:h-[75vh] lg:p-10
@@ -440,7 +457,7 @@ const  [isHovered, setIsHovered] = useState(false);
                                    p-4 sm:p-6 md:p-8 flex flex-col"> {/* Added flex-col */}
                        <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
                            style={{paddingLeft:'20px', paddingTop:"20px"}}>
-                         Edit  Control Account
+                         Edit  Tax Category
                        </h3>
                        <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
 
@@ -477,7 +494,21 @@ const  [isHovered, setIsHovered] = useState(false);
                            name="description"
                          ></textarea>
                          {errors.description && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.description}</span>}
-
+                         <label 
+                           style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
+                           className="font-semibold text-sm text-[#344767] w-[80%]"
+                         >
+                           Tax:
+                         </label>
+                         <input type="text" 
+                           placeholder="Type here" 
+                           className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                           style={{marginLeft:'25px'}}
+                           value={formData.name}
+                           onChange={(e)=>handleChange(e)}
+                           name="tax"
+                         />
+                         {errors.name && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.name}</span>}
                          <label 
                            style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
                            className="font-semibold text-sm text-[#344767] w-[80%]"
@@ -524,4 +555,4 @@ const  [isHovered, setIsHovered] = useState(false);
                    
               </>)}
 
-export default  ControllAccount
+export default  Tax

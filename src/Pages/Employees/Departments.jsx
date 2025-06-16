@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Pagination from "../Pagination";
-import CreateButton from "../CreateButton";
+import Pagination from "../../components/Pagination";
+import CreateButton from "../../components/CreateButton";
 
 const Departments = () => {
 
