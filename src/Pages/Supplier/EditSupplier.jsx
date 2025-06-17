@@ -1,4 +1,4 @@
-const CreateSupplier = () => {
+const EditSupplier = () => {
   return (
     <div 
       className="bg-white w-full
@@ -269,4 +269,4 @@ const CreateSupplier = () => {
   );
 };
 
-export default CreateSupplier
+export default EditSupplier

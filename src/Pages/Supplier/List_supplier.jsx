@@ -5,7 +5,12 @@ import { useState } from "react";
 import CreateSupplier from "./CreateSupplier";
 import { Link } from "react-router-dom";
 import '@fontsource/open-sans'; // Default weight 400
-import Pagination from "../../components/Pagination";
+import CustomScrollbar from "../../components/CustomScrollbar";
+import EditButton from '../../components/EditButton';
+import DeleteButton from '../../components/DeleteButton';
+import CreateButton from '../../components/CreateButton';
+import Pagination from '../../components/Pagination';
+import ItemsPerPageSelector from '../../components/ItemsPerPageSelector';
 const List_supplier=()=>{
 
     
@@ -167,22 +172,9 @@ const  [isHovered, setIsHovered] = useState(false);
                     >
 
                       <Link to="/dashboard/supplier/Create_supplier">
-                        <button
-                          className="text-xs font-bold"
-                          style={{
-                            width: '160px',
-                            height: '30px',
-                            borderRadius: '8px',
-                            backgroundColor: isHovered ? 'rgb(97, 113, 228)' : 'rgb(126, 96, 228)',
-                            color: 'white',
-                            transition: 'background-color 0.3s ease',
-                            cursor: 'pointer',
-                          }}
-                          onMouseEnter={() => setIsHovered(true)}
-                          onMouseLeave={() => setIsHovered(false)}
-                        >
-                          + New Tax Category
-                        </button>
+                         <CreateButton
+                         buttoncontent=" + Create New Supplier "
+             /> 
                       </Link>
                     </div>
            
@@ -254,29 +246,15 @@ const  [isHovered, setIsHovered] = useState(false);
                           </td>
                           <td className="px-4 py-4 border-b border-gray-200 text-xs" style={{ width: '200px', paddingLeft: '10px' }}>
                             <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                              <button
-                                type="button"
-                                className="btn border-none text-white font-bold text-xs rounded-lg"
-                                style={{
-                                  width: '80px',
-                                  padding: '5px',
-                                  backgroundColor: '#696BE4',
-                                }}
-                                onClick={() => setEditModal(true)}
-                              >
-                                Edit
-                              </button>
-                              <button
-                                className="btn border-none text-white font-bold text-xs rounded-lg"
-                                style={{
-                                  width: '80px',
-                                  padding: '5px',
-                                  background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-                                }}
-                                onClick={() => document.getElementById('my_modal_8').showModal()}
-                              >
-                                Delete
-                              </button>
+                           
+                            <Link to="/dashboard/supplier/Create_supplier">
+                              <EditButton
+                              />
+                              </Link>
+                               <DeleteButton 
+                                buttonText="Delete " 
+                                modalId="my_modal_8" 
+                                    />
                             </div>
                           </td>
                         </tr>
@@ -290,87 +268,79 @@ const  [isHovered, setIsHovered] = useState(false);
 
 
                  <dialog id="my_modal_8" className="modal">
-
-
-                 <div className="modal-box text-center py-8 px-6 rounded-xl relative font-[Open_Sans]
-                    w-[90vw] h-[50vh]             /* base (mobile) */
-                    sm:w-[70vw] sm:h-[30vh]       /* ≥ 640px */
-                    md:w-[50vw] md:h-[30vh]       /* ≥ 768px */
-                    lg:w-[35vw] lg:h-[30vh]       /* ≥ 1024px */
-                    xl:w-[30vw] xl:h-[50vh]       /* ≥ 1280px */
-                    2xl:w-[25vw] 2xl:h-[20vh]     /* ≥ 1536px */
-                  "
-
-                 onClick={()=>document.getElementById('my_modal_8').close()}
-                 >
-                 
-                  {/* Icon */}
-                  <div className="flex justify-center mb-4" style={{opacity:'.5'}}>
-                    <div className="text-orange-400 text-6xl">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth=".7"
-                        stroke="currentColor"
-                        className="w-30 h-30"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0 3.75h.008v.008H12v-.008zM12 3.75c4.556 0 8.25 3.694 8.25 8.25s-3.694 8.25-8.25 8.25S3.75 16.556 3.75 12 7.444 3.75 12 3.75z" />
-                      </svg>
-                    </div>
-                  </div>
-
-                  {/* Title & Message */}
-                  <h3 className="text-lg font-semibold " style={{margin:'20px'}}>Are you sure?</h3>
-                  <p className="text-sm text-gray-500 " style={{margin:'20px'}}>You won't be able to revert this!</p>
-
-                  {/* Actions */}
-                  <div className="flex justify-center gap-4">
-                    <button
-                      className="btn text-xs bg-red-500 font-bold text-white hover:bg-red-600 px-6"
-                      onClick={() => document.getElementById('my_modal_cancel').showModal()}
-                      style={{width:'100px'}}
-                    >
-                      No, cancel!
-                    </button>
-                    <button
-                      className="btn text-xs bg-green-500 font-bold text-white hover:bg-green-600 px-6"
+                       <div className="modal-box text-center py-8 px-6 rounded-xl bg-white relative font-[Open_Sans]
+                          w-[90vw] max-w-[400px] h-[90vh] max-h-[300px]
+                         
+                    "
+                       onClick={()=>document.getElementById('my_modal_8').close()}
+                       >
+                       
+                        {/* Icon */}
+                        <div className="flex justify-center mb-4" style={{opacity:'.5'}}>
+                          <div className="text-orange-400 text-6xl">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth=".7"
+                              stroke="currentColor"
+                              className="w-30 h-30"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0 3.75h.008v.008H12v-.008zM12 3.75c4.556 0 8.25 3.694 8.25 8.25s-3.694 8.25-8.25 8.25S3.75 16.556 3.75 12 7.444 3.75 12 3.75z" />
+                            </svg>
+                          </div>
+                        </div>
+                        {/* Title & Message */}
+                        <h3 className="text-lg font-semibold text-gray-500 " style={{margin:'20px'}}>Are you sure?</h3>
+                        <p className="text-sm text-gray-500 " style={{margin:'20px'}}>You won't be able to revert this!</p>
+      
+                        {/* Actions */}
+                        <div className="flex justify-center gap-4">
+                          <button
+                            className="btn text-xs border-none bg-red-500 font-bold text-white hover:bg-red-600 px-6"
+                            onClick={() => document.getElementById('my_modal_cancel').showModal()}
+                            style={{width:'100px'}}
+                          >
+                            No, cancel!
+                          </button>
+                          <button
+                            className="btn text-xs bg-green-500 border-none font-bold text-white hover:bg-green-600 px-6"
+                            onClick={() => {
+                              document.getElementById('my_modal_8').close();
+                            }}
+                            style={{width:'100px'}}
+                          >
+                            Yes, delete it!
+                          </button>
+                        </div>
+                      </div>
+                    </dialog>
+      
+      
+                  <dialog id="my_modal_cancel" className="modal">
+                  <div className="modal-box text-center bg-white py-10 px-8 w-[90vw] max-w-[400px] h-[90vh] max-h-[300px] relative font-[Open Sans] "
                       onClick={() => {
-                        document.getElementById('my_modal_8').close();
-                      }}
-                      style={{width:'100px'}}
-                    >
-                      Yes, delete it!
-                    </button>
+                      document.getElementById('my_modal_cancel').close();
+                      }}>
+                      <div className="flex justify-center mb-4" style={{opacity:'.5'}}>
+                      <div className="text-blue-400 text-6xl">
+                          <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth=".7"
+                          stroke="currentColor"
+                          className="w-30 h-30"
+                          >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0 3.75h.008v.008H12v-.008zM12 3.75c4.556 0 8.25 3.694 8.25 8.25s-3.694 8.25-8.25 8.25S3.75 16.556 3.75 12 7.444 3.75 12 3.75z" />
+                          </svg>
+                      </div>
+                      </div>
+                      <h3 className="text-3xl font-bold text-gray-500 " style={{margin:'20px'}}>Cancelled</h3>
+                      <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your Supplier is safe</p>
+                      <button className="btn border-none bg-blue-500 w-[50px] rounded-lg" > ok</button>
                   </div>
-                </div>
-              </dialog>
-
-
-            <dialog id="my_modal_cancel" className="modal">
-            <div className="modal-box text-center py-10 px-8 relative font-[Open Sans] "
-                onClick={() => {
-                document.getElementById('my_modal_cancel').close();
-                }}>
-                <div className="flex justify-center mb-4" style={{opacity:'.5'}}>
-                <div className="text-blue-400 text-6xl">
-                    <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth=".7"
-                    stroke="currentColor"
-                    className="w-30 h-30"
-                    >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0 3.75h.008v.008H12v-.008zM12 3.75c4.556 0 8.25 3.694 8.25 8.25s-3.694 8.25-8.25 8.25S3.75 16.556 3.75 12 7.444 3.75 12 3.75z" />
-                    </svg>
-                </div>
-                </div>
-                <h3 className="text-3xl font-bold text-gray-500 " style={{margin:'20px'}}>Cancelled</h3>
-                <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your Jewellery Type is safe</p>
-                <button className="btn bg-blue-500 w-[50px] rounded-lg" > ok</button>
-            </div>
-            </dialog>
+                  </dialog>
                 </div>
 
 
