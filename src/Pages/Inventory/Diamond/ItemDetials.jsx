@@ -286,16 +286,16 @@ const ItemDetails = () => {
   <div className="overflow-auto  ">
   <div className="w-[1000px] h-[150px] mt-6">
    <table className="w-full text-sm  text-left border-separate border-spacing-x-2 border-spacing-y-1 min-w-[1400px]" >
-        <thead className="bg-gray-200 text-blue-500 font-semibold">
+        <thead className="bg-gray-200 text-gray-500 font-semibold">
           <tr>
-            <th className=" px-4 bg-blue-100 py-2 text-center align-middle" style={{width:'200px'}}></th>
-            <th className="border px-4 py-2 text-center align-middle" style={{width:'200px'}}>Carat</th>
-            <th className="border px-4 py-2 text-center align-middle" style={{width:'200px'}}>PCS</th>
-            <th className="border px-4 py-2 text-center align-middle" style={{width:'200px'}}>Clarity</th>
-            <th className="border px-4 py-2 text-center align-middle" style={{width:'200px'}}>Cut</th>
-            <th className="border px-4 py-2 text-center align-middle" style={{width:'200px'}}>color</th>
-            <th className="border px-4 py-2 text-center align-middle" style={{width:'200px'}}>Cert.No</th>
-            <th className="border px-4 py-2 text-center align-middle" style={{width:'200px'}}>Item</th>
+            <th className=" bg-white py-2 text-center align-middle" style={{width:'80px'}}></th>
+            <th className="   text-center align-middle" style={{width:'200px'}}>Carat</th>
+            <th className=" text-center align-middle" style={{width:'200px'}}>PCS</th>
+            <th className=" text-center align-middle" style={{width:'200px'}}>Clarity</th>
+            <th className=" text-center align-middle" style={{width:'200px'}}>Cut</th>
+            <th className=" text-center align-middle" style={{width:'200px'}}>color</th>
+            <th className=" text-center align-middle" style={{width:'200px'}}>Cert.No</th>
+            <th className=" text-center align-middle" style={{width:'200px'}}>Item</th>
           </tr>
         </thead>
        {rows.map((row) => (
