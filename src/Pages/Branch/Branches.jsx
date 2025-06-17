@@ -158,30 +158,10 @@ import { Link } from 'react-router';
                                <td className="px-6 py-5 border-b border-gray-200 text-xs ">UAE</td>
                                <td className="px-6 py-5 border-b border-gray-200 text-xs ">ABHUDHABI</td>
                              
-                              
-                               <td
-                                className={`
-                                    px-6 py-5 border-b border-gray-200 text-xs 
-                                    cursor-pointer transition-all duration-200 ease-in-out
-                                    ${isActive ? " text-green-800 font-medium" : " text-red-800 font-medium"}
-                                    hover:bg-opacity-80 active:scale-95
-                                `}
-                                onClick={() => setIsActive(!isActive)}
-                                >
-                                <span className="flex items-center gap-1">
-                                    {isActive ? (
-                                    <>
-                                        <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                                        Active
-                                    </>
-                                    ) : (
-                                    <>
-                                        <span className="w-2 h-2 rounded-full bg-red-500"></span>
-                                        Deactivated
-                                    </>
-                                    )}
-                                </span>
-                                </td> 
+                              <td className="px-6 py-5 border-b border-gray-200 text-xs">
+                               <span className="bg-green-200 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
+                               </td> 
+                             
       
                                 <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
                                   <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
@@ -283,7 +263,7 @@ import { Link } from 'react-router';
                         </div>
       
                         {/* Title & Message */}
-                        <h3 className="text-lg font-semibold " style={{margin:'20px'}}>Are you sure?</h3>
+                        <h3 className="text-lg font-semibold text-gray-500 " style={{margin:'20px'}}>Are you sure?</h3>
                         <p className="text-sm text-gray-500 " style={{margin:'20px'}}>You won't be able to revert this!</p>
       
                         {/* Actions */}
@@ -333,7 +313,7 @@ import { Link } from 'react-router';
                       </div>
                       </div>
                       <h3 className="text-3xl font-bold text-gray-500 " style={{margin:'20px'}}>Cancelled</h3>
-                      <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your Jewellery Type is safe</p>
+                      <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your Branch is safe</p>
                       <button className="btn border-none bg-blue-500 w-[50px] rounded-lg" > ok</button>
                   </div>
                   </dialog>
@@ -341,71 +321,68 @@ import { Link } from 'react-router';
       
                       {modal && (
                                 <div className="fixed text-black inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
-                                  <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
-                                                sm:w-[85vw] sm:h-[75vh] sm:p-6
-                                                md:w-[65vw] md:h-[65vh] md:p-8
-                                                lg:w-[55vw] lg:h-[75vh] lg:p-10
-                                                xl:w-[35vw] xl:h-[85vh] xl:p-12
-                                               
-                                                p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
+                                  <div className="bg-white rounded-xl shadow-md w-[90vw] max-w-[500px] h-[95vh] max-h-[550px] flex flex-col overflow-y-auto gap-3" style={{padding:'20px'}}> 
                                                 
                                                 {/* Added flex-col */}
-                                    <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
-                                        style={{paddingLeft:'20px', paddingTop:"20px"}}>
+                                    <h3 className="font-bold text-[22px] text-[#344767] "
+                                        >
                                          Create New Branch                        </h3>
-                                    <hr className="my-4 border-gray-200" style={{marginTop:'10px'}}/>
+                                    <hr className="my-4 border-gray-200" />
       
-                                    <div className="flex flex-col flex-grow text-gray-600"> {/* Added flex-grow */}
+                                    <div className="flex flex-col flex-grow text-gray-600 gap-2 justify-center items-center"> {/* Added flex-grow */}
                                    
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                       Branch Name :<span className="text-red-500 font-bold ml-1">*</span>                                      </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%]  rounded-sm focus:outline-none border-gray-300 bg-white  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%]  rounded-sm focus:outline-none border-gray-300 bg-white  focus:border-b-2 focus:border-blue-500"
+                                        style={{paddingLeft:'12px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        Branch Code<span className="text-red-500 font-bold ml-1">*</span>                                      </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%]  rounded-sm focus:outline-none border-gray-300 bg-white  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%]  rounded-sm focus:outline-none border-gray-300 bg-white  focus:border-b-2 focus:border-blue-500"
+                                        style={{paddingLeft:'12px'}}
+
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        Location/City:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                                                                style={{paddingLeft:'12px'}}
+
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                       
 
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                         Address:
                                       </label>
 
-                                      <textarea className="textarea w-[90%] border-gray-200 bg-white rounded-sm focus:outline-none  focus:border-b-2 focus:border-blue-500" 
+                                      <textarea className="textarea w-[100%] border-gray-200 bg-white rounded-sm focus:outline-none  focus:border-b-2 focus:border-blue-500" 
                                         placeholder="Description" 
-                                        style={{marginLeft:'25px'}}
+                                           style={{paddingLeft:'12px'}}
+
                                         onChange={(e)=>handleChange(e)}
                                         
                                         name=""
@@ -413,55 +390,59 @@ import { Link } from 'react-router';
 
 
                                        <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        Phone:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                         style={{paddingLeft:'12px'}}
+
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                       
                                        <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        Email:
                                       </label>
                                       <input type="email" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        style={{paddingLeft:'12px'}}
+
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                        <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        Country:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                          style={{paddingLeft:'12px'}}
+
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                        <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        State / Province:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                          style={{paddingLeft:'12px'}}
+
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
@@ -469,14 +450,14 @@ import { Link } from 'react-router';
                             
                                            
                                             <label 
-                                                style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                                className="font-semibold text-sm text-[#344767] w-[80%]"
+                                               
+                                                className="font-semibold text-xs text-[#344767] w-[100%]"
                                             >
                                                 Status:
                                             </label>
                                             <select defaultValue=""
-                                                className="select w-[90%] h-[35px] border-gray-200 bg-white focus:outline-none text-gray-400 rounded-sm focus:border-b-2 focus:border-blue-500" 
-                                                style={{marginLeft:'25px'}}
+                                                className="select w-[100%] h-[35px] border-gray-200 bg-white focus:outline-none text-gray-400 rounded-sm focus:border-b-2 focus:border-blue-500" 
+                                               
                                                 value={formData.status}
                                                 name=''
                                                 onChange={(e)=>handleChange(e)}
@@ -488,8 +469,8 @@ import { Link } from 'react-router';
             
                                             </div> 
                                             {/* Button container positioned 10px above bottom */}
-                                            <div className="flex flex-col sm:flex-row justify-center items-center gap-4  " 
-                                                style={{marginTop: '20px', marginBottom: '10px',marginRight:'20px' ,paddingLeft: '200px'}}>
+                                            <div className="flex flex-col sm:flex-row justify-end items-end gap-4  " 
+                                               >
                                             <button
                                                 type="button"
                                                 className="w-[120px] h-[35px] font-bold text-xs rounded-lg text-white border-none"
@@ -513,74 +494,69 @@ import { Link } from 'react-router';
       
       
                       {editModal &&  (
-                             < div className="fixed text-black inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
-                                  <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
-                                                sm:w-[85vw] sm:h-[75vh] sm:p-6
-                                                md:w-[65vw] md:h-[65vh] md:p-8
-                                                lg:w-[55vw] lg:h-[75vh] lg:p-10
-                                                xl:w-[35vw] xl:h-[85vh] xl:p-12
-                                               
-                                                p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
+                             <div className="fixed text-black inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
+                                  <div className="bg-white rounded-xl shadow-md w-[90vw] max-w-[500px] h-[95vh] max-h-[550px] flex flex-col overflow-y-auto gap-3" style={{padding:'20px'}}> 
                                                 
                                                 {/* Added flex-col */}
-                                    <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
-                                        style={{paddingLeft:'20px', paddingTop:"20px"}}>
-                                          Edit Branch                        </h3>
-                                    <hr className="my-4 border-gray-200" style={{marginTop:'10px'}}/>
+                                    <h3 className="font-bold text-[22px] text-[#344767] "
+                                        >
+                                         Edit Branch                        </h3>
+                                    <hr className="my-4 border-gray-200" />
       
-                                    <div className="flex flex-col flex-grow text-gray-600"> {/* Added flex-grow */}
+                                    <div className="flex flex-col flex-grow text-gray-600 gap-2 justify-center items-center"> {/* Added flex-grow */}
                                    
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
-                                        Branch Name:<span className="text-red-500 font-bold ml-1">*</span> 
-                                      </label>
+                                      Branch Name :<span className="text-red-500 font-bold ml-1">*</span>                                      </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%]  rounded-sm focus:outline-none border-gray-300 bg-white  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%]  rounded-sm focus:outline-none border-gray-300 bg-white  focus:border-b-2 focus:border-blue-500"
+                                        style={{paddingLeft:'12px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
-                                        Branch Code:<span className="text-red-500 font-bold ml-1">*</span> 
-                                      </label>
+                                       Branch Code<span className="text-red-500 font-bold ml-1">*</span>                                      </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%]  rounded-sm focus:outline-none border-gray-300 bg-white  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%]  rounded-sm focus:outline-none border-gray-300 bg-white  focus:border-b-2 focus:border-blue-500"
+                                        style={{paddingLeft:'12px'}}
+
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        Location/City:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                                                                style={{paddingLeft:'12px'}}
+
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                       
 
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                         Address:
                                       </label>
 
-                                      <textarea className="textarea w-[90%] border-gray-200 bg-white rounded-sm focus:outline-none  focus:border-b-2 focus:border-blue-500" 
+                                      <textarea className="textarea w-[100%] border-gray-200 bg-white rounded-sm focus:outline-none  focus:border-b-2 focus:border-blue-500" 
                                         placeholder="Description" 
-                                        style={{marginLeft:'25px'}}
+                                           style={{paddingLeft:'12px'}}
+
                                         onChange={(e)=>handleChange(e)}
                                         
                                         name=""
@@ -588,55 +564,59 @@ import { Link } from 'react-router';
 
 
                                        <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        Phone:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                         style={{paddingLeft:'12px'}}
+
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                       
                                        <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        Email:
                                       </label>
                                       <input type="email" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        style={{paddingLeft:'12px'}}
+
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                        <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        Country:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                          style={{paddingLeft:'12px'}}
+
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                        <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        State / Province:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] rounded-sm border-gray-200 bg-white focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                          style={{paddingLeft:'12px'}}
+
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
@@ -644,14 +624,14 @@ import { Link } from 'react-router';
                             
                                            
                                             <label 
-                                                style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                                className="font-semibold text-sm text-[#344767] w-[80%]"
+                                               
+                                                className="font-semibold text-xs text-[#344767] w-[100%]"
                                             >
                                                 Status:
                                             </label>
                                             <select defaultValue=""
-                                                className="select w-[90%] h-[35px] border-gray-200 bg-white focus:outline-none text-gray-400 rounded-sm focus:border-b-2 focus:border-blue-500" 
-                                                style={{marginLeft:'25px'}}
+                                                className="select w-[100%] h-[35px] border-gray-200 bg-white focus:outline-none text-gray-400 rounded-sm focus:border-b-2 focus:border-blue-500" 
+                                               
                                                 value={formData.status}
                                                 name=''
                                                 onChange={(e)=>handleChange(e)}
@@ -663,8 +643,8 @@ import { Link } from 'react-router';
             
                                             </div> 
                                             {/* Button container positioned 10px above bottom */}
-                                            <div className="flex flex-col sm:flex-row justify-center items-center gap-4  " 
-                                                style={{marginTop: '20px', marginBottom: '10px',marginRight:'20px' ,paddingLeft: '200px'}}>
+                                            <div className="flex flex-col sm:flex-row justify-end items-end gap-4  " 
+                                               >
                                             <button
                                                 type="button"
                                                 className="w-[120px] h-[35px] font-bold text-xs rounded-lg text-white border-none"

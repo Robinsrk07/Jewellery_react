@@ -4,6 +4,11 @@ import '@fontsource/open-sans/600.css'; // Semi-bold
 import '@fontsource/open-sans/700.css'; // Bold
 import { Link } from 'react-router-dom';
  import Pagination from '../../components/Pagination';
+ import CustomScrollbar from "../../components/CustomScrollbar";
+ import EditButton from '../../components/EditButton';
+import DeleteButton from '../../components/DeleteButton';
+import CreateButton from '../../components/CreateButton';
+import ItemsPerPageSelector from '../../components/ItemsPerPageSelector';
 const BranchWiseEmployee = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [items, setItems] = useState(10);
@@ -78,32 +83,7 @@ const BranchWiseEmployee = () => {
 
   return (
     <>
-      <style jsx global>{`
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 6px;
-          height: 6px;
-        }
-        
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: #f1f1f1;
-          border-radius: 3px;
-        }
-        
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: rgb(218, 216, 216);
-          border-radius: 3px;
-          border: 1px solid rgb(206, 198, 198);
-        }
-        
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: rgb(202, 190, 190);
-        }
-        
-        .custom-scrollbar {
-          scrollbar-width: thin;
-          scrollbar-color: rgb(226, 215, 215) #f1f1f1;
-        }
-      `}</style>
+      <CustomScrollbar/>
       
       <div 
         className="bg-white w-full
@@ -115,65 +95,11 @@ const BranchWiseEmployee = () => {
           mx-auto overflow-auto custom-scrollbar"
         style={{ fontFamily: 'Open Sans', overflow: 'auto' }}
       >
-        <div
-          style={{
-            position: 'sticky',
-            left: 0,
-            top: 0,
-            zIndex: 10,
-            backgroundColor: 'white',
-            padding: '1.5rem',
-            boxSizing: 'border-box',
-            display: 'flex',
-            justifyContent: 'flex-end',
-            width: 'fit-content',
-            minWidth: '100%'
-          }}
-          className='flex flex-row gap-2'
-        >
-          <input 
-            className='input input-md border text-gray-500 bg-white border-gray-300'
-            placeholder='   Search Here'
-          />
-          <button
-            className="text-xs font-bold"
-            style={{
-              width: '160px',
-              height: '35px',
-              borderRadius: '6px',
-              backgroundColor: isHovered ? 'rgb(97, 113, 228)' : 'rgb(126, 96, 228)',
-              color: 'white',
-              transition: 'background-color 0.3s ease',
-              cursor: 'pointer',
-            }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            onClick={()=>setModal(true)}
-          >
-            + New Employee
-          </button>
-        </div>
-
-        <div className='text-gray-600' style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
-          <p className="text-xs font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
-          <select
-            className="border border-gray-300 rounded-lg w-[114px] h-[35px] px-2"
-            style={{
-              appearance: 'none',
-              WebkitAppearance: 'none',
-              MozAppearance: 'none',
-              backgroundColor: 'white',
-              backgroundImage: 'none',
-              paddingLeft: '5px',
-            }}
-            onChange={(e) => setItems(Number(e.target.value))}
-            value={items}
-          >
-            <option value={10}>10</option>
-            <option value={25}>25</option>
-            <option value={50}>50</option>
-          </select>
-        </div>
+        <CreateButton
+            buttoncontent="+ New Employee"
+            onClick={() => setModal(true)}  // This will now work!
+             />                 
+         <ItemsPerPageSelector items={items} setItems={setItems} />
 
         <table className="table w-full text-sm text-[#A8B2C4] border-collapse min-w-[1300px]" 
           style={{ borderSpacing: '0 12px', borderCollapse: 'separate' }}>
@@ -232,31 +158,25 @@ const BranchWiseEmployee = () => {
       </div>
       {modal && (
                                 <div className="fixed text-gray-400 inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
-                                  <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
-                                                sm:w-[85vw] sm:h-[75vh] sm:p-6
-                                                md:w-[65vw] md:h-[55vh] md:p-8
-                                                lg:w-[65vw] lg:h-[75vh] lg:p-10
-                                                xl:w-[42vw] xl:h-[95vh] xl:p-12
-                                                2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14
-                                                p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
+                                  <div className="bg-white rounded-xl shadow-md  w-[90vw] max-w-[500px] h-[95vh] max-h-[550px] flex flex-col overflow-y-auto gap-3" style={{padding:'20px'}}> 
                                                 
                                                 {/* Added flex-col */}
-                                    <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
-                                        style={{paddingLeft:'20px', paddingTop:"20px"}}>
+                                    <h3 className="font-bold text-[22px] text-[#344767] "
+                                        >
                                          Create Employee                           </h3>
-                                    <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
+                                    <hr className="my-4 border-gray-300" />
       
-                                    <div className="flex flex-col flex-grow"> {/* Added flex-grow */}
+                                    <div className="flex flex-col flex-grow gap-3 justify-center items-center"> {/* Added flex-grow */}
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                         Name:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg bg-white border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] rounded-lg bg-white border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        style={{paddingLeft:'12px'}}
                                         name="name"
                                       />
                                       {/* {errors.name && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.name}</span>} */}
@@ -264,90 +184,90 @@ const BranchWiseEmployee = () => {
                                     
       
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                         Gender:
                                       </label>
-                                      <select defaultValue="   select Status"
-                                        className="select w-[90%] bg-white border-gray-200 focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
+                                      <select defaultValue=" select Status"
+                                        className="select w-[100%] bg-white border-gray-200 focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
+                                        style={{paddingLeft:'12px'}}
                                         //alue={formData.status}
                                         name='gender'
                                         //onChange={(e)=>handleChange(e)}
                                       >
-                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select Status</option>
-                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;male </option>
-                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;female</option>
+                                        <option className=" text-gray-400">select Status</option>
+                                        <option className=" text-gray-400">male </option>
+                                        <option className=" text-gray-400">female</option>
                                       </select>
                                       {/* {errors.gender && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.gender}</span>} */}
                                      
                                      
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%] "
                                       >
                                        Department:
                                       </label>
                                      <select defaultValue="select Department"
-                                        className="select w-[90%] focus:outline-none bg-white border-gray-200 text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
+                                        className="select w-[100%] focus:outline-none bg-white border-gray-200 text-gray-400  focus:border-b-2 focus:border-blue-500" 
+                                         style={{paddingLeft:'12px'}}
                                       //  value={formData.department}
                                         name='position'
                                         //onChange={(e)=>handleChange(e)}
                                       >
-                                        <option  className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select Position</option>
-                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ABC </option>
-                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EFG</option>
+                                        <option  className=" text-gray-400">select Position</option>
+                                        <option className=" text-gray-400">ABC </option>
+                                        <option className=" text-gray-400">EFG</option>
                                       </select>
                                       {/* {errors.department && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.department}</span>} */}
 
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        Branch:
                                       </label>
                                        <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%]  rounded-lg bg-gray-200 text-gray-500 border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%]  rounded-lg bg-gray-200 text-gray-500 border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        style={{paddingLeft:'12px'}}
                                         name="name"
-                                        value={"     dubai"}
+                                        value={"dubai"}
                                       />
                                     
                                       {/* {errors.department && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.department}</span>} */}
                                       
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%] "
                                       >
                                        Position:
                                       </label>
                                       <select defaultValue="select Position"
-                                        className="select w-[90%] focus:outline-none bg-white border-gray-200 text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
+                                        className="select w-[100%] focus:outline-none bg-white border-gray-200 text-gray-400  focus:border-b-2 focus:border-blue-500" 
+                                        style={{paddingLeft:'12px'}}
                                        // value={formData.department}
                                         name='position'
                                        // onChange={(e)=>handleChange(e)}
                                       >
-                                        <option  className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select Position</option>
-                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ABC </option>
-                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EFG</option>
+                                        <option  className=" text-gray-400">select Position</option>
+                                        <option className=" text-gray-400">ABC </option>
+                                        <option className=" text-gray-400">EFG</option>
                                       </select>
                                       {/* {errors.position && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.position}</span>} */}
 
 
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                       
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                         Salary:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg bg-white border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] rounded-lg bg-white border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                         style={{paddingLeft:'12px'}}
                                        // value={formData.salary}
                                         //onChange={(e)=>handleChange(e)}
                                         name="salary"
@@ -356,15 +276,15 @@ const BranchWiseEmployee = () => {
                                      
                                      
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                         Bank Account Number:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg bg-white border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] rounded-lg bg-white border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                         style={{paddingLeft:'12px'}}
                                         //value={formData.bankaccountnumber}
                                        // onChange={(e)=>handleChange(e)}
                                         name="bankaccountnumber"
@@ -373,21 +293,21 @@ const BranchWiseEmployee = () => {
                                         
                                          
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        Status:
                                       </label>
                                       <select defaultValue="select Position"
-                                        className="select w-[90%] focus:outline-none bg-white border-gray-200 text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
+                                        className="select w-[100%] focus:outline-none bg-white border-gray-200 text-gray-400  focus:border-b-2 focus:border-blue-500" 
+                                        style={{paddingLeft:'12px'}}
                                        // value={formData.status}
                                         name='status'
                                        // onChange={(e)=>handleChange(e)}
                                       >
-                                        <option  className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select status</option>
-                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Active </option>
-                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inactive</option>
+                                        <option  className=" text-gray-400">select status</option>
+                                        <option className=" text-gray-400">Active </option>
+                                        <option className=" text-gray-400">Inactive</option>
                                       </select>
                                      {/* // {errors.status && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.status}</span>} */}
                                       
@@ -396,11 +316,11 @@ const BranchWiseEmployee = () => {
 
 
                                     {/* Button container positioned 10px above bottom */}
-                                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
-                                        style={{marginTop: '20px', marginBottom: '10px', paddingLeft: '200px'}}>
+                                    <div className="flex flex-col sm:flex-row justify-end items-end gap-3  " 
+                                        >
                                       <button
                                         type="button"
-                                        className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
+                                        className="btn border-none w-[100px] rounded-lg text-white"
                                         style={{ backgroundColor: '#8392ab' }}
                                         //onClick={(e) => handleSubmit(e)}
                                       >
@@ -408,7 +328,7 @@ const BranchWiseEmployee = () => {
                                       </button>
                                       <button
                                         type="button"
-                                        className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
+                                        className="btn border-none w-[100px] rounded-lg text-white"
                                         style={{ backgroundColor: '#5E72e4' }}
                                         onClick={()=>setModal(false)}
                                       >
@@ -419,32 +339,26 @@ const BranchWiseEmployee = () => {
                                 </div>
                          )}
                          {editModal && (
-                                <div className="fixed text-gray-400 inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
-                                  <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
-                                                sm:w-[85vw] sm:h-[75vh] sm:p-6
-                                                md:w-[65vw] md:h-[55vh] md:p-8
-                                                lg:w-[65vw] lg:h-[75vh] lg:p-10
-                                                xl:w-[42vw] xl:h-[95vh] xl:p-12
-                                                2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14
-                                                p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
+                                 <div className="fixed text-gray-400 inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
+                                  <div className="bg-white rounded-xl shadow-md  w-[90vw] max-w-[500px] h-[95vh] max-h-[550px] flex flex-col overflow-y-auto gap-3" style={{padding:'20px'}}> 
                                                 
                                                 {/* Added flex-col */}
-                                    <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
-                                        style={{paddingLeft:'20px', paddingTop:"20px"}}>
-                                         Edit Employee                           </h3>
-                                    <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
+                                    <h3 className="font-bold text-[22px] text-[#344767] "
+                                        >
+                                      Edit Employee                           </h3>
+                                    <hr className="my-4 border-gray-300" />
       
-                                    <div className="flex flex-col flex-grow"> {/* Added flex-grow */}
+                                    <div className="flex flex-col flex-grow gap-3 justify-center items-center"> {/* Added flex-grow */}
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                         Name:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg bg-white border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] rounded-lg bg-white border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        style={{paddingLeft:'12px'}}
                                         name="name"
                                       />
                                       {/* {errors.name && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.name}</span>} */}
@@ -452,90 +366,90 @@ const BranchWiseEmployee = () => {
                                     
       
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                         Gender:
                                       </label>
-                                      <select defaultValue="   select Status"
-                                        className="select w-[90%] bg-white border-gray-200 focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
+                                      <select defaultValue=" select Status"
+                                        className="select w-[100%] bg-white border-gray-200 focus:outline-none text-gray-400  focus:border-b-2 focus:border-blue-500" 
+                                        style={{paddingLeft:'12px'}}
                                         //alue={formData.status}
                                         name='gender'
                                         //onChange={(e)=>handleChange(e)}
                                       >
-                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select Status</option>
-                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;male </option>
-                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;female</option>
+                                        <option className=" text-gray-400">select Status</option>
+                                        <option className=" text-gray-400">male </option>
+                                        <option className=" text-gray-400">female</option>
                                       </select>
                                       {/* {errors.gender && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.gender}</span>} */}
                                      
                                      
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%] "
                                       >
                                        Department:
                                       </label>
                                      <select defaultValue="select Department"
-                                        className="select w-[90%] focus:outline-none bg-white border-gray-200 text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
+                                        className="select w-[100%] focus:outline-none bg-white border-gray-200 text-gray-400  focus:border-b-2 focus:border-blue-500" 
+                                         style={{paddingLeft:'12px'}}
                                       //  value={formData.department}
                                         name='position'
                                         //onChange={(e)=>handleChange(e)}
                                       >
-                                        <option  className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select Position</option>
-                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ABC </option>
-                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EFG</option>
+                                        <option  className=" text-gray-400">select Position</option>
+                                        <option className=" text-gray-400">ABC </option>
+                                        <option className=" text-gray-400">EFG</option>
                                       </select>
                                       {/* {errors.department && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.department}</span>} */}
 
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        Branch:
                                       </label>
                                        <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%]  rounded-lg bg-gray-200 text-gray-500 border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%]  rounded-lg bg-gray-200 text-gray-500 border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        style={{paddingLeft:'12px'}}
                                         name="name"
-                                        value={"     dubai"}
+                                        value={"dubai"}
                                       />
                                     
                                       {/* {errors.department && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.department}</span>} */}
                                       
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%] "
                                       >
                                        Position:
                                       </label>
                                       <select defaultValue="select Position"
-                                        className="select w-[90%] focus:outline-none bg-white border-gray-200 text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
+                                        className="select w-[100%] focus:outline-none bg-white border-gray-200 text-gray-400  focus:border-b-2 focus:border-blue-500" 
+                                        style={{paddingLeft:'12px'}}
                                        // value={formData.department}
                                         name='position'
                                        // onChange={(e)=>handleChange(e)}
                                       >
-                                        <option  className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select Position</option>
-                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ABC </option>
-                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EFG</option>
+                                        <option  className=" text-gray-400">select Position</option>
+                                        <option className=" text-gray-400">ABC </option>
+                                        <option className=" text-gray-400">EFG</option>
                                       </select>
                                       {/* {errors.position && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.position}</span>} */}
 
 
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                       
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                         Salary:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg bg-white border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] rounded-lg bg-white border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                         style={{paddingLeft:'12px'}}
                                        // value={formData.salary}
                                         //onChange={(e)=>handleChange(e)}
                                         name="salary"
@@ -544,15 +458,15 @@ const BranchWiseEmployee = () => {
                                      
                                      
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                         Bank Account Number:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg bg-white border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] rounded-lg bg-white border-gray-200 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                         style={{paddingLeft:'12px'}}
                                         //value={formData.bankaccountnumber}
                                        // onChange={(e)=>handleChange(e)}
                                         name="bankaccountnumber"
@@ -561,21 +475,21 @@ const BranchWiseEmployee = () => {
                                         
                                          
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        Status:
                                       </label>
                                       <select defaultValue="select Position"
-                                        className="select w-[90%] focus:outline-none bg-white border-gray-200 text-gray-400  focus:border-b-2 focus:border-blue-500" 
-                                        style={{marginLeft:'25px'}}
+                                        className="select w-[100%] focus:outline-none bg-white border-gray-200 text-gray-400  focus:border-b-2 focus:border-blue-500" 
+                                        style={{paddingLeft:'12px'}}
                                        // value={formData.status}
                                         name='status'
                                        // onChange={(e)=>handleChange(e)}
                                       >
-                                        <option  className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select status</option>
-                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Active </option>
-                                        <option className=" text-gray-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inactive</option>
+                                        <option  className=" text-gray-400">select status</option>
+                                        <option className=" text-gray-400">Active </option>
+                                        <option className=" text-gray-400">Inactive</option>
                                       </select>
                                      {/* // {errors.status && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.status}</span>} */}
                                       
@@ -584,11 +498,11 @@ const BranchWiseEmployee = () => {
 
 
                                     {/* Button container positioned 10px above bottom */}
-                                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
-                                        style={{marginTop: '20px', marginBottom: '10px', paddingLeft: '200px'}}>
+                                    <div className="flex flex-col sm:flex-row justify-end items-end gap-3  " 
+                                        >
                                       <button
                                         type="button"
-                                        className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
+                                        className="btn border-none w-[100px] rounded-lg text-white"
                                         style={{ backgroundColor: '#8392ab' }}
                                         //onClick={(e) => handleSubmit(e)}
                                       >
@@ -596,7 +510,7 @@ const BranchWiseEmployee = () => {
                                       </button>
                                       <button
                                         type="button"
-                                        className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
+                                        className="btn border-none w-[100px] rounded-lg text-white"
                                         style={{ backgroundColor: '#5E72e4' }}
                                         onClick={()=>setEditModal(false)}
                                       >

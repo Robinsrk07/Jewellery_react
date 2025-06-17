@@ -1,8 +1,14 @@
 import { useState } from "react";
+import CustomScrollbar from "../../../components/CustomScrollbar";
+import EditButton from '../../../components/EditButton';
+import DeleteButton from '../../../components/DeleteButton';
+import CreateButton from '../../../components/CreateButton';
+import Pagination from '../../../components/Pagination';
+import ItemsPerPageSelector from '../../../components/ItemsPerPageSelector';
+
 
 const Country =()=>{
    
- const  [isHovered, setIsHovered] = useState(false);
                     const [items, setItems] = useState(10);
                     const [formData, setFormData] = useState({
                       code:'',
@@ -23,7 +29,22 @@ const Country =()=>{
                      const [editModal,setEditModal]= useState(false)
                   
                     //validation 
-                    
+                    const countryData = [
+                              {
+                                id: 1,
+                                slNo: 1,
+                                code: "+91",
+                                name: "INDIA",
+                                status: "ACTIVE"
+                              },
+                              {
+                                id: 2,
+                                slNo: 2,
+                                code: "+971",
+                                name: "United Arab Emirates",
+                                status: "ACTIVE"
+                              }
+                            ];
                     const validate = () => {
                       const newErrors = {};
                       if (!formData.name.trim()) newErrors.name = 'Please Enter Name';
@@ -60,6 +81,9 @@ const Country =()=>{
                     // Handle close modal
                     const handleCloseModal = () => {
                       setModal(false);
+                    };
+                  
+                    const handleEditCloseModal = () => {
                       setEditModal(false)
                     };
                   
@@ -70,33 +94,7 @@ const Country =()=>{
                     return (
                       
                   <>
-                  <style jsx global>{`
-                    .custom-scrollbar::-webkit-scrollbar {
-                      width: 6px;  /* Slightly wider for better visibility */
-                      height: 6px; /* For horizontal scroll */
-                    }
-                    
-                    .custom-scrollbar::-webkit-scrollbar-track {
-                      background: #f1f1f1; /* Light gray track */
-                      border-radius: 3px;
-                    }
-                    
-                    .custom-scrollbar::-webkit-scrollbar-thumb {
-                      background:rgb(218, 216, 216); /* Rich red color */
-                      border-radius: 3px;
-                      border: 1px solidrgb(206, 198, 198); /* Darker red border */
-                    }
-                    
-                    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-                      background:rgb(202, 190, 190); /* Darker red on hover */
-                    }
-                    
-                    /* For Firefox */
-                    .custom-scrollbar {
-                      scrollbar-width: thin;
-                      scrollbar-color:rgb(226, 215, 215) #f1f1f1; /* red thumb on gray track */
-                    }
-                  `}</style>
+                  <CustomScrollbar/>
                  <div className="bg-white w-full
                                   max-w-[95vw] 
                                   xl:max-w-[90vw] 
@@ -106,180 +104,69 @@ const Country =()=>{
                                   mx-auto overflow-auto  custom-scrollbar"
                               style={{ fontFamily: 'Open Sans',overflow:'auto'}}
                                 >
-                  <div
-                          style={{
-                            width: '100%',
-                            display: 'flex',
-                            justifyContent: 'flex-end',
-                            padding: '1.5rem',
-                            boxSizing: 'border-box',
-                          }}
-                        >
-                          <button
-                          className="text-xs font-bold"
-                            style={{
-                              width: '90%',
-                              maxWidth: '160px',
-                              height: '30px',
-                              border: '1px solid blue',
-                              borderRadius: '8px',
-                              backgroundColor: isHovered
-                                ? 'rgb(97, 113, 228)'
-                                : 'rgb(126, 96, 228)',
-                              color: 'white',
-                              transition: 'background-color 0.3s ease',
-                              cursor: 'pointer',
-                            }}
-                            onMouseEnter={() => setIsHovered(true)}
-                            onMouseLeave={() => setIsHovered(false)}
-                            onClick={() => setModal(true)}
-                          >
-                            + New Country
-                          </button>
-                        </div>
-                  
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
-                          <p className="text-xs font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
-                          <select
-                            className="border border-gray-300 rounded-lg w-[114px] h-[35px] px-2"
-                            style={{
-                              appearance: 'none',
-                              WebkitAppearance: 'none',
-                              MozAppearance: 'none',
-                              backgroundColor: 'white',
-                              backgroundImage: 'none',
-                              paddingLeft: '5px',
-                            }}
-                            onChange={(e) => setItems(Number(e.target.value))}
-                            value={items}
-                          >
-                            <option value={10}>10</option>
-                            <option value={25}>25</option>
-                            <option value={50}>50</option>
-                          </select>
-                        </div>
+                 <CreateButton
+                  buttoncontent="+ New Country"
+                  onClick={() => setModal(true)}  // This will now work!
+                 />                 
+                 <ItemsPerPageSelector items={items} setItems={setItems} />
                   
                         
                   
-                        <table className="table w-full text-sm text-left text-gray-500 border-collapse
-                        " style={{ width: '100%', borderSpacing: '0 12px', borderCollapse: 'separate' }}
->
-                          <thead className="text-xs text-gray-400 uppercase bg-white">
-                            <tr>
-                              <th className="px-6 py-3" style={{width:'80px',paddingLeft:'20px'}} >SL NO</th>
-                              <th className="px-6 py-3" style={{width:'100px'}} >CODE</th>
-                              <th className="px-6 py-3"  style={{width:'130px'}}>NAME</th>
-                              <th className="px-6 py-3" style={{width:'130px'}}>STATUS</th>
-                              <th className="px-6 py-3" style={{width:'130px'}} >ACTION</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            
-                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs"> +91</td>
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs">INDIA</td>
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
-                                   <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                       <button
-                                       type="button"
-                                       className="btn text-white font-bold text-xs rounded-lg"
-                                       style={{
-                                           width: '100px',
-                                           padding: '5px',
-                                           backgroundColor: '#696BE4',
-                                       }}                              
-                                       onClick={()=>setEditModal(true)}
-                                       >
-                                       Edit
-                                       </button>
-               
-                                       <button
-                                       className="btn text-white font-bold text-xs rounded-lg"
-                                       style={{
-                                           width: '100px',
-                                           padding: '5px',
-                                           background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-                                       }}
-                                       onClick={()=>document.getElementById('my_modal_8').showModal()}
-       
-                                       >
-                                       Delete 
-                                       </button>
-                                   </div>
-                                   </td>
-                              </tr>
-                              <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20PX'}}>2</td>
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs">+971</td>
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs">	United Arab emirites</td>
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs">ACTIVE</td>
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
-                                   <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                       <button
-                                       type="button"
-                                       className="btn text-white font-bold text-xs rounded-lg"
-                                       style={{
-                                           width: '100px',
-                                           padding: '5px',
-                                           backgroundColor: '#696BE4',
-                                       }}
-                                       onClick={()=>setEditModal(true)}
-                                       >
-                                       Edit
-                                       </button>
-               
-                                       <button
-                                       className="btn text-white font-bold text-xs rounded-lg"
-                                       style={{
-                                           width: '100px',
-                                           padding: '5px',
-                                           background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-                                       }}
-                                       onClick={()=>document.getElementById('my_modal_8').showModal()}
-                                       >
-                                       Delete 
-                                       </button>
-                                   </div>
-                                   </td>
-                              </tr>
-                              
-                             
-                              
-                             
-                           
-                          </tbody>
-                        </table>
-                        
+                      <table className="w-full text-sm text-left text-gray-500 border-collapse overflow-x-auto"
+        style={{ borderSpacing: '0 12px', borderCollapse: 'separate', minWidth: '800px' }}>
+                      <thead className="text-xs text-gray-400 uppercase bg-white">
+                        <tr>
+                          <th className="py-3" style={{ width: '80px', paddingLeft: '20px' }}>SL NO</th>
+                          <th className="py-3" style={{ width: '100px' }}>CODE</th>
+                          <th className="py-3" style={{ width: '130px' }}>NAME</th>
+                          <th className="py-3" style={{ width: '130px' }}>STATUS</th>
+                          <th className="py-3" style={{ width: '130px' }}>ACTION</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {countryData.map((country) => (
+                          <tr key={country.id} className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+                            <td className="py-4 border-b border-gray-200 text-xs" style={{ paddingLeft: '20px' }}>
+                              {country.slNo}
+                            </td>
+                            <td className="py-4 border-b border-gray-200 text-xs">{country.code}</td>
+                            <td className="py-4 border-b border-gray-200 text-xs">{country.name}</td>
+                            <td className="py-4 border-b border-gray-200 text-xs">{country.status}</td>
+                            <td className="py-4 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                              <div className="flex gap-2.5 items-center">
+                                 <EditButton
+                                 onClick={()=>setEditModal(true)}
+                                 />
+                                <DeleteButton 
+                                 buttonText="Delete " 
+                                 modalId="my_modal_8" 
+                                    />
+                              </div>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                                        
                   
                         {/* Pagination */}
-                        <div className="flex gap-1 justify-center">
-                          <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
-                            {'<'}
-                          </button>
-                          <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
-                            1
-                          </button>
-                          <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
-                            {'>'}
-                          </button>
-                        </div>
+                        <Pagination/>
                   
                         {/* Modal */}
        
        
-                        <dialog id="my_modal_8" className="modal">
+                         <dialog id="my_modal_8" className="modal">
        
        
-                        <div className="modal-box text-center py-8 px-6 relative font-[Open_Sans]
-                           w-[90vw] h-[50vh]             /* base (mobile) */
-                           sm:w-[70vw] sm:h-[50vh]       /* ≥ 640px */
-                           md:w-[50vw] md:h-[40vh]       /* ≥ 768px */
-                           lg:w-[35vw] lg:h-[40vh]       /* ≥ 1024px */
-                           xl:w-[30vw] xl:h-[40vh]       /* ≥ 1280px */
-                           2xl:w-[25vw] 2xl:h-[20vh]     /* ≥ 1536px */
-                         "
+                        <div className="modal-box bg-white text-center py-8 px-6 relative font-[Open_Sans]
+                           
+                            max-w-[90vw] aspect-[3/3]      /* Mobile: 4:3 ratio */
+                            sm:max-w-[70vw] sm:aspect-[3/3] 
+                            md:max-w-[50vw] md:aspect-[16/12]
+                            lg:max-w-[35vw] lg:aspect-[1/1]
+                            xl:max-w-[30vw] xl:aspect-[4/3]
+                            2xl:max-w-[25vw] 2xl:aspect-[21/9]
+                          "
        
                         onClick={()=>document.getElementById('my_modal_8').close()}
                         >
@@ -301,20 +188,20 @@ const Country =()=>{
                          </div>
        
                          {/* Title & Message */}
-                         <h3 className="text-lg font-semibold " style={{margin:'20px'}}>Are you sure?</h3>
+                         <h3 className="text-lg font-semibold text-gray-500 " style={{margin:'20px'}}>Are you sure?</h3>
                          <p className="text-sm text-gray-500 " style={{margin:'20px'}}>You won't be able to revert this!</p>
        
                          {/* Actions */}
                          <div className="flex justify-center gap-4">
                            <button
-                             className="btn text-xs bg-red-500 font-bold text-white hover:bg-red-600 px-6"
+                             className="btn border-none text-xs bg-red-500 font-bold text-white hover:bg-red-600 px-6"
                              onClick={() => document.getElementById('my_modal_cancel').showModal()}
                              style={{width:'100px'}}
                            >
                              No, cancel!
                            </button>
                            <button
-                             className="btn text-xs bg-green-500 font-bold text-white hover:bg-green-600 px-6"
+                             className="btn text-xs border-none bg-green-500 font-bold text-white hover:bg-green-600 px-6"
                              onClick={() => {
                                document.getElementById('my_modal_8').close();
                              }}
@@ -330,7 +217,12 @@ const Country =()=>{
           <dialog id="my_modal_cancel" className="modal">
        
        
-         <div className="modal-box text-center py-10 px-8 relative font-[Open Sans] "
+         <div className="modal-box bg-white text-center py-10 px-8 relative font-[Open Sans]  max-w-[90vw] aspect-[3/3]      /* Mobile: 4:3 ratio */
+                            sm:max-w-[70vw] sm:aspect-[3/3] 
+                            md:max-w-[50vw] md:aspect-[16/12]
+                            lg:max-w-[35vw] lg:aspect-[1/1]
+                            xl:max-w-[30vw] xl:aspect-[4/3]
+                            2xl:max-w-[25vw] 2xl:aspect-[21/9] "
          onClick={() => {
            
              document.getElementById('my_modal_cancel').close();
@@ -354,201 +246,186 @@ const Country =()=>{
        
            {/* Title & Message */}
            <h3 className="text-3xl font-bold text-gray-500 " style={{margin:'20px'}}>Cancelled</h3>
-           <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your Jewellery Type is safe</p>
-           <button className="btn bg-blue-500 w-[50px] rounded-lg" > ok</button>
+           <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your Country is safe</p>
+           <button className="btn border-none bg-blue-500 w-[50px] rounded-lg" > ok</button>
        
            
          </div>
-       </dialog>
+       </dialog>   
                        
                        </div>
        
-                       {modal && (
-                           <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                              <div className="bg-white rounded-xl shadow-md w-[90%]  h-[85vh] sm:w-[85vw] sm:h-[95vh] sm:p-6  /* ≥ 640px */
-                                       md:w-[65vw] md:h-[85vh] md:p-8  /* ≥ 768px */
-                                       lg:w-[45vw] lg:h-[85vh] lg:p-10 /* ≥ 1024px */
-                                       xl:w-[32vw] xl:h-[95vh] xl:p-12 /* ≥ 1280px */
-                                       2xl:w-[30vw] 2xl:h-[30vh] 2xl:p-14 /* ≥ 1536px */ 
-                                       p-4 sm:p-6 md:p-8">
-                                <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
-                                style={{paddingLeft:'20px',
-                                paddingTop:"20px"}}>
-                                 New Country
-                               </h3>
-                               <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
-       
-                               <div className="flex flex-col "> {/* Added this container */}
-                                 <label 
-                                   style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                   className="font-semibold text-sm text-[#344767] w-[80%]"
-                                 >
-                                   Code:
-                                 </label>
-                                 <input type="text" 
-                                 placeholder="code" 
-                                 className="input w-[90%] rounded-lg "
-                                 style={{marginLeft:'25px'}}
-                                 value={formData.name}
-                                 onChange={(e)=>handleChange(e)}
-                                 name="name"
-                                 />
-                                 {errors.code && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.code}</span>}
-       
-                                 <label 
-                                      style={{ paddingLeft:'25px',
-                                      marginTop: '20px',
-                                      marginBottom:'10px', 
-                                      display: 'block' }}
-                                      className="font-semibold text-sm text-[#344767] w-[80%]"
-                                 >
-                                  Name: 
-                                   </label>
-       
-       
-                                   <input type="text" 
-                                    placeholder="code" 
-                                    className="input w-[90%] rounded-lg "
-                                    style={{marginLeft:'25px'}}
-                                    value={formData.name}
-                                    onChange={(e)=>handleChange(e)}
-                                    name="name"
-                                    />
-                                    
-                                    {errors.name && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.name}</span>}
-       
-                                    {/* label */}
-                                    <label 
-                                    style={{ paddingLeft:'25px', marginTop: '20px',
-                                    marginBottom:'10px',
-                                    display: 'block' }}
-                                    className="font-semibold text-sm text-[#344767] w-[80%]"
-                                    >
-                                   Status:
-                                 </label>
-                                  <select defaultValue="select Status"
-                                    className="select w-[90%]" 
-                                    style={{marginLeft:'25px'}}
-                                    value={formData.status}
-                                    name='status'
-                                    onChange={(e)=>handleChange(e)}
-                                    >
-                                  <option disabled={true}>select Status</option>
-                                  <option>Active</option>
-                                  <option>Inactive</option>
-                                  
-                                  </select>
-                                  {errors.status && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.status}</span>}
-                                  
-                                <hr className="my-4 border-gray-300" style={{marginTop:'40px'}}/>
-                                <div className="modal-action" style={{ padding: '50px',paddingTop:'70px', height: '30px' }}>
-                                     <button type="button" className="btn  w-2/6"  style={{backgroundColor: '#8392ab'}} onClick={(e)=>handleSubmit(e)}>Submit</button>
-                                     <button
-                                       type="button"
-                                       className="btn  w-2/6"
-                                       style={{backgroundColor: '#5E72e4'}}
-                                       onClick={handleCloseModal}
-                                     >
-                                       Close
-                                     </button>
-                                   </div>
-                               </div>
-                             </div>
-                           </div>
+                        {modal && (
+                           <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
+                                  <div className="bg-white rounded-xl shadow-md w-[90vw] max-w-[500px] h-[95vh] max-h-[500px] flex flex-col gap-4 overflow-y-auto" style={{padding:'20px'}}>                                                 
+                                    <h3 className="font-bold text-[22px] text-[#344767] "
+                                       >
+                                         Create Country                     </h3>
+                                    <hr className=" border-gray-300"/>
+      
+                                    <div className="flex flex-col flex-grow gap-4"> {/* Added flex-grow */}
+                                   
+                                      
+                                      <label 
+                                       
+                                        className="font-semibold text-xs text-[#344767] w-[80%]"
+                                      >
+                                       Code:
+                                      </label>
+                                      <input type="text" 
+                                        placeholder="Type here" 
+                                        className="input w-[100%] rounded-lg focus:outline-none bg-white text-gray-300 border-gray-300 focus:border-b-2 focus:border-blue-500"                                       
+                                        style={{paddingLeft:'12px'}}
+                                        //onChange={(e)=>handleChange(e)}
+                                        name=""
+                                      />
+
+                                       <label 
+                                       
+                                        className="font-semibold text-xs text-[#344767] w-[80%]"
+                                      >
+                                       Name:
+                                      </label>
+                                      <input type="text" 
+                                        placeholder="Type here" 
+                                        className="input w-[100%] rounded-lg focus:outline-none bg-white text-gray-300 border-gray-300 focus:border-b-2 focus:border-blue-500"                                       
+                                        style={{paddingLeft:'12px'}}
+                                        //onChange={(e)=>handleChange(e)}
+                                        name=""
+                                      />
+                                      
+                                      
+
+                                   
+                            
+                                           
+                                            <label 
+                                                
+                                                className="font-semibold text-xs text-[#344767] w-[80%]"
+                                            >
+                                                Status:
+                                            </label>
+                                            <select defaultValue=""
+                                                className="select w-[100%] h-[35px] bg-white border-gray-300 focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                                                style={{paddingLeft:'12px'}}
+                                                //value={formData.status}
+                                                name=''
+                                               // onChange={(e)=>handleChange(e)}
+                                            >
+                                                <option className=" text-gray-600">Select </option>
+                                                <option className=" text-gray-600"> Active</option>
+                                                <option className=" text-gray-600"> InActive</option>
+                                            </select>
+            
+                                            </div> 
+                                            {/* Button container positioned 10px above bottom */}
+                                            <div className="flex flex-col sm:flex-row justify-end items-end gap-4  " 
+                                                >
+                                            <button
+                                                type="button"
+                                                className="btn w-[100px] h-[35px] rounded-lg text-white border-none"
+                                                style={{ backgroundColor: '#8392ab' }}
+                                               // onClick={(e) => handleSubmit(e)}
+                                            >
+                                                Submit
+                                            </button>
+                                            <button
+                                                type="button"
+                                                className="btn w-[100px] h-[35px]  rounded-lg text-white border-none"
+                                                style={{ backgroundColor: '#5E72e4' }}
+                                                onClick={handleCloseModal}
+                                            >
+                                                Close
+                                            </button>
+                                            </div>
+                                        </div>
+                                        </div>
                          )}
        
                        {editModal &&(
-                            <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                            <div className="bg-white rounded-xl shadow-md w-[90%]  h-[85vh] sm:w-[85vw] sm:h-[95vh] sm:p-6  /* ≥ 640px */
-                                     md:w-[65vw] md:h-[85vh] md:p-8  /* ≥ 768px */
-                                     lg:w-[65vw] lg:h-[90vh] lg:p-10 /* ≥ 1024px */
-                                     xl:w-[32vw] xl:h-[95vh] xl:p-12 /* ≥ 1280px */
-                                     2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14 /* ≥ 1536px */ 
-                                     p-4 sm:p-6 md:p-8">
-                              <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
-                              style={{paddingLeft:'20px',
-                              paddingTop:"20px"}}>
-                              Edit Country
-                             </h3>
-                             <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
-     
-                             <div className="flex flex-col "> {/* Added this container */}
-                               <label 
-                                 style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                 className="font-semibold text-sm text-[#344767] w-[80%]"
-                               >
-                                 Code:
-                               </label>
-                               <input type="text" 
-                               placeholder="code" 
-                               className="input w-[90%] rounded-lg "
-                               style={{marginLeft:'25px'}}
-                               value={formData.name}
-                               onChange={(e)=>handleChange(e)}
-                               name="name"
-                               />
-                               {errors.code && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.code}</span>}
-     
-                               <label 
-                                    style={{ paddingLeft:'25px',
-                                    marginTop: '20px',
-                                    marginBottom:'10px', 
-                                    display: 'block' }}
-                                    className="font-semibold text-sm text-[#344767] w-[80%]"
-                               >
-                                Name: 
-                                 </label>
-     
-     
-                                 <input type="text" 
-                                  placeholder="code" 
-                                  className="input w-[90%] rounded-lg "
-                                  style={{marginLeft:'25px'}}
-                                  value={formData.name}
-                                  onChange={(e)=>handleChange(e)}
-                                  name="name"
-                                  />
-                                  
-                                  {errors.name && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.name}</span>}
-     
-                                  {/* label */}
-                                  <label 
-                                  style={{ paddingLeft:'25px', marginTop: '20px',
-                                  marginBottom:'10px',
-                                  display: 'block' }}
-                                  className="font-semibold text-sm text-[#344767] w-[80%]"
-                                  >
-                                 Status:
-                               </label>
-                                <select defaultValue="select Status"
-                                  className="select w-[90%]" 
-                                  style={{marginLeft:'25px'}}
-                                  value={formData.status}
-                                  name='status'
-                                  onChange={(e)=>handleChange(e)}
-                                  >
-                                <option disabled={true}>select Status</option>
-                                <option>Active</option>
-                                <option>Inactive</option>
-                                
-                                </select>
-                                {errors.status && <span className="text-red-500 text-xs" style={{marginLeft:'25px'}}>{errors.status}</span>}
-                                
-                              <hr className="my-4 border-gray-300" style={{marginTop:'40px'}}/>
-                              <div className="modal-action" style={{ padding: '50px',paddingTop:'70px', height: '30px' }}>
-                                   <button type="button" className="btn  w-2/6"  style={{backgroundColor: '#8392ab'}} onClick={(e)=>handleSubmit(e)}>Submit</button>
-                                   <button
-                                     type="button"
-                                     className="btn  w-2/6"
-                                     style={{backgroundColor: '#5E72e4'}}
-                                     onClick={handleCloseModal}
-                                   >
-                                     Close
-                                   </button>
-                                 </div>
-                             </div>
-                           </div>
-                         </div>)}
+                        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
+                                  <div className="bg-white rounded-xl shadow-md w-[90vw] max-w-[500px] h-[95vh] max-h-[500px] flex flex-col gap-4 overflow-y-auto" style={{padding:'20px'}}>                                                 
+                                    <h3 className="font-bold text-[22px] text-[#344767] "
+                                       >
+                                        Edit Country       
+                                                     </h3>
+                                    <hr className=" border-gray-300"/>
+      
+                                    <div className="flex flex-col flex-grow gap-4"> {/* Added flex-grow */}
+                                   
+                                      
+                                      <label 
+                                       
+                                        className="font-semibold text-xs text-[#344767] w-[80%]"
+                                      >
+                                       Name:
+                                      </label>
+                                      <input type="text" 
+                                        placeholder="Type here" 
+                                        className="input w-[100%] rounded-lg focus:outline-none bg-white text-gray-300 border-gray-300 focus:border-b-2 focus:border-blue-500"                                       
+                                        style={{paddingLeft:'12px'}}
+                                        //onChange={(e)=>handleChange(e)}
+                                        name=""
+                                      />
+                                      
+                                      
+
+                                      <label 
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
+                                      >
+                                        Description:
+                                      </label>
+
+                                      <textarea className="textarea w-[100%] bg-white border-gray-300 text-gray-300 rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500" 
+                                        placeholder="Description" 
+                                        style={{paddingLeft:'12px',color: '#374151',}}
+                                       // onChange={(e)=>handleChange(e)}
+                                        name=""
+                                      ></textarea>
+                            
+                                           
+                                            <label 
+                                                
+                                                className="font-semibold text-xs text-[#344767] w-[80%]"
+                                            >
+                                                Status:
+                                            </label>
+                                            <select defaultValue=""
+                                                className="select w-[100%] h-[35px] bg-white border-gray-300 focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                                                style={{paddingLeft:'12px'}}
+                                                //value={formData.status}
+                                                name=''
+                                               // onChange={(e)=>handleChange(e)}
+                                            >
+                                                <option className=" text-gray-600">Select </option>
+                                                <option className=" text-gray-600"> Active</option>
+                                                <option className=" text-gray-600"> InActive</option>
+                                            </select>
+            
+                                            </div> 
+                                            {/* Button container positioned 10px above bottom */}
+                                            <div className="flex flex-col sm:flex-row justify-end items-end gap-4  " 
+                                                >
+                                            <button
+                                                type="button"
+                                                className="btn w-[100px] h-[35px] rounded-lg text-white border-none"
+                                                style={{ backgroundColor: '#8392ab' }}
+                                               // onClick={(e) => handleSubmit(e)}
+                                            >
+                                                Submit
+                                            </button>
+                                            <button
+                                                type="button"
+                                                className="btn w-[100px] h-[35px]  rounded-lg text-white border-none"
+                                                style={{ backgroundColor: '#5E72e4' }}
+                                                onClick={handleEditCloseModal}
+                                            >
+                                                Close
+                                            </button>
+                                            </div>
+                                        </div>
+                        </div>)}
        
                           
                      </>)
