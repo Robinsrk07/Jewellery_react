@@ -1,5 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import CustomScrollbar from "../../components/CustomScrollbar";
+import EditButton from '../../components/EditButton';
+import DeleteButton from '../../components/DeleteButton';
+import CreateButton from '../../components/CreateButton';
+import Pagination from '../../components/Pagination';
+import ItemsPerPageSelector from '../../components/ItemsPerPageSelector';
+
 
 const Stock_Transfer = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -201,58 +208,12 @@ const Stock_Transfer = () => {
       <div className="bg-white w-full max-w-[99vw] xl:max-w-[90vw] 2xl:max-w-[95vw] h-auto max-h-[70vh] rounded-xl px-4 md:px-8 lg:px-12 mx-auto overflow-auto custom-scrollbar"
            style={{ fontFamily: 'Open Sans', overflow: 'auto' }}>
         
-        <div style={{
-          position: 'sticky',
-          left: 0,
-          top: 0,
-          zIndex: 10,
-          backgroundColor: 'white',
-          padding: '1.5rem',
-          boxSizing: 'border-box',
-          display: 'flex',
-          justifyContent: 'flex-end',
-          width: 'fit-content',
-          minWidth: '100%'
-        }}>
-          <button
-            className="text-xs font-bold"
-            style={{
-              width: '160px',
-              height: '30px',
-              borderRadius: '8px',
-              backgroundColor: isHovered ? 'rgb(97, 113, 228)' : '#6270E4',
-              color: 'white',
-              transition: 'background-color 0.3s ease',
-              cursor: 'pointer',
-            }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            onClick={() => setModal(true)}
-          >
-            Create Stock Transfer 
-          </button>
-        </div>
+         <CreateButton
+            buttoncontent="+ Create Stock Transfer"
+            onClick={() => setModal(true)}  // This will now work!
+             /> 
         
-        <div className="text-gray-500" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
-          <p className="text-xs font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
-          <select
-            className="border border-gray-300 rounded-lg w-[114px] h-[35px] px-2"
-            style={{
-              appearance: 'none',
-              WebkitAppearance: 'none',
-              MozAppearance: 'none',
-              backgroundColor: 'white',
-              backgroundImage: 'none',
-              paddingLeft: '5px',
-            }}
-            onChange={(e) => setItems(Number(e.target.value))}
-            value={items}
-          >
-            <option value={10}>10</option>
-            <option value={25}>25</option>
-            <option value={50}>50</option>
-          </select>
-        </div>
+        <ItemsPerPageSelector items={items} setItems={setItems} />
         
         <table className="table w-full text-sm text-left border-collapse min-w-[1600px]"
                style={{ borderSpacing: '0 12px', borderCollapse: 'separate' }}>
@@ -273,7 +234,7 @@ const Stock_Transfer = () => {
           <tbody>
             {stockTransfers.map((transfer, index) => (
               <tr key={transfer.id} className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '20px' }}>
+                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '40px' }}>
                   {index + 1}
                 </td>
                 <td className="px-6 py-5 border-b border-gray-200 text-xs">{transfer.id}</td>
@@ -297,19 +258,9 @@ const Stock_Transfer = () => {
                 <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
                   <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                 
-                      <button
-                        type="button"
-                        className="btn text-white border-none font-bold text-xs rounded-lg"
-                        style={{
-                          width: '84px',
-                          padding: '5px',
-                          height:'35px',
-                          backgroundColor: '#696BE4',
-                        }}
-                        onClick={()=>setEditModal(true)}
-                      >
-                        Edit
-                      </button>
+                       <EditButton
+                      onClick={()=>setEditModal(true)}
+                        />
                     
                     <button
                       type="button"
@@ -323,18 +274,10 @@ const Stock_Transfer = () => {
                     >
                       View                     
                     </button>
-                    <button
-                      className="btn text-white border-none font-bold text-xs rounded-lg"
-                      style={{
-                        width: '100px',
-                        padding: '5px',
-                        background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-                        height:'35px'
-                      }}
-                      onClick={() => document.getElementById('my_modal_8').showModal()}
-                    >
-                      Delete Item
-                    </button>
+                    <DeleteButton 
+                      buttonText="Delete Stock Transfer " 
+                        modalId="my_modal_8" 
+                    />
                   </div>
                 </td>
               </tr>
@@ -342,116 +285,119 @@ const Stock_Transfer = () => {
           </tbody>
         </table>
         
-        <div className="flex gap-1 justify-center">
-          <button className="btn border-gray-200 bg-white rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
-            {'<'}
-          </button>
-          <button className="btn rounded-full border-gray-100 w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
-            1
-          </button>
-          <button className="btn border-gray-200 bg-white rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
-            {'>'}
-          </button>
-        </div>
+         <Pagination/>
         
         <dialog id="my_modal_8" className="modal">
-          <div className="modal-box text-center py-8 px-6 rounded-xl relative font-[Open_Sans] w-[90vw] h-[50vh] sm:w-[70vw] sm:h-[30vh] md:w-[50vw] md:h-[30vh] lg:w-[35vw] lg:h-[30vh] xl:w-[30vw] xl:h-[50vh] 2xl:w-[25vw] 2xl:h-[20vh]"
-               onClick={() => document.getElementById('my_modal_8').close()}>
-            <div className="flex justify-center mb-4" style={{opacity:'.5'}}>
-              <div className="text-orange-400 text-6xl">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth=".7"
-                  stroke="currentColor"
-                  className="w-30 h-30"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0 3.75h.008v.008H12v-.008zM12 3.75c4.556 0 8.25 3.694 8.25 8.25s-3.694 8.25-8.25 8.25S3.75 16.556 3.75 12 7.444 3.75 12 3.75z" />
-                </svg>
-              </div>
-            </div>
-            <h3 className="text-lg font-semibold" style={{margin:'20px'}}>Are you sure?</h3>
-            <p className="text-sm text-gray-500" style={{margin:'20px'}}>You won't be able to revert this!</p>
-            <div className="flex justify-center gap-4">
-              <button
-                className="btn text-xs bg-red-500 font-bold text-white hover:bg-red-600 px-6"
-                onClick={() => document.getElementById('my_modal_cancel').showModal()}
-                style={{width:'100px'}}
-              >
-                No, cancel!
-              </button>
-              <button
-                className="btn text-xs bg-green-500 font-bold text-white hover:bg-green-600 px-6"
-                onClick={() => {
-                  document.getElementById('my_modal_8').close();
-                }}
-                style={{width:'100px'}}
-              >
-                Yes, delete it!
-              </button>
-            </div>
-          </div>
-        </dialog>
-        
-        <dialog id="my_modal_cancel" className="modal">
-          <div className="modal-box text-center py-10 px-8 relative font-[Open Sans]" 
-               onClick={() => {
-                 document.getElementById('my_modal_cancel').close();
-               }}>
-            <div className="flex justify-center mb-4" style={{opacity:'.5'}}>
-              <div className="text-blue-400 text-6xl">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth=".7"
-                  stroke="currentColor"
-                  className="w-30 h-30"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0 3.75h.008v.008H12v-.008zM12 3.75c4.556 0 8.25 3.694 8.25 8.25s-3.694 8.25-8.25 8.25S3.75 16.556 3.75 12 7.444 3.75 12 3.75z" />
-                </svg>
-              </div>
-            </div>
-            <h3 className="text-3xl font-bold text-gray-500" style={{margin:'20px'}}>Cancelled</h3>
-            <p className="text-lg text-gray-500 font-semibold" style={{margin:'20px'}}>Your Jewellery Type is safe</p>
-            <button className="btn bg-blue-500 w-[50px] rounded-lg">ok</button>
-          </div>
-        </dialog>
+      
+      
+                       <div className="modal-box bg-white text-center py-8 px-6 rounded-xl relative font-[Open_Sans]
+                         w-[90vw] max-w-[400px] h-[90vh] max-h-[300px]
+                        "
+      
+                       onClick={()=>document.getElementById('my_modal_8').close()}
+                       >
+                       
+                        {/* Icon */}
+                        <div className="flex justify-center mb-4" style={{opacity:'.5'}}>
+                          <div className="text-orange-400 text-6xl">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth=".7"
+                              stroke="currentColor"
+                              className="w-30 h-30"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0 3.75h.008v.008H12v-.008zM12 3.75c4.556 0 8.25 3.694 8.25 8.25s-3.694 8.25-8.25 8.25S3.75 16.556 3.75 12 7.444 3.75 12 3.75z" />
+                            </svg>
+                          </div>
+                        </div>
+      
+                        {/* Title & Message */}
+                        <h3 className="text-lg text-gray-500 font-semibold " style={{margin:'20px'}}>Are you sure?</h3>
+                        <p className="text-sm text-gray-500 " style={{margin:'20px'}}>You won't be able to revert this!</p>
+      
+                        {/* Actions */}
+                        <div className="flex justify-center gap-4">
+                          <button
+                            className="btn text-xs border-none bg-red-500 font-bold text-white hover:bg-red-600 px-6"
+                            onClick={() => document.getElementById('my_modal_cancel').showModal()}
+                            style={{width:'100px'}}
+                          >
+                            No, cancel!
+                          </button>
+                          <button
+                            className="btn text-xs border-none bg-green-500 font-bold text-white hover:bg-green-600 px-6"
+                            onClick={() => {
+                              document.getElementById('my_modal_8').close();
+                            }}
+                            style={{width:'100px'}}
+                          >
+                            Yes, delete it!
+                          </button>
+                        </div>
+                      </div>
+                    </dialog>
+      
+      
+                  <dialog id="my_modal_cancel" className="modal">
+                  <div className="modal-box text-center py-10 px-8 w-[90vw] bg-white max-w-[400px] h-[90vh] max-h-[300px] relative font-[Open Sans] "
+                      onClick={() => {
+                      document.getElementById('my_modal_cancel').close();
+                      }}>
+                      <div className="flex justify-center mb-4" style={{opacity:'.5'}}>
+                      <div className="text-blue-400 text-6xl">
+                          <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth=".7"
+                          stroke="currentColor"
+                          className="w-30 h-30"
+                          >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0 3.75h.008v.008H12v-.008zM12 3.75c4.556 0 8.25 3.694 8.25 8.25s-3.694 8.25-8.25 8.25S3.75 16.556 3.75 12 7.444 3.75 12 3.75z" />
+                          </svg>
+                      </div>
+                      </div>
+                      <h3 className="text-3xl font-bold text-gray-500 " style={{margin:'20px'}}>Cancelled</h3>
+                      <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your Stock  is safe</p>
+                      <button className="btn border-none bg-blue-500 w-[50px] rounded-lg" > ok</button>
+                  </div>
+                  </dialog>
       </div>
 
       {modal && (
         <div className="w-full h-full text-gray-100 z-50 absolute inset-0 bg-black/40 flex justify-center items-center overflow-auto"style={{ fontFamily: 'Open Sans' }}>
-          <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh] sm:w-[85vw] sm:h-[75vh] sm:p-6 md:w-[65vw] md:h-[65vh] md:p-8 lg:w-[55vw] lg:h-[75vh] lg:p-10 xl:w-[35vw] xl:h-[85vh] xl:p-12 p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto">
-            <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
-                style={{paddingLeft:'20px', paddingTop:"20px"}}>
+          <div className="bg-white rounded-xl shadow-md  w-[90vw] max-w-[500px] h-[90vh] max-h-[600px]   flex flex-col overflow-y-auto gap-4"style={{padding:'20px'}}>
+            <h3 className="font-bold text-[22px] text-[#344767]"
+                >
               Create Stock Transfer
             </h3>
-            <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
+            <hr className="my-4 border-gray-300" />
 
-            <div className="flex flex-col flex-grow text-gray-600">
-              <label style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                     className="font-bold text-[11px] text-[#344767] w-[80%]">
+            <div className="flex flex-col flex-grow text-gray-600 gap-3">
+              <label 
+                     className="font-bold text-[11px] text-[#344767] w-[100%]">
                 Transfer ID:
               </label>
               <input
                 type="text"
-                placeholder="  Type here"
-                className="input w-[90%] text-gray-400 rounded-lg focus:outline-none border-gray-300 bg-white focus:border-b-2 focus:border-blue-500"
-                style={{marginLeft:'25px'}}
+                placeholder="Type here"
+                className="input w-[100%] text-gray-400 text-xs rounded-lg focus:outline-none border-gray-300 bg-white focus:border-b-2 focus:border-blue-500"
+                style={{paddingLeft:'12px'}}
                 name="transferId"
                 value={formData.transferId}
                 onChange={handleChange}
               />
 
-              <label style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                     className="font-bold text-[11px] text-[#344767] w-[80%]">
+              <label 
+                     className="font-bold text-[11px] text-[#344767] w-[100%]">
                 Purchase Invoices:
               </label>
               
-              <div className="multi-select-container text-gray-400 bg-white text-xs" >
+              <div className="multi-select-container  text-gray-400  text-xs" >
                 <button 
-                  className="multi-select-button"
+                  className="multi-select-button bg-red-200"
                   onClick={() => setInvoiceDropdownOpen(!isInvoiceDropdownOpen)}
                 >
                   {selectedInvoices.length > 0 
@@ -468,7 +414,7 @@ const Stock_Transfer = () => {
                           type="checkbox"
                           checked={selectedInvoices.includes(invoice)}
                           onChange={() => handleInvoiceToggle(invoice)}
-                          className="form-checkbox bg-white text-blue-600 rounded"
+                          className="form-checkbox  bg-white text-blue-600 rounded"
                         />
                         {invoice}
                       </label>
@@ -495,108 +441,109 @@ const Stock_Transfer = () => {
                 )}
               </div>
 
-              <label style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                     className="font-bold text-[11px] text-[#344767] w-[80%]">
+              <label 
+                     className="font-bold text-[11px] text-[#344767] w-[100%]">
                 From Branch:
               </label>
               <select
-                className="select w-[90%] h-[40px] border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500"
-                style={{ marginLeft: '25px' }}
+                className="select w-[100%] text-xs h-[40px] border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500"
+                style={{paddingLeft:'12px'}}
                 name="fromBranch"
                 value={formData.fromBranch}
                 onChange={handleChange}
               >
-                <option value="" disabled hidden className="text-[10px]">'&nbsp;&nbsp;&nbsp;Select Branch</option>
+                <option value="" disabled hidden className="text-[10px]">Select Branch</option>
                 {branches.map((branch, index) => (
                   <option className="text-xs text-gray-400" key={index}  value={branch}>
-                   &nbsp;&nbsp;&nbsp;&nbsp; {branch}
+                    {branch}
                   </option>
                 ))}
               </select>
 
-              <label style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                     className="font-bold text-[11px] text-[#344767] w-[80%]">
+              <label 
+                     className="font-bold text-[11px] text-[#344767] w-[100%]">
                 To Branch:
               </label>
               <select
-                className="select w-[90%] h-[40px] border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500"
-                style={{ marginLeft: '25px' }}
+                className="select w-[100%] text-xs h-[40px] border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500"
+                  style={{paddingLeft:'12px'}}
+
                 name="toBranch"
                 value={formData.toBranch}
                 onChange={handleChange}
               >
-                <option value="" disabled hidden> &nbsp;&nbsp;&nbsp;&nbsp;Select Branch</option>
+                <option value="" disabled hidden> Select Branch</option>
                 {branches.map((branch, index) => (
                   <option key={index} className="text-gray-600" value={branch}>
-                    &nbsp;&nbsp;&nbsp;&nbsp; {branch}
+                     {branch}
                   </option>
                 ))}
               </select>
 
-              <label style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                     className="font-bold text-[11px] text-[#344767] w-[80%]">
+              <label 
+                     className="font-bold text-[11px] text-[#344767] w-[100%]">
                 Item Count:
               </label>
               <input
                 type="text"
-                placeholder="   Type here"
-                className="input w-[90%] text-gray-400 rounded-lg focus:outline-none border-gray-300 bg-white focus:border-b-2 focus:border-blue-500"
-                style={{marginLeft:'25px'}}
+                placeholder="Type here"
+                className="input w-[100%] text-gray-400 text-xs rounded-lg focus:outline-none border-gray-300 bg-white focus:border-b-2 focus:border-blue-500"
+                style={{paddingLeft:'12px'}}
                 name="itemCount"
                 value={formData.itemCount}
                 onChange={handleChange}
               />
 
-              <label style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                     className="font-bold text-[11px] text-[#344767] w-[80%]">
+              <label 
+                     className="font-bold text-[11px] text-[#344767] w-[100%]">
                 Transferred By:
               </label>
               <input
                 type="text"
-                placeholder="   Type here"
-                className="input w-[90%] text-gray-400 rounded-lg focus:outline-none border-gray-300 bg-white focus:border-b-2 focus:border-blue-500"
-                style={{marginLeft:'25px'}}
+                placeholder="Type here"
+                className="input w-[100%] text-xs text-gray-400 rounded-lg focus:outline-none border-gray-300 bg-white focus:border-b-2 focus:border-blue-500"
+                style={{paddingLeft:'12px'}}
                 name="transferredBy"
                 value={formData.transferredBy}
                 onChange={handleChange}
               />
 
-              <label style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                     className="font-bold text-[11px] text-[#344767] w-[80%]">
+              <label 
+                     className="font-bold text-[11px] text-[#344767] w-[100%]">
                 Transfer Date:
               </label>
               <input
                 type="date"
-                className="input w-[90%] text-gray-400 rounded-lg focus:outline-none border-gray-300 bg-white focus:border-b-2 focus:border-blue-500"
-                style={{marginLeft:'25px'}}
+                className="input w-[100%] text-xs text-gray-400 rounded-lg focus:outline-none border-gray-300 bg-white focus:border-b-2 focus:border-blue-500"
+                style={{paddingLeft:'12px'}}
                 name="transferDate"
                 value={formData.transferDate}
                 onChange={handleChange}
               />
 
-              <label style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                     className="font-bold text-[11px] text-[#344767] w-[80%]">
+              <label 
+                     className="font-bold text-[11px] text-[#344767] w-[100%]">
                 Status:
               </label>
               <select
-                className="select w-[90%] h-[35px] border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
-                style={{marginLeft:'25px'}}
+                className="select w-[100%] h-[35px]  text-xs border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                style={{paddingLeft:'12px'}}
                 name="status"
                 value={formData.status}
                 onChange={handleChange}
               >
-                <option value="" disabled hidden> &nbsp;&nbsp;&nbsp;&nbsp;Select Status</option>
-                <option value="Completed"> &nbsp;&nbsp;&nbsp;&nbsp;Completed</option>
-                <option value="Pending"> &nbsp;&nbsp;&nbsp;&nbsp;Pending</option>
-                <option value="Cancelled"> &nbsp;&nbsp;&nbsp;&nbsp;Cancelled</option>
+                <option value="" disabled hidden> Select Status</option>
+                <option value="Completed">Completed</option>
+                <option value="Pending"> Pending</option>
+                <option value="Cancelled"> Cancelled</option>
               </select>
             </div>
             
-            <div className="flex flex-col sm:flex-row justify-end items-center gap-4 " 
-                 style={{marginTop: '20px', marginBottom: '10px',padding:'20px'}}>
+            <div className="flex flex-col sm:flex-row justify-end items-end gap-4 " 
+                >
               <button
                 type="button"
-                className="w-[150px] h-[35px] rounded-lg text-white font-bold text-xs border-none"
+                className="w-[100px] h-[35px] rounded-lg text-white font-bold text-xs border-none"
                 style={{ backgroundColor: '#8392ab' }}
                 onClick={handleSubmit}
               >
@@ -604,7 +551,7 @@ const Stock_Transfer = () => {
               </button>
               <button
                 type="button"
-                className="w-[150px] h-[35px] rounded-lg text-white font-bold text-xs border-none"
+                className="w-[100px] h-[35px] rounded-lg text-white font-bold text-xs border-none"
                 style={{ backgroundColor: '#5E72e4' }}
                 onClick={() => setModal(false)}
               >
@@ -615,37 +562,37 @@ const Stock_Transfer = () => {
         </div>
       )}
       {editModal && (
-        <div className="w-full h-full text-gray-100 z-50 absolute inset-0 bg-black/40 flex justify-center items-center overflow-auto"style={{ fontFamily: 'Open Sans' }}>
-          <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh] sm:w-[85vw] sm:h-[75vh] sm:p-6 md:w-[65vw] md:h-[65vh] md:p-8 lg:w-[55vw] lg:h-[75vh] lg:p-10 xl:w-[35vw] xl:h-[85vh] xl:p-12 p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto">
-            <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
-                style={{paddingLeft:'20px', paddingTop:"20px"}}>
-              Edit Stock Transfer
+       <div className="w-full h-full text-gray-100 z-50 absolute inset-0 bg-black/40 flex justify-center items-center overflow-auto"style={{ fontFamily: 'Open Sans' }}>
+          <div className="bg-white rounded-xl shadow-md  w-[90vw] max-w-[500px] h-[90vh] max-h-[600px]   flex flex-col overflow-y-auto gap-4"style={{padding:'20px'}}>
+            <h3 className="font-bold text-[22px] text-[#344767]"
+                >
+            Edit Stock Transfer
             </h3>
-            <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
+            <hr className="my-4 border-gray-300" />
 
-            <div className="flex flex-col flex-grow text-gray-600">
-              <label style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                     className="font-bold text-[11px] text-[#344767] w-[80%]">
+            <div className="flex flex-col flex-grow text-gray-600 gap-3">
+              <label 
+                     className="font-bold text-[11px] text-[#344767] w-[100%]">
                 Transfer ID:
               </label>
               <input
                 type="text"
-                placeholder="  Type here"
-                className="input w-[90%] text-gray-400 rounded-lg focus:outline-none border-gray-300 bg-white focus:border-b-2 focus:border-blue-500"
-                style={{marginLeft:'25px'}}
+                placeholder="Type here"
+                className="input w-[100%] text-gray-400 text-xs rounded-lg focus:outline-none border-gray-300 bg-white focus:border-b-2 focus:border-blue-500"
+                style={{paddingLeft:'12px'}}
                 name="transferId"
                 value={formData.transferId}
                 onChange={handleChange}
               />
 
-              <label style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                     className="font-bold text-[11px] text-[#344767] w-[80%]">
+              <label 
+                     className="font-bold text-[11px] text-[#344767] w-[100%]">
                 Purchase Invoices:
               </label>
               
-              <div className="multi-select-container text-gray-400 bg-white text-xs" >
+              <div className="multi-select-container  text-gray-400  text-xs" >
                 <button 
-                  className="multi-select-button"
+                  className="multi-select-button bg-red-200"
                   onClick={() => setInvoiceDropdownOpen(!isInvoiceDropdownOpen)}
                 >
                   {selectedInvoices.length > 0 
@@ -662,7 +609,7 @@ const Stock_Transfer = () => {
                           type="checkbox"
                           checked={selectedInvoices.includes(invoice)}
                           onChange={() => handleInvoiceToggle(invoice)}
-                          className="form-checkbox bg-white text-blue-600 rounded"
+                          className="form-checkbox  bg-white text-blue-600 rounded"
                         />
                         {invoice}
                       </label>
@@ -689,108 +636,109 @@ const Stock_Transfer = () => {
                 )}
               </div>
 
-              <label style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                     className="font-bold text-[11px] text-[#344767] w-[80%]">
+              <label 
+                     className="font-bold text-[11px] text-[#344767] w-[100%]">
                 From Branch:
               </label>
               <select
-                className="select w-[90%] h-[40px] border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500"
-                style={{ marginLeft: '25px' }}
+                className="select w-[100%] text-xs h-[40px] border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500"
+                style={{paddingLeft:'12px'}}
                 name="fromBranch"
                 value={formData.fromBranch}
                 onChange={handleChange}
               >
-                <option value="" disabled hidden className="text-[10px]">'&nbsp;&nbsp;&nbsp;Select Branch</option>
+                <option value="" disabled hidden className="text-[10px]">Select Branch</option>
                 {branches.map((branch, index) => (
                   <option className="text-xs text-gray-400" key={index}  value={branch}>
-                   &nbsp;&nbsp;&nbsp;&nbsp; {branch}
+                    {branch}
                   </option>
                 ))}
               </select>
 
-              <label style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                     className="font-bold text-[11px] text-[#344767] w-[80%]">
+              <label 
+                     className="font-bold text-[11px] text-[#344767] w-[100%]">
                 To Branch:
               </label>
               <select
-                className="select w-[90%] h-[40px] border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500"
-                style={{ marginLeft: '25px' }}
+                className="select w-[100%] text-xs h-[40px] border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500"
+                  style={{paddingLeft:'12px'}}
+
                 name="toBranch"
                 value={formData.toBranch}
                 onChange={handleChange}
               >
-                <option value="" disabled hidden> &nbsp;&nbsp;&nbsp;&nbsp;Select Branch</option>
+                <option value="" disabled hidden> Select Branch</option>
                 {branches.map((branch, index) => (
                   <option key={index} className="text-gray-600" value={branch}>
-                    &nbsp;&nbsp;&nbsp;&nbsp; {branch}
+                     {branch}
                   </option>
                 ))}
               </select>
 
-              <label style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                     className="font-bold text-[11px] text-[#344767] w-[80%]">
+              <label 
+                     className="font-bold text-[11px] text-[#344767] w-[100%]">
                 Item Count:
               </label>
               <input
                 type="text"
-                placeholder="   Type here"
-                className="input w-[90%] text-gray-400 rounded-lg focus:outline-none border-gray-300 bg-white focus:border-b-2 focus:border-blue-500"
-                style={{marginLeft:'25px'}}
+                placeholder="Type here"
+                className="input w-[100%] text-gray-400 text-xs rounded-lg focus:outline-none border-gray-300 bg-white focus:border-b-2 focus:border-blue-500"
+                style={{paddingLeft:'12px'}}
                 name="itemCount"
                 value={formData.itemCount}
                 onChange={handleChange}
               />
 
-              <label style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                     className="font-bold text-[11px] text-[#344767] w-[80%]">
+              <label 
+                     className="font-bold text-[11px] text-[#344767] w-[100%]">
                 Transferred By:
               </label>
               <input
                 type="text"
-                placeholder="   Type here"
-                className="input w-[90%] text-gray-400 rounded-lg focus:outline-none border-gray-300 bg-white focus:border-b-2 focus:border-blue-500"
-                style={{marginLeft:'25px'}}
+                placeholder="Type here"
+                className="input w-[100%] text-xs text-gray-400 rounded-lg focus:outline-none border-gray-300 bg-white focus:border-b-2 focus:border-blue-500"
+                style={{paddingLeft:'12px'}}
                 name="transferredBy"
                 value={formData.transferredBy}
                 onChange={handleChange}
               />
 
-              <label style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                     className="font-bold text-[11px] text-[#344767] w-[80%]">
+              <label 
+                     className="font-bold text-[11px] text-[#344767] w-[100%]">
                 Transfer Date:
               </label>
               <input
                 type="date"
-                className="input w-[90%] text-gray-400 rounded-lg focus:outline-none border-gray-300 bg-white focus:border-b-2 focus:border-blue-500"
-                style={{marginLeft:'25px'}}
+                className="input w-[100%] text-xs text-gray-400 rounded-lg focus:outline-none border-gray-300 bg-white focus:border-b-2 focus:border-blue-500"
+                style={{paddingLeft:'12px'}}
                 name="transferDate"
                 value={formData.transferDate}
                 onChange={handleChange}
               />
 
-              <label style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                     className="font-bold text-[11px] text-[#344767] w-[80%]">
+              <label 
+                     className="font-bold text-[11px] text-[#344767] w-[100%]">
                 Status:
               </label>
               <select
-                className="select w-[90%] h-[35px] border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
-                style={{marginLeft:'25px'}}
+                className="select w-[100%] h-[35px]  text-xs border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                style={{paddingLeft:'12px'}}
                 name="status"
                 value={formData.status}
                 onChange={handleChange}
               >
-                <option value="" disabled hidden> &nbsp;&nbsp;&nbsp;&nbsp;Select Status</option>
-                <option value="Completed"> &nbsp;&nbsp;&nbsp;&nbsp;Completed</option>
-                <option value="Pending"> &nbsp;&nbsp;&nbsp;&nbsp;Pending</option>
-                <option value="Cancelled"> &nbsp;&nbsp;&nbsp;&nbsp;Cancelled</option>
+                <option value="" disabled hidden> Select Status</option>
+                <option value="Completed">Completed</option>
+                <option value="Pending"> Pending</option>
+                <option value="Cancelled"> Cancelled</option>
               </select>
             </div>
             
-            <div className="flex flex-col sm:flex-row justify-end items-center gap-4 " 
-                 style={{marginTop: '20px', marginBottom: '10px' ,padding:'20px'}}>
+            <div className="flex flex-col sm:flex-row justify-end items-end gap-4 " 
+                >
               <button
                 type="button"
-                className="w-[150px] h-[35px] rounded-lg text-white font-bold text-xs border-none"
+                className="w-[100px] h-[35px] rounded-lg text-white font-bold text-xs border-none"
                 style={{ backgroundColor: '#8392ab' }}
                 onClick={handleSubmit}
               >
@@ -798,9 +746,9 @@ const Stock_Transfer = () => {
               </button>
               <button
                 type="button"
-                className="w-[150px] h-[35px] rounded-lg text-white font-bold text-xs border-none"
+                className="w-[100px] h-[35px] rounded-lg text-white font-bold text-xs border-none"
                 style={{ backgroundColor: '#5E72e4' }}
-                onClick={() =>setEditModal(false)}
+                onClick={() => setEditModal(false)}
               >
                 Close
               </button>

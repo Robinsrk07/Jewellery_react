@@ -219,7 +219,7 @@
                                       onClick={()=>document.getElementById('my_modal_8').showModal()}
       
                                       >
-                                      Delete Currency
+                                      Delete UOM
                                       </button>
                                   </div>
                                   </td>
@@ -253,18 +253,11 @@
                        {/* Modal */}
       
       
-                       <dialog id="my_modal_8" className="modal">
-      
-      
-                       <div className="modal-box text-center py-8 px-6 rounded-xl relative font-[Open_Sans]
-                          w-[90vw] h-[50vh]             /* base (mobile) */
-                          sm:w-[70vw] sm:h-[30vh]       /* ≥ 640px */
-                          md:w-[50vw] md:h-[30vh]       /* ≥ 768px */
-                          lg:w-[35vw] lg:h-[30vh]       /* ≥ 1024px */
-                          xl:w-[30vw] xl:h-[50vh]       /* ≥ 1280px */
-                          2xl:w-[25vw] 2xl:h-[20vh]     /* ≥ 1536px */
-                        "
-      
+                      <dialog id="my_modal_8" className="modal">
+                       <div className="modal-box text-center py-8 px-6 rounded-xl bg-white relative font-[Open_Sans]
+                          w-[90vw] max-w-[400px] h-[90vh] max-h-[300px]
+                         
+                    "
                        onClick={()=>document.getElementById('my_modal_8').close()}
                        >
                        
@@ -283,22 +276,21 @@
                             </svg>
                           </div>
                         </div>
-      
                         {/* Title & Message */}
-                        <h3 className="text-lg font-semibold " style={{margin:'20px'}}>Are you sure?</h3>
+                        <h3 className="text-lg font-semibold text-gray-500 " style={{margin:'20px'}}>Are you sure?</h3>
                         <p className="text-sm text-gray-500 " style={{margin:'20px'}}>You won't be able to revert this!</p>
       
                         {/* Actions */}
                         <div className="flex justify-center gap-4">
                           <button
-                            className="btn text-xs bg-red-500 font-bold text-white hover:bg-red-600 px-6"
+                            className="btn text-xs border-none bg-red-500 font-bold text-white hover:bg-red-600 px-6"
                             onClick={() => document.getElementById('my_modal_cancel').showModal()}
                             style={{width:'100px'}}
                           >
                             No, cancel!
                           </button>
                           <button
-                            className="btn text-xs bg-green-500 font-bold text-white hover:bg-green-600 px-6"
+                            className="btn text-xs bg-green-500 border-none font-bold text-white hover:bg-green-600 px-6"
                             onClick={() => {
                               document.getElementById('my_modal_8').close();
                             }}
@@ -312,7 +304,7 @@
       
       
                   <dialog id="my_modal_cancel" className="modal">
-                  <div className="modal-box text-center py-10 px-8 relative font-[Open Sans] "
+                  <div className="modal-box text-center bg-white py-10 px-8 w-[90vw] max-w-[400px] h-[90vh] max-h-[300px] relative font-[Open Sans] "
                       onClick={() => {
                       document.getElementById('my_modal_cancel').close();
                       }}>
@@ -331,53 +323,47 @@
                       </div>
                       </div>
                       <h3 className="text-3xl font-bold text-gray-500 " style={{margin:'20px'}}>Cancelled</h3>
-                      <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your Jewellery Type is safe</p>
-                      <button className="btn bg-blue-500 w-[50px] rounded-lg" > ok</button>
+                      <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your UOM is safe</p>
+                      <button className="btn border-none bg-blue-500 w-[50px] rounded-lg" > ok</button>
                   </div>
                   </dialog>
                       </div>
       
                       {modal && (
                                 <div className="fixed inset-0 text-black  border-gray-400  bg-black/50 flex items-center justify-center z-50 overflow-auto">
-                                  <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
-                                                sm:w-[85vw] sm:h-[75vh] sm:p-6
-                                                md:w-[65vw] md:h-[65vh] md:p-8
-                                                lg:w-[55vw] lg:h-[75vh] lg:p-10
-                                                xl:w-[35vw] xl:h-[95vh] xl:p-12
-                                                2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14
-                                                p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
+                                  <div className="bg-white rounded-xl shadow-md w-[90vw] max-w-[500px] h-[90vh] max-h-[600px] flex flex-col overflow-y-auto gap-3" style={{padding:'20px'}}> 
                                                 
                                                 {/* Added flex-col */}
-                                    <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
-                                        style={{paddingLeft:'20px', paddingTop:"20px"}}>
+                                    <h3 className="font-bold text-[22px] text-[#344767]"
+                                        >
                                          Create UOM                          </h3>
-                                    <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
+                                    <hr className="my-4 border-gray-300" />
       
-                                    <div className="flex flex-col flex-grow"> {/* Added flex-grow */}
+                                    <div className="flex flex-col flex-grow gap-3"> {/* Added flex-grow */}
                                    
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        code:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg bg-white border-gray-300 focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] text-xs rounded-lg bg-white border-gray-300 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        style={{paddingLeft:'12px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        Name:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] rounded-lg bg-white border-gray-300 focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] text-xs rounded-lg bg-white border-gray-300 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        style={{paddingLeft:'12px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
@@ -385,8 +371,8 @@
 
                             
                                             <label 
-                                            style={{ paddingLeft: '25px', marginTop: '20px', marginBottom: '10px', display: 'block' }}
-                                            className="font-semibold text-sm text-[#344767] w-[80%]"
+                                            
+                                            className="font-semibold text-xs text-[#344767] w-[100%]"
                                             >
                                             Convertion Factor:
                                             </label>
@@ -395,16 +381,16 @@
                                                 type="number" 
                                                 name="input_tax"  // Must match your formData key
                                                 placeholder="Type here" 
-                                                className="input w-[90%] bg-white border-gray-300 rounded-lg border border-gray-300 focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                                style={{ marginLeft: '25px', padding: '8px 12px' }}
+                                                className="input w-[100%] text-xs bg-white border-gray-300 rounded-lg border border-gray-300 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                                style={{paddingLeft:'12px' }}
                                                 value={formData.input_tax || ''}
                                                 onChange={handleChange}
                                                 step="1"  // For decimal values if needed
                                                 />
 
                                             <label 
-                                            style={{ paddingLeft: '25px', marginTop: '20px', marginBottom: '10px', display: 'block' }}
-                                            className="font-semibold text-sm text-[#344767] w-[80%]"
+                                            
+                                            className="font-semibold text-xs text-[#344767] w-[100%]"
                                             >
                                             Usd price :
                                             </label>
@@ -413,8 +399,8 @@
                                                 type="number" 
                                                 name="input_tax"  // Must match your formData key
                                                 placeholder="Type here" 
-                                                className="input w-[90%] rounded-lg border bg-white border-gray-300 border-gray-300 focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                                style={{ marginLeft: '25px', padding: '8px 12px' }}
+                                                className="input w-[100%] text-xs rounded-lg border bg-white border-gray-300 border-gray-300 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                                style={{ paddingLeft:'12px' }}
                                                 value={formData.input_tax || ''}
                                                 onChange={handleChange}
                                                 step="1"  // For decimal values if needed
@@ -424,14 +410,14 @@
 
                                            
                                             <label 
-                                                style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                                className="font-semibold text-sm text-[#344767] w-[80%]"
+                                                
+                                                className="font-semibold text-sm text-[#344767] w-[100%]"
                                             >
                                                 Status:
                                             </label>
                                             <select defaultValue=""
-                                                className="select w-[90%] h-[35px] bg-white border-gray-300 focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
-                                                style={{marginLeft:'25px'}}
+                                                className="select w-[100%] h-[35px] bg-white border-gray-300 focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                                                style={{paddingLeft:'25px'}}
                                                 value={formData.status}
                                                 name=''
                                                 onChange={(e)=>handleChange(e)}
@@ -443,11 +429,11 @@
             
                                             </div> 
                                             {/* Button container positioned 10px above bottom */}
-                                            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
-                                                style={{marginTop: '20px', marginBottom: '10px',  paddingLeft: '200px'}}>
+                                            <div className="flex flex-col sm:flex-row justify-end items-end gap-4  " 
+                                                >
                                             <button
                                                 type="button"
-                                                className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn border-none w-[100px] h-[33px] rounded-lg text-white"
                                                 style={{ backgroundColor: '#8392ab' }}
                                                 onClick={(e) => handleSubmit(e)}
                                             >
@@ -455,7 +441,7 @@
                                             </button>
                                             <button
                                                 type="button"
-                                                className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn border-none w-[100px] h-[33px] rounded-lg text-white"
                                                 style={{ backgroundColor: '#5E72e4' }}
                                                 onClick={handleCloseModal}
                                             >
@@ -468,46 +454,40 @@
       
       
                       {editModal && (
-                                <div className="fixed inset-0 text-gray-500 bg-black/50 flex items-center justify-center z-50 overflow-auto">
-                                  <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
-                                                sm:w-[85vw] sm:h-[75vh] sm:p-6
-                                                md:w-[65vw] md:h-[65vh] md:p-8
-                                                lg:w-[55vw] lg:h-[75vh] lg:p-10
-                                                xl:w-[35vw] xl:h-[95vh] xl:p-12
-                                                2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14
-                                                p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
+                                <div className="fixed inset-0 text-black  border-gray-400  bg-black/50 flex items-center justify-center z-50 overflow-auto">
+                                  <div className="bg-white rounded-xl shadow-md w-[90vw] max-w-[500px] h-[90vh] max-h-[600px] flex flex-col overflow-y-auto gap-3" style={{padding:'20px'}}> 
                                                 
                                                 {/* Added flex-col */}
-                                    <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
-                                        style={{paddingLeft:'20px', paddingTop:"20px"}}>
-                                         Edit UOM                          </h3>
-                                    <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
+                                    <h3 className="font-bold text-[22px] text-[#344767]"
+                                        >
+                                       Edit UOM                          </h3>
+                                    <hr className="my-4 border-gray-300" />
       
-                                    <div className="flex flex-col flex-grow"> {/* Added flex-grow */}
+                                    <div className="flex flex-col flex-grow gap-3"> {/* Added flex-grow */}
                                    
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        code:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] border-gray-300 bg-white rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] text-xs rounded-lg bg-white border-gray-300 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        style={{paddingLeft:'12px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
                                       <label 
-                                        style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                        className="font-semibold text-sm text-[#344767] w-[80%]"
+                                        
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
                                       >
                                        Name:
                                       </label>
                                       <input type="text" 
-                                        placeholder="    Type here" 
-                                        className="input w-[90%] border-gray-300 bg-white rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                        style={{marginLeft:'25px'}}
+                                        placeholder="Type here" 
+                                        className="input w-[100%] text-xs rounded-lg bg-white border-gray-300 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        style={{paddingLeft:'12px'}}
                                         onChange={(e)=>handleChange(e)}
                                         name=""
                                       />
@@ -515,8 +495,8 @@
 
                             
                                             <label 
-                                            style={{ paddingLeft: '25px', marginTop: '20px', marginBottom: '10px', display: 'block' }}
-                                            className="font-semibold text-sm text-[#344767] w-[80%]"
+                                            
+                                            className="font-semibold text-xs text-[#344767] w-[100%]"
                                             >
                                             Convertion Factor:
                                             </label>
@@ -525,16 +505,16 @@
                                                 type="number" 
                                                 name="input_tax"  // Must match your formData key
                                                 placeholder="Type here" 
-                                                className="input w-[90%] border-gray-300 bg-white rounded-lg border border-gray-300 focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                                style={{ marginLeft: '25px', padding: '8px 12px' }}
+                                                className="input w-[100%] text-xs bg-white border-gray-300 rounded-lg border border-gray-300 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                                style={{paddingLeft:'12px' }}
                                                 value={formData.input_tax || ''}
                                                 onChange={handleChange}
                                                 step="1"  // For decimal values if needed
                                                 />
 
                                             <label 
-                                            style={{ paddingLeft: '25px', marginTop: '20px', marginBottom: '10px', display: 'block' }}
-                                            className="font-semibold text-sm text-[#344767] w-[80%]"
+                                            
+                                            className="font-semibold text-xs text-[#344767] w-[100%]"
                                             >
                                             Usd price :
                                             </label>
@@ -543,8 +523,8 @@
                                                 type="number" 
                                                 name="input_tax"  // Must match your formData key
                                                 placeholder="Type here" 
-                                                className="input w-[90%] border-gray-300 bg-white rounded-lg border border-gray-300 focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                                style={{ marginLeft: '25px', padding: '8px 12px' }}
+                                                className="input w-[100%] text-xs rounded-lg border bg-white border-gray-300 border-gray-300 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                                style={{ paddingLeft:'12px' }}
                                                 value={formData.input_tax || ''}
                                                 onChange={handleChange}
                                                 step="1"  // For decimal values if needed
@@ -554,14 +534,14 @@
 
                                            
                                             <label 
-                                                style={{ paddingLeft:'25px', marginTop: '20px', marginBottom:'10px', display: 'block' }}
-                                                className="font-semibold text-sm text-[#344767] w-[80%]"
+                                                
+                                                className="font-semibold text-sm text-[#344767] w-[100%]"
                                             >
                                                 Status:
                                             </label>
                                             <select defaultValue=""
-                                                className="select w-[90%] h-[35px] border-gray-300 bg-white focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
-                                                style={{marginLeft:'25px'}}
+                                                className="select w-[100%] h-[35px] bg-white border-gray-300 focus:outline-none text-gray-400 rounded-lg focus:border-b-2 focus:border-blue-500" 
+                                                style={{paddingLeft:'25px'}}
                                                 value={formData.status}
                                                 name=''
                                                 onChange={(e)=>handleChange(e)}
@@ -573,11 +553,11 @@
             
                                             </div> 
                                             {/* Button container positioned 10px above bottom */}
-                                            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
-                                                style={{marginTop: '20px', marginBottom: '10px',  paddingLeft: '200px'}}>
+                                            <div className="flex flex-col sm:flex-row justify-end items-end gap-4  " 
+                                                >
                                             <button
                                                 type="button"
-                                                className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn border-none w-[100px] h-[33px] rounded-lg text-white"
                                                 style={{ backgroundColor: '#8392ab' }}
                                                 onClick={(e) => handleSubmit(e)}
                                             >
@@ -585,7 +565,7 @@
                                             </button>
                                             <button
                                                 type="button"
-                                                className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn border-none w-[100px] h-[33px] rounded-lg text-white"
                                                 style={{ backgroundColor: '#5E72e4' }}
                                                 onClick={handleCloseModal}
                                             >

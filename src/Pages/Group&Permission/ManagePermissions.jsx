@@ -6,7 +6,7 @@ const ManagePermissions = () => {
        
         <div className="sticky top-0 z-10 bg-white flex justify-end items-center w-[90%] min-h-[120px]">
             <Link to='/dashboard/settings/groupandpermissions/group'>
-            <button className="btn text-white font-semibold bg-blue-500 w-[7vw]">Back</button>
+            <button className="btn border-none text-white font-semibold bg-blue-500 w-[7vw]">Back</button>
             </Link>
         </div>
 
@@ -313,7 +313,7 @@ const ManagePermissions = () => {
         </div>
        
         <div className="sticky top-0 z-10 bg-white flex justify-end items-center w-[90%] min-h-[120px]">
-  <button className="btn text-white font-semibold bg-blue-500 w-[7vw]">save</button>
+  <button className="btn text-white border-none font-semibold bg-blue-500 w-[7vw]">save</button>
 </div>
       </div>
     );

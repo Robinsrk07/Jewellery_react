@@ -363,113 +363,109 @@ Can add main stock , Can change main stock , Can delete main stock , Can view ma
                   </dialog>
                       </div>
       
-                      {modal && (
-                                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
-                                        <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
-                                                        sm:w-[85vw] sm:h-[55vh] sm:p-6
-                                                        md:w-[65vw] md:h-[55vh] md:p-8
-                                                        lg:w-[55vw] lg:h-[55vh] lg:p-10
-                                                        xl:w-[35vw] xl:h-[55vh] xl:p-12
-                                                        2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14
-                                                        p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
-                                                        
-                                                        {/* Added flex-col */}
-                                            <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
-                                                style={{paddingLeft:'20px', paddingTop:"20px"}}>
-                                                Create Group                        </h3>
-                                            <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
-            
-                                            <div className="flex flex-col flex-grow"> {/* Added flex-grow */}
+                        {modal && (
+                                <div className="fixed inset-0 text-black  border-gray-400  bg-black/50 flex items-center justify-center z-50 overflow-auto">
+                                  <div className="bg-white rounded-xl shadow-md w-[90vw] max-w-[500px] h-[90vh] max-h-[300px] flex flex-col overflow-y-auto gap-3" style={{padding:'20px'}}> 
+                                                
+                                                {/* Added flex-col */}
+                                    <h3 className="font-bold text-[22px] text-[#344767]"
+                                        >
+                                         Create UOM                          </h3>
+                                    <hr className="my-4 border-gray-300" />
+      
+                                    <div className="flex flex-col flex-grow gap-3"> {/* Added flex-grow */}
+                                   
+                                      <label 
                                         
-                                            <label 
-                                                style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                                className="font-semibold text-sm text-[#344767] w-[80%]"
-                                            >
-                                            Group  Name:
-                                            </label>
-                                            <input type="text" 
-                                                placeholder="    Type here" 
-                                                className="input w-[90%] border-gray-300 bg-white rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                                style={{marginLeft:'25px'}}
-                                                onChange={(e)=>handleChange(e)}
-                                                name=""
-                                            />
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
+                                      >
+                                       Group:
+                                      </label>
+                                      <input type="text" 
+                                        placeholder="Type here" 
+                                        className="input w-[100%] text-xs rounded-lg bg-white border-gray-300 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        style={{paddingLeft:'12px'}}
+                                        onChange={(e)=>handleChange(e)}
+                                        name=""
+                                      />
+                                     
+
+
+            
                                             </div> 
                                             {/* Button container positioned 10px above bottom */}
-                                            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
-                                                style={{marginTop: '20px', marginBottom: '10px',  paddingLeft: '200px'}}>
+                                            <div className="flex flex-col sm:flex-row justify-end items-end gap-4  " 
+                                                >
                                             <button
                                                 type="button"
-                                                className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn border-none w-[100px] h-[33px] rounded-lg text-white"
                                                 style={{ backgroundColor: '#8392ab' }}
                                                 onClick={(e) => handleSubmit(e)}
                                             >
-                                                Close 
+                                                Submit
                                             </button>
                                             <button
                                                 type="button"
-                                                className="btn border-none w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn border-none w-[100px] h-[33px] rounded-lg text-white"
                                                 style={{ backgroundColor: '#5E72e4' }}
                                                 onClick={handleCloseModal}
                                             >
-                                                Create
+                                                Close
                                             </button>
                                             </div>
                                         </div>
                                         </div>
-                                )}      
+                                )}     
       
       
                       {editModal &&  (
-                                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-auto">
-                                        <div className="bg-white rounded-xl shadow-md w-[90%] max-h-[95vh]
-                                                        sm:w-[85vw] sm:h-[55vh] sm:p-6
-                                                        md:w-[65vw] md:h-[55vh] md:p-8
-                                                        lg:w-[55vw] lg:h-[55vh] lg:p-10
-                                                        xl:w-[35vw] xl:h-[55vh] xl:p-12
-                                                        2xl:w-[25vw] 2xl:h-[30vh] 2xl:p-14
-                                                        p-4 sm:p-6 md:p-8 flex flex-col overflow-y-auto"> 
-                                                        
-                                                        {/* Added flex-col */}
-                                            <h3 className="font-bold text-[22px] text-[#344767] pl-4 pt-2 sm:pl-6 sm:pt-4 md:pl-8 md:pt-6"
-                                                style={{paddingLeft:'20px', paddingTop:"20px"}}>
-                                                Create Group                        </h3>
-                                            <hr className="my-4 border-gray-300" style={{marginTop:'10px'}}/>
-            
-                                            <div className="flex flex-col flex-grow"> {/* Added flex-grow */}
+                                 <div className="fixed inset-0 text-black  border-gray-400  bg-black/50 flex items-center justify-center z-50 overflow-auto">
+                                  <div className="bg-white rounded-xl shadow-md w-[90vw] max-w-[500px] h-[90vh] max-h-[300px] flex flex-col overflow-y-auto gap-3" style={{padding:'20px'}}> 
+                                                
+                                                {/* Added flex-col */}
+                                    <h3 className="font-bold text-[22px] text-[#344767]"
+                                        >
+                                        Edit UOM                          </h3>
+                                    <hr className="my-4 border-gray-300" />
+      
+                                    <div className="flex flex-col flex-grow gap-3"> {/* Added flex-grow */}
+                                   
+                                      <label 
                                         
-                                            <label 
-                                                style={{ paddingLeft:'25px', marginTop: '20px',marginBottom:'10px', display: 'block' }}
-                                                className="font-semibold text-sm text-[#344767] w-[80%]"
-                                            >
-                                            Group  Name:
-                                            </label>
-                                            <input type="text" 
-                                                placeholder="    Type here" 
-                                                className="input w-[90%] rounded-lg focus:outline-none  focus:border-b-2 focus:border-blue-500"
-                                                style={{marginLeft:'25px'}}
-                                                onChange={(e)=>handleChange(e)}
-                                                name=""
-                                            />
+                                        className="font-semibold text-xs text-[#344767] w-[100%]"
+                                      >
+                                       Group:
+                                      </label>
+                                      <input type="text" 
+                                        placeholder="Type here" 
+                                        className="input w-[100%] text-xs rounded-lg bg-white border-gray-300 focus:outline-none  focus:border-b-2 focus:border-blue-500"
+                                        style={{paddingLeft:'12px'}}
+                                        onChange={(e)=>handleChange(e)}
+                                        name=""
+                                      />
+                                     
+
+
+            
                                             </div> 
                                             {/* Button container positioned 10px above bottom */}
-                                            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 px-6 py-6 " 
-                                                style={{marginTop: '20px', marginBottom: '10px',  paddingLeft: '200px'}}>
+                                            <div className="flex flex-col sm:flex-row justify-end items-end gap-4  " 
+                                                >
                                             <button
                                                 type="button"
-                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn border-none w-[100px] h-[33px] rounded-lg text-white"
                                                 style={{ backgroundColor: '#8392ab' }}
                                                 onClick={(e) => handleSubmit(e)}
                                             >
-                                                Close 
+                                                Submit
                                             </button>
                                             <button
                                                 type="button"
-                                                className="btn w-2/3 sm:w-[30%] rounded-lg text-white"
+                                                className="btn border-none w-[100px] h-[33px] rounded-lg text-white"
                                                 style={{ backgroundColor: '#5E72e4' }}
                                                 onClick={handleCloseModal}
                                             >
-                                                Create
+                                                Close
                                             </button>
                                             </div>
                                         </div>
