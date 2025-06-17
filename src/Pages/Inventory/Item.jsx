@@ -3,11 +3,68 @@
     
      import { useState } from "react";
      import { Link } from "react-router";
+     import CustomScrollbar from "../../components/CustomScrollbar";
+     import EditButton from '../../components/EditButton';
+     import DeleteButton from '../../components/DeleteButton';
+     import CreateButton from '../../components/CreateButton';
+     import Pagination from '../../components/Pagination';
+    import ItemsPerPageSelector from '../../components/ItemsPerPageSelector';
      const  Item = () => {
      
           
-      const  [isHovered, setIsHovered] = useState(false);
+            const  [isHovered, setIsHovered] = useState(false);
                    const [items, setItems] = useState(10);
+
+                    const inventoryData = [
+    {
+      id: 1,
+      code: "BRD-NKL-22K-001",
+      uniqueId: "BRD-NKL00001",
+      name: "22K Gold Bridal Necklace",
+      itemType: "Gold",
+      uom: "Gram",
+      category: "Bridal Jewellery",
+      jewelleryType: "Necklace",
+      makingCalculationOn: "gross_weight",
+      status: "ACTIVE"
+    },
+    {
+      id: 2,
+      code: "EVD-PND-18K-002",
+      uniqueId: "EVD-PND00002",
+      name: "18K Gold Everyday Wear Pendant",
+      itemType: "Gold",
+      uom: "Gram",
+      category: "Everyday Wear",
+      jewelleryType: "Necklace",
+      makingCalculationOn: "net_weight",
+      status: "ACTIVE"
+    },
+    {
+      id: 3,
+      code: "LUX-RNG-14K-003",
+      uniqueId: "LUX-RNG00003",
+      name: "14K Gold Designer Cocktail Ring",
+      itemType: "Gold",
+      uom: "Gram",
+      category: "Luxury & Designer Jewellery",
+      jewelleryType: "Ring",
+      makingCalculationOn: "gross_weight",
+      status: "ACTIVE"
+    },
+    {
+      id: 4,
+      code: "GOLD-BAR-001",
+      uniqueId: "GOLD_BAR00004",
+      name: "Gold Bar",
+      itemType: "Gold",
+      uom: "Gram",
+      category: "Gold",
+      jewelleryType: "Gold Bar",
+      makingCalculationOn: "gross_weight",
+      status: "ACTIVE"
+    }
+  ];
                  
                    return (
                      
@@ -65,263 +122,75 @@
                               }}
                           >
                               <Link to="/dashboard/inventory/createItem">
-                        <button
-                          className="text-xs font-bold"
-                          style={{
-                            width: '160px',
-                            height: '30px',
-                            borderRadius: '8px',
-                            backgroundColor: isHovered ? 'rgb(97, 113, 228)' : 'rgb(126, 96, 228)',
-                            color: 'white',
-                            transition: 'background-color 0.3s ease',
-                            cursor: 'pointer',
-                          }}
-                          onMouseEnter={() => setIsHovered(true)}
-                          onMouseLeave={() => setIsHovered(false)}
-                        >
-                          Create New Item
-                        </button>
+                       <CreateButton
+                        buttoncontent="+ Create New Item"
+                        />                 
                       </Link>
                           </div>
                  
-                       <div className="text-gray-500" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
-                         <p className="text-xs font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
-                         <select
-                           className="border border-gray-300 rounded-lg w-[114px] h-[35px] px-2"
-                           style={{
-                             appearance: 'none',
-                             WebkitAppearance: 'none',
-                             MozAppearance: 'none',
-                             backgroundColor: 'white',
-                             backgroundImage: 'none',
-                             paddingLeft: '5px',
-                           }}
-                           onChange={(e) => setItems(Number(e.target.value))}
-                           value={items}
-                         >
-                           <option value={10}>10</option>
-                           <option value={25}>25</option>
-                           <option value={50}>50</option>
-                         </select>
-                       </div>
+                        <ItemsPerPageSelector items={items} setItems={setItems} />
                  
                        
                  
-                       <table className="table w-full text-sm text-left text-gray-500 border-collapse min-w-[2200px]
-                       " style={{ borderSpacing: '0 12px', borderCollapse: 'separate', }}>
-                         <thead className="text-xs text-gray-400 uppercase bg-white">
-                           <tr>
-                             <th className="px-6 py-3" style={{paddingLeft:'20px' ,width:'150px'}} >SL NO</th>
-                             <th className="px-6 py-3 " style={{width:'150px'}} >CODE </th>
-                             <th className="px-6 py-3 "  style={{width:'150px'}}>UNIQUE ID</th>
-                             <th className="px-6 py-3   " style={{width:'150px'}} >NAME</th>
-                             <th className="px-6 py-3 "  style={{width:'150px'}}>ITEM TYPE</th>
-                             <th className="px-6 py-3 " style={{width:'150px'}} >UOM</th>
-                             <th className="px-6 py-3 "  style={{width:'150px'}}>CATEGORY</th>
-                             <th className="px-6 py-3 "style={{width:'150px'}}  >JEWELLERY TYPE</th>
-                             <th className="px-6 py-3 "style={{width:'250px'}}  > MAKING CALCULATION ON</th>
-                             <th className="px-6 py-3 "style={{width:'150px'}}  >STATUS</th>
-                             <th className="px-6 py-3 "style={{width:'150px'}}  >ACTION</th>
-                           </tr>
-                         </thead>
-                         <tbody>
-                           
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>1</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">BRD-NKL-22K-001 </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">BRD-NKL00001 </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">22K Gold Bridal Necklace </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gram </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Bridal Jewellery </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Necklace </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">gross_weight </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">
-                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
-                               </td> 
-      
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
-                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                    <Link to='/dashboard/inventory/gold/updateitem'>
-                                      <button
-                                      type="button"
-                                      className="btn text-white border-none font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '100px',
-                                          padding: '5px',
-                                          backgroundColor: '#696BE4',
-                                      }}                              
-                                      >
-                                      Edit
-                                      </button></Link>
-              
-                                      <button
-                                      className="btn text-white border-none font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '100px',
-                                          padding: '5px',
-                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-                                      }}
-                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
-                                      >
-                                      Delete  Item
-                                      </button>
-                                  </div>
-                                  </td>
-                             </tr>
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>2</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">EVD-PND-18K-002 </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">EVD-PND00002 </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">18K Gold Everyday Wear Pendant </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gram </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Everyday Wear </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Necklace </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">net_weight </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">
-                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
-                               </td> 
-      
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
-                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                    <Link to='/dashboard/inventory/gold/updateitem'>
-                                      <button
-                                      type="button"
-                                      className="btn text-white border-none font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '100px',
-                                          padding: '5px',
-                                          backgroundColor: '#696BE4',
-                                      }}                              
-                                      >
-                                      Edit
-                                      </button></Link>
-              
-                                      <button
-                                      className="btn text-white border-none font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '100px',
-                                          padding: '5px',
-                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-                                      }}
-                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
-                                      >
-                                      Delete Item
-                                      </button>
-                                  </div>
-                                  </td>
-                             </tr>
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>3</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">LUX-RNG-14K-003 </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">LUX-RNG00003 </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">14K Gold Designer Cocktail Ring </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gram </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Luxury & Designer Jewellery </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Ring </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">gross_weight </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">
-                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
-                               </td> 
-      
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
-                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                    <Link to='/dashboard/inventory/gold/updateitem'>
-                                      <button
-                                      type="button"
-                                      className="btn border-none text-white font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '100px',
-                                          padding: '5px',
-                                          backgroundColor: '#696BE4',
-                                      }}                              
-                                      >
-                                      Edit
-                                      </button></Link>
-              
-                                      <button
-                                      className="btn border-none text-white font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '100px',
-                                          padding: '5px',
-                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-                                      }}
-                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
-                                      >
-                                      Delete Item
-                                      </button>
-                                  </div>
-                                  </td>
-                             </tr>
-                             <tr  className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>4</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">GOLD-BAR-001</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">GOLD_BAR00004 </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold Bar</td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gram </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">Gold Bar </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">gross_weight </td>
-                               <td className="px-6 py-5 border-b border-gray-200 text-xs">
-                               <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>ACTIVE</span>
-                               </td> 
-      
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
-                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                    <Link to='/dashboard/inventory/gold/updateitem'>
-                                      <button
-                                      type="button"
-                                      className="btn border-none text-white font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '100px',
-                                          padding: '5px',
-                                          backgroundColor: '#696BE4',
-                                      }}                              
-                                      >
-                                      Edit
-                                      </button></Link>
-              
-                                      <button
-                                      className="btn text-white border-none font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '100px',
-                                          padding: '5px',
-                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-                                      }}
-                                      onClick={()=>document.getElementById('my_modal_8').showModal()}
-                                      >
-                                      Delete Item
-                                      </button>
-                                  </div>
-                                  </td>
-                             </tr>
-                            
-                            
-                             
-                             
-                             
-                             
-                            
-                          
-                         </tbody>
-                       </table>
+                        <table 
+      className="table w-full text-sm text-left text-gray-500 border-collapse min-w-[2200px]" 
+      style={{ borderSpacing: '0 12px', borderCollapse: 'separate' }}
+    >
+      <thead className="text-xs text-gray-400 uppercase bg-white">
+        <tr>
+          <th className="px-6 py-3" style={{paddingLeft:'20px', width:'150px'}}>SL NO</th>
+          <th className="px-6 py-3" style={{width:'150px'}}>CODE</th>
+          <th className="px-6 py-3" style={{width:'150px'}}>UNIQUE ID</th>
+          <th className="px-6 py-3" style={{width:'150px'}}>NAME</th>
+          <th className="px-6 py-3" style={{width:'150px'}}>ITEM TYPE</th>
+          <th className="px-6 py-3" style={{width:'150px'}}>UOM</th>
+          <th className="px-6 py-3" style={{width:'150px'}}>CATEGORY</th>
+          <th className="px-6 py-3" style={{width:'150px'}}>JEWELLERY TYPE</th>
+          <th className="px-6 py-3" style={{width:'250px'}}>MAKING CALCULATION ON</th>
+          <th className="px-6 py-3" style={{width:'150px'}}>STATUS</th>
+          <th className="px-6 py-3" style={{width:'150px'}}>ACTION</th>
+        </tr>
+      </thead>
+      <tbody>
+        {inventoryData.map((item) => (
+          <tr key={item.id} className="bg-white hover:bg-gray-50 h-[44px] text-gray-400">
+            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{paddingLeft:'20px'}}>
+              {item.id}
+            </td>
+            <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.code}</td>
+            <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.uniqueId}</td>
+            <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.name}</td>
+            <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.itemType}</td>
+            <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.uom}</td>
+            <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.category}</td>
+            <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.jewelleryType}</td>
+            <td className="px-6 py-5 border-b border-gray-200 text-xs">{item.makingCalculationOn}</td>
+            <td className="px-6 py-5 border-b border-gray-200 text-xs">
+              <span className="bg-green-300 font-bold text-[10px] text-green-700 px-2 py-0.5 rounded" style={{padding: '2px 6px'}}>
+                {item.status}
+              </span>
+            </td>
+            <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+              <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                <Link to='/dashboard/inventory/gold/updateitem'>
+                   <EditButton
+        
+                   />
+                </Link>
+                <DeleteButton 
+                buttonText="Delete Item" 
+                modalId="my_modal_8" 
+               />
+              </div>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
                        
                  
                        {/* Pagination */}
-                       <div className="flex gap-1 justify-center">
-                         <button className="btn border-gray-200 bg-white rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
-                           {'<'}
-                         </button>
-                         <button className="btn rounded-full border-gray-100 w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
-                           1
-                         </button>
-                         <button className="btn  border-gray-200 bg-white rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
-                           {'>'}
-                         </button>
-                       </div>
+                        <Pagination/>
                  
                        {/* Modal */}
       
@@ -329,13 +198,8 @@
                        <dialog id="my_modal_8" className="modal">
       
       
-                       <div className="modal-box text-center py-8 px-6 rounded-xl relative font-[Open_Sans]
-                          w-[90vw] h-[50vh]             /* base (mobile) */
-                          sm:w-[70vw] sm:h-[30vh]       /* ≥ 640px */
-                          md:w-[50vw] md:h-[30vh]       /* ≥ 768px */
-                          lg:w-[35vw] lg:h-[30vh]       /* ≥ 1024px */
-                          xl:w-[30vw] xl:h-[50vh]       /* ≥ 1280px */
-                          2xl:w-[25vw] 2xl:h-[20vh]     /* ≥ 1536px */
+                       <div className="modal-box bg-white text-center py-8 px-6 rounded-xl relative font-[Open_Sans]
+                         w-[90vw] max-w-[400px] h-[90vh] max-h-[300px]
                         "
       
                        onClick={()=>document.getElementById('my_modal_8').close()}
@@ -358,20 +222,20 @@
                         </div>
       
                         {/* Title & Message */}
-                        <h3 className="text-lg font-semibold " style={{margin:'20px'}}>Are you sure?</h3>
+                        <h3 className="text-lg text-gray-500 font-semibold " style={{margin:'20px'}}>Are you sure?</h3>
                         <p className="text-sm text-gray-500 " style={{margin:'20px'}}>You won't be able to revert this!</p>
       
                         {/* Actions */}
                         <div className="flex justify-center gap-4">
                           <button
-                            className="btn text-xs bg-red-500 font-bold text-white hover:bg-red-600 px-6"
+                            className="btn text-xs border-none bg-red-500 font-bold text-white hover:bg-red-600 px-6"
                             onClick={() => document.getElementById('my_modal_cancel').showModal()}
                             style={{width:'100px'}}
                           >
                             No, cancel!
                           </button>
                           <button
-                            className="btn text-xs bg-green-500 font-bold text-white hover:bg-green-600 px-6"
+                            className="btn text-xs border-none bg-green-500 font-bold text-white hover:bg-green-600 px-6"
                             onClick={() => {
                               document.getElementById('my_modal_8').close();
                             }}
@@ -385,7 +249,7 @@
       
       
                   <dialog id="my_modal_cancel" className="modal">
-                  <div className="modal-box text-center py-10 px-8 relative font-[Open Sans] "
+                  <div className="modal-box text-center py-10 px-8 w-[90vw] bg-white max-w-[400px] h-[90vh] max-h-[300px] relative font-[Open Sans] "
                       onClick={() => {
                       document.getElementById('my_modal_cancel').close();
                       }}>
@@ -404,8 +268,8 @@
                       </div>
                       </div>
                       <h3 className="text-3xl font-bold text-gray-500 " style={{margin:'20px'}}>Cancelled</h3>
-                      <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your Jewellery Type is safe</p>
-                      <button className="btn bg-blue-500 w-[50px] rounded-lg" > ok</button>
+                      <p className="text-lg text-gray-500  font-semibold " style={{margin:'20px'}}>Your Item is safe</p>
+                      <button className="btn border-none bg-blue-500 w-[50px] rounded-lg" > ok</button>
                   </div>
                   </dialog>
                       </div>

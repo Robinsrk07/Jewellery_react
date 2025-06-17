@@ -20,7 +20,7 @@ const purchaseFix = () => {
          
           <div className="w-[90%] ">
           <label className="text-xs font-bold  text-[#344767]"> Supplier</label>
-          <select className="select select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+          <select className="select bg-white select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
                <option disabled>&nbsp;&nbsp;&nbsp;&nbsp;select supplier</option>
                <option >&nbsp;&nbsp;&nbsp;&nbsp;GOLD SUPPLIER </option>
                <option >&nbsp;&nbsp;&nbsp;&nbsp;TEST SUPPLIER</option>
@@ -30,7 +30,7 @@ const purchaseFix = () => {
           <label className="text-xs font-bold text-[#344767]">Balance Gold Weight</label>
           <input
               type="text"
-              className="input input-bordered bg-gray-200 input-sm w-full text-gray-500 rounded-lg 
+              className="input  input-bordered bg-gray-200 input-sm w-full text-gray-500 rounded-lg 
                       focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300
                       [&::-webkit-calendar-picker-indicator]:opacity-50"
               placeholder=""
@@ -41,7 +41,7 @@ const purchaseFix = () => {
         <div className="w-[90%]">
           {/* name */}
         <label className="text-xs font-bold  text-[#344767]">Payment Type</label>
-        <select className="select select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+        <select className="select bg-white  select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
                <option>&nbsp;&nbsp;&nbsp;&nbsp;Cash</option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;Bank</option>
            </select>
@@ -49,7 +49,7 @@ const purchaseFix = () => {
         {/* item type */}
         <div className="w-[90%]">
         <label className="text-xs font-bold  text-[#344767]">Selling Unit</label>
-        <select className="select select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+        <select className="select bg-white select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
           <option>&nbsp;&nbsp;&nbsp;&nbsp;gram</option>
         </select>
         </div>
@@ -69,34 +69,36 @@ const purchaseFix = () => {
           <label className="text-xs font-bold text-[#344767]">Terms of Payment</label>
           <input
               type="text"
-              className="input input-bordered  input-sm w-full text-gray-500 rounded-lg 
+              className="input bg-white  input-bordered  input-sm w-full text-gray-500 rounded-lg 
                       focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300
                       [&::-webkit-calendar-picker-indicator]:opacity-50"
-              placeholder=" "
+              placeholder="terms of payment "
+              style={{paddingLeft:'12px'}}
           />
           </div>
         <div className="w-[90%]">
           <label className="text-xs font-bold text-[#344767]">Settelment Weight</label>
           <input
               type="text"
-              className="input input-bordered  input-sm w-full text-gray-500 rounded-lg 
+              className="input input-bordered  bg-white  input-sm w-full text-gray-500 rounded-lg 
                       focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300
                       [&::-webkit-calendar-picker-indicator]:opacity-50"
-              placeholder=" "
+              placeholder="Settelment Weight "
+              style={{paddingLeft:'12px'}}
           />
           </div>
           <div className="w-[90%]">
       <label className="text-xs font-bold  text-[#344767]">Notes</label>
-      <textarea className="textarea textarea-gray rounded-lg " placeholder="    notes"></textarea>   
+      <textarea className="textarea bg-white border-gray-300 textarea-gray rounded-lg " placeholder="    notes"></textarea>   
      </div>
      <div className="w-[90%]">
           <label className="text-xs font-bold text-[#344767]">Terms of Payment</label>
           <input
               type="text"
-              className="input input-bordered  input-sm w-full text-gray-500 rounded-lg 
+              className="input bg-white input-bordered  input-sm w-full text-gray-500 rounded-lg 
                       focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300
                       [&::-webkit-calendar-picker-indicator]:opacity-50"
-              placeholder=" "
+              placeholder="  Terms of Payment"
           />
           </div>
           
@@ -112,7 +114,7 @@ const purchaseFix = () => {
 
       
       <div className="flex  w-full h-[20vh]  mt-4 justify-end text-white " style={{paddingRight:'5vw'}} >  {/* Container div */}
-          <button className="btn text-white text-xs  bg-blue-700  w-full  sm:w-1/4 md:w-[10vw] rounded-lg">
+          <button className="btn border-none text-white text-xs  bg-blue-700  w-full  sm:w-1/4 md:w-[10vw] rounded-lg">
             Save
           </button>
           

@@ -25,7 +25,7 @@ const CreateNewPurchase = () => {
            
             <div className="w-[90%] ">
             <label className="text-xs font-bold  text-[#344767]">Item Type</label>
-            <select className="select select-bordered select-sm w-full bg-gray-200 text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+            <select className="select  select-bordered select-sm w-full bg-gray-200 text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
                  <option>&nbsp;&nbsp;&nbsp;&nbsp;GOLD</option>
              </select>
             </div>
@@ -40,7 +40,7 @@ const CreateNewPurchase = () => {
           {/* item type */}
           <div className="w-[90%]">
           <label className="text-xs font-bold  text-[#344767]">Terms Of Payment</label>
-          <select className="select select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+          <select className="select bg-white select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
           <option  className="text-gray-300" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;Item Type</option>
             <option>&nbsp;&nbsp;&nbsp;&nbsp;test</option>
             <option>&nbsp;&nbsp;&nbsp;&nbsp;test</option>
@@ -51,7 +51,7 @@ const CreateNewPurchase = () => {
             <label className="text-xs font-bold text-[#344767]">Date</label>
             <input
                 type="date"
-                className="input input-bordered input-sm w-full text-gray-500 rounded-lg 
+                className="input input-bordered bg-white input-sm w-full text-gray-500 rounded-lg 
                         focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300
                         [&::-webkit-calendar-picker-indicator]:opacity-50"
                 placeholder="Select date"
@@ -60,7 +60,7 @@ const CreateNewPurchase = () => {
 
             <div className="w-[90%]">
             <label className="text-xs font-bold  text-[#344767]">Supplier</label>
-            <select className="select select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+            <select className="select select-bordered bg-white   select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
             <option  className="text-gray-300" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;Item Type</option>
                 <option>&nbsp;&nbsp;&nbsp;&nbsp;GOLD SUPPLIER DUBAI</option>
                 <option>&nbsp;&nbsp;&nbsp;&nbsp;test Supplier</option>
@@ -68,15 +68,15 @@ const CreateNewPurchase = () => {
             </div>
 
             <div className="w-[90%] ">
-            <label className="text-xs font-bold  text-[#344767]">Reference Number</label>
+            <label className="text-xs font-bold   text-[#344767]">Reference Number</label>
                 <input
                 type="text"
-                placeholder="    Type here"
-                className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300"/>
+                placeholder=" Type here"
+                className="input input-bordered  bg-white text-gray-300 input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300"/>
             </div>
             <div className="w-[90%]">
             <label className="text-xs font-bold  text-[#344767]">Stock Point</label>
-            <select className="select select-bordered select-sm w-full  text-gray-500  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+            <select className="select select-bordered bg-white select-sm w-full  text-gray-500  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
             <option  className="text-gray-300" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp; stock point</option>
                 <option>&nbsp;&nbsp;&nbsp;&nbsp;Reserved Stock</option>
                 <option>&nbsp;&nbsp;&nbsp;&nbsp;Low Stock Alert</option>
@@ -87,7 +87,7 @@ const CreateNewPurchase = () => {
             </div>
             <div className="w-[90%]">
             <label className="text-xs font-bold  text-[#344767]">Buyer</label>
-            <select className="select select-bordered select-sm w-full  text-gray-500  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+            <select className="select select-bordered bg-white select-sm w-full  text-gray-500  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
             <option  className="text-gray-300" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp; Buyer</option>
                 <option>&nbsp;&nbsp;&nbsp;&nbsp;test</option>
                 <option>&nbsp;&nbsp;&nbsp;&nbsp;test</option>
@@ -98,7 +98,7 @@ const CreateNewPurchase = () => {
             <label className="text-xs font-bold text-[#344767]">Currency</label>
             <input
                 type="number"
-                className="input input-bordered input-sm w-full text-gray-900 rounded-lg 
+                className="input input-bordered bg-white input-sm w-full text-gray-900 rounded-lg 
                         focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300
                         [&::-webkit-calendar-picker-indicator]:opacity-50"
                 placeholder="$1.00000@3.6725000"
@@ -119,7 +119,7 @@ const CreateNewPurchase = () => {
            
             <div className="w-[90%]">
              <label className="text-xs font-bold  text-[#344767]">Purchase Type</label>
-             <select className="select select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+             <select className="select select-bordered bg-white select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
                <option>&nbsp;&nbsp;&nbsp;&nbsp;HEDGE</option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;NO HEDGE</option>
              </select>
@@ -127,7 +127,7 @@ const CreateNewPurchase = () => {
 
            <div className="w-[90%]">
   <label className="text-xs font-bold text-[#344767]">Items</label>
-  <select className="select select-bordered select-sm w-full text-gray-400 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+  <select className="select select-bordered bg-white  select-sm w-full text-gray-400 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
     {/* Default placeholder option (disabled and selected by default) */}
     <option disabled selected className="text-gray-300">
       &nbsp;&nbsp;&nbsp;&nbsp;Select an item
@@ -143,7 +143,7 @@ const CreateNewPurchase = () => {
 
             <div className="w-[90%]">
              <label className="text-xs font-bold  text-[#344767]">Design</label>
-             <select className="select select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+             <select className="select select-bordered bg-white select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
                <option  className="text-gray-300" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;-------</option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;Filigri design</option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;Halo Design</option>
@@ -153,7 +153,7 @@ const CreateNewPurchase = () => {
 
             <div className="w-[90%]">
              <label className="text-xs font-bold  text-[#344767]">Brand</label>
-             <select className="select select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+             <select className="select select-bordered select-sm w-full bg-white  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
                <option  className="text-gray-300" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;-------</option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;Tanishq</option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;cartier</option>
@@ -162,7 +162,7 @@ const CreateNewPurchase = () => {
            </div>
             <div className="w-[90%]">
              <label className="text-xs font-bold  text-[#344767]">Made in</label>
-             <select className="select select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+             <select className="select select-bordered bg-white select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
                <option  className="text-gray-300" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;-------</option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;India</option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;United Arab Emirates</option>
@@ -170,7 +170,7 @@ const CreateNewPurchase = () => {
            </div>
             <div className="w-[90%]">
              <label className="text-xs font-bold  text-[#344767]">Size</label>
-             <select className="select select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+             <select className="select select-bordered bg-white select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
                <option  className="text-gray-300" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;-------</option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;Ring Size</option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;Bangle Size</option>
@@ -179,7 +179,7 @@ const CreateNewPurchase = () => {
            </div>
             <div className="w-[90%]">
              <label className="text-xs font-bold  text-[#344767]">Style</label>
-             <select className="select select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+             <select className="select select-bordered bg-white  select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
                <option  className="text-gray-300" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;-------</option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;Traditional</option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;Modern/Minimalist</option>
@@ -188,7 +188,7 @@ const CreateNewPurchase = () => {
            </div>
             <div className="w-[90%]">
              <label className="text-xs font-bold  text-[#344767]">Occasion</label>
-             <select className="select select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+             <select className="select select-bordered bg-white select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
                <option  className="text-gray-300" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;-------</option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;Wedding </option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;Anniversery</option>
@@ -197,7 +197,7 @@ const CreateNewPurchase = () => {
            </div>
             <div className="w-[90%]">
              <label className="text-xs font-bold  text-[#344767]">Metal Color</label>
-             <select className="select select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+             <select className="select select-bordered bg-white select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
                <option  className="text-gray-300" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;-------</option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;Wedding </option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;Anniversery</option>
@@ -206,7 +206,7 @@ const CreateNewPurchase = () => {
            </div>
             <div className="w-[90%]">
              <label className="text-xs font-bold  text-[#344767]">Gender</label>
-             <select className="select select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+             <select className="select select-bordered bg-white select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
                <option  className="text-gray-300" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;-------</option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;Wedding </option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;Anniversery</option>
@@ -215,7 +215,7 @@ const CreateNewPurchase = () => {
            </div>
             <div className="w-[90%]">
              <label className="text-xs font-bold  text-[#344767]">Stone Type</label>
-             <select className="select select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+             <select className="select select-bordered bg-white select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
                <option  className="text-gray-300" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;-------</option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;Wedding </option>
                <option>&nbsp;&nbsp;&nbsp;&nbsp;Anniversery</option>
@@ -229,7 +229,7 @@ const CreateNewPurchase = () => {
                 type="number"
                 min="0"
                 placeholder="    Making rate"
-                className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300"/>
+                className="input input-bordered bg-white text-gray-300 input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300"/>
             </div>
             <div className="w-[90%] ">
             <label className="text-xs font-bold  text-[#344767]">Stone Rate</label>
@@ -237,7 +237,7 @@ const CreateNewPurchase = () => {
                 type="number"
                 min="0"
                 placeholder="    Stone rate"
-                className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300"/>
+                className="input input-bordered bg-white text-gray-300 input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300"/>
             </div>
             <div className="w-[90%] ">
             <label className="text-xs font-bold  text-[#344767]">Multi Stone Rate</label>
@@ -245,7 +245,7 @@ const CreateNewPurchase = () => {
                 type="number"
                 min="0"
                 placeholder="    Multi stone rate"
-                className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300"/>
+                className="input input-bordered input-sm w-full bg-white text-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300"/>
             </div>
 
             <div className="w-[90%] ">
@@ -254,7 +254,7 @@ const CreateNewPurchase = () => {
                 type="number"
                 min="0"
                 placeholder="   Stone weight"
-                className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300"/>
+                className="input input-bordered input-sm bg-white text-gray-300 w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300"/>
             </div>
             <div className="w-[90%] ">
             <label className="text-xs font-bold  text-[#344767]"> Multi Stone Weight</label>
@@ -262,7 +262,7 @@ const CreateNewPurchase = () => {
                 type="number"
                 min="0"
                 placeholder=" Multi Stone weight"
-                className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300"/>
+                className="input input-bordered input-sm w-full bg-white text-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300"/>
             </div>
 
             <div className="w-[90%] ">
@@ -271,7 +271,7 @@ const CreateNewPurchase = () => {
                 type="number"
                 min="0"
                 placeholder=" Gross Weight"
-                className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300"/>
+                className="input input-bordered bg-white text-gray-300 input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300"/>
             </div>
 
             <div className="w-[90%] ">
@@ -280,7 +280,7 @@ const CreateNewPurchase = () => {
                 type="number"
                 min="0"
                 placeholder=" Discount"
-                className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300"/>
+                className="input input-bordered bg-white text-gray-300 input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300"/>
             </div>
         
           <div className="w-[90%]">
@@ -289,7 +289,7 @@ const CreateNewPurchase = () => {
             <input
               type="text"
               placeholder="    Tagline 1"
-              className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300" />
+              className="input input-bordered input-sm w-full bg-white text-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300" />
           </div>
 
           <div className="w-[90%]">
@@ -298,7 +298,7 @@ const CreateNewPurchase = () => {
             <input
               type="text"
               placeholder="    Tagline 2"
-              className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300" />
+              className="input input-bordered input-sm w-full bg-white text-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300" />
           </div>
 
           <div className="w-[90%]">
@@ -307,7 +307,7 @@ const CreateNewPurchase = () => {
             <input
               type="text"
               placeholder="    Tagline 3"
-              className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300" />
+              className="input input-bordered input-sm w-full bg-white text-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300" />
           </div>
 
           <div className="w-[90%]">
@@ -316,7 +316,7 @@ const CreateNewPurchase = () => {
             <input
               type="text"
               placeholder="    Tagline 4"
-              className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300" />
+              className="input input-bordered input-sm w-full bg-white text-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300" />
           </div>
 
           <div className="w-[90%]">
@@ -325,7 +325,7 @@ const CreateNewPurchase = () => {
             <input
               type="text"
               placeholder="    Tag Defenition"
-              className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300" />
+              className="input input-bordered input-sm w-full bg-white text-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300" />
           </div>
 
           <div className="w-[90%]">
@@ -334,13 +334,13 @@ const CreateNewPurchase = () => {
             <input
               type="text"
               placeholder="    Alias "
-              className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300" />
+              className="input input-bordered input-sm w-full bg-white text-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300" />
           </div>
 
           {/* item type */}
           <div className="w-[90%]">
           <label className="text-xs font-bold  text-[#344767]">Status</label>
-          <select className="select select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+          <select className="select select-bordered select-sm w-full bg-white text-gray-300  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
           <option  className="text-gray-300" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;Item Type</option>
             <option>&nbsp;&nbsp;&nbsp;&nbsp;Active </option>
             <option>&nbsp;&nbsp;&nbsp;&nbsp;Inactive</option>
@@ -349,17 +349,17 @@ const CreateNewPurchase = () => {
           {/* uom */}
           <div className="w-[90%]">
         <label className="text-xs font-bold  text-[#344767]">Address</label>
-        <textarea className="textarea textarea-gray rounded-lg " placeholder="    Address"></textarea>   
+        <textarea className="textarea textarea-gray rounded-lg bg-white text-gray-300 border-gray-300 " placeholder="    Address"></textarea>   
        </div>
 
         
   
         </div>
-        <div className="flex  w-full h-[20vh]  mt-4 justify-center text-white items-center" >  {/* Container div */}
-            <button className="btn text-white text-xs  bg-blue-700  w-full  sm:w-1/4 md:w-[10vw] rounded-lg">
+        <div className="flex  w-full h-[20vh]  mt-4 justify-center gap-2 text-white items-center" >  {/* Container div */}
+            <button className="btn border-none text-white text-xs bg-blue-700  w-full  sm:w-1/4 md:w-[10vw] rounded-lg">
               Save
             </button>
-            <button className="btn text-white  text-xs bg-blue-700  w-full  sm:w-1/4 md:w-[15vw] rounded-lg">
+            <button className="btn text-white border-none text-xs  bg-blue-700  w-full  sm:w-1/4 md:w-[15vw] rounded-lg">
               Save & Continue Adding
             </button>
          </div>
@@ -368,6 +368,9 @@ const CreateNewPurchase = () => {
   };
   
   export default CreateNewPurchase
+
+
+
 
 
 

@@ -4,6 +4,12 @@
     
      import { useState } from "react";
      import { Link } from "react-router";
+     import CustomScrollbar from "../../../components/CustomScrollbar";
+      import EditButton from '../../../components/EditButton';
+      import DeleteButton from '../../../components/DeleteButton';
+      import CreateButton from '../../../components/CreateButton';
+      import Pagination from '../../../components/Pagination';
+      import ItemsPerPageSelector from '../../../components/ItemsPerPageSelector';
      const  Purchase = () => {
      
           
@@ -111,65 +117,20 @@
                  style={{ fontFamily: 'Open Sans',overflow:'auto'}}
                    >
                     
-                                  <div
-                              style={{
-                              position: 'sticky',
-                              left: 0,
-                              top: 0,
-                              zIndex: 10,
-                              backgroundColor: 'white',
-                              padding: '1.5rem',
-                              boxSizing: 'border-box',
-                              display: 'flex',
-                              justifyContent: 'flex-end',
-                              width: 'fit-content', // Changed from 100%
-                              minWidth: '100%' // Ensures it matches table width
-                              }}
-                          >
+                                 
                               <Link to="/dashboard/inventory/gold/creategoldpurchase">
-                        <button
-                          className="text-xs font-bold"
-                          style={{
-                            width: '160px',
-                            height: '30px',
-                            borderRadius: '8px',
-                            backgroundColor: isHovered ? 'rgb(97, 113, 228)' : 'rgb(126, 96, 228)',
-                            color: 'white',
-                            transition: 'background-color 0.3s ease',
-                            cursor: 'pointer',
-                          }}
-                          onMouseEnter={() => setIsHovered(true)}
-                          onMouseLeave={() => setIsHovered(false)}
-                        >
-                          + New Purchase
-                        </button>
-                      </Link>
-                          </div>
+                              <CreateButton
+                                buttoncontent="+ Purchase"
+                  
+                                  />
+                              </Link>
+                         
                  
-                       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '5px' }}>
-                         <p className="text-xs font-semibold" style={{ marginLeft: '5px' }}>Items per page: {items}</p>
-                         <select
-                           className="border border-gray-300 rounded-lg w-[114px] h-[35px] px-2"
-                           style={{
-                             appearance: 'none',
-                             WebkitAppearance: 'none',
-                             MozAppearance: 'none',
-                             backgroundColor: 'white',
-                             backgroundImage: 'none',
-                             paddingLeft: '5px',
-                           }}
-                           onChange={(e) => setItems(Number(e.target.value))}
-                           value={items}
-                         >
-                           <option value={10}>10</option>
-                           <option value={25}>25</option>
-                           <option value={50}>50</option>
-                         </select>
-                       </div>
+                       <ItemsPerPageSelector items={items} setItems={setItems} />
                  
                        
                  
-                       <table className="table w-full text-sm text-left text-gray-500 border-collapse min-w-[3000px]
+                       <table className="table w-full text-sm text-left text-gray-500 border-collapse min-w-[2500px]
                        " style={{ borderSpacing: '0 12px', borderCollapse: 'separate', }}>
                          <thead className="text-xs text-gray-400 uppercase bg-white">
                            <tr>
@@ -204,31 +165,18 @@
                                  <td className="px-6 py-5 border-b border-gray-200 text-xs">1</td>
                                  <td className="px-6 py-5 border-b border-gray-200 text-xs">April 9, 2025, 12:35 p.m.</td>
       
-                                <td className="px-6 py-5 border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
-                                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                <td className=" border-b border-gray-200 text-xs" style={{ paddingLeft: '10px' }}>
+                                  <div className="flex flex-row ">
                                       <Link to="/dashboard/inventory/gold/createnewpurchase">
-                                      <button
-                                      type="button"
-                                      className="btn text-white font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '200px',
-                                          padding: '5px',
-                                          backgroundColor: '#696BE4',
-                                      }}                              
-                                      >
-                                      New Purchase
-                                      </button></Link>
+                                      <CreateButton
+                                        buttoncontent=" New Purchase"
+                                        
+                                        /> </Link>
                                       <Link to="/dashboard/inventory/gold/viewpurchase">
-                                      <button
-                                      className="btn text-white w-full font-bold text-xs rounded-lg"
-                                      style={{
-                                          width: '200px',
-                                          padding: '5px',
-                                          background: 'linear-gradient(to right, #A1B1D1, #697C9B)',
-                                      }}
-                                      >
-                                      view Purchase
-                                      </button></Link>
+                                       <CreateButton
+                                        buttoncontent="View Purchase"
+                                        
+                                        /> </Link>
                                   </div>
                                   </td>
                              </tr>
@@ -245,17 +193,7 @@
                        
                  
                        {/* Pagination */}
-                       <div className="flex gap-1 justify-center">
-                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
-                           {'<'}
-                         </button>
-                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
-                           1
-                         </button>
-                         <button className="btn rounded-full w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
-                           {'>'}
-                         </button>
-                       </div>
+                        <Pagination/>
                  
                        {/* Modal */}
       

@@ -1,5 +1,5 @@
 
-
+import { Link } from "react-router";
 
 
 const UpdateItem = () => {
@@ -15,17 +15,19 @@ const UpdateItem = () => {
         mx-auto overflow-auto custom-scrollbar"
       style={{ fontFamily: 'Open Sans' }}
     >
-<div className="flex justify-end  h-[30px] ">
-  <button className="btn btn-primary">Back</button>
-</div>
+
+      <Link to='/dashboard/inventory/item'>
+      <div className="flex justify-end   h-[30px]"style={{padding:'20px'}} >
+        <button className="btn bg-blue-500 border-none w-[100px] h-[30px]  ">Back</button>
+      </div></Link>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7" style={{padding: '2vw'}}>
           {/* code */}
           <div className="w-[90%] ">
           <label className="text-xs font-bold  text-[#344767]">Code</label>
               <input
               type="text"
-              placeholder="    Type here"
-              className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300"/>
+              placeholder="Type here"
+              className="input bg-white text-gray-300 input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300"/>
           </div>
       
         <div className="w-[90%]">
@@ -34,12 +36,12 @@ const UpdateItem = () => {
           <input
             type="text"
             placeholder="    Type here"
-            className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300" />
+            className="input input-bordered bg-white text-gray-300  input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300" />
         </div>
         {/* item type */}
         <div className="w-[90%]">
         <label className="text-xs font-bold  text-[#344767]">Item Type</label>
-        <select className="select select-bordered select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+        <select className="select select-bordered bg-white text-gray-300  select-sm w-full  text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
         <option  className="text-gray-300" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;Item Type</option>
           <option>&nbsp;&nbsp;&nbsp;&nbsp;GOLD</option>
           <option>&nbsp;&nbsp;&nbsp;&nbsp;DIAMOND</option>
@@ -48,7 +50,7 @@ const UpdateItem = () => {
         {/* uom */}
         <div className="w-[90%]">
         <label className="text-xs font-bold  text-[#344767]">UOM</label>
-        <select className="select select-bordered select-sm w-full text-gray-400 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+        <select className="select select-bordered bg-white text-gray-300  select-sm w-full text-gray-400 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
         <option className="text-gray-300" disabled  selected >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select UOM</option>
           <option className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp; Gram</option>
         </select>
@@ -57,7 +59,7 @@ const UpdateItem = () => {
         {/* category */}
         <div className="w-[90%]">
         <label className="text-xs font-bold  text-[#344767]">Category</label>
-        <select className="select select-bordered select-sm w-full text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+        <select className="select select-bordered bg-white text-gray-300  select-sm w-full text-gray-400  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
         <option disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select Category</option>
           <option className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp; Luxuary& Designer Wear</option>
           <option  className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Every Day Wear</option>
@@ -69,7 +71,7 @@ const UpdateItem = () => {
        {/* sub Category */}
         <div className="w-[90%]">
         <label className="text-xs font-bold  text-[#344767]"> Sub  Category</label>
-        <select className="select select-bordered select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+        <select className="select select-bordered bg-white text-gray-300  select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
         <option disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -------- </option>
           <option className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;  Wedding Sets</option>
           <option  className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mangal Suthra</option>
@@ -87,7 +89,7 @@ const UpdateItem = () => {
             {/* jewellery type */}
         <div className="w-[90%]">
         <label className="text-xs font-bold  text-[#344767]"> Jewellery Type</label>
-        <select className="select select-bordered select-sm w-full text-gray-600  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+        <select className="select select-bordered bg-white text-gray-300  select-sm w-full text-gray-600  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
         <option disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; select jewellery type </option>
           <option className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Necklaces</option>
           <option  className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ear Rings</option>
@@ -98,7 +100,7 @@ const UpdateItem = () => {
                 {/* brand */}
         <div className="w-[90%]">
         <label className="text-xs font-bold  text-[#344767]"> Brand</label>
-        <select className="select select-bordered select-sm w-full text-gray-600  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+        <select className="select select-bordered bg-white text-gray-300  select-sm w-full text-gray-600  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
         <option disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; select jewellery type </option>
           <option className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Thanisq</option>
           <option  className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cartier</option>
@@ -112,7 +114,7 @@ const UpdateItem = () => {
 
         <div className="w-[90%]">
         <label className="text-xs font-bold  text-[#344767]"> Making Calculation On</label>
-        <select className="select select-bordered select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+        <select className="select select-bordered bg-white text-gray-300  select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
         <option disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;------</option>
           <option className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp; Gross Weight</option>
           <option  className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Net Weight</option>
@@ -121,7 +123,7 @@ const UpdateItem = () => {
     {/* --------------- */}
         <div className="w-[90%]">
         <label className="text-xs font-bold  text-[#344767]"> Is Scrap Item</label>
-        <select className="select select-bordered select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+        <select className="select select-bordered bg-white text-gray-300  select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
         <option disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;------</option>
           <option className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</option>
           <option  className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; No</option>
@@ -130,7 +132,7 @@ const UpdateItem = () => {
 {/* --------------- */}
         <div className="w-[90%]">
         <label className="text-xs font-bold  text-[#344767]"> Is Serialized</label>
-        <select className="select select-bordered select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+        <select className="select select-bordered bg-white text-gray-300  select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
         <option disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;------</option>
           <option className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</option>
           <option  className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; No</option>
@@ -145,7 +147,7 @@ const UpdateItem = () => {
 
         <div className="w-[90%]">
         <label className="text-xs font-bold  text-[#344767]"> Is Gift Item</label>
-        <select className="select select-bordered select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+        <select className="select select-bordered bg-white text-gray-300  select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
         <option disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;------</option>
           <option className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</option>
           <option  className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</option>
@@ -155,7 +157,7 @@ const UpdateItem = () => {
 {/* --------------- */}
         <div className="w-[90%]">
         <label className="text-xs font-bold  text-[#344767]"> Return as</label>
-        <select className="select select-bordered select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+        <select className="select select-bordered bg-white text-gray-300  select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
         <option disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;------</option>
           <option className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Full Exchange</option>
           <option  className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exchange</option>
@@ -167,7 +169,7 @@ const UpdateItem = () => {
 
        <div className="w-[90%]">
         <label className="text-xs font-bold  text-[#344767]"> Is Repair Item</label>
-        <select className="select select-bordered select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+        <select className="select select-bordered bg-white text-gray-300  select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
         <option disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;------</option>
           <option className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes</option>
           <option  className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</option>
@@ -177,13 +179,13 @@ const UpdateItem = () => {
 {/* --------------- */}
       <div className="w-[90%]">
       <label className="text-xs font-bold  text-[#344767]">Item Image</label>
-      <input type="file" className="file-input file-input-bordered file-input-sm w-full " />
+      <input type="file" className="file-input bg-white text-gray-300  file-input-bordered file-input-sm w-full " />
       </div>
 {/* --------------- */}
 
        <div className="w-[90%]">
         <label className="text-xs font-bold  text-[#344767]"> Default Tax</label>
-        <select className="select select-bordered select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+        <select className="select select-bordered bg-white text-gray-300  select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
         <option disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default Input Tax</option>
           <option className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gold- default-Input-Tax:1.000000% -output_tax:1.00000%</option>
           <option  className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gold- Making-Input-Tax:1.000000% -output_tax:1.00000%</option>
@@ -198,7 +200,7 @@ const UpdateItem = () => {
  {/* --------------- */}
        <div className="w-[90%]">
         <label className="text-xs font-bold  text-[#344767]"> Made in</label>
-        <select className="select select-bordered select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+        <select className="select select-bordered bg-white text-gray-300  select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
         <option disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-----------</option>
           <option className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;United Arab Emirates </option>
           <option  className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; India</option>
@@ -214,7 +216,7 @@ const UpdateItem = () => {
           type="number"
           min="0"
           placeholder="Making buffer value"
-          className="input input-bordered input-sm w-full rounded-lg 
+          className="input input-bordered bg-white text-gray-300  input-sm w-full rounded-lg 
                       focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300
                       appearance-auto"
           />
@@ -227,7 +229,7 @@ const UpdateItem = () => {
               type="number"
               min="0"
               placeholder="Stone buffer value"
-              className="input input-bordered input-sm w-full rounded-lg 
+              className="input input-bordered bg-white text-gray-300  input-sm w-full rounded-lg 
                       focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300
                       appearance-auto"
           />
@@ -239,7 +241,7 @@ const UpdateItem = () => {
               type="number"
               min="0"
               placeholder="Stone Sale Markup"
-              className="input input-bordered input-sm w-full rounded-lg 
+              className="input input-bordered input-sm w-full bg-white text-gray-300  rounded-lg 
                       focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300
                       appearance-auto"
           />
@@ -251,7 +253,7 @@ const UpdateItem = () => {
               type="number"
               min="0"
               placeholder="Making Sale Markup"
-              className="input input-bordered input-sm w-full rounded-lg 
+              className="input input-bordered bg-white text-gray-300  input-sm w-full rounded-lg 
                       focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300
                       appearance-auto"
           />
@@ -259,7 +261,7 @@ const UpdateItem = () => {
 {/* --------------- */}
           <div className="w-[90%]">
         <label className="text-xs font-bold  text-[#344767]"> Buffer Consider Type</label>
-        <select className="select select-bordered select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+        <select className="select select-bordered bg-white text-gray-300  select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
         <option disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--------</option>
           <option className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consider</option>
           <option  className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Not Consider</option>
@@ -272,11 +274,11 @@ const UpdateItem = () => {
           <input
             type="text"
             placeholder="    Code"
-            className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300" />
+            className="input input-bordered bg-white text-gray-300  input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300" />
         </div>
         <div className="w-[90%]">
         <label className="text-xs font-bold  text-[#344767]"> Status</label>
-        <select className="select select-bordered select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
+        <select className="select select-bordered bg-white text-gray-300  select-sm w-full  rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300">
         <option disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;------</option>
           <option className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Active </option>
           <option  className="text-sm text-gray-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inactive</option>
@@ -288,7 +290,7 @@ const UpdateItem = () => {
           <input
             type="text"
             placeholder="    Prefix"
-            className="input input-bordered input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300" />
+            className="input input-bordered bg-white text-gray-300  input-sm w-full rounded-lg focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300" />
         </div>
 
         <div className="w-[90%]">
@@ -297,7 +299,7 @@ const UpdateItem = () => {
               type="number"
               min="0"
               placeholder="     Id length"
-              className="input input-bordered input-sm w-full rounded-lg 
+              className="input input-bordered bg-white text-gray-300  input-sm w-full rounded-lg 
                       focus:outline-none focus:border-blue-500 focus:ring-0 border-gray-300
                       appearance-auto"
           />
@@ -312,7 +314,7 @@ const UpdateItem = () => {
 
       </div>
       <div className="flex  w-full h-[20vh]  mt-4 justify-center items-center" >  {/* Container div */}
-          <button className="btn bg-blue-700  w-full  sm:w-1/4 md:w-[10vw] rounded-lg">
+          <button className="btn bg-blue-700 border-none  w-full  sm:w-1/4 md:w-[10vw] rounded-lg">
             Save
           </button>
        </div>

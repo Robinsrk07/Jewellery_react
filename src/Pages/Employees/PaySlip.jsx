@@ -2,6 +2,12 @@ import { useState, useCallback } from "react";
 import { Search, Plus, Edit, Trash2, Save, X, Upload, Eye, Calculator, ArrowLeft } from 'lucide-react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import CustomScrollbar from "../../components/CustomScrollbar";
+import EditButton from '../../components/EditButton';
+import DeleteButton from '../../components/DeleteButton';
+import CreateButton from '../../components/CreateButton';
+import Pagination from '../../components/Pagination';
+import ItemsPerPageSelector from '../../components/ItemsPerPageSelector';
 const PaySlip = () => {
     const [employees] = useState([
         { id: 'EMP001', name: 'John Doe', phone: '9876543210', department: 'IT', designation: 'Software Engineer', bankAccount: '1234567890', upiId: 'john@paytm' },
@@ -264,23 +270,12 @@ const PaySlip = () => {
                                 paddingTop: '30px'
                             }}
                         >
-                            <div className="flex flex-col gap-2">
-                                <p className="text-[12px]">Items Per Page</p>
-                                <select
-                                    className="border border-gray-300 rounded-sm text-sm"
-                                    value={items}
-                                    onChange={(e) => setItems(Number(e.target.value))}
-                                >
-                                    <option value={10}>10</option>
-                                    <option value={25}>25</option>
-                                    <option value={50}>50</option>
-                                </select>
-                            </div>
+                             <ItemsPerPageSelector items={items} setItems={setItems} />
 
                             <input
                                 type="text"
                                 placeholder="Search employee..."
-                                className="border border-gray-300 rounded-sm text-sm w-[300px] focus:border-blue-300"
+                                className="border input bg-white border-gray-300 rounded-sm text-sm w-[300px] focus:border-blue-300"
                                 style={{ padding: '10px' }}
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -511,17 +506,7 @@ const PaySlip = () => {
                 )}
 
                 {currentView === "employee-list" && (
-                    <div className="flex gap-1 justify-center">
-                        <button className="btn rounded-full border-gray-100 bg-white w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
-                            {'<'}
-                        </button>
-                        <button className="btn rounded-full border-none w-[40px] h-[40px] flex items-center justify-center font-semibold bg-blue-500 text-white">
-                            1
-                        </button>
-                        <button className="btn rounded-full border-gray-100 bg-white w-[40px] h-[40px] flex items-center justify-center font-bold text-gray-500">
-                            {'>'}
-                        </button>
-                    </div>
+                    <Pagination/>
                 )}
             </div>
         </>
